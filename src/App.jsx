@@ -1,29 +1,45 @@
-import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-
-// Import Pages
-import AboutMePage from './src/pages/AboutMePage';
-import ServicesPage from './src/pages/ServicesPage'; // Import the new Services page
-import LandingPage from './src/pages/LandingPage';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Layout from './components/Layout';
 
-// Set up the stack navigator
-const Stack = createStackNavigator();
+import LandingPage from './pages/LandingPage';
+import AboutMePage from './pages/AboutMePage';
+import ProjectsPage from './pages/ProjectsPage';
 
-// App Component
 const App = () => {
+  const [loading, setLoading] = useState(true);
+
+  // Simulating loading of the app
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000); // Simulate loading for 2 seconds
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="loading-screen">
+        <h2>Loading...</h2>
+      </div>
+    );
+  }
+
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="AboutMe">
-        <Stack.Screen name="AboutMe" component={AboutMePage} />
-        <Stack.Screen name="Services" component={ServicesPage} /> {/* Add the Services page to the navigation */}
-        <Stack.screen nname="LandingPage" component={LandingPage} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Router>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<LandingPage />} />
+        <Route path="about" element={<AboutMePage />} />
+        <Route path="projects" element={<ProjectsPage />} />
+      </Route>
+    </Routes>
+  </Router>
   );
 };
 
 export default App;
+
+
 
