@@ -1,0 +1,105 @@
+/* Hero Section Styling */
+.hero-section {
+    position: relative;
+    background-color: #fff;
+    padding: 80px 20px;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    overflow: hidden; /* Hide overflowing text/animations */
+  }
+  
+  /* Background Text Animation */
+  .background-text {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 700;
+    color: #BCA58E;
+    opacity: 0.5; /* Adjust opacity for visibility */
+    z-index: 1; /* Ensure background text is in the correct layer */
+    animation: backgroundTextAnimation 8s infinite ease-in-out; /* Slowed down the animation */
+  }
+  
+  /* Animation for background text */
+  @keyframes backgroundTextAnimation {
+    0% {
+      transform: translateX(-50%) scale(1);
+      opacity: 0.5; /* Ensure it's visible at the start */
+    }
+    25% {
+      transform: translateX(0%) scale(1.1);
+      opacity: 0.7;
+    }
+    50% {
+      transform: translateX(50%) scale(1.2);
+      opacity: 1;
+    }
+    75% {
+      transform: translateX(0%) scale(1.1);
+      opacity: 0.7;
+    }
+    100% {
+      transform: translateX(-50%) scale(1);
+      opacity: 0.5;
+    }
+  }
+  
+  /* Hero Card Styling (Foreground) */
+  .hero-card {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.8); /* Slight transparency */
+    padding: 30px 60px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Drop shadow effect */
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .hero-card h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    text-transform: uppercase;
+  }
+  
+  /* Explore Button Styling */
+  .explore-btn {
+    background-color: #310000;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+  }
+  
+  .explore-btn:hover {
+    background-color: #BCA58E;
+    transform: scale(1.05);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .hero-card {
+      padding: 20px 40px;
+    }
+    
+    .hero-card h1 {
+      font-size: 24px;
+    }
+  
+    .background-text {
+      font-size: 3rem;
+    }
+  }
+  
+  

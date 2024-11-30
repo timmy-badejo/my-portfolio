@@ -1,17 +1,12 @@
-// ContactPage.jsx (Example for form)
+
 import React from 'react';
-import { Formik } from 'formik';
+
 
 const ContactPage = () => {
   return (
     <div className="contact-page">
       <h2>Contact Me</h2>
-      <Formik
-        initialValues={{ name: '', email: '', message: '' }}
-        onSubmit={values => {
-          console.log(values);
-        }}
-      >
+      
         {({ values, handleChange, handleSubmit }) => (
           <form onSubmit={handleSubmit}>
             <div>
@@ -33,6 +28,7 @@ const ContactPage = () => {
               />
             </div>
             <div>
+            
               <label>Message</label>
               <textarea
                 name="message"
@@ -40,10 +36,10 @@ const ContactPage = () => {
                 onChange={handleChange}
               />
             </div>
-            <button type="submit">Submit</button>
+
           </form>
         )}
-      </Formik>
+      
     </div>
   );
 };

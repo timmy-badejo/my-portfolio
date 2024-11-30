@@ -1,31 +1,55 @@
-import React, { useState, useEffect } from 'react';
-import { gsap } from 'gsap';
+import React from 'react';
+import HeroSection from '../components/HeroSection';
+import AboutMeSection from '../components/AboutMeSection';
+import SkillsSection from '../components/SkillsSection';
+import OfferSection from '../components/OfferSection';
+import ProjectsSection from '../components/ProjectsSection';
+import ContactSection from '../components/ContactSection';
+import MyProcessSection from '../components/MyProcessSection'; 
+import './LandingPage.css';
 
 const LandingPage = () => {
-  const [showGreeting, setShowGreeting] = useState(false);
-
-  // Use GSAP for title animation when component mounts
-  useEffect(() => {
-    gsap.from('.title', { opacity: 0, duration: 1, y: -50 });  // GSAP animation for title
-
-    // Show the greeting message after 2 seconds
-    setTimeout(() => {
-      setShowGreeting(true);
-    }, 2000);
-  }, []);
-
   return (
     <div className="landing-page">
-      <h1 className="title">Welcome to My Portfolio</h1>
-      
-      {showGreeting ? (
-        <p>Digital Designer and Developer</p>
-      ) : (
-        <p>Loading...</p>  // Show loading message until greeting appears
-      )}
 
-      <p>Bringing ideas to life with creativity and technology.</p>
-      <a href="/about" className="button">Learn More About Me</a>
+     
+
+      {/* Hero Section */}
+      <section className="hero">
+        <HeroSection />
+      </section>
+
+      {/* About Section */}
+      <section className="about">
+        <AboutMeSection />
+      </section>
+
+      {/* Skills Section */}
+      <section className="skills">
+        <SkillsSection />
+      </section>
+
+      {/* Projects Section */}
+      <section className="projects">
+        <ProjectsSection />
+      </section>
+
+      {/* Offer Section */}
+      <section className="offerSection">
+        <OfferSection />
+      </section>
+
+      {/* Contact Section */}
+      <section className="contact">
+        <ContactSection />
+      </section>
+
+      {/* Process Section */}
+      <section className="process">
+        <MyProcessSection />  {/* Added MyProcessSection */}
+      </section>
+
+      
     </div>
   );
 };

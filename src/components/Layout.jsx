@@ -1,19 +1,19 @@
-// Layout.jsx
+// src/components/Layout.jsx
 import React from 'react';
-import Header from './Header';
-import Footer from './Footer';
-import { Outlet } from 'react-router-dom';  // This allows rendering of child routes
+import ProcessSection from './ProcessSection';  // Importing the ProcessSection component
 
 const Layout = () => {
   return (
     <div>
-      <Header />
-      <div className="main-content">
-        <Outlet />  {/* The content of the active page will be displayed here */}
-      </div>
-      <Footer />
+      <header>Header</header>
+      <main>
+        <ProcessSection />  {/* Using ProcessSection here */}
+        {/* Other sections */}
+      </main>
+      <footer>Footer</footer>
     </div>
   );
 };
 
 export default Layout;
+
