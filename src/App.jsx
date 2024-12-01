@@ -45,7 +45,15 @@ const App = () => {
 
 export default App;
 
+// https://github.com/timmy-badejo/my-portfolio.git
 
+// Hello Arrick  hope you're doing well. I wanted to let you know that I used an AI-generated image for my profile picture as a temporary solution. I encountered an issue where my profile image, stored in the assets folder, didn’t display correctly, along with my logo. I'm in the process of resolving this issue and plan to replace the image once I figure it out.
+
+//Additionally, I’ll be adding other images, such as project images, once this issue is resolved. If you have any suggestions or could assist me with this, your help would be greatly appreciated.
+
+//Thank you for your understanding and support!
+
+//Best regards, timmy badejo
 
 
 
