@@ -21,6 +21,7 @@
     opacity: 0.5; /* Adjust opacity for visibility */
     z-index: 1; /* Ensure background text is in the correct layer */
     animation: backgroundTextAnimation 8s infinite ease-in-out; /* Slowed down the animation */
+    margin-top: 170px;
   }
   
   /* Animation for background text */
@@ -51,7 +52,7 @@
   .hero-card {
     display: inline-block;
     background: rgba(255, 255, 255, 0.8); /* Slight transparency */
-    padding: 30px 60px;
+    padding: 60px 180px;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Drop shadow effect */
     margin-bottom: 20px;
@@ -65,6 +66,13 @@
     color: #333;
     margin: 0;
     text-transform: uppercase;
+  }
+
+  .hero-card p {
+    font-size: 18px;
+    color:#310000;
+    margin: 0;
+
   }
   
   /* Explore Button Styling */

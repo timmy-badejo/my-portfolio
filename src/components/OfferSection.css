@@ -1,0 +1,115 @@
+/* OfferSection Styling */
+.offer-section {
+    padding: 50px 20px;
+    background-color: #fff;
+    font-family: "Nunito", 'sans-serif';
+  }
+  
+  .offer-section h2 {
+    font-size: 36px;
+    color: #333;
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  
+  .offer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px;
+  }
+  
+  .offer-text {
+    width: 60%;
+  }
+  
+  .service {
+    margin-bottom: 25px;
+  }
+  
+  .service h3 {
+    font-size: 28px;
+    color: #BCA58E;
+    margin-bottom: 10px;
+  }
+  
+  .service p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  /* Image flip styles */
+  .offer-image {
+    width: 40%;
+  }
+  
+  .offer-image-container {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.3s ease-in-out;
+    border-radius: 8px;
+  }
+  
+  .offer-image:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Flip card styles */
+  .image-flip-container {
+    perspective: 1000px;
+  }
+  
+  .flip-card {
+    width: 100%;
+    height: auto;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+  }
+  
+  .flip-card.flipped {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    backface-visibility: hidden;
+  }
+  
+  .flip-card-back {
+    transform: rotateY(180deg);
+  }
+  
+  .project-description {
+    font-size: 1rem;
+    color: #000;
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+  
+  .project-description.active {
+    opacity: 1;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .offer-content {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .offer-text {
+      width: 100%;
+    }
+  
+    .offer-image {
+      width: 100%;
+      margin-top: 20px;
+    }
+  }
+  

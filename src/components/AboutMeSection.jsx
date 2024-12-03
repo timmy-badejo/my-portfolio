@@ -35,7 +35,7 @@ const AboutMeSection = () => {
        {/* Profile Image */}
        <div className="profile-image">
         <img
-          src="https://images.deepai.org/art-image/b2a0447cac2047589a91f730258bd6a6/young-handsome-african-american-with-afro-hai_zWIDTfD.jpg" 
+          src= 'https://images.deepai.org/art-image/b2a0447cac2047589a91f730258bd6a6/young-handsome-african-american-with-afro-hai_zWIDTfD.jpg'
           alt="Profile"
         />
       </div>

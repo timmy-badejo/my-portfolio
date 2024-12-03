@@ -1,20 +1,19 @@
 // src/App.jsx
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Use Routes instead of Switch
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Layout from './components/Layout';
-
 import LandingPage from './pages/LandingPage';
 import AboutMePage from './pages/AboutMePage';
-import ProjectsPage from './pages/ProjectsPage';
 import ContactPage from './pages/ContactPage';
+import ProjectsPage from './pages/ProjectsPage';  // Add ProjectsPage
+import ProjectDetailPage from './pages/ProjectDetailPage';  // Add ProjectDetailPage
+
 import './global.css';
 
 const App = () => {
   const [loading, setLoading] = useState(true);
 
-  // Simulating loading of the app
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
@@ -35,8 +34,9 @@ const App = () => {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="about" element={<AboutMePage />} />
-        <Route path="projects" element={<ProjectsPage />} />
-        <Route path="contact" element={<ContactPage/>}/>
+        <Route path="contact" element={<ContactPage />} />
+        <Route path="projects" element={<ProjectsPage />} /> {/* Projects page with list of projects */}
+        <Route path="projects/:projectId" element={<ProjectDetailPage />} /> {/* Dynamic project detail page */}
       </Routes>
       <Footer />
     </Router>
@@ -44,6 +44,16 @@ const App = () => {
 };
 
 export default App;
+
+
+
+
+
+
+
+
+
+
 
 // https://github.com/timmy-badejo/my-portfolio.git
 

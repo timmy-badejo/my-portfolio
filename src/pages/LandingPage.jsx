@@ -3,9 +3,10 @@ import HeroSection from '../components/HeroSection';
 import AboutMeSection from '../components/AboutMeSection';
 import SkillsSection from '../components/SkillsSection';
 import OfferSection from '../components/OfferSection';
-import ProjectsSection from '../components/ProjectsSection';
+import FeaturedProjects from '../components/FeaturedProjects';
 import ContactSection from '../components/ContactSection';
 import MyProcessSection from '../components/MyProcessSection'; 
+
 import './LandingPage.css';
 
 const LandingPage = () => {
@@ -19,19 +20,14 @@ const LandingPage = () => {
         <HeroSection />
       </section>
 
-      {/* About Section */}
-      <section className="about">
-        <AboutMeSection />
-      </section>
-
       {/* Skills Section */}
       <section className="skills">
         <SkillsSection />
       </section>
 
-      {/* Projects Section */}
-      <section className="projects">
-        <ProjectsSection />
+      {/* About Section */}
+      <section className="about">
+        <AboutMeSection />
       </section>
 
       {/* Offer Section */}
@@ -39,15 +35,28 @@ const LandingPage = () => {
         <OfferSection />
       </section>
 
+       {/* Process Section */}
+       <section className="process">
+        <MyProcessSection />  {/* Added MyProcessSection */}
+      </section>
+
+      
+
+      {/* Projects Section */}
+      <section className="featuredprojects">
+        <FeaturedProjects />
+      </section>
+
+    
+
       {/* Contact Section */}
       <section className="contact">
         <ContactSection />
       </section>
 
-      {/* Process Section */}
-      <section className="process">
-        <MyProcessSection />  {/* Added MyProcessSection */}
-      </section>
+     
+
+      
 
       
     </div>

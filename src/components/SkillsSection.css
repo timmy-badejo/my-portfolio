@@ -8,8 +8,9 @@
   
   .skills-section h2 {
     font-size: 36px;
-    color: #333;
+    color: #3F0000;
     margin-bottom: 30px;
+    text-align: left;
   }
   
   .skills {

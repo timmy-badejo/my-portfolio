@@ -1,33 +1,36 @@
 /* Header Styles */
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #4b2e2e;  /* Deep red */
-    padding: 20px;
-    color: #fff;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-  }
-  
-  .logo {
-    display:flex;
-    align-items: center;
-  }
-  
-  .logo-image {
-    width: 50px;  /* Adjust the logo size */
-    height: 50px;
-    margin-right: 10px;
-  }
-  
-  .logo-text {
-    font-size: 14px;
-    font-weight: bold;
-    color: #fff;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #4b2e2e;  /* Deep red */
+  padding: 20px;
+  color: #fff;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;  /* Indicates that the logo is clickable */
+}
+
+.logo-image {
+  width: 50px;  /* Adjust the logo size */
+  height: 50px;
+  margin-right: 10px;
+  transition: transform 1s ease;  /* Smooth transform transition */
+}
+
+.logo-text {
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+}
+
   
   .nav-links {
     list-style-type: none;

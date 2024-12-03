@@ -32,7 +32,11 @@ const HeroSection = () => {
       {/* Foreground Text Card */}
       <div className="hero-card">
         <h1>Transforming Digital Ideas Into Reality</h1>
-        <button className="explore-btn">Explore Project</button>
+        <p>Combining creativity and technology to build innovative digital solutions.
+Explore my work and see how I bring ideas to life through design and 
+development.
+</p>
+        <button className="explore-btn">Explore</button>
       </div>
     </section>
   );

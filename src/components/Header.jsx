@@ -1,14 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './Header.css';  // Make sure to create a CSS file for styling the header
+import { gsap } from 'gsap'; // Import GSAP for animation
+import './Header.css'; // Make sure to create a CSS file for styling the header
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa'; // Import social icons
 
 const Header = () => {
+  const handleLogoClick = () => {
+    // GSAP Animation for spinning the logo on click
+    gsap.fromTo(
+      '.logo svg', // Target the SVG element inside the .logo class
+      { rotation: 0 }, // Initial rotation angle
+      { rotation: 360, duration: 1, ease: 'power2.out' } // Rotate 360 degrees
+    );
+  };
+
   return (
     <header className="header">
       {/* Logo */}
-      <div className="logo">
-        <img src="assests/Tc_logo.png" alt="TC" className="logo-image" /> {/* Logo Image */}
+      <div className="logo" onClick={handleLogoClick}> {/* Trigger animation on click */}
+        <svg
+          className="logo-image"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 100 100"
+          width="50" // Adjust size as needed
+          height="50"
+        >
+          <use href="/Tc%20logo.svg" />
+        </svg>
         <span className="logo-text">TimmyCreative</span>
       </div>
 
@@ -50,6 +68,8 @@ const Header = () => {
 };
 
 export default Header;
+
+
 
 
 

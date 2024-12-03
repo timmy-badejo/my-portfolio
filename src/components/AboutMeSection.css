@@ -11,14 +11,15 @@
   
   .about-me-section h2 {
     font-size: 36px;
-    color: #333;
+    color: #3F0000;
     margin-bottom: 20px;
     font-weight: bold;
+    text-align: left;
   }
   
   .about-text p {
     font-size: 18px;
-    color: #555;
+    color: #3F0000;
     line-height: 1.6;
     max-width: 800px;
     margin: 0 auto; /* Centers the paragraph */
@@ -27,7 +28,7 @@
   }
   
   .about-text .active {
-    opacity: 1;
+    opacity: 1.5;
   }
   
   /* Profile Image Styling */
