@@ -115,29 +115,49 @@ body {
     }
   }
   
-  /*  LoadingScreen.css */
-
-.loading-screen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #1CB5E0; /* Background color */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  transition: opacity 1s ease; /* Smooth fade transition */
-}
-
-
-.tc-text {
-  font-size: 5rem;
-  font-weight: bold;
-  color: #fff;
-  text-transform: uppercase;
-  font-family: 'Nunito', sans-serif;
-  letter-spacing: 10px;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-}
+  /* loadingcreen */
+  .loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #BCA58E; /* Background color */
+    display: flex;
+    flex-direction: column; /* Align TC and TimmyCreative vertically */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 1s ease; /* Smooth fade transition */
+  }
+  
+  .tc-text {
+    font-size: 5rem;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'Nunito', sans-serif;
+    letter-spacing: 10px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  }
+  
+  .timmy-creative {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .timmy-creative .letter {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+    margin: 0 5px; /* Add spacing between letters */
+    opacity: 0; /* Hidden initially for animation */
+    text-shadow: 0px 0px 0 rgba(0, 0, 0, 0); /* No shadow initially */
+  }
+  
+  .timmy-creative .letter.animated {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Drop shadow for animation */
+  }
+  

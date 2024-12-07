@@ -1,66 +1,114 @@
-// src/pages/ProjectDetailPage.js
 import React from 'react';
-import { useParams } from 'react-router-dom';  // To get the project ID from the URL
-import './ProjectDetailPage.css';  // Make sure to style your project details
+import { useParams } from 'react-router-dom';
+import { Carousel } from 'react-responsive-carousel'; // Add carousel
+import 'react-responsive-carousel/lib/styles/carousel.min.css'; // Carousel CSS
+import './ProjectDetailPage.css';
 
-// Sample project data (this can be external or fetched from an API)
+// Import PDF viewer
+import { Worker, Viewer } from '@react-pdf-viewer/core';
+import '@react-pdf-viewer/core/lib/styles/index.css';
+
+// Sample Project Data
 const getProjectDataById = (id) => {
   const projects = [
     {
       id: "1",
-      title: "Sweet Sensations: Cake vs. Pleasure Poster Redesign",
-      image: "https://i.pinimg.com/736x/5a/dd/16/5add164dac701c1ccbfd53914f927794.jpg",
-      details: "This redesign improves visuals, clarity, and messaging.",
-      narrative: "The original poster explored the playful comparison of cake and pleasure.",
-      actions: "Ongoing actions to refine design elements.",
-      technicalInfo: "Created using Photoshop",
-      notes: "Feedback was provided by peers and instructors."
+      title: "Ron Zalko Web Design",
+      image: "/Ron Zalko web design.jpg",
+      pdf: "/Ron_Zalko_Fitness_Wireframe.pdf",
+      details: "Redesigned Ron Zalko Fitness & Yoga website to enhance user experience...",
+      narrative: "The Ron Zalko Fitness website serves as the digital presence for a premier fitness center...",
+      challenges: "Overcame challenges in integrating complex booking forms and enhancing accessibility...",
+      technicalInfo: "UI/UX Design, Web Development, Accessibility Improvements",
+      notes: "Feedback was implemented after usability tests..."
     },
     {
       id: "2",
-      title: "Logo Design and Business Card for Melody Beats",
-      image: "https://via.placeholder.com/500",
-      details: "A vibrant logo and business card designed for Melody Beats.",
-      narrative: "The company aims to appeal to a youthful, energetic demographic.",
-      actions: "Feedback and iterations based on client reviews.",
-      technicalInfo: "Designed using Illustrator",
-      notes: "Professional and vibrant branding."
+      title: "Melody Beats Branding",
+      image: "/Melody_Beats_Logo.jpg",
+      pdf: "/Revised_Final_Assignment_Yomi-Badejo_Graphic_Design.pdf",
+      details: "Created cohesive branding for Melody Beats through logo and business card design...",
+      narrative: "The branding project for Melody Beats involved crafting a vibrant identity...",
+      challenges: "Balancing creative design with strict client requirements...",
+      technicalInfo: "Adobe Illustrator, Branding Strategy",
+      notes: "Iterations refined with client feedback."
     },
     {
       id: "3",
-      title: "Redesign of the Timmy Care Hair App",
-      image: "https://via.placeholder.com/500",
-      details: "Improved navigation and branding for the Timmy Care Hair app.",
-      narrative: "Enhanced UI/UX through Figma prototyping.",
-      actions: "User flows and wireframes refined.",
-      technicalInfo: "Created using Figma",
-      notes: "Focused on improving user experience."
+      title: "TimmyCare App Redesign",
+      image: "/TimmyCare_App_Design.jpg",
+      pdf: "/TimmyCare_Mobile_app.pdf",
+      details: "Redesigned TimmyCare Hair App to improve navigation and user engagement...",
+      narrative: "Focused on enhancing user experience by refining user flows and layouts...",
+      challenges: "Simplifying navigation while maintaining brand aesthetics...",
+      technicalInfo: "Figma, Prototyping, Wireframing",
+      notes: "Successful testing with user groups."
     },
   ];
 
-  return projects.find((project) => project.id === id);  // Find the project by ID
+  return projects.find((project) => project.id === id);
 };
 
 const ProjectDetailPage = () => {
-  const { projectId } = useParams();  // Extract projectId from URL
-  const projectData = getProjectDataById(projectId);  // Fetch the project data using the projectId
+  const { projectId } = useParams();
+  const projectData = getProjectDataById(projectId);
 
   if (!projectData) {
-    return <p>Project not found</p>;  // Display an error message if the project data is not found
+    return <p>Project not found</p>;
   }
 
   return (
     <div className="project-detail">
-      <h2>{projectData.title}</h2>
-      <img src={projectData.image} alt={projectData.title} />
-      <p><strong>Details:</strong> {projectData.details}</p>
-      <p><strong>Narrative:</strong> {projectData.narrative}</p>
-      <p><strong>Actions:</strong> {projectData.actions}</p>
-      <p><strong>Technical Info:</strong> {projectData.technicalInfo}</p>
-      <p><strong>Notes:</strong> {projectData.notes}</p>
+      {/* Hero Section */}
+      <div className="project-hero">
+        <img src={projectData.image} alt={projectData.title} className="project-image" />
+        <h1>{projectData.title}</h1>
+        <h3>{projectData.technicalInfo}</h3>
+      </div>
+
+      {/* Project Narrative */}
+      <div className="project-section">
+        <h2>Project Overview</h2>
+        <p>{projectData.narrative}</p>
+      </div>
+
+      {/* Challenges Section */}
+      <div className="project-section">
+        <h2>Challenges Overcome</h2>
+        <p>{projectData.challenges}</p>
+      </div>
+
+      {/* Technical Details */}
+      <div className="project-section">
+        <h2>Details</h2>
+        <p><strong>Details:</strong> {projectData.details}</p>
+        <p><strong>Notes:</strong> {projectData.notes}</p>
+      </div>
+
+      {/* PDF Viewer */}
+      <div className="project-section">
+        <h2>Supporting Documentation</h2>
+        <Worker>
+          <div style={{ height: '600px' }}>
+            <Viewer fileUrl={projectData.pdf} />
+          </div>
+        </Worker>
+      </div>
+
+      {/* Carousel for Images */}
+      <div className="project-section">
+        <h2>Gallery</h2>
+        <Carousel showThumbs={false} dynamicHeight>
+          <div>
+            <img src={projectData.image} alt="Project Image" />
+          </div>
+          {/* Add more images if needed */}
+        </Carousel>
+      </div>
     </div>
   );
 };
 
 export default ProjectDetailPage;
+
 

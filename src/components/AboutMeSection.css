@@ -109,5 +109,62 @@
       height: 120px;
     }
   }
+
+  /* Skills Section */
+.skills-section {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.skills-section h3 {
+  font-size: 24px;
+  color: #24658D;
+  margin-bottom: 20px;
+}
+
+.skills-list {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.skill-badge {
+  background-color: #BCA58E;
+  color: #3F0000;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Values Section */
+.values-section {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.values-section h3 {
+  font-size: 24px;
+  color: #24658D;
+  margin-bottom: 20px;
+}
+
+.values-list {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.value-badge {
+  background-color: #3F0000;
+  color: #FFF;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
   
   

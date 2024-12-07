@@ -8,6 +8,7 @@ import AboutMePage from './pages/AboutMePage';
 import ContactPage from './pages/ContactPage';
 import ProjectsPage from './pages/ProjectsPage';  // Add ProjectsPage
 import ProjectDetailPage from './pages/ProjectDetailPage';  // Add ProjectDetailPage
+import LoadingScreen from './components/LoadingScreen';
 
 import './global.css';
 
@@ -23,6 +24,7 @@ const App = () => {
   if (loading) {
     return (
       <div className="loading-screen">
+        <LoadingScreen></LoadingScreen>
         <h2>Loading...</h2>
       </div>
     );

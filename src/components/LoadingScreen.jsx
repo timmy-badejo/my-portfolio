@@ -1,6 +1,5 @@
-// LoadingScreen.js
 import React, { useEffect } from 'react';
-import { gsap } from 'gsap';  // Import GSAP for animation
+import { gsap } from 'gsap'; // Import GSAP for animation
 
 const LoadingScreen = ({ onAnimationComplete }) => {
   useEffect(() => {
@@ -11,32 +10,56 @@ const LoadingScreen = ({ onAnimationComplete }) => {
       { opacity: 1, x: 0, duration: 1, delay: 0.5, ease: 'bounce.out' }
     );
 
-    // Shake and float animation
-    gsap.to('.tc-text', {
-      scale: 1.2,
-      rotation: 360,
-      duration: 1,
+    // TimmyCreative animation - animate each letter
+    gsap.fromTo(
+      '.timmy-creative span',
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        stagger: 0.2, // Stagger each letter's animation
+        delay: 1.5, // Start after the TC text animation
+        ease: 'power2.out',
+      }
+    );
+
+    // Drop shadow animation
+    gsap.to('.timmy-creative span', {
+      textShadow: '2px 2px 8px rgba(0, 0, 0, 0.5)',
       repeat: -1,
       yoyo: true,
-      ease: 'easeInOut',
+      duration: 1.5,
+      ease: 'sine.inOut',
     });
 
-    // After 2 seconds (adjust timing as needed), fade out the loading screen
+    // Fade out the loading screen after animation completes
     setTimeout(() => {
       gsap.to('.loading-screen', {
         opacity: 0,
         duration: 1,
-        onComplete: onAnimationComplete,  // Callback to indicate the animation is complete
+        onComplete: onAnimationComplete,
       });
-    }, 2000); // Set the timing to match the loading screen duration
+    }, 5100); // Total animation time (TC + TimmyCreative)
   }, [onAnimationComplete]);
 
   return (
     <div className="loading-screen">
       <div className="tc-text">TC</div>
+      <div className="timmy-creative">
+        {['T', 'i', 'm', 'm', 'y', 'C', 'r', 'e', 'a', 't', 'i', 'v', 'e'].map((char, index) => (
+          <span key={index} className="letter">
+            {char}
+          </span>
+        ))}
+      </div>
     </div>
   );
 };
 
 export default LoadingScreen;
+
+
+
+
 

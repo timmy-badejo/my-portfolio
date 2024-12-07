@@ -1,27 +1,48 @@
-/* src/pages/ProjectDetailPage.css */
 .project-detail {
-    padding: 20px;
-    background-color: #fff;
-    font-family: 'Nunito', sans-serif;
-  }
-  
-  .project-detail h2 {
-    font-size: 32px;
-    color: #1CB5E0;
-    margin-bottom: 20px;
-  }
-  
-  .project-detail img {
-    width: 100%;
-    max-height: 400px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 20px;
-  }
-  
-  .project-detail p {
-    font-size: 16px;
-    line-height: 1.6;
-    margin-bottom: 15px;
-  }
-  
+  font-family: 'Nunito', sans-serif;
+  margin: 20px;
+  color: #333;
+}
+
+.project-hero {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.project-hero img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.project-hero h1 {
+  font-size: 36px;
+  color: #BCA58E;
+  margin-top: 20px;
+}
+
+.project-section {
+  margin: 20px 0;
+}
+
+.project-section h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.project-section p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.carousel .slide img {
+  max-height: 500px;
+  object-fit: cover;
+}
+
+.project-section .viewer-container {
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
