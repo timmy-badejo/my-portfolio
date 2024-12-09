@@ -1,7 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { gsap } from 'gsap';
+import Conceptdev from '../assests/Conceptdev.svg';
+import WireframeDesign from '../assests/wireframe&design.svg';
+import CodedDevelopment from '../assests/Conceptdev.svg';
 import '../pages/LandingPage.css';
 
 const MyProcessSection = () => {
+  useEffect(() => {
+    // Animate the SVGs on hover
+    const svgElements = document.querySelectorAll('.process-img');
+    svgElements.forEach((svg) => {
+      gsap.fromTo(
+        svg,
+        { scale: 1 },
+        { scale: 1.05, repeat: -1, yoyo: true, duration: 1.5, ease: 'power1.inOut' }
+      );
+    });
+  }, []);
+
   return (
     <section className="process-section">
       <h2>My Process</h2>
@@ -9,9 +25,9 @@ const MyProcessSection = () => {
       <div className="process-container">
         <div className="process-item">
           <div className="process-image">
-            <img 
-              src="https://images.deepai.org/art-image/5154fe99cffc43fc99c65c83000be8af/graphic-design-graphic-drawings-png.jpg" 
-              alt="Concept Development" 
+            <img
+              src={Conceptdev}
+              alt="Concept Development"
               className="process-img"
             />
           </div>
@@ -23,9 +39,9 @@ const MyProcessSection = () => {
 
         <div className="process-item">
           <div className="process-image">
-            <img 
-              src="https://images.deepai.org/art-image/7813b5adc3df4dac9b77ad977bca5eac/digital-and-graphic-design-services-graphic-d_wACYgVA.jpg" 
-              alt="Wireframing & Design" 
+            <img
+              src={WireframeDesign}
+              alt="Wireframing & Design"
               className="process-img"
             />
           </div>
@@ -37,9 +53,9 @@ const MyProcessSection = () => {
 
         <div className="process-item">
           <div className="process-image">
-            <img 
-              src="https://images.deepai.org/art-image/e6e3d1f42a3c4c1aadc59b10e2ba4314/graphic-design-graphic-drawings-png-13d9c8.jpg" 
-              alt="Coding & Development" 
+            <img
+              src={CodedDevelopment}
+              alt="Coding & Development"
               className="process-img"
             />
           </div>
@@ -54,3 +70,4 @@ const MyProcessSection = () => {
 };
 
 export default MyProcessSection;
+

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Tclogo from '../assests/Tclogo.svg'; // Import the SVG logo
 import { gsap } from 'gsap';
 import './Header.css';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
@@ -22,15 +23,11 @@ const Header = () => {
         onMouseEnter={() => gsap.to('.logo-text', { x: 10, opacity: 1, duration: 0.5 })}
         onMouseLeave={() => gsap.to('.logo-text', { x: 0, opacity: 0, duration: 0.5 })}
       >
-        <svg
+        <img
+          src={Tclogo} // Use the imported logo
+          alt="TimmyCreative Logo"
           className="logo-image"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 100 100"
-          width="50"
-          height="50"
-        >
-          <use href="/mnt/data/Tc%20logo.svg" />
-        </svg>
+        />
         <span className="logo-text">TimmyCreative</span>
       </div>
 
@@ -40,7 +37,6 @@ const Header = () => {
           <li><Link to="/" className="nav-link">Home</Link></li>
           <li><Link to="/about" className="nav-link">About</Link></li>
           <li><Link to="/projects" className="nav-link">Projects</Link></li>
-          
         </ul>
       </nav>
 
@@ -56,3 +52,6 @@ const Header = () => {
 };
 
 export default Header;
+
+
+

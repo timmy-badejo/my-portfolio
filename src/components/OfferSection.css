@@ -3,6 +3,7 @@
     padding: 50px 20px;
     background-color: #fff;
     font-family: "Nunito", 'sans-serif';
+    margin-bottom: 400px;
   }
   
   .offer-section h2 {
@@ -58,6 +59,51 @@
   .offer-image:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   }
+
+  .svg-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.svg-icon {
+  width: 120px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease;
+  opacity: 0.7;
+}
+
+.svg-icon.active {
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+.svg-icon:hover {
+  transform: scale(1.3);
+  opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .offer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .offer-text {
+    width: 100%;
+  }
+
+  .svg-container {
+    justify-content: center;
+  }
+
+  .svg-icon {
+    width: 100px;
+  }
+}
   
   /* Flip card styles */
   .image-flip-container {
@@ -91,12 +137,15 @@
     font-size: 1rem;
     color: #000;
     opacity: 0;
-    transition: opacity 1s ease;
+    transition: opacity 1s ease, transform 1s ease;
+    transform: translateY(20px); /* Subtle upward movement for animation */
   }
   
   .project-description.active {
     opacity: 1;
+    transform: translateY(0);
   }
+  
   
   /* Responsive Design */
   @media (max-width: 768px) {

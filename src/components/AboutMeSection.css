@@ -1,170 +1,110 @@
-/* About Me Section Styling */
 .about-me-section {
-    padding: 50px 20px;
-    background-color: #f5f5f5; /* Light gray background */
-    text-align: center;
-    font-family: "Nunito", sans-serif;
-    margin-top: 20px;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .about-me-section h2 {
-    font-size: 36px;
-    color: #3F0000;
-    margin-bottom: 20px;
-    font-weight: bold;
-    text-align: left;
-  }
-  
-  .about-text p {
-    font-size: 18px;
-    color: #3F0000;
-    line-height: 1.6;
-    max-width: 800px;
-    margin: 0 auto; /* Centers the paragraph */
-    opacity: 0; /* Ensures the paragraph fades in */
-    transition: opacity 1s ease;
-  }
-  
-  .about-text .active {
-    opacity: 1.5;
-  }
-  
-  /* Profile Image Styling */
-  .profile-image img {
-    width: 350px; /* Increase the size */
-    height: 350px;
-    object-fit: cover;
-    border-radius: 50%; /* Circular shape */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow */
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  
-  
-  /* Floating shapes */
-  .shapes-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-  }
-  
-  .shape {
-    position: absolute;
-    border-radius: 50%;
-    background-color: #BCA58E; /* Placeholder color */
-    opacity: 0.6;
-  }
-  
-  .shape1 {
-    width: 100px;
-    height: 100px;
-    top: -50px;
-    left: -150px;
-    background-color: #3F0000;
-  }
-  
-  .shape2 {
-    width: 120px;
-    height: 120px;
-    top: 60px;
-    left: 80px;
-    background-color: #24658D;
-  }
-  
-  .shape3 {
-    width: 90px;
-    height: 90px;
-    top: -40px;
-    right: -80px;
-    background-color: #BCA58E;
-  }
-  
-  .shape4 {
-    width: 110px;
-    height: 110px;
-    top: 150px;
-    right: 100px;
-    background-color: #3F0000;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .about-me-section h2 {
-      font-size: 28px;
-    }
-  
-    .about-text p {
-      font-size: 16px;
-      padding: 0 20px; /* Add some padding for better readability */
-    }
-  
-    .profile-image img {
-      width: 120px;
-      height: 120px;
-    }
-  }
-
-  /* Skills Section */
-.skills-section {
-  margin-top: 40px;
+  padding: 50px 20px;
+  background-color: #f5f5f5; /* Light gray background */
   text-align: center;
+  font-family: "Nunito", sans-serif;
+  margin-top: 20px;
+  position: relative;
+  overflow: hidden;
 }
 
-.skills-section h3 {
-  font-size: 24px;
-  color: #24658D;
-  margin-bottom: 20px;
-}
-
-.skills-list {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.skill-badge {
-  background-color: #BCA58E;
+.about-me-section h2 {
+  font-size: 36px;
   color: #3F0000;
-  padding: 10px 20px;
-  border-radius: 20px;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-/* Values Section */
-.values-section {
-  margin-top: 40px;
-  text-align: center;
-}
-
-.values-section h3 {
-  font-size: 24px;
-  color: #24658D;
   margin-bottom: 20px;
-}
-
-.values-list {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.value-badge {
-  background-color: #3F0000;
-  color: #FFF;
-  padding: 10px 20px;
-  border-radius: 20px;
-  font-size: 16px;
   font-weight: bold;
+  text-align: left;
 }
+
+.about-text p {
+  font-size: 18px;
+  color: #3F0000;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto; /* Centers the paragraph */
+  opacity: 0; /* Ensures the paragraph fades in */
+  transition: opacity 1s ease;
+}
+
+.about-text .active {
+  opacity: 1;
+}
+
+/* Profile Image Styling */
+.profile-image img {
+  width: 200px; /* Profile image width */
+  height: 200px; /* Profile image height */
+  object-fit: cover;
+  border-radius: 50%; /* Circular shape */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow */
+  margin-bottom: 20px; /* Spacing below the image */
+}
+
+/* Floating shapes */
+.shapes-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  background-color: #BCA58E; /* Placeholder color */
+  opacity: 0.6;
+}
+
+.shape1 {
+  width: 100px;
+  height: 100px;
+  top: -50px;
+  left: -150px;
+  background-color: #3F0000;
+}
+
+.shape2 {
+  width: 120px;
+  height: 120px;
+  top: 60px;
+  left: 80px;
+  background-color: #24658D;
+}
+
+.shape3 {
+  width: 90px;
+  height: 90px;
+  top: -40px;
+  right: -80px;
+  background-color: #BCA58E;
+}
+
+.shape4 {
+  width: 110px;
+  height: 110px;
+  top: 150px;
+  right: 100px;
+  background-color: #3F0000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-me-section h2 {
+    font-size: 28px;
+  }
+
+  .about-text p {
+    font-size: 16px;
+    padding: 0 20px; /* Add some padding for better readability */
+  }
+
+  .profile-image img {
+    width: 150px;
+    height: 150px;
+  }
+}
+
 
   
   

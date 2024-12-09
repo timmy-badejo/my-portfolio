@@ -1,4 +1,3 @@
-// ContactSection.jsx
 import React, { useState } from 'react';
 import '../pages/LandingPage.css';
 
@@ -10,71 +9,76 @@ const ContactSection = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Message from ${name} (${email}, ${phone}) has been submitted.`);
+    alert(`Thank you, ${name}. Your message has been submitted.`);
+    setName('');
+    setEmail('');
+    setPhone('');
+    setMessage('');
   };
 
   return (
     <section className="contact-section">
       <h2>Let's Connect!</h2>
-      <div className="message">
-        <p>
-          I’m excited to hear from you! Whether you have a project idea, a collaboration opportunity, or just want to say hello, feel free to reach 
-          out using the form above. I’m always eager to work on creative projects, solve design challenges, or bring your vision to life through 
-          thoughtful design and development. Share a few details about your needs, and I’ll get back to you as soon as possible. Let’s create something amazing together!
-        </p>
-      </div>
+      <p className="contact-intro">
+        Have a project idea, collaboration opportunity, or just want to say hello? I'm excited to hear from you. Fill out the form below or{' '}
+        <a href="mailto:timmybad06@gmail.com" className="email-link">
+          email me directly
+        </a>
+        . Let’s create something amazing together!
+      </p>
 
       <form onSubmit={handleSubmit} className="contact-form">
-        <div className="form-row">
-          <div className="form-group">
-            <label>Your Name:</label>
-            <input 
-              type="text" 
-              value={name} 
-              onChange={(e) => setName(e.target.value)} 
-              placeholder="Your Name" 
-            />
-          </div>
-          <div className="form-group">
-            <label>Your Email:</label>
-            <input 
-              type="email" 
-              value={email} 
-              onChange={(e) => setEmail(e.target.value)} 
-              placeholder="Your Email" 
-            />
-          </div>
+        <div className="form-group">
+          <label htmlFor="name">Your Name</label>
+          <input
+            id="name"
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="Enter your name"
+            required
+          />
         </div>
-
-        <div className="form-row">
-          <div className="form-group">
-            <label>Your Phone Number:</label>
-            <input 
-              type="text" 
-              value={phone} 
-              onChange={(e) => setPhone(e.target.value)} 
-              placeholder="Your Phone Number" 
-            />
-          </div>
+        <div className="form-group">
+          <label htmlFor="email">Your Email</label>
+          <input
+            id="email"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Enter your email"
+            required
+          />
         </div>
-
-        <div className="form-row">
-          <div className="form-group">
-            <label>Your Message:</label>
-            <textarea 
-              value={message} 
-              onChange={(e) => setMessage(e.target.value)} 
-              placeholder="Your Message" 
-            />
-          </div>
+        <div className="form-group">
+          <label htmlFor="phone">Your Phone Number</label>
+          <input
+            id="phone"
+            type="text"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            placeholder="Enter your phone number"
+          />
         </div>
+        <div className="form-group">
+          <label htmlFor="message">Your Message</label>
+          <textarea
+            id="message"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            placeholder="Enter your message"
+            required
+          />
+        </div>
+        <button type="submit" className="submit-btn">
+          Send Message
+        </button>
       </form>
-
-      <button type="submit" className="submit-btn">Submit</button>
     </section>
   );
 };
 
 export default ContactSection;
+
 
 

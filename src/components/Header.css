@@ -20,9 +20,13 @@
 
 .logo-image {
   width: 50px;
-  height: 50px;
-  margin-right: 10px;
+  height: auto;
+  object-fit: contain; /* Ensures images fit well */
   transition: transform 1s ease, scale 0.5s ease;
+}
+
+.logo-image:hover {
+  transform: rotate(10deg) scale(1.1); /* Subtle rotation and zoom effect on hover */
 }
 
 .logo-text {
@@ -34,6 +38,12 @@
   top: 50%;
   left: 60px;
   transform: translateY(-50%);
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
+}
+
+.logo:hover .logo-text {
+  opacity: 1;
+  transform: translateY(-50%) translateX(10px); /* Slide-in effect on hover */
 }
 
 .nav-links {
@@ -50,39 +60,30 @@
   text-decoration: none;
   font-size: 18px;
   font-weight: 500;
-}
-
-.nav-link:hover {
-  text-decoration: underline;
-}
-
-.dropdown {
   position: relative;
 }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #fff;
-  min-width: 160px;
-  z-index: 1;
-  top: 30px;
-  left: 0;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.dropdown-item {
-  color: #333;
-  padding: 12px 16px;
+.nav-link:hover {
   text-decoration: none;
 }
 
-.dropdown-item:hover {
-  background-color: #ddd;
+.nav-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #f1c40f; /* Underline effect color */
+  transition: width 0.3s;
+  position: absolute;
+  left: 0;
+  bottom: -3px;
 }
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+
 
 .social-icons {
   display: flex;
@@ -94,11 +95,12 @@
   color: #fff;
   margin: 0 10px;
   font-size: 20px;
-  transition: color 0.3s;
+  transition: color 0.3s, transform 0.3s ease-in-out;
 }
 
 .social-icon:hover {
   color: #f1c40f;
+  transform: scale(1.2); /* Slight zoom on hover */
 }
 
 @media (max-width: 768px) {
