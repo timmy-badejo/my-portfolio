@@ -1,6 +1,6 @@
 import React from 'react';
-import { Document, Page, pdfjs } from 'react-pdf';
-import workerSrc from 'pdfjs-dist/build/pdf.worker.min.js';
+import { Document, Page } from 'react-pdf';
+// import workerSrc from 'pdfjs-dist/build/pdf.worker.min.js';
 import { useParams } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';

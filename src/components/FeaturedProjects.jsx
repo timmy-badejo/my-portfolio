@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useFloating, offset, flip } from '@floating-ui/react';
 import timmyhaircare1 from '../assests/timmyhaircare1.jpg';
