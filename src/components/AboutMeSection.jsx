@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useMemo } from 'react';
 import { gsap } from 'gsap';
 import profileImage from '../assests/profilei_mage.jpg';
 import './AboutMeSection.css';
@@ -7,12 +7,12 @@ const AboutMeSection = () => {
   const [currentParagraph, setCurrentParagraph] = useState(0);
   const typerRef = useRef(null);
   const shapesRef = useRef([]);
-  const textOptions = [
+  const textOptions = useMemo( () => { return [
     "Creative Thinker",
     "Digital Designer",
     "Web Developer",
     "Innovative Mind"
-  ];
+  ]}, []);
   const [currentText, setCurrentText] = useState(textOptions[0]);
 
   useEffect(() => {
