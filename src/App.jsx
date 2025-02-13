@@ -1,17 +1,19 @@
 // src/App.jsx
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import LandingPage from './pages/LandingPage';
-import AboutMePage from './pages/AboutMePage';
-import ContactPage from './pages/ContactPage';
-import ProjectsPage from './pages/ProjectsPage';  // Add ProjectsPage
-import ProjectDetailPage from './pages/ProjectDetailPage.jsx';
- // Add ProjectDetailPage
-import LoadingScreen from './components/LoadingScreen';
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import $ from 'jquery'; // Ensure this is at the top
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import LandingPage from "./pages/LandingPage";
+import AboutMePage from "./pages/AboutMePage";
+import ContactPage from "./pages/ContactPage";
+import ProjectsPage from "./pages/ProjectsPage";
+import ProjectDetailPage from "./pages/ProjectDetailPage";
+import LoadingScreen from "./components/LoadingScreen";
+import "./global.css";
 
-import './global.css';
+// Ensure jQuery is available globally
+window.$ = window.jQuery = $;
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -19,13 +21,13 @@ const App = () => {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 2000); // Simulate loading for 2 seconds
+    }, 6000); 
   }, []);
 
   if (loading) {
     return (
       <div className="loading-screen">
-        <LoadingScreen></LoadingScreen>
+        <LoadingScreen />
         <h2>Loading...</h2>
       </div>
     );
@@ -38,8 +40,8 @@ const App = () => {
         <Route path="/" element={<LandingPage />} />
         <Route path="about" element={<AboutMePage />} />
         <Route path="contact" element={<ContactPage />} />
-        <Route path="projects" element={<ProjectsPage />} /> {/* Projects page with list of projects */}
-        <Route path="projects/:projectId" element={<ProjectDetailPage />} /> {/* Dynamic project detail page */}
+        <Route path="projects" element={<ProjectsPage />} />
+        <Route path="projects/:projectId" element={<ProjectDetailPage />} />
       </Routes>
       <Footer />
     </Router>
@@ -47,6 +49,10 @@ const App = () => {
 };
 
 export default App;
+
+
+
+
 
 
 

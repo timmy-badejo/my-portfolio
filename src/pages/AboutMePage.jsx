@@ -6,6 +6,8 @@ import brandingSVG from '../assests/branding.svg';
 import SkillsSection from '../components/SkillsSection';
 import './AboutMePage.css';
 
+
+
 const AboutMePage = () => {
   const [currentValueIndex, setCurrentValueIndex] = useState(0);
   const nameRef = useRef(null);

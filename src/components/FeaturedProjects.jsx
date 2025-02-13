@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { useFloating, offset, flip } from '@floating-ui/react';
 import timmyhaircare1 from '../assests/timmyhaircare1.jpg';
 import timmyhaircare2 from '../assests/timmyhaircare2.jpg';
 import timmyhaircare3 from '../assests/timmyhaircare3.jpg';
@@ -11,6 +12,12 @@ import scwcharity from '../assests/scwcharitywebpage.png';
 import './FeaturedProjects.css';
 
 const FeaturedProjects = () => {
+  const [hoveredProject, setHoveredProject] = useState(null);
+  const { refs, floatingStyles } = useFloating({
+    placement: 'top',
+    middleware: [offset(10), flip()],
+  });
+
   const projects = [
     {
       id: 1,
@@ -47,24 +54,23 @@ const FeaturedProjects = () => {
   ];
 
   return (
-    <div className="featured-projects">
-      <h2>My Featured Projects</h2>
+    <section className="featured-projects">
+      <h2 className="section-title">My Featured Projects</h2>
       <div className="projects-grid">
         {projects.map((project) => (
-          <div className="project-card" key={project.id}>
+          <div
+            key={project.id}
+            className="project-card"
+            ref={refs.setReference}
+            onMouseEnter={() => setHoveredProject(project)}
+            onMouseLeave={() => setHoveredProject(null)}
+          >
             <div className="project-image-container">
-              <img
-                src={project.images[0]}
-                alt={project.title}
-                className="project-image"
-              />
-              {project.images.length > 1 && (
-                <div className="image-overlay">+{project.images.length - 1} more</div>
-              )}
+              <img src={project.images[0]} alt={project.title} className="project-image" />
+              {project.images.length > 1 && <div className="image-overlay">+{project.images.length - 1} more</div>}
             </div>
             <div className="project-content">
               <h3>{project.title}</h3>
-              <p>{project.description}</p>
               <div className="categories">
                 {project.categories.map((category, index) => (
                   <span key={index} className="category-badge">
@@ -72,17 +78,24 @@ const FeaturedProjects = () => {
                   </span>
                 ))}
               </div>
-              <Link to={project.link} className="view-project-btn">
-                View Project
-              </Link>
+              <Link to={project.link} className="view-project-btn">View Project</Link>
             </div>
           </div>
         ))}
       </div>
-    </div>
+
+      {/* Floating Tooltip */}
+      {hoveredProject && (
+        <div ref={refs.setFloating} style={floatingStyles} className="floating-tooltip">
+          <h4>{hoveredProject.title}</h4>
+          <p>{hoveredProject.description}</p>
+        </div>
+      )}
+    </section>
   );
 };
 
 export default FeaturedProjects;
+
 
 

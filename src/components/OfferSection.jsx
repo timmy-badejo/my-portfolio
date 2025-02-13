@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import PrototypeWireframing from '../assests/prototypewireframing.svg';
 import Branding from '../assests/branding.svg';
@@ -9,80 +9,78 @@ import UiUx from '../assests/uiux.svg';
 import './OfferSection.css';
 
 const OfferSection = () => {
-  const [flipIndex, setFlipIndex] = useState(0);
-
-  const svgIcons = [
-    { src: DesignService, title: 'Design Services' },
-    { src: UiUx, title: 'UI/UX Design' },
-    { src: Branding, title: 'Brand Identity Design' },
-    { src: PrototypeWireframing, title: 'Prototyping & Wireframing' },
-    { src: Graphic, title: 'Graphic Design' },
-    { src: WebDev, title: 'Interactive Design' },
-  ];
-
-  const descriptions = [
-    "Responsive Web Design – Crafting websites that look great and function seamlessly across all devices.",
-    "Creating user-friendly interfaces and experiences that prioritize usability and engagement.",
-    "Designing logos, color schemes, and branding materials to give businesses a unique and professional presence.",
-    "Developing interactive prototypes to visualize design ideas and user flows.",
-    "Designing banners, social media assets, and promotional materials.",
-    "Creating engaging animations and interactive elements using CSS, JavaScript, or libraries like GSAP.",
-  ];
-
-  const handleFlip = () => {
-    setFlipIndex((prevIndex) => (prevIndex + 1) % svgIcons.length);
-  };
+  const cardRefs = useRef([]);
+  const shapeRefs = useRef([]);
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      handleFlip();
-    }, 6000);
-
-    // Animate SVGs on hover
-    const svgElements = document.querySelectorAll('.svg-icon');
-    svgElements.forEach((svg) => {
+    // Animate Cards on Scroll
+    cardRefs.current.forEach((card, index) => {
       gsap.fromTo(
-        svg,
-        { scale: 1 },
-        { scale: 1.1, repeat: -1, yoyo: true, duration: 1.5, ease: 'power1.inOut' }
+        card,
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, duration: 1.5, delay: index * 0.2, ease: 'power2.out' }
       );
     });
 
-    return () => clearInterval(intervalId);
+    // Floating Shape Animation
+    shapeRefs.current.forEach((shape, index) => {
+      gsap.to(shape, {
+        x: index % 2 === 0 ? 30 : -30,
+        y: index % 2 === 0 ? -20 : 20,
+        rotation: 360,
+        duration: 6,
+        repeat: -1,
+        yoyo: true,
+        ease: 'power1.inOut',
+      });
+    });
   }, []);
+
+  const svgIcons = [
+    { src: DesignService, title: 'Design Services', description: 'Crafting visually appealing, user-friendly digital experiences for businesses and brands.' },
+    { src: UiUx, title: 'UI/UX Design', description: 'Creating seamless and engaging interfaces focused on user experience and interaction.' },
+    { src: Branding, title: 'Brand Identity Design', description: 'Building strong, memorable brand identities through strategic design solutions.' },
+    { src: PrototypeWireframing, title: 'Prototyping & Wireframing', description: 'Developing wireframes and interactive prototypes to visualize and refine design concepts.' },
+    { src: Graphic, title: 'Graphic Design', description: 'Designing eye-catching marketing materials, social media assets, and promotional content.' },
+    { src: WebDev, title: 'Interactive Design', description: 'Enhancing digital experiences with interactive animations and engaging web technologies.' },
+  ];
 
   return (
     <section className="offer-section">
-      <h2>What I Can Offer</h2>
-      <div className="offer-content">
-        <div className="offer-text">
-          <div className="service">
-            <h3>{svgIcons[flipIndex].title}</h3>
-            <p
-              className={`project-description ${
-                flipIndex !== null ? 'active' : ''
-              }`}
-            >
-              {descriptions[flipIndex]}
-            </p>
+      <h2 className="section-title">What I Can Offer</h2>
+      <div className="offer-grid">
+        {svgIcons.map((icon, index) => (
+          <div key={index} className="offer-card" ref={(el) => (cardRefs.current[index] = el)}>
+            <div className="flip-card">
+              <div className="flip-card-inner">
+                {/* Front of the Card */}
+                <div className="flip-card-front">
+                  <img src={icon.src} alt={icon.title} className="svg-icon" />
+                  <h3>{icon.title}</h3>
+                </div>
+                {/* Back of the Card */}
+                <div className="flip-card-back">
+                  <p>{icon.description}</p>
+                </div>
+              </div>
+            </div>
+            {/* Floating Shapes */}
+            <div className="floating-shapes">
+              {[...Array(3)].map((_, i) => (
+                <div key={i} className={`shape shape${i}`} ref={(el) => shapeRefs.current.push(el)}></div>
+              ))}
+            </div>
           </div>
-        </div>
-        <div className="offer-image">
-          <div className="svg-container">
-            {svgIcons.map((icon, index) => (
-              <img
-                key={index}
-                src={icon.src}
-                alt={icon.title}
-                className={`svg-icon ${index === flipIndex ? 'active' : ''}`}
-              />
-            ))}
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   );
 };
 
 export default OfferSection;
+
+
+
+
+
 

@@ -1,11 +1,33 @@
 /* Global Styles */
-.landing-page {
-  font-family: 'Nunito', sans-serif;
-  margin: 0;
-  padding: 0;
+:root {
+  --primary-color: #310000;
+  --secondary-color: #bca58e;
+  --accent-color: #ffd700;
+  --background-color: #f4f4f4;
 }
 
 
+
+.landing-page {
+  
+  color: var(--primary-color);
+  padding-top: 80px; 
+  margin: 0;
+}
+
+
+
+
+#backgroundCanvas {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none; /* Ensures it doesn't interfere with other interactions */
+  opacity: 40%;
+}
 
 
 
@@ -73,39 +95,79 @@ a.button:hover {
 
 
 
-/* Contact Section Styling*/
-
+/* Contact Section */
 .contact-section {
-  padding: 50px 20px;
-  background: linear-gradient(to bottom right, #310000, #BCA58E);
-  color: #fff;
+  padding: 80px 10%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  color: #310000;
   text-align: center;
   font-family: 'Nunito', sans-serif;
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  
 }
 
-.contact-section h2 {
-  font-size: 36px;
+/* Title & Intro */
+.contact-title {
+  font-size: 42px;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .contact-intro {
   font-size: 18px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   line-height: 1.6;
 }
 
-.contact-intro .email-link {
+/* Contact Info Cards */
+.contact-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.contact-card {
+  background: #fff;
+  color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  text-align: center;
+}
+
+.contact-card:hover {
+  transform: translateY(-10px);
+}
+
+.contact-icon {
+  font-size: 28px;
+  color: #BCA58E;
+  margin-bottom: 10px;
+}
+
+.contact-card h4 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.contact-card p {
+  font-size: 16px;
+}
+
+.contact-card a {
+  text-decoration: none;
+  color: #BCA58E;
+  transition: color 0.3s ease-in-out;
+}
+
+.contact-card a:hover {
   color: #FFD700;
-  text-decoration: underline;
 }
 
-.contact-intro .email-link:hover {
-  color: #FFA500;
-}
-
+/* Contact Form */
 .contact-form {
   max-width: 600px;
   margin: 0 auto;
@@ -114,25 +176,32 @@ a.button:hover {
   gap: 20px;
 }
 
+/* Form Group */
 .form-group {
+  position: relative;
   text-align: left;
 }
 
-.form-group label {
-  font-size: 16px;
-  margin-bottom: 5px;
-  display: block;
+.input-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #BCA58E;
 }
 
+/* Input Fields */
 .form-group input,
 .form-group textarea {
   width: 100%;
-  padding: 12px;
+  padding: 14px 50px;
   font-size: 16px;
   border: none;
   border-radius: 8px;
   outline: none;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 .form-group input:focus,
@@ -140,25 +209,26 @@ a.button:hover {
   box-shadow: 0 4px 12px rgba(255, 215, 0, 0.8);
 }
 
+/* Textarea */
 textarea {
   resize: vertical;
   height: 120px;
 }
 
+/* Submit Button */
 .submit-btn {
-  padding: 15px 30px;
-  font-size: 16px;
-  font-weight: bold;
-  color: #fff;
-  background-color: #310000;
+  background-color: #FFD700;
   border: none;
+  padding: 14px 20px;
+  font-size: 18px;
+  font-weight: bold;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 .submit-btn:hover {
-  background-color: #FFD700;
+  background-color: #f1c40f;
   transform: scale(1.05);
 }
 
@@ -166,80 +236,73 @@ textarea {
   transform: scale(1);
 }
 
+.map-container {
+  margin-top: 40px;
+  height: 400px;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.leaflet-map {
+  height: 100%;
+  width: 100%;
+}
+
+
+
+/* Responsive Design */
 @media (max-width: 768px) {
-  .contact-section h2 {
-    font-size: 28px;
+  .contact-section {
+    padding: 60px 5%;
+  }
+
+  .contact-title {
+    font-size: 36px;
   }
 
   .contact-intro {
     font-size: 16px;
   }
 
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .contact-card {
+    width: 100%;
+  }
+
   .contact-form {
     gap: 15px;
+  }
+  .map-container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-title {
+    font-size: 32px;
+  }
+
+  .contact-form {
+    gap: 10px;
+  }
+
+  .submit-btn {
+    font-size: 16px;
+  }
+  .map-container {
+    height: 300px;
   }
 }
 
 
-.process-section {
-  padding: 80px 20px;
-  background-color: #f4f4f4;
-  font-family: "Nunito", sans-serif;
-  text-align: center;
-  margin-bottom: 100px;
-}
 
-.process-section h2 {
-  font-size: 36px;
-  color: #310000;
-  margin-bottom: 30px;
-}
-
-.process-container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 60px;
-  flex-wrap: wrap;
-}
-
-.process-item {
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  animation: fadeInUp 1.5s forwards;
-}
-
-.process-img {
-  width: 150px; /* Adjust size */
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease-in-out;
-}
-
-.process-img:hover {
-  transform: scale(1.1); /* Zoom effect on hover */
-}
-
-.process-text {
-  margin-top: 20px;
-}
-
-.process-text h3 {
-  font-size: 24px;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.process-text p {
-  font-size: 16px;
-  color: #666;
-  line-height: 1.6;
-  max-width: 300px;
-  margin: 0 auto;
-}
 
 /* Animations */
 @keyframes fadeInUp {
@@ -259,21 +322,5 @@ textarea {
     flex-direction: column;
     align-items: center;
     gap: 30px;
-  }
-
-  .process-item {
-    width: 80%;
-  }
-
-  .process-text h3 {
-    font-size: 20px;
-  }
-
-  .process-text p {
-    font-size: 14px;
-  }
-
-  .process-img {
-    width: 120px; /* Adjust size for smaller screens */
   }
 }

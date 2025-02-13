@@ -1,71 +1,91 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import profileImage from '../assests/profilei_mage.jpg';
 import './AboutMeSection.css';
 
 const AboutMeSection = () => {
   const [currentParagraph, setCurrentParagraph] = useState(0);
+  const typerRef = useRef(null);
+  const shapesRef = useRef([]);
+  const textOptions = [
+    "Creative Thinker",
+    "Digital Designer",
+    "Web Developer",
+    "Innovative Mind"
+  ];
+  const [currentText, setCurrentText] = useState(textOptions[0]);
 
   useEffect(() => {
-    // GSAP Animation to fade in and move the heading and paragraph
-    gsap.from('.about-me-section h2', { opacity: 0, duration: 1, y: -50 });
+    // GSAP Animations
+    gsap.from('.about-me-section h2', { opacity: 0, duration: 1, y: -50, ease: 'power2.out' });
+    gsap.from('.profile-image', { opacity: 0, duration: 1.5, scale: 0.8, ease: 'elastic.out(1, 0.75)' });
 
-    // Animation for floating shapes
-    gsap.to('.shape', {
-      x: 100,
-      y: 30,
-      rotation: 360,
-      duration: 4,
-      repeat: -1,
-      yoyo: true,
-      ease: 'easeInOut',
+    // Animate floating shapes
+    shapesRef.current.forEach((shape, index) => {
+      gsap.to(shape, {
+        x: index % 2 === 0 ? 50 : -50,
+        y: index % 2 === 0 ? -30 : 30,
+        rotation: 360,
+        duration: 6,
+        repeat: -1,
+        yoyo: true,
+        ease: 'power1.inOut'
+      });
     });
 
-    // Change paragraphs every 8 seconds
+    // Auto-switch paragraphs
     const paragraphInterval = setInterval(() => {
       setCurrentParagraph((prevIndex) => (prevIndex + 1) % 4);
     }, 8000);
 
-    return () => clearInterval(paragraphInterval); // Clear interval on component unmount
+    // Auto-switch typing effect text
+    const textInterval = setInterval(() => {
+      setCurrentText((prevText) => {
+        const currentIndex = textOptions.indexOf(prevText);
+        return textOptions[(currentIndex + 1) % textOptions.length];
+      });
+    }, 3000);
+
+    return () => {
+      clearInterval(paragraphInterval);
+      clearInterval(textInterval);
+    };
   }, []);
 
   return (
     <section className="about-me-section">
-      <h2>About & Beyond</h2>
-
-      {/* Profile Image */}
-      <div className="profile-image">
-        <img src={profileImage} alt="Profile" />
+      <div className="about-content">
+        <h2 ref={typerRef} className="typer">{currentText}</h2>
+        <span className="cursor">|</span>
+        <div className="about-text">
+          <p className={currentParagraph === 0 ? 'active' : ''}>I’m Timmy Badejo, a passionate digital designer and developer with a keen eye for creativity and technology.</p>
+          <p className={currentParagraph === 1 ? 'active' : ''}>My passion lies in interactive and web design, crafting stunning animations, seamless navigation, and responsive layouts.</p>
+          <p className={currentParagraph === 2 ? 'active' : ''}>I’m constantly growing, diving into new technologies, and solving complex challenges through design and development.</p>
+          <p className={currentParagraph === 3 ? 'active' : ''}>Collaboration is at the heart of my work. I love working with teams and clients to bring their visions to life.</p>
+        </div>
       </div>
-
-      {/* About Me Paragraphs */}
-      <div className="about-text">
-        <p className={currentParagraph === 0 ? 'active' : ''}>
-          I’m Timmy Badejo, a passionate digital designer and developer with a keen eye for creativity and a deep understanding of technology. With a background in New Media Design and Web Development, I bring a balance of design aesthetics and technical proficiency to every project I undertake. My goal is to transform digital concepts into functional, user-friendly designs that stand out.
-        </p>
-        <p className={currentParagraph === 1 ? 'active' : ''}>
-          My passion lies in exploring the possibilities of interactive design and web design. I’m driven by the challenge of creating experiences that not only look stunning but also engage users on a deeper level. Whether it’s crafting immersive animations, seamless navigation, or responsive layouts, I aim to design websites and applications that feel alive, intuitive, and memorable. By leveraging the latest design principles and technologies, I strive to push the boundaries of digital experiences.
-        </p>
-        <p className={currentParagraph === 2 ? 'active' : ''}>
-          As I continue to grow as a digital designer and developer, I’m excited to dive deeper into new media design and development, exploring innovative solutions that merge creativity with functionality. I believe that every project is an opportunity to learn and innovate, and I’m always eager to tackle complex challenges that expand my skills and broaden my perspective. From ideation to implementation, I enjoy the entire process of bringing ideas to life through design and code.
-        </p>
-        <p className={currentParagraph === 3 ? 'active' : ''}>
-          Collaboration is at the heart of my approach. I’m passionate about working with others to create beautiful, impactful designs and seamless development projects. Whether it’s a client, a team, or other creatives, I believe that great design and development happen when ideas are shared, refined, and executed with care. My goal is to help businesses and individuals bring their visions to life, creating digital solutions that not only meet their needs but also inspire their audiences.
-        </p>
+      <div className="profile-container">
+        <img src={profileImage} alt="Profile" className="profile-image" />
       </div>
-
-      {/* Floating shapes */}
+      
+      {/* Floating Shapes */}
       <div className="shapes-container">
-        <div className="shape shape1"></div>
-        <div className="shape shape2"></div>
-        <div className="shape shape3"></div>
-        <div className="shape shape4"></div>
+        {[...Array(4)].map((_, index) => (
+          <div key={index} className={`shape shape${index + 1}`} ref={el => shapesRef.current[index] = el}></div>
+        ))}
       </div>
     </section>
   );
 };
 
 export default AboutMeSection;
+
+
+
+
+
+
+
 
 
 

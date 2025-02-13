@@ -1,23 +1,26 @@
 import React from 'react';
+import { Document, Page, pdfjs } from 'react-pdf';
+import workerSrc from 'pdfjs-dist/build/pdf.worker.min.js';
 import { useParams } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css'; // Carousel CSS
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './ProjectDetailPage.css';
 
 // Import images and documents
 import RonZalkoWebDesign from '../assests/RonZalkowebdesign.jpg';
-import ronZalkoWireframe from '../assests/Page 16.png';
+import ronZalkoWireframe from '../assests/ronZalkoWireframe.pdf';
 import melodyBeats from '../assests/MelodyCard1.jpg';
-import melodyBeatsDocument from '../assests/Revised_Final Assignment_Yomi-Badejo_Graphic Design.pdf';
+import melodyBeatsDocument from '../assests/melodyBeatsDocument.pdf';
 import scwCharity from '../assests/scwcharitywebpage.png';
 import timmyHairCare from '../assests/timmyhaircare4.jpg';
-import timmyHairCareDocument from '../assests/TimmyCare Mobile app.pdf';
+import timmyHairCareDocument from '../assests/timmyHairCareDocument.pdf';
+import  scwCharityDocument from '../assests/scwCharityDocument.pdf';
 
-// Import PDF viewer
-import { Worker, Viewer } from '@react-pdf-viewer/core';
-import '@react-pdf-viewer/core/lib/styles/index.css';
+// Configure worker for react-pdf
 
-// Sample Project Data
+
+
+// Project Data
 const getProjectDataById = (id) => {
   const projects = [
     {
@@ -66,7 +69,7 @@ const getProjectDataById = (id) => {
       id: "4",
       title: "SCW Charity Website",
       image: scwCharity,
-      pdf: null,
+      pdf: scwCharityDocument,
       overview: "Developed a user-focused website to promote social welfare initiatives and community outreach.",
       challenges: "Limited resources required creative problem-solving to deliver impactful results and ensure stakeholder satisfaction.",
       details: [
@@ -85,6 +88,12 @@ const ProjectDetailPage = () => {
   const { projectId } = useParams();
   const projectData = getProjectDataById(projectId);
 
+  const [numPages, setNumPages] = React.useState(null);
+
+  const onDocumentLoadSuccess = ({ numPages }) => {
+    setNumPages(numPages);
+  };
+
   if (!projectData) {
     return <p>Project not found</p>;
   }
@@ -100,19 +109,14 @@ const ProjectDetailPage = () => {
 
       {/* Cards Section */}
       <div className="cards-container">
-        {/* Project Overview Card */}
         <div className="card">
           <h2>Project Overview</h2>
           <p>{projectData.overview}</p>
         </div>
-
-        {/* Challenges Overcome Card */}
         <div className="card">
           <h2>Challenges Overcome</h2>
           <p>{projectData.challenges}</p>
         </div>
-
-        {/* Details Card */}
         <div className="card">
           <h2>Details</h2>
           <ul>
@@ -127,11 +131,13 @@ const ProjectDetailPage = () => {
       {projectData.pdf && (
         <div className="project-section">
           <h2>Supporting Documentation</h2>
-          <Worker>
-            <div style={{ height: '600px', border: '1px solid #ddd' }}>
-              <Viewer fileUrl={projectData.pdf} />
-            </div>
-          </Worker>
+          <div style={{ width: '100%', height: '600px', border: '1px solid #ddd' }}>
+            <Document file={projectData.pdf} onLoadSuccess={onDocumentLoadSuccess}>
+              {Array.from(new Array(numPages), (el, index) => (
+                <Page key={`page_${index + 1}`} pageNumber={index + 1} />
+              ))}
+            </Document>
+          </div>
         </div>
       )}
 
@@ -149,6 +155,7 @@ const ProjectDetailPage = () => {
 };
 
 export default ProjectDetailPage;
+
 
 
 

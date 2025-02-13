@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa'; // Import social icons
+import { FaInstagram, FaLinkedinIn } from 'react-icons/fa'; // Import social icons
 import Tclogo from '../assests/Tclogo.svg'; // Import the SVG logo
 import './Footer.css'; // Import the updated CSS file for styling
 
@@ -24,12 +24,6 @@ const Footer = () => {
 
       {/* Social Icons */}
       <div className="social-icons">
-        <a href="https://www.facebook.com" className="social-icon" target="_blank" rel="noopener noreferrer">
-          <FaFacebookF />
-        </a>
-        <a href="https://www.twitter.com" className="social-icon" target="_blank" rel="noopener noreferrer">
-          <FaTwitter />
-        </a>
         <a href="https://www.instagram.com" className="social-icon" target="_blank" rel="noopener noreferrer">
           <FaInstagram />
         </a>
