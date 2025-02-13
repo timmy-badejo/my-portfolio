@@ -50,7 +50,7 @@ const AboutMeSection = () => {
       clearInterval(paragraphInterval);
       clearInterval(textInterval);
     };
-  }, []);
+  }, [textOptions]);
 
   return (
     <section className="about-me-section">
