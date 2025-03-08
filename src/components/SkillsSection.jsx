@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { gsap } from 'gsap';
-import $ from "jquery";
-import "tilt.js";
+import $ from "jquery"; // ✅ Keep only one jQuery import
+import 'tilt.js'; // ✅ Ensure this is installed in package.json
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
@@ -28,33 +28,34 @@ const skillsData = [
 const SkillsSection = () => {
   useEffect(() => {
     if (typeof window !== "undefined") {
-      setTimeout(() => {
-        $(".tilt-card").tilt({
-          maxTilt: 20,
-          perspective: 1000,
-          easing: "cubic-bezier(.03,.98,.52,.99)",
-          scale: 1.05,
-          speed: 400,
-          transition: true,
-          reset: true,
-          glare: true,
-          maxGlare: 0.2
-        });
-      }, 500);
+      const tiltElements = $(".tilt-card"); // ✅ Store reference for cleanup
+
+      // Initialize tilt.js
+      tiltElements.tilt({
+        maxTilt: 20,
+        perspective: 1000,
+        easing: "cubic-bezier(.03,.98,.52,.99)",
+        scale: 1.05,
+        speed: 400,
+        transition: true,
+        reset: true,
+        glare: true,
+        maxGlare: 0.2
+      });
+
+      // GSAP Animation for fade-in effect
+      gsap.fromTo(
+        '.skills-section .skill-item',
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, duration: 1, stagger: 0.2, ease: "power2.out" }
+      );
+
+      // Cleanup on unmount
+      return () => {
+        tiltElements.tilt("destroy"); // ✅ Proper tilt.js destroy method
+      };
     }
-
-    // GSAP Animation for fade-in effect
-    gsap.fromTo(
-      '.skills-section .skill-item',
-      { opacity: 0, y: 50 },
-      { opacity: 1, y: 0, duration: 1, stagger: 0.2, ease: "power2.out" }
-    );
-
-    // Cleanup to prevent memory leaks
-    return () => {
-      $(".tilt-card").tilt.destroy?.();
-    };
-  }, []);
+  }, []); // ✅ No missing dependencies
 
   return (
     <section className="skills-section container">
@@ -88,6 +89,7 @@ const SkillsSection = () => {
 };
 
 export default SkillsSection;
+
 
 
 

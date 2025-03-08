@@ -1,0 +1,41 @@
+/* src/styles/MarqueeText.css */
+
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+  }
+  
+  .marquee {
+    display: inline-block;
+    font-size: 50px;
+    font-weight: bold;
+    color: #3498db; /* Blue color */
+    animation: marquee-animation 8s linear infinite;
+    position: absolute;
+    white-space: nowrap;
+  }
+  
+  @keyframes marquee-animation {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  /* Responsive Text Size */
+  @media (max-width: 768px) {
+    .marquee {
+      font-size: 40px; /* Adjust text size for tablets */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .marquee {
+      font-size: 30px; /* Adjust text size for mobile */
+    }
+  }
+  
