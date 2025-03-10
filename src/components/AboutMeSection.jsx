@@ -1,84 +1,105 @@
-import React, { useEffect, useRef, useState, useMemo } from 'react';
-import { gsap } from 'gsap';
-import profileImage from '../assests/profilei_mage.jpg';
-import './AboutMeSection.css';
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import profileImage from "../assests/profile_image.jpg"; // Ensure correct path
+import Tilt from "react-parallax-tilt"; // Import Tilt.js
+import "./AboutMeSection.css";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const AboutMeSection = () => {
-  const [currentParagraph, setCurrentParagraph] = useState(0);
-  const typerRef = useRef(null);
-  const shapesRef = useRef([]);
-  const textOptions = useMemo( () => { return [
-    "Creative Thinker",
-    "Digital Designer",
-    "Web Developer",
-    "Innovative Mind"
-  ]}, []);
-  const [currentText, setCurrentText] = useState(textOptions[0]);
+  const profileRef = useRef(null);
+  const marqueeRef = useRef(null);
+  const circleRef = useRef(null);
 
   useEffect(() => {
-    // GSAP Animations
-    gsap.from('.about-me-section h2', { opacity: 0, duration: 1, y: -50, ease: 'power2.out' });
-    gsap.from('.profile-image', { opacity: 0, duration: 1.5, scale: 0.8, ease: 'elastic.out(1, 0.75)' });
+    // Profile Image Animation (Entrance, Parallax, Tilt)
+    gsap.fromTo(
+      profileRef.current,
+      { scale: 0.8, opacity: 0, rotate: 10 },
+      {
+        scale: 1,
+        opacity: 1,
+        rotate: 0,
+        duration: 1.5,
+        ease: "elastic.out(1, 0.8)",
+        scrollTrigger: {
+          trigger: profileRef.current,
+          start: "top 80%",
+        },
+      }
+    );
 
-    // Animate floating shapes
-    shapesRef.current.forEach((shape, index) => {
-      gsap.to(shape, {
-        x: index % 2 === 0 ? 50 : -50,
-        y: index % 2 === 0 ? -30 : 30,
-        rotation: 360,
-        duration: 6,
-        repeat: -1,
-        yoyo: true,
-        ease: 'power1.inOut'
-      });
+    // Floating Circle Animation (Now Visible)
+    gsap.to(circleRef.current, {
+      y: 25,
+      x: 15,
+      duration: 3,
+      repeat: -1,
+      yoyo: true,
+      ease: "power1.inOut",
     });
 
-    // Auto-switch paragraphs
-    const paragraphInterval = setInterval(() => {
-      setCurrentParagraph((prevIndex) => (prevIndex + 1) % 4);
-    }, 8000);
-
-    // Auto-switch typing effect text
-    const textInterval = setInterval(() => {
-      setCurrentText((prevText) => {
-        const currentIndex = textOptions.indexOf(prevText);
-        return textOptions[(currentIndex + 1) % textOptions.length];
-      });
-    }, 3000);
-
-    return () => {
-      clearInterval(paragraphInterval);
-      clearInterval(textInterval);
-    };
-  }, [textOptions]);
+    // Marquee Animation
+    gsap.to(marqueeRef.current, {
+      xPercent: -50,
+      duration: 10,
+      repeat: -1,
+      ease: "linear",
+    });
+  }, []);
 
   return (
     <section className="about-me-section">
-      <div className="about-content">
-        <h2 ref={typerRef} className="typer">{currentText}</h2>
-        <span className="cursor">|</span>
-        <div className="about-text">
-          <p className={currentParagraph === 0 ? 'active' : ''}>I’m Timmy Badejo, a passionate digital designer and developer with a keen eye for creativity and technology.</p>
-          <p className={currentParagraph === 1 ? 'active' : ''}>My passion lies in interactive and web design, crafting stunning animations, seamless navigation, and responsive layouts.</p>
-          <p className={currentParagraph === 2 ? 'active' : ''}>I’m constantly growing, diving into new technologies, and solving complex challenges through design and development.</p>
-          <p className={currentParagraph === 3 ? 'active' : ''}>Collaboration is at the heart of my work. I love working with teams and clients to bring their visions to life.</p>
-        </div>
-      </div>
+      {/* Profile Image (Left Side) with Tilt Effect */}
       <div className="profile-container">
-        <img src={profileImage} alt="Profile" className="profile-image" />
+        <div ref={circleRef} className="floating-circle"></div>
+        <Tilt tiltMaxAngleX={15} tiltMaxAngleY={15} glareEnable={true}>
+          <img
+            ref={profileRef}
+            src={profileImage}
+            alt="Profile"
+            className="profilei_mage"
+          />
+        </Tilt>
       </div>
-      
-      {/* Floating Shapes */}
-      <div className="shapes-container">
-        {[...Array(4)].map((_, index) => (
-          <div key={index} className={`shape shape${index + 1}`} ref={el => shapesRef.current[index] = el}></div>
-        ))}
+
+      {/* About Content (Right Side) */}
+      <div className="about-content">
+        <h1 className="about-header">ABOUT ME</h1>
+        <h3 className="about-subheader">I design, I develop, I create solutions.</h3>
+        <p>
+          I’m <strong>Timmy Badejo</strong>, a passionate <strong>Digital Designer and Web Developer</strong> with a keen eye for aesthetics and functionality. I specialize in crafting seamless user experiences, interactive animations, and visually captivating designs.
+        </p>
+        <p>
+          My expertise spans <strong>UI/UX design, motion graphics, front-end development, and creative problem-solving</strong>. With a strong dedication to continuous learning, I explore new design trends, development frameworks, and animation techniques.
+        </p>
+        <p>
+          I thrive on collaboration, transforming ideas into reality through modern web technologies and engaging digital experiences.
+        </p>
       </div>
+
+      {/* Marquee Effect (Now Takes Up a Quarter of the Page) */}
+      <div className="marquee-wrapper">
+  <div className="marquee">
+    <span className="marquee-filled">
+      DIGITAL DESIGNER • GRAPHIC DESIGNER • MOTION GRAPHIC DESIGNER • WEB DEVELOPER • UI/UX SPECIALIST • INTERACTIVE DESIGNER •
+    </span>
+  </div>
+  <div className="marquee marquee-stroke">
+    <span>
+      LET'S GET IT STARTED IN YEAH • LET'S GET IT STARTED ALRIGHT • AND THE BASS KEEPS RUNNING RUNNING AND RUNNING RUNNING • OOOHHH OHHH •
+    </span>
+  </div>
+</div>
     </section>
   );
 };
 
 export default AboutMeSection;
+
+
+
 
 
 

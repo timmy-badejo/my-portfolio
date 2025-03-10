@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import profileImage from '../assests/profilei_mage.jpg';
+import profileImage from '../assests/profile_image.jpg';
 import graphicSVG from '../assests/graphic.svg';
 import brandingSVG from '../assests/branding.svg';
 import SkillsSection from '../components/SkillsSection';

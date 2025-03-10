@@ -1,32 +1,90 @@
-/* About Me Section */
+/* General About Section Styling */
 .about-me-section {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh; /* Fullscreen height */
+  flex-wrap: wrap;
   padding: 80px 10%;
-  background: linear-gradient(to right, #FDFCFB, #E2D1C3);
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+  background: #F8F8F8;
   color: #310031;
-  text-align: center;
   font-family: "Nunito", sans-serif;
-  border-radius: 20px;
   position: relative;
   overflow: hidden;
 }
 
-/* About Content (Text Section) */
+.about-header {
+  font-family: cursive;
+  font-size: 2.5rem;
+  color: #310031;
+  position: relative;
+}
+
+/* Profile Image (Left Side) */
+.profile-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.about-subheader {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #4a004a;
+  margin-bottom: 15px;
+}
+
+.profile-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.profilei_mage {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.profilei_mage:hover {
+  transform: scale(1.1);
+}
+
+/* Floating Circle (Now More Visible) */
+.floating-circle {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: rgba(75, 0, 130, 0.2);
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(75, 0, 130, 0.5);
+  top: 10%;
+  left: 20%;
+  animation: floatAnimation 3s infinite alternate ease-in-out;
+}
+
+
+/* About Content (Right Side) */
 .about-content {
-  max-width: 600px;
+  flex: 2;
   text-align: left;
+  padding-left: 50px;
 }
 
 .about-content h2 {
   font-size: 48px;
   font-weight: bold;
+  text-transform: uppercase;
   color: #310031;
   margin-bottom: 15px;
-  text-transform: uppercase;
+}
+
+/* Typing Cursor Effect */
+.typer {
+  display: inline-block;
 }
 
 .cursor {
@@ -36,7 +94,6 @@
   animation: blink 0.8s infinite;
 }
 
-/* Dynamic Typing Effect */
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
@@ -56,116 +113,79 @@
   opacity: 1;
 }
 
-/* Profile Image */
-.profile-container {
-  margin-left: 50px;
+/* Marquee Effect */
+.marquee-wrapper {
+  position: relative;
+  width: 100%;
+  height: 25vh; /* 25% of the viewport height */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ 
 }
 
-.profile-image {
-  width: 320px;
-  height: 320px;
-  object-fit: cover;
-  border-radius: 50%;
-  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
-  transition: transform 0.3s ease-in-out;
+.marquee {
+  display: flex;
+  width: 100%;
+  font-size: 1.8rem;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
 }
 
-.profile-image:hover {
-  transform: scale(1.1);
+.marquee-filled {
+  color: #310031;
+  animation: marqueeLeft 10s linear infinite;
 }
 
-/* Floating Shapes */
-.shapes-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
+/* Bottom Marquee (Moves Right) */
+.marquee-stroke {
+  display: flex;
+  width: 100%;
+  font-size: 1.8rem;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  -webkit-text-stroke: 1px #310031;
+  color: transparent;
+  animation: marqueeRight 10s linear infinite;
 }
 
-.shape {
-  position: absolute;
-  border-radius: 50%;
-  background-color: rgba(255, 215, 0, 0.5);
-  opacity: 0.6;
-  animation: floating 6s infinite ease-in-out;
+.marquee-stroke {
+  -webkit-text-stroke: 1px #310031;
+  color: transparent;
 }
 
-.shape1 {
-  width: 80px;
-  height: 80px;
-  top: -50px;
-  left: -150px;
-  background-color: #FFD700;
-}
-
-.shape2 {
-  width: 100px;
-  height: 100px;
-  top: 60px;
-  left: 80px;
-  background-color: #FF6347;
-}
-
-.shape3 {
-  width: 70px;
-  height: 70px;
-  top: -40px;
-  right: -80px;
-  background-color: #4682B4;
-}
-
-.shape4 {
-  width: 90px;
-  height: 90px;
-  top: 150px;
-  right: 100px;
-  background-color: #FFD700;
-}
-
-@keyframes floating {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(20px); }
-  100% { transform: translateY(0); }
-}
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .about-me-section {
-    flex-direction: column;
-    height: auto;
-    padding: 60px 5%;
+/* Marquee Animations */
+@keyframes marqueeLeft {
+  from {
+    transform: translateX(100%);
   }
-
-  .about-content {
-    max-width: 100%;
-    text-align: center;
-    margin-bottom: 40px;
-  }
-
-  .profile-container {
-    margin: 0 auto;
-  }
-
-  .profile-image {
-    width: 250px;
-    height: 250px;
+  to {
+    transform: translateX(-100%);
   }
 }
 
+@keyframes marqueeRight {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+/* Responsive Fixes */
 @media (max-width: 768px) {
-  .about-me-section {
-    padding: 40px 5%;
+  .marquee {
+    font-size: 1.5rem;
   }
-
-  .about-content h2 {
-    font-size: 36px;
-  }
-
-  .profile-image {
-    width: 200px;
-    height: 200px;
+  .marquee-stroke {
+    font-size: 1.5rem;
   }
 }
-
 
