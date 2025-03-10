@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import Tclogo from '../assests/Tclogo.svg';
 import MusicIcon from '../assests/music.svg';
-import PuzzleIcon from '../assests/puzzle.svg';
+import IdeaIcon from '../assests/idea.svg';
 import WebpageIcon from '../assests/webpage.svg';
+
 import './Home.css';
 import { 
   FaInstagram, FaLinkedinIn, FaBars, FaTimes, 
@@ -18,7 +19,7 @@ const Home = () => {
 
   // References for SVG Animations
   const musicRef = useRef(null);
-  const puzzleRef = useRef(null);
+  const ideaRef = useRef(null);
   const webpageRef = useRef(null);
 
   useEffect(() => {
@@ -65,11 +66,9 @@ const Home = () => {
           </ul>
           <Link to="/resume.pdf" target="_blank" className="btn-resume"> <FaFileDownload /> Download CV</Link>
         </nav>
-
-        
       </header>
 
-      {/* Social Icons - Fixed Duplicates */}
+      {/* Social Icons */}
       <div className="social-icons">
           <a href="https://www.instagram.com" className="social-icon"><FaInstagram /></a>
           <a href="https://www.linkedin.com/in/timmy-yomi-badejo-b9b773251" className="social-icon"><FaLinkedinIn /></a>
@@ -100,12 +99,12 @@ const Home = () => {
           onMouseLeave={() => handleMouseLeave(musicRef)} 
         />
         <img 
-          ref={puzzleRef} 
-          src={PuzzleIcon} 
-          alt="Puzzle Icon" 
+          ref={ideaRef} 
+          src={IdeaIcon} 
+          alt="Idea Icon" 
           className="animated-svg" 
-          onMouseEnter={() => handleMouseEnter(puzzleRef)} 
-          onMouseLeave={() => handleMouseLeave(puzzleRef)} 
+          onMouseEnter={() => handleMouseEnter(ideaRef)} 
+          onMouseLeave={() => handleMouseLeave(ideaRef)} 
         />
         <img 
           ref={webpageRef} 
@@ -121,6 +120,7 @@ const Home = () => {
 };
 
 export default Home;
+
 
 
 
