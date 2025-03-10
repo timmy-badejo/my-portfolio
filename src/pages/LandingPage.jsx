@@ -68,12 +68,7 @@ const LandingPage = () => {
         <HeroSection />
       </section>
 
-      {/* ✅ Debugged: Marquee Text Section */}
-      <section className="marquee-container">
-        <div className="marquee-wrapper">
-          <p className="marquee-text">hi i am timmy</p>
-        </div>
-      </section>
+      
 
       {/* Skills Section */}
       <section className="skills">

@@ -6,7 +6,6 @@ import Asset4 from '../assests/Asset4.svg';
 import Asset5 from '../assests/Asset5.svg';
 import Asset6 from '../assests/Asset6.svg';
 import Asset7 from '../assests/Asset7.svg';
-import matte_blanc from '../assests/matte_blanc.jpg';
 import './HeroSection.css';
 
 const HeroSection = () => {
@@ -33,7 +32,7 @@ const HeroSection = () => {
     <section 
       className="hero-section container-fluid"
       style={{
-        backgroundImage: `url(${matte_blanc})`,
+        
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',

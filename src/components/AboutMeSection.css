@@ -4,12 +4,45 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 80px 10%;
+  padding: 80px 5%;
   background: #F8F8F8;
   color: #310031;
   font-family: "Nunito", sans-serif;
   position: relative;
   overflow: hidden;
+}
+
+/* Animated Floating Circles */
+.animated-circles {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
+
+.floating-circle {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  opacity: 0.8;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+}
+
+.floating-circle:nth-child(1) {
+  top: 10%;
+  left: 20%;
+}
+
+.floating-circle:nth-child(2) {
+  top: 50%;
+  right: 15%;
+}
+
+.floating-circle:nth-child(3) {
+  bottom: 10%;
+  left: 50%;
 }
 
 .about-header {
@@ -41,8 +74,8 @@
 }
 
 .profilei_mage {
-  width: 280px;
-  height: 280px;
+  width: 250px;
+  height: 250px;
   object-fit: cover;
   border-radius: 50%;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
@@ -53,18 +86,7 @@
   transform: scale(1.1);
 }
 
-/* Floating Circle (Now More Visible) */
-.floating-circle {
-  position: absolute;
-  width: 80px;
-  height: 80px;
-  background: rgba(75, 0, 130, 0.2);
-  border-radius: 50%;
-  box-shadow: 0 0 20px rgba(75, 0, 130, 0.5);
-  top: 10%;
-  left: 20%;
-  animation: floatAnimation 3s infinite alternate ease-in-out;
-}
+
 
 
 /* About Content (Right Side) */
@@ -82,22 +104,7 @@
   margin-bottom: 15px;
 }
 
-/* Typing Cursor Effect */
-.typer {
-  display: inline-block;
-}
 
-.cursor {
-  font-size: 36px;
-  color: #310031;
-  display: inline-block;
-  animation: blink 0.8s infinite;
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
 
 /* About Me Text */
 .about-text p {
@@ -115,43 +122,29 @@
 
 /* Marquee Effect */
 .marquee-wrapper {
-  position: relative;
   width: 100%;
-  height: 25vh; /* 25% of the viewport height */
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  margin-top: 30px;
  
 }
 
 .marquee {
   display: flex;
-  width: 100%;
-  font-size: 1.8rem;
+  font-size: 18px;
   font-weight: bold;
   white-space: nowrap;
-  overflow: hidden;
-  position: relative;
 }
 
 .marquee-filled {
-  color: #310031;
+  display: inline-block;
+  padding-right: 50px;
   animation: marqueeLeft 10s linear infinite;
 }
 
 /* Bottom Marquee (Moves Right) */
 .marquee-stroke {
-  display: flex;
-  width: 100%;
-  font-size: 1.8rem;
-  font-weight: bold;
-  white-space: nowrap;
-  overflow: hidden;
-  position: relative;
-  -webkit-text-stroke: 1px #310031;
-  color: transparent;
+  display: inline-block;
+  padding-left: 50px;
   animation: marqueeRight 10s linear infinite;
 }
 
@@ -179,13 +172,23 @@
   }
 }
 
-/* Responsive Fixes */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-  .marquee {
-    font-size: 1.5rem;
+  .about-me-section {
+    flex-direction: column;
+    text-align: center;
   }
-  .marquee-stroke {
-    font-size: 1.5rem;
+
+  .profile-container {
+    margin-bottom: 20px;
+  }
+
+  .about-content {
+    padding-left: 0;
+  }
+
+  .marquee-wrapper {
+    font-size: 14px;
   }
 }
 
