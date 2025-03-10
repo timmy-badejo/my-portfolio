@@ -89,7 +89,7 @@ const Home = () => {
       </div>
 
       {/* SVG Animations */}
-      <div className="svg-container">
+      <div className="svg-container-2">
         <img 
           ref={musicRef} 
           src={MusicIcon} 

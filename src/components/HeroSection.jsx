@@ -1,73 +1,66 @@
-import React, { useEffect, useState } from 'react';
-import { gsap } from 'gsap';
-import Asset2 from '../assests/Asset2.svg';
-import Asset3 from '../assests/Asset3.svg';
-import Asset4 from '../assests/Asset4.svg';
-import Asset5 from '../assests/Asset5.svg';
-import Asset6 from '../assests/Asset6.svg';
-import Asset7 from '../assests/Asset7.svg';
-import './HeroSection.css';
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Asset2 from "../assests/Asset2.svg";
+import Asset3 from "../assests/Asset3.svg";
+import Asset4 from "../assests/Asset4.svg";
+import Asset5 from "../assests/Asset5.svg";
+import Asset6 from "../assests/Asset6.svg";
+import Asset7 from "../assests/Asset7.svg";
+import "./HeroSection.css";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const HeroSection = () => {
-  const [currentText, setCurrentText] = useState(0);
-
-  const backgroundTexts = [
-    "NEW MEDIA DESIGNER",
-    "AND DEVELOPER",
-    "CREATIVE CODER",
-    "DIGITAL INNOVATOR",
-  ];
+  const svgRefs = useRef([]);
+  const textRef = useRef(null);
 
   useEffect(() => {
-    gsap.from('.hero-card h1', { opacity: 0, y: -50, duration: 1 });
+    // 🔹 Hero Text Animation
+    gsap.fromTo(
+      textRef.current,
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, duration: 1.5, ease: "power4.out" }
+    );
 
-    const textInterval = setInterval(() => {
-      setCurrentText((prevIndex) => (prevIndex + 1) % backgroundTexts.length);
-    }, 5000);
-
-    return () => clearInterval(textInterval);
-  }, [backgroundTexts.length]);
+    // 🔹 Floating SVG Animation
+    svgRefs.current.forEach((svg, index) => {
+      gsap.to(svg, {
+        y: "random(-20, 20)",
+        x: "random(-10, 10)",
+        rotation: "random(-10, 10)",
+        duration: 5 + index * 0.5,
+        repeat: -1,
+        yoyo: true,
+        ease: "power1.inOut",
+      });
+    });
+  }, []);
 
   return (
-    <section 
-      className="hero-section container-fluid"
-      style={{
-        
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        backgroundAttachment: 'fixed' // Parallax effect
-      }}
-    >
-      {/* Matte Background Overlay */}
-      <div className="hero-overlay"></div>
+    <section className="hero-section">
+      {/* 🔹 Large Centered Hero Text */}
+      <h1 ref={textRef} className="hero-text">
+        <span>NEW MEDIA DESIGNER</span>
+        <span>AND DEVELOPER</span>
+        <span>CREATIVE CODER</span>
+        <span>DIGITAL INNOVATOR</span>
+      </h1>
 
-      {/* Background Animated Text */}
-      <p className="background-text">{backgroundTexts[currentText]}</p>
-
-      {/* SVG Graphics */}
-      <div className="row justify-content-center">
-        <div className="col-12 col-md-10 d-flex flex-wrap justify-content-center svg-graphics">
-          {[Asset2, Asset3, Asset4, Asset5, Asset6, Asset7].map((asset, index) => (
-            <img key={index} className="hover-svg img-fluid" src={asset} alt={`Asset ${index + 2}`} />
-          ))}
-        </div>
-      </div>
-
-      {/* Hero Card */}
-      <div className="hero-card text-center mx-auto">
-        <h1>Transforming Digital Ideas Into Reality</h1>
-        <p>
-          Combining creativity and technology to build innovative digital solutions.
-          Explore my work and see how I bring ideas to life through design and development.
-        </p>
-        <button className="btn explore-btn">Explore</button>
+      {/* 🔹 Animated SVGs */}
+      <div className="svg-container">
+        {[Asset2, Asset3, Asset4, Asset5, Asset6, Asset7].map((asset, index) => (
+          <img
+            key={index}
+            ref={(el) => (svgRefs.current[index] = el)}
+            src={asset}
+            alt={`Animated Asset ${index + 2}`}
+            className="floating-svg"
+          />
+        ))}
       </div>
     </section>
   );
 };
 
 export default HeroSection;
-
-
-
