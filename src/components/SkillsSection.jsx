@@ -50,7 +50,7 @@ const SkillsSection = () => {
         <div className="skills-grid">
           {skillsData.map((skill, index) => (
             <div key={index} 
-                 className="skill-card tilt-card" 
+                 className="skill-card" 
                  onMouseEnter={() => setActiveSkill(index)} 
                  onMouseLeave={() => setActiveSkill(null)}>
               {skill.icon}

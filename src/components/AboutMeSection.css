@@ -46,10 +46,12 @@
 }
 
 .about-header {
-  font-family: cursive;
+  font-family: "Nunito", sans-serif;
   font-size: 2.5rem;
   color: #310031;
   position: relative;
+  color: transparent; /* Remove Fill */
+  -webkit-text-stroke: 2px #690B22; /* Stroke Effect */
 }
 
 /* Profile Image (Left Side) */
