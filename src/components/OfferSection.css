@@ -1,154 +1,72 @@
-/* Offer Section */
+/* Offer Section CSS */
 .offer-section {
   background-color: #ffffff;
   font-family: "Nunito", sans-serif;
-  margin-bottom: 180px;
-  margin-top: 50px;
-  border-radius: 15px;
-  padding: 50px 80px;
+  padding: 80px 10%;
   text-align: center;
 }
 
-/* Section Title */
 .section-title {
-  font-size: 42px;
-  font-weight: 800;
-  color: #313131;
-  margin-bottom: 50px;
-  text-transform: uppercase;
+  font-family: "Nunito", sans-serif;
+  font-size: 2.5rem;
+  position: relative;
+  color: transparent; /* Remove Fill */
+  -webkit-text-stroke: 2px #690B22; /* Stroke Effect */
 }
 
-/* Offer Grid */
 .offer-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
-  justify-items: center;
-}
-
-/* Offer Card */
-.offer-card {
-  background: linear-gradient(to bottom, #ffffff, #f5f5f5);
-  padding: 25px;
-  border-radius: 15px;
-  text-align: center;
-  position: relative;
-  perspective: 1200px;
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.4s ease-in-out, box-shadow 0.3s ease-in-out;
-  margin-top: 50px;
-  margin-bottom: 100px;
-}
-
-/* Flip Card Container */
-.flip-card {
-  width: 100%;
-  height: auto;
-  transform-style: preserve-3d;
-  transition: transform 0.6s ease-in-out;
-}
-
-/* Flip Animation on Hover */
-.offer-card:hover .flip-card {
-  transform: rotateY(180deg);
-}
-
-/* Flip Card Inner */
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-}
-
-/* Front and Back Faces */
-.flip-card-front,
-.flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: auto;
-  backface-visibility: hidden;
-  padding: 80px;
-  border-radius: 15px;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: start;
 }
 
-/* Back Face */
-.flip-card-back {
-  transform: rotateY(180deg);
-  background: #BCA58E;
-  color: #fff;
+.offer-card {
+  background: #f9f9f9;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+}
+
+.offer-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.service-icon {
+  width: 80px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.offer-card h3 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.offer-card p {
   font-size: 16px;
-  font-weight: 500;
+  color: #666;
+  line-height: 1.6;
 }
 
-/* SVG Icons */
-.svg-icon {
-  width: 300px;
-  height: 100px;
-  margin-bottom: 15px;
-}
-
-/* Floating Shapes */
-.floating-shapes {
-  position: absolute;
-  top: -10px;
-  right: -10px;
-}
-
-.shape {
-  position: absolute;
-  background: rgba(255, 215, 0, 0.5);
-  border-radius: 50%;
-  animation: floating 6s infinite ease-in-out;
-}
-
-.shape0 {
-  width: 25px;
-  height: 25px;
-  top: 5px;
-  left: 10px;
-  background: #FFD700;
-}
-
-.shape1 {
-  width: 20px;
-  height: 20px;
-  bottom: 5px;
-  right: 10px;
-  background: #FF6347;
-}
-
-.shape2 {
-  width: 15px;
-  height: 15px;
-  top: 15px;
-  right: 20px;
-  background: #4682B4;
-}
-
-/* Floating Animation */
-@keyframes floating {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(10px); }
-  100% { transform: translateY(0); }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .offer-grid {
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+@media screen and (max-width: 768px) {
+  .offer-section {
+    padding: 50px 5%;
   }
-
-  .svg-icon {
-    width: 80px;
-    height: 80px;
+  .section-title {
+    font-size: 32px;
   }
-
-  .flip-card-back {
-    font-size: 14px;
+  .offer-card {
+    padding: 30px;
+  }
+  .service-icon {
+    width: 60px;
   }
 }

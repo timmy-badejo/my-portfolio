@@ -31,7 +31,7 @@ const features = [
 const Portfolio = () => {
   return (
     <section className="portfolio-section">
-      <h2 className="section-title">My Approach</h2>
+      <h2 className="section-title-2">My Approach</h2>
       <div className="cards-container">
         {features.map((feature, index) => (
           <Card

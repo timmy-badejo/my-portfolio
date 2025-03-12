@@ -55,7 +55,7 @@ const FeaturedProjects = () => {
 
   return (
     <section className="featured-projects">
-      <h2 className="section-title">My Featured Projects</h2>
+      <h2 className="section-title-3">My Featured Projects</h2>
       <div className="projects-grid">
         {projects.map((project) => (
           <div
