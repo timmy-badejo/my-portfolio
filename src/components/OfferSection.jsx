@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
+import VanillaTilt from 'vanilla-tilt';
 import PrototypeWireframing from '../assests/prototypewireframing.svg';
 import Branding from '../assests/branding.svg';
 import DesignService from '../assests/designservice.svg';
@@ -20,6 +21,16 @@ const OfferSection = () => {
         { opacity: 1, y: 0, duration: 1, delay: index * 0.2, ease: 'power2.out' }
       );
     });
+
+    // Apply Tilt Effect
+    cardRefs.current.forEach((card) => {
+      VanillaTilt.init(card, {
+        max: 10,
+        speed: 400,
+        glare: true,
+        'max-glare': 0.2,
+      });
+    });
   }, []);
 
   const services = [
@@ -33,7 +44,7 @@ const OfferSection = () => {
 
   return (
     <section className="offer-section">
-      <h2 className="section-title">WHAT I OFFER</h2>
+      <h2 className="section-title">What I Can Offer</h2>
       <div className="offer-grid">
         {services.map((service, index) => (
           <div key={index} className="offer-card" ref={(el) => (cardRefs.current[index] = el)}>
