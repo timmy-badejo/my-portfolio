@@ -1,4 +1,6 @@
-/* General Styles */
+/* Home.css */
+
+/* Reset & Global Styles */
 * {
   margin: 0;
   padding: 0;
@@ -6,6 +8,7 @@
   font-family: "Nunito", sans-serif;
 }
 
+/* Home Section */
 .home {
   background: #690B22;
   color: #fff;
@@ -15,107 +18,13 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  position: relative;
+  padding-top: 80px; /* to account for fixed header */
+  border-radius: 15px;
+  
 }
 
-/* SVG Animation Styling */
-.svg-container-2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  margin-top: 50px;
-}
-
-.animated-svg {
-  width: 80px;
-  height: auto;
-  transition: transform 0.3s;
-  cursor: pointer;
-}
-
-/* Header Styles */
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  z-index: 1000;
-  background: #690B22;
-}
-
-/* Logo */
-.logo {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-
-.logo-image {
-  width: 100px;
-  height: auto;
-  transition: transform 0.3s;
-}
-
-
-
-.logo:hover .logo-image {
-  transform: rotate(10deg) scale(1.1);
-}
-
-.logo-text {
-  font-weight: bold;
-  font-size: 20px;
-  margin-left: 10px;
-  opacity: 0;
-  transition: opacity 0.5s;
-}
-
-.logo:hover .logo-text {
-  opacity: 1;
-}
-
-/* Navigation */
-.nav-menu {
-  display: flex;
-  align-items: center;
-}
-
-.nav-links {
-  display: flex;
-  gap: 40px;
-  list-style: none;
-}
-
-.nav-link {
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s ease-in-out;
-  padding: 10px 15px;
-}
-
-.nav-link:hover {
-  color: #FFB38E;
-}
-
-.btn-resume {
-  background: #fff;
-  color: #000;
-  padding: 10px 15px;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: 0.3s;
-  margin-left: 20px;
-}
-
-.btn-resume:hover {
-  background: #FFB38E;
-  color: #000;
-}
-
-/* Social Icons */
+/* Social Icons (Positioned Right) */
 .social-icons {
   position: absolute;
   right: 20px;
@@ -123,57 +32,56 @@
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  gap:15px;
-  
+  gap: 15px;
 }
 
 .social-icon {
   font-size: 20px;
-  color: #000;
-  transition: transform 0.3s, color 0.3s;
+  color: #fff;
+  transition: transform 0.3s ease;
   text-decoration: none;
 }
 
 .social-icon:hover {
   transform: rotateY(360deg);
-  color: #007bff;
 }
 
-/* Banner */
+/* Banner Section */
 .banner {
-  margin-top: 100px;
-  text-align: center;
+  margin-top: 120px;
 }
 
 .greeting {
-  font-size: 30px;
+  font-size: 2rem;
+  margin-bottom: 10px;
 }
 
 .name {
-  font-size: 120px;
+  font-size: 4rem;
   font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .timmy {
-  color: white;
+  color: #fff;
 }
 
 .badejo {
   color: transparent;
-  -webkit-text-stroke: 1px white;
+  -webkit-text-stroke: 1px #fff;
 }
 
 .role {
-  font-size: 20px;
+  font-size: 1.2rem;
   margin: 10px 0;
 }
 
 .typewriter {
   font-weight: bold;
-  color: #FFB38E;;
+  color: #FFB38E;
 }
 
-/* Buttons */
+/* CTA Buttons */
 .cta-buttons {
   display: flex;
   justify-content: center;
@@ -187,17 +95,17 @@
   border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
-  transition: 0.3s;
+  transition: opacity 0.3s ease;
 }
 
 .btn-primary {
   background: #FFB38E;
-  color: black;
+  color: #000;
 }
 
 .btn-secondary {
-  background: white;
-  color: black;
+  background: #fff;
+  color: #000;
 }
 
 .btn-primary:hover,
@@ -205,34 +113,42 @@
   opacity: 0.8;
 }
 
+/* SVG Container for Animated Icons */
+.svg-container-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-top: 50px;
+}
 
-
-/* Mobile Responsive Menu */
-.menu-toggle {
-  display: none;
-  font-size: 24px;
+.animated-svg {
+  width: 80px;
+  height: auto;
+  transition: transform 0.3s ease;
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
-  .nav-menu {
-    display: none;
-    flex-direction: column;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .nav-menu.active {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    background: #fff;
-    padding: 15px;
-    border-radius: 5px;
-  }
+.animated-svg:hover {
+  transform: scale(1.1);
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+  .greeting {
+    font-size: 1.8rem;
+  }
+  .name {
+    font-size: 3rem;
+  }
+  .role {
+    font-size: 1rem;
+  }
+  .cta-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .animated-svg {
+    width: 60px;
+  }
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Home from '../components/Home';
 import HeroSection from '../components/HeroSection';
 import AboutMeSection from '../components/AboutMeSection';
 import SkillsSection from '../components/SkillsSection';
@@ -43,8 +43,10 @@ const LandingPage = () => {
 
   return (
     <div className="landing-page">
-      
       <BackgroundCanvas />
+
+      {/* Home Section */}
+      <Home />
 
       {/* Card Design Section */}
       <section className="card-section">
@@ -68,8 +70,6 @@ const LandingPage = () => {
         <HeroSection />
       </section>
 
-      
-
       {/* Skills Section */}
       <section className="skills">
         <SkillsSection />
@@ -85,7 +85,7 @@ const LandingPage = () => {
         <MyProcessSection />
       </section>
 
-      {/* Projects Section */}
+      {/* Featured Projects Section */}
       <section className="featured-projects">
         <FeaturedProjects />
       </section>
@@ -99,4 +99,5 @@ const LandingPage = () => {
 };
 
 export default LandingPage;
+
 

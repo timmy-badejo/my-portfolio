@@ -2,14 +2,13 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import $ from 'jquery'; // Ensure this is at the top
-import Home from "./components/Home";
+import Header from "./components/Header";
 import Footer from "./components/Footer";
 import LandingPage from "./pages/LandingPage";
 import AboutMePage from "./pages/AboutMePage";
 import ContactPage from "./pages/ContactPage";
 import ProjectsPage from "./pages/ProjectsPage";
 import ProjectDetailPage from "./pages/ProjectDetailPage";
-import Portfolio from "./pages/Portfolio";
 import LoadingScreen from "./components/LoadingScreen";
 import "./global.css";
 
@@ -36,10 +35,9 @@ const App = () => {
 
   return (
     <Router>
-      <Home />
+      <Header />
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="portfolio" element={<Portfolio/>} />
         <Route path="about" element={<AboutMePage />} />
         <Route path="contact" element={<ContactPage />} />
         <Route path="projects" element={<ProjectsPage />} />

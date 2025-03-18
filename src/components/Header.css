@@ -1,0 +1,115 @@
+/* Header.css */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background: #690B22;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  }
+  
+  .header__logo {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .header__logo-image {
+    width: 100px;
+    transition: transform 0.3s;
+  }
+  
+  .header__logo-text {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 10px;
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+  
+  .header__logo:hover .header__logo-text {
+    opacity: 1;
+  }
+  
+  .header__menu-toggle {
+    display: none;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .header__nav-menu {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header__nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header__nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .header__nav-link:hover {
+    color: #FFB38E;
+  }
+  
+  .header__btn-resume {
+    background: #fff;
+    color: #000;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-left: 20px;
+    transition: background 0.3s;
+  }
+  
+  .header__btn-resume:hover {
+    background: #FFB38E;
+    color: #000;
+  }
+  
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .header__menu-toggle {
+      display: block;
+    }
+    .header__nav-menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background: rgba(255,255,255,0.9);
+      width: 100%;
+      text-align: center;
+      padding: 10px 0;
+      border-radius: 5px;
+    }
+    .header__nav-menu.active {
+      display: flex;
+    }
+    .header__nav-links {
+      flex-direction: column;
+    }
+   
+  }
+  
