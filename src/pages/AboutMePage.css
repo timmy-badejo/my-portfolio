@@ -1,46 +1,38 @@
-.about-me-page {
+/* AP ABOUT-ME PAGE */
+.ap-about-me-page {
   position: relative;
-  color:#310000;
-  padding: 50px;
-}
-
-/* Floating Circles */
-.floating-circles {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.circle {
-  position: relative;
-  border-radius: 50%;
-  mix-blend-mode: multiply;
-  opacity: 0.9;
-}
-
-/* Hero Section */
-.hero-section {
-  margin-top: 200px;
-  background-color: #310000;
   color: #310000;
+  padding: 50px;
+  background: #fff;
+  font-family: 'Nunito', sans-serif;
+  overflow: hidden;
+}
+
+/* HERO SECTION */
+.ap-hero-section {
+  position: relative;
+  margin-top: 100px;
+  background-color: #690B22;
+  color: #fff;
   text-align: center;
   padding: 50px 20px;
   border-radius: 10px;
   margin-bottom: 40px;
+  z-index: 1;
 }
 
-.hero-container h1 {
+.ap-hero-container {
+  position: relative; /* So floating circles are absolutely positioned within */
+}
+
+.ap-hero-container h1 {
   font-size: 40px;
   font-weight: bold;
   margin: 10px 0;
   text-transform: uppercase;
 }
 
-.hero-container p {
+.ap-hero-container p {
   font-size: 20px;
   margin: 10px 0;
 }
@@ -50,67 +42,222 @@
   height: 220px;
   object-fit: cover;
   border-radius: 50%;
+  margin-top: 20px;
 }
 
-/* SVG Section */
-.svg-section {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin: 40px 0;
+/* FLOATING CIRCLES INSIDE HERO */
+.ap-floating-circles-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1; /* behind hero text */
 }
 
-.svg-graphic {
-  width: 300px;
-  height: auto;
-  transition: transform 0.5s ease;
+.ap-floating-circle {
+  position: absolute;
+  border-radius: 50%;
+  mix-blend-mode: multiply;
+  opacity: 0.9;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.svg-graphic:hover {
-  transform: scale(1.2);
+/* 2-COLUMN EDUCATION & EXPERIENCE SECTION */
+.ap-edu-exp-section {
+  margin: 60px 0;
+  width: 100%;
 }
 
-/* Cards Section */
-.cards-container {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  align-items: center;
+.ap-edu-exp-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  align-items: start;
 }
 
-.card {
-  background-color: #310000;
+.ap-edu-column, .ap-exp-column {
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.ap-section-title {
+  font-size: 2rem;
+  margin-bottom: 25px;
   color: #310000;
-  padding: 20px;
-  border-radius: 10px;
-  flex: 1;
-  min-width: 280px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.9);
+  text-transform: uppercase;
 }
 
-/* Values Section */
-.values-section {
-  
-  margin: 0;
-  align-items: center;
-}
-
-
-.carousel {
+/* Education Items */
+.ap-edu-item {
   display: flex;
-  gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 20px;
 }
 
-.carousel-card {
-  padding: 20px;
-  background: white;
+.ap-edu-icon {
+  margin-right: 15px;
+  color: #310000;
+  flex-shrink: 0;
+}
+
+.ap-edu-content h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #310000;
+}
+
+.ap-edu-date {
+  font-size: 0.9rem;
+  color: #888;
+  margin: 5px 0;
+}
+
+/* Experience Items */
+.ap-exp-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.ap-exp-icon {
+  margin-right: 15px;
+  color: #310000;
+  flex-shrink: 0;
+}
+
+.ap-exp-content h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #310000;
+}
+
+.ap-exp-company {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #666;
+}
+
+.ap-exp-date {
+  font-size: 0.9rem;
+  color: #888;
+  margin: 5px 0;
+}
+
+/* FUN FACT SECTION */
+.ap-fun-fact-section {
+  margin: 50px 0;
+  text-align: center;
+}
+
+.ap-fun-fact-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.ap-fun-fact-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  background: #f4f4f4;
   border-radius: 10px;
-  opacity: 0.5;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
 }
 
-.carousel-card.active {
-  transform: scale(1.2);
-  opacity: 1;
+.ap-fun-fact-icon {
+  font-size: 50px;
+  margin-bottom: 15px;
+  color: #310000;
 }
 
+.ap-fun-fact-content h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.ap-fun-fact-content p {
+  color: #666;
+  font-size: 1rem;
+}
+
+/* SKILLS SECTION */
+.ap-skills-section {
+  margin: 50px 0;
+  text-align: center;
+}
+
+.ap-skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.ap-skill-card {
+  background: #f4f4f4;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ap-skill-card h3 {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+.ap-skill-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+}
+
+/* ========== RESPONSIVE MEDIA QUERIES ========== */
+@media (max-width: 768px) {
+  /* Hero text & image smaller */
+  .ap-hero-container h1 {
+    font-size: 30px;
+  }
+  .ap-hero-container p {
+    font-size: 16px;
+  }
+  .profile-img {
+    width: 180px;
+    height: 180px;
+  }
+
+  /* 2-Column layout becomes single column */
+  .ap-edu-exp-container {
+    grid-template-columns: 1fr; /* single column on mobile */
+  }
+
+  /* Possibly reduce font sizes */
+  .ap-section-title {
+    font-size: 1.5rem;
+  }
+  .ap-edu-content h3, .ap-exp-content h3 {
+    font-size: 1.2rem;
+  }
+  .ap-edu-date, .ap-exp-date, .ap-exp-company {
+    font-size: 0.8rem;
+  }
+
+  /* Fun Facts & Skills become single column if you want smaller cards */
+  .ap-fun-fact-container {
+    grid-template-columns: 1fr;
+  }
+  .ap-skills-container {
+    grid-template-columns: 1fr;
+  }
+}
