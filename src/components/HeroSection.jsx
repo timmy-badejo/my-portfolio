@@ -41,10 +41,10 @@ const HeroSection = () => {
     <section className="hero-section">
       {/* 🔹 Large Centered Hero Text */}
       <h1 ref={textRef} className="hero-text">
-        <span>NEW MEDIA DESIGNER</span>
-        <span>AND DEVELOPER</span>
+        <span>INTERACTIVE DESIGNER</span>
+        <span>AND WEB DEVELOPER</span>
         <span>CREATIVE CODER</span>
-        <span>DIGITAL INNOVATOR</span>
+        <span>DIGITAL EXPERIENCE DESIGNER</span>
       </h1>
 
       {/* 🔹 Animated SVGs */}

@@ -1,24 +1,22 @@
 import React from 'react';
-import { Document, Page } from 'react-pdf';
-// import workerSrc from 'pdfjs-dist/build/pdf.worker.min.js';
+import { Document, Page, pdfjs } from 'react-pdf';
 import { useParams } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './ProjectDetailPage.css';
-
-// Import images and documents
-import RonZalkoWebDesign from '../assests/RonZalkowebdesign.jpg';
-import ronZalkoWireframe from '../assests/ronZalkoWireframe.pdf';
+import RonZalkoWebDesign from '../assests/Ron Zalko web design.jpg';
+import ronZalkoWireframe from '../assests/Ron-Zalko-Web-Design-Wireframe.pdf';
 import melodyBeats from '../assests/MelodyCard1.jpg';
 import melodyBeatsDocument from '../assests/melodyBeatsDocument.pdf';
 import scwCharity from '../assests/scwcharitywebpage.png';
 import timmyHairCare from '../assests/timmyhaircare4.jpg';
 import timmyHairCareDocument from '../assests/timmyHairCareDocument.pdf';
-import  scwCharityDocument from '../assests/scwCharityDocument.pdf';
+import scwCharityDocument from '../assests/scwCharityDocument.pdf';
 
-// Configure worker for react-pdf
-
-
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+  'pdfjs-dist/build/pdf.worker.min.js',
+  import.meta.url
+).toString();
 
 // Project Data
 const getProjectDataById = (id) => {
@@ -89,9 +87,15 @@ const ProjectDetailPage = () => {
   const projectData = getProjectDataById(projectId);
 
   const [numPages, setNumPages] = React.useState(null);
+  const [pdfError, setPdfError] = React.useState(null);
 
   const onDocumentLoadSuccess = ({ numPages }) => {
     setNumPages(numPages);
+    setPdfError(null);
+  };
+
+  const onDocumentError = () => {
+    setPdfError('Unable to load PDF here. Please use the open links below.');
   };
 
   if (!projectData) {
@@ -132,11 +136,42 @@ const ProjectDetailPage = () => {
         <div className="project-section">
           <h2>Supporting Documentation</h2>
           <div style={{ width: '100%', height: '600px', border: '1px solid #ddd' }}>
-            <Document file={projectData.pdf} onLoadSuccess={onDocumentLoadSuccess}>
-              {Array.from(new Array(numPages), (el, index) => (
-                <Page key={`page_${index + 1}`} pageNumber={index + 1} />
-              ))}
+            <Document
+              file={projectData.pdf}
+              onLoadSuccess={onDocumentLoadSuccess}
+              onLoadError={onDocumentError}
+              onSourceError={onDocumentError}
+              loading={<p className="project-doc-loading">Loading PDF…</p>}
+            >
+              {numPages ? (
+                Array.from({ length: numPages }, (_, index) => (
+                  <Page key={`page_${index + 1}`} pageNumber={index + 1} />
+                ))
+              ) : (
+                <p className="project-doc-loading">Preparing PDF…</p>
+              )}
             </Document>
+          </div>
+          {pdfError && <p className="project-doc-error">{pdfError}</p>}
+          <div className="project-doc-actions">
+            <a
+              href={projectData.pdf}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-doc-link"
+            >
+              Open PDF in new tab
+            </a>
+            {projectData.image && (
+              <a
+                href={projectData.image}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-doc-link"
+              >
+                Open JPG preview
+              </a>
+            )}
           </div>
         </div>
       )}
@@ -155,8 +190,3 @@ const ProjectDetailPage = () => {
 };
 
 export default ProjectDetailPage;
-
-
-
-
-

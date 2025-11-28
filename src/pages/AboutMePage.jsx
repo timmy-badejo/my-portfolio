@@ -1,10 +1,12 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import {
   FaGraduationCap, FaBriefcase, FaLightbulb, FaMusic, FaFilm, FaChurch, FaCog,
   FaPaintBrush, FaUserEdit, FaBullhorn, FaComments, FaFont, FaHeadset, FaPenNib,
   FaLaptopCode, FaBoxOpen, FaPrint, FaCameraRetro, FaTasks, FaCode, FaEdit
 } from 'react-icons/fa';
+import HeroSection from '../components/HeroSection';
+import AboutHeroComposite from "../components/AboutHeroComposite";
 import {
   SiHtml5, SiJavascript, SiReact, SiAdobexd,
   SiAdobephotoshop, SiAdobeillustrator
@@ -13,9 +15,10 @@ import { Tilt } from 'react-tilt';
 import profileImage from '../assests/profile_image.jpg';
 import './AboutMePage.css';
 
-/** 
- * Helper to return an icon for each skill 
- */
+
+
+
+
 const getSkillIcon = (skill, size = 40) => {
   switch (skill) {
     case "UI Design":                 return <FaCog size={size} />;
@@ -48,21 +51,21 @@ const getSkillIcon = (skill, size = 40) => {
 const AboutMePage = () => {
   const nameRef = useRef(null);
   const titleRef = useRef(null);
+  const coreValuesContainerRef = useRef(null);
+  // Declare currentCoreIndex only once.
+  const [currentCoreIndex, setCurrentCoreIndex] = useState(0);
 
-  /** Profile Data with updated Experience and Education */
   const profileData = {
     name: "Timilehin Yomi-Badejo",
     title: "New Media Designer and Web Developer",
-    bio: `Creative and disciplined graphic designer...`,
-    /** Updated Education entries */
+    bio: `Creative and disciplined graphic designer who collaborates with private and commercial clients to discover their styles, create breath-taking designs, and pay attention to clients’ natural preferences, to achieve bespoke design.`,
     education: [
       {
         degree: "Diploma , New Media Design and Web Development",
         school: "British Columbia Institute of Technology",
         date: "Jan 2024 - Jul 2025",
         details: `Actively pursuing an Interactive Design Program at BCIT to enhance skills 
-                  and stay at the forefront of industry trends. 
-                  Skills: JavaScript · Digital Photography · Communication · Computer Literacy · UI/UX · User Interface Design · Adobe XD`
+                  and stay at the forefront of industry trends. Skills: JavaScript · Digital Photography · Communication · Computer Literacy · UI/UX · User Interface Design · Adobe XD`
       },
       {
         degree: "Certificate , Communication Design Essential",
@@ -82,18 +85,15 @@ const AboutMePage = () => {
         school: "Fraser International College",
         date: "Apr 2013 - Sep 2015",
         details: `Skills: Adobe Creative Suite · Communication · Computer Literacy · Graphics · Page Layout · Design`
-      },
+      }
     ],
-    /** Updated Experience entries */
     experience: [
       {
         role: "Graphic Designer",
         company: "Winner's Chapel International, Vancouver · Full-time",
         date: "Jul 2023 - Present",
         location: "Vancouver, BC, Canada · Hybrid",
-        description: `Actively contribute to the online presence of Winners Chapel, 
-                      providing design services for weekly events and services. 
-                      Collaborate with the events team to ensure a consistent and engaging visual brand.`,
+        description: `Actively contribute to the online presence of Winners Chapel, providing design services for weekly events and services. Collaborate with the events team to ensure a consistent and engaging visual brand.`,
         skills: ["Communication", "Computer Literacy", "Presentations", "Graphic Design", "Social Media Graphic Design"]
       },
       {
@@ -101,8 +101,7 @@ const AboutMePage = () => {
         company: "Freelance · Full-time",
         date: "Sep 2020 - Present",
         location: "Vancouver, BC, Canada · Remote",
-        description: `Successfully executed diverse design projects, including logos, branding, and promotional materials. 
-                      Developed a keen understanding of clients' needs, delivering tailored and impactful solutions.`,
+        description: `Successfully executed diverse design projects, including logos, branding, and promotional materials. Developed a keen understanding of clients' needs, delivering tailored and impactful solutions.`,
         skills: [
           "HTML", "Adobe Photoshop", "Communication", "Adobe InDesign", "Branding", "Computer Literacy",
           "Logo Design", "Art", "Presentations", "Branding & Identity", "Graphic Design", "Illustration", 
@@ -115,16 +114,13 @@ const AboutMePage = () => {
         company: "JECO-EDUCATION · Contract Full-time",
         date: "Feb 2023 - Sep 2023",
         location: "Lagos, Nigeria · Remote",
-        description: `Contributed to Jeco Education's brand by designing engaging visuals for their Instagram page. 
-                      Collaborated with cross-functional teams to ensure brand consistency and impact. 
-                      Actively participated in shaping social media strategies.`,
+        description: `Contributed to Jeco Education's brand by designing engaging visuals for their Instagram page. Collaborated with cross-functional teams to ensure brand consistency and impact. Actively participated in shaping social media strategies.`,
         skills: [
           "Communication", "Branding", "Computer Literacy", "Customer Service", "Presentations", 
           "Social Media Graphic Design", "Social Media Advertising"
         ]
       }
     ],
-    /** The rest of your data (skills, funFacts) remain the same */
     skills: [
       "UI Design", "HTML/CSS", "JavaScript", "React.js", "Graphic Design", "UI/UX", "Adobe XD", 
       "Branding", "Communication", "Adobe Photoshop", "Adobe Illustrator", "Adobe InDesign", "Typography",
@@ -135,11 +131,62 @@ const AboutMePage = () => {
       { icon: <FaMusic />, title: "Music Lover", description: "I enjoy creating playlists for every mood." },
       { icon: <FaFilm />, title: "Anime & Movies", description: "I love watching anime and horror films." },
       { icon: <FaChurch />, title: "Church Community", description: "I am deeply involved in my church community." },
-      { icon: <FaLightbulb />, title: "Creative Design", description: "Design videos and AMVs are my passion." },
+      { icon: <FaLightbulb />, title: "Creative Design", description: "Design videos and AMVs are my passion." }
+    ],
+    coreValues: [
+      {
+        title: "Creativity & Innovation",
+        front: "Creativity & Innovation",
+        back: "I'm always pushing myself to think beyond the obvious and come up with fresh, engaging ideas. I love experimenting with visuals, animations, and interfaces to create standout projects. My projects, like the AniAPI Anime App and the TimiCares website, are examples of my desire to build interactive, user-friendly experiences."
+      },
+      {
+        title: "User-Centric Focus",
+        front: "User-Centric Focus",
+        back: "Understanding and prioritizing the user experience is essential to me. I put myself in the user’s shoes, ensuring my designs are intuitive, accessible, and cohesive. I design responsive and adaptive interfaces that are enjoyable for everyone."
+      },
+      {
+        title: "Attention to Detail",
+        front: "Attention to Detail",
+        back: "I pay meticulous attention to every aspect of my work—from typography and color choices to layout and spacing. I believe polished, well-thought-out designs make projects shine."
+      },
+      {
+        title: "Lifelong Learning & Adaptability",
+        front: "Lifelong Learning",
+        back: "I'm committed to continuously learning and evolving. Whether it's mastering new frameworks or refining my design approach, I embrace challenges as opportunities for growth."
+      },
+      {
+        title: "Resilience & Perseverance",
+        front: "Resilience",
+        back: "I don't give up when things get tough. I've faced technical and creative challenges, and I keep pushing forward—turning obstacles into opportunities for improvement."
+      },
+      {
+        title: "Collaboration & Communication",
+        front: "Collaboration",
+        back: "Working with others and communicating effectively is vital to me. I strive to explain my ideas clearly, listen actively, and incorporate feedback to build great projects."
+      },
+      {
+        title: "Professionalism & Integrity",
+        front: "Professionalism",
+        back: "I hold myself to high standards, delivering quality work on time and with integrity. I'm dedicated to constant self-improvement and excellence."
+      },
+      {
+        title: "Problem-Solving & Analytical Thinking",
+        front: "Problem-Solving",
+        back: "I love breaking down complex problems and finding creative solutions—whether in code, design, or user interactions."
+      },
+      {
+        title: "Consistency & Reliability",
+        front: "Consistency",
+        back: "I strive to be dependable and consistent in every project—from design and prototyping to development and deployment."
+      },
+      {
+        title: "Passion for My Craft",
+        front: "Passion",
+        back: "Above all, I'm deeply passionate about digital design and development. I aim to create work that leaves a lasting impact both visually and functionally."
+      }
     ]
   };
 
-  /** GSAP Animations */
   useEffect(() => {
     // Animate hero name & title
     const tl = gsap.timeline();
@@ -154,7 +201,7 @@ const AboutMePage = () => {
       { opacity: 1, x: 0, duration: 1.5, ease: "elastic.out(1, 0.5)" }
     );
 
-    // Animate floating circles
+    // Animate floating circles inside hero container
     gsap.to('.ap-floating-circle', {
       x: "random(-150,150)",
       y: "random(-150,150)",
@@ -165,34 +212,55 @@ const AboutMePage = () => {
     });
   }, []);
 
+  // Auto-rotate the Core Values flip card every 8 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      gsap.to(coreValuesContainerRef.current, {
+        rotationY: 90,
+        duration: 0.5,
+        ease: "power1.in",
+        onComplete: () => {
+          setCurrentCoreIndex((prev) => (prev + 1) % profileData.coreValues.length);
+          gsap.fromTo(coreValuesContainerRef.current, { rotationY: -90 }, { rotationY: 0, duration: 0.5, ease: "power1.out" });
+        }
+      });
+    }, 8000);
+    return () => clearInterval(interval);
+  }, [profileData.coreValues.length]);
+
   return (
     <div className="ap-about-me-page">
-      {/* HERO SECTION */}
-      <section className="ap-hero-section">
-        <div className="ap-hero-container">
-          {/* Floating Circles inside the hero container */}
-          <div className="ap-floating-circles-container">
-            {[...Array(12)].map((_, index) => (
-              <div
-                key={index}
-                className="ap-floating-circle"
-                style={{
-                  backgroundColor: index % 2 === 0 ? "#310000" : "#BCA58E",
-                  width: `${Math.random() * 80 + 40}px`,
-                  height: `${Math.random() * 80 + 40}px`,
-                }}
-              ></div>
-            ))}
-          </div>
-          <h1 ref={nameRef}>{profileData.name}</h1>
-          <p ref={titleRef}>{profileData.title}</p>
-          <Tilt>
-            <img src={profileImage} alt="Profile" className="profile-img" />
-          </Tilt>
-        </div>
-      </section>
+      {/* Shared Hero Section */}
+<HeroSection />
+{/* Composite hero: profile + circles + marquee + about text */}
+    <AboutHeroComposite />
 
-      {/* TWO-COLUMN Education & Experience SECTION */}
+      <section className="ap-hero-section">
+  <div className="ap-hero-container">
+    <div className="ap-floating-circles-container">
+      {[...Array(12)].map((_, index) => (
+        <div
+          key={index}
+          className="ap-floating-circle"
+          style={{
+            backgroundColor: index % 2 === 0 ? "#310000" : "#BCA58E",
+            width: `${Math.random() * 80 + 40}px`,
+            height: `${Math.random() * 80 + 40}px`,
+          }}
+        ></div>
+      ))}
+    </div>
+
+    <h1 ref={nameRef}>{profileData.name}</h1>
+    <p ref={titleRef}>{profileData.title}</p>
+
+    <Tilt>
+      <img src={profileImage} alt="Profile" className="profile-img" />
+    </Tilt>
+  </div>
+</section>
+
+      {/* EDUCATION & EXPERIENCE SECTION */}
       <section className="ap-edu-exp-section">
         <div className="ap-edu-exp-container">
           {/* Education Column */}
@@ -200,7 +268,6 @@ const AboutMePage = () => {
             <h2 className="ap-section-title">My Education</h2>
             {profileData.education.map((edu, index) => (
               <div key={index} className="ap-edu-item">
-                {/* GSAP + Tilt on Icon */}
                 <Tilt>
                   <div className="ap-edu-icon">
                     <FaGraduationCap size={40} />
@@ -215,13 +282,11 @@ const AboutMePage = () => {
               </div>
             ))}
           </div>
-
           {/* Experience Column */}
           <div className="ap-exp-column">
             <h2 className="ap-section-title">My Experience</h2>
             {profileData.experience.map((exp, index) => (
               <div key={index} className="ap-exp-item">
-                {/* GSAP + Tilt on Icon */}
                 <Tilt>
                   <div className="ap-exp-icon">
                     <FaBriefcase size={40} />
@@ -240,9 +305,34 @@ const AboutMePage = () => {
         </div>
       </section>
 
+      {/* CORE VALUES FLIP CARD CAROUSEL SECTION */}
+      <section className="ap-core-values-section">
+        <h2 className="ap-core-values-title">My Core Values as a Designer & Developer</h2>
+        <p className="ap-core-values-subtitle">
+          As a digital designer and developer, I strive to embody certain values that guide my work and fuel my creativity. These values are at the heart of everything I do, whether I’m building a sleek portfolio, developing an engaging app, or crafting user-centered designs.
+        </p>
+        <div className="ap-core-value-slider">
+          <Tilt options={{ max: 10, scale: 1.02 }}>
+            <div className="ap-core-value-card" ref={coreValuesContainerRef}>
+              <div className="ap-core-value-inner">
+                <div className="ap-core-value-front">
+                  <h3>{profileData.coreValues[currentCoreIndex].front}</h3>
+                </div>
+                <div className="ap-core-value-back">
+                  <p>{profileData.coreValues[currentCoreIndex].back}</p>
+                </div>
+              </div>
+            </div>
+          </Tilt>
+        </div>
+        <p className="ap-core-values-conclusion">
+          These values shape my approach to every project I take on, driving me to create experiences that are not only visually stunning but also intuitive and effective.
+        </p>
+      </section>
+
       {/* FUN FACTS SECTION */}
       <section className="ap-fun-fact-section">
-        <h2>Fun Facts About Me</h2>
+        <h2 className="ap-section-title">Fun Facts About Me</h2>
         <div className="ap-fun-fact-container">
           {profileData.funFacts.map((fact, index) => (
             <div key={index} className="ap-fun-fact-item">
@@ -260,7 +350,7 @@ const AboutMePage = () => {
 
       {/* SKILLS SECTION */}
       <section className="ap-skills-section">
-        <h2>Skills</h2>
+        <h2 className="ap-section-title">Skills</h2>
         <div className="ap-skills-container">
           {profileData.skills.map((skill, index) => (
             <Tilt key={index} options={{ max: 25 }}>

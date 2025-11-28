@@ -46,7 +46,7 @@ const AboutMeSection = () => {
     // Marquee Animation
     gsap.to(marqueeRef.current, {
       xPercent: -50,
-      duration: 10,
+      duration: 45,
       repeat: -1,
       ease: "linear",
     });

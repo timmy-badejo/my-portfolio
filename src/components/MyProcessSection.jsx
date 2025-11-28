@@ -31,56 +31,56 @@ const MyProcessSection = () => {
   }, []);
 
   const processSteps = [
-    {
-      id: 1,
-      icon: <FaSearch size={40} />,
-      title: 'Discovery & Research',
-      description:
-        'Every project begins with research, strategy, and planning to establish the core foundation of the design. This phase involves defining project goals, analyzing competitors, and exploring user needs to ensure a comprehensive understanding of the landscape.',
-    },
-    {
-      id: 2,
-      icon: <FaLightbulb size={40} />,
-      title: 'Concept Development',
-      description:
-        'Following the initial research, we move into concept development, where we brainstorm ideas, curate mood boards, and outline essential design and functionality elements. This step is crucial for setting the creative direction of the project.',
-    },
-    {
-      id: 3,
-      icon: <FaSketch size={40} />,
-      title: 'Wireframing & Prototyping',
-      description:
-        'Next, we focus on wireframing and prototyping. This involves structuring layouts, building wireframes, and developing interactive prototypes that allow for testing and refinement of our ideas before moving forward.',
-    },
-    {
-      id: 4,
-      icon: <FaPalette size={40} />,
-      title: 'Visual Design & Branding',
-      description:
-        'In this phase, we shape a cohesive visual identity by integrating typography, colors, and branding elements. This ensures a seamless user experience and reinforces the overall design concept.',
-    },
-    {
-      id: 5,
-      icon: <FaCode size={40} />,
-      title: 'Development & Implementation',
-      description:
-        'With the design finalized, we transition into development and implementation, where we convert our designs into clean, responsive code. This includes adding interactive elements to create a dynamic user experience.',
-    },
-    {
-      id: 6,
-      icon: <FaTools size={40} />,
-      title: 'Testing & Refinement',
-      description:
-        'Once development is complete, we conduct testing and refinement. This phase involves usability testing, identifying and resolving issues, optimizing performance, and fine-tuning interactions to enhance the overall user experience.',
-    },
-    {
-      id: 7,
-      icon: <FaRocket size={40} />,
-      title: 'Launch & Post-Launch Support',
-      description:
-        'Finally, we prepare for the launch and provide post-launch support. This includes deploying the project, tracking performance metrics, and offering ongoing updates to ensure continuous improvement and success.',
-    },
-  ];
+  {
+    id: 1,
+    icon: <FaSearch size={40} />,
+    title: 'Discovery & Research',
+    description:
+      'I start by learning about the project goals, users, and competitors to build a strong foundation for design decisions.',
+  },
+  {
+    id: 2,
+    icon: <FaLightbulb size={40} />,
+    title: 'Concept Development',
+    description:
+      'I brainstorm ideas, create mood boards, and define the visual direction that shapes the project’s creative vision.',
+  },
+  {
+    id: 3,
+    icon: <FaSketch size={40} />,
+    title: 'Wireframing & Prototyping',
+    description:
+      'I design layouts and interactive prototypes to test ideas early and refine the user experience before development.',
+  },
+  {
+    id: 4,
+    icon: <FaPalette size={40} />,
+    title: 'Visual Design & Branding',
+    description:
+      'I apply color, typography, and branding to craft a clean, cohesive, and engaging interface.',
+  },
+  {
+    id: 5,
+    icon: <FaCode size={40} />,
+    title: 'Development & Implementation',
+    description:
+      'I turn designs into responsive, functional code and add interactive elements that bring the experience to life.',
+  },
+  {
+    id: 6,
+    icon: <FaTools size={40} />,
+    title: 'Testing & Refinement',
+    description:
+      'I test usability, fix issues, and fine-tune performance to ensure everything runs smoothly across devices.',
+  },
+  {
+    id: 7,
+    icon: <FaRocket size={40} />,
+    title: 'Launch & Support',
+    description:
+      'I deploy the final project and provide updates or improvements to keep it performing its best.',
+  },
+];
 
   return (
     <section className="process-section">

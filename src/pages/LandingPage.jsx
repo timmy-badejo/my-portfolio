@@ -1,6 +1,5 @@
 import React from 'react';
 import Home from '../components/Home';
-import HeroSection from '../components/HeroSection';
 import AboutMeSection from '../components/AboutMeSection';
 import SkillsSection from '../components/SkillsSection';
 import OfferSection from '../components/OfferSection';
@@ -19,27 +18,31 @@ import './LandingPage.css';
 
 const LandingPage = () => {
   const cardData = [
-    {
-      icon: dedicationIcon,
-      title: 'Dedication',
-      description: 'I am committed to continuously improving myself and my skills, always striving for consistency and focus. My approach to design and problem-solving is centered on delivering thoughtful, high-quality solutions that enhance user experience and efficiency. I believe that every project is an opportunity to grow and refine my craft.',
-    },
-    {
-      icon: smartWorkIcon,
-      title: 'Smart Work',
-      description: 'I break down complex tasks into manageable pieces, allowing me to work efficiently without feeling overwhelmed. By structuring my workflow strategically, I ensure that I deliver high-quality work while maintaining a sustainable pace, avoiding burnout, and staying motivated throughout the process.',
-    },
-    {
-      icon: collaborationIcon,
-      title: 'Collaboration',
-      description: 'I thrive in team environments, working closely with my peers to bring ideas to life. I am always ready to take on development tasks and open to feedback, suggestions, and different perspectives. I believe that collaboration fosters innovation, and I actively seek input from others to improve my work and contribute to the success of our projects.',
-    },
-    {
-      icon: technologyIcon,
-      title: 'Technology',
-      description: 'I continuously explore and adapt to new technologies to enhance my designs and solve complex design challenges. Staying updated with industry trends allows me to incorporate the latest tools and techniques into my work, ensuring that my solutions are both innovative and effective.',
-    },
-  ];
+  {
+    icon: dedicationIcon,
+    title: 'Dedication',
+    description:
+      'I’m committed to growth and consistency, focusing on thoughtful design and solutions that enhance user experience.',
+  },
+  {
+    icon: smartWorkIcon,
+    title: 'Smart Work',
+    description:
+      'I simplify complex tasks with strategic workflows, ensuring quality results without burnout.',
+  },
+  {
+    icon: collaborationIcon,
+    title: 'Collaboration',
+    description:
+      'I thrive in team settings, valuing feedback and diverse ideas to create stronger, more creative outcomes.',
+  },
+  {
+    icon: technologyIcon,
+    title: 'Technology',
+    description:
+      'I stay current with tools and trends, using new technologies to build innovative and effective designs.',
+  },
+];
 
   return (
     <div className="landing-page">
@@ -47,6 +50,21 @@ const LandingPage = () => {
 
       {/* Home Section */}
       <Home />
+
+      {/* Featured Projects Section */}
+      <section className="featured-projects">
+        <FeaturedProjects />
+      </section>
+
+      {/* About Section */}
+      <section className="about-me-section">
+        <AboutMeSection />
+      </section>
+
+      {/* Skills Section */}
+      <section className="skills">
+        <SkillsSection />
+      </section>
 
       {/* Card Design Section */}
       <section className="card-section">
@@ -60,21 +78,6 @@ const LandingPage = () => {
         ))}
       </section>
 
-      {/* About Section */}
-      <section className="about-me-section">
-        <AboutMeSection />
-      </section>
-
-      {/* Hero Section */}
-      <section className="hero">
-        <HeroSection />
-      </section>
-
-      {/* Skills Section */}
-      <section className="skills">
-        <SkillsSection />
-      </section>
-
       {/* Offer Section */}
       <section className="offer-section">
         <OfferSection />
@@ -83,11 +86,6 @@ const LandingPage = () => {
       {/* Process Section */}
       <section className="process-section">
         <MyProcessSection />
-      </section>
-
-      {/* Featured Projects Section */}
-      <section className="featured-projects">
-        <FeaturedProjects />
       </section>
 
       {/* Contact Section */}

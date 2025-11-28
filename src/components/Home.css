@@ -10,25 +10,26 @@
 
 /* Home Section */
 .home {
-  background: #690B22;
-  color: #fff;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  position: relative;
-  padding-top: 80px; /* to account for fixed header */
-  border-radius: 15px;
+  background: rgba(255, 179, 142, 0.8); /* 0.8 = 80% visible, 20% transparent */
+color: #fff;
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+text-align: center;
+position: relative;
+padding-top: 80px; /* to account for fixed header */
+border-radius: 15px;
+
   
 }
 
 /* Social Icons (Positioned Right) */
 .social-icons {
   position: absolute;
-  right: 20px;
-  top: 50%;
+  right: 150px;
+  top: 60%;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
@@ -36,7 +37,7 @@
 }
 
 .social-icon {
-  font-size: 20px;
+  font-size: 80px;
   color: #fff;
   transition: transform 0.3s ease;
   text-decoration: none;
@@ -52,7 +53,7 @@
 }
 
 .greeting {
-  font-size: 2rem;
+  font-size: 4rem;
   margin-bottom: 10px;
 }
 
@@ -78,7 +79,8 @@
 
 .typewriter {
   font-weight: bold;
-  color: #FFB38E;
+  font-size: 2rem;
+  color: #0056b3;
 }
 
 /* CTA Buttons */
@@ -99,13 +101,13 @@
 }
 
 .btn-primary {
-  background: #FFB38E;
-  color: #000;
+  background: #0056b3;
+  color: #ffff;
 }
 
 .btn-secondary {
   background: #fff;
-  color: #000;
+  color: #0056b3;
 }
 
 .btn-primary:hover,

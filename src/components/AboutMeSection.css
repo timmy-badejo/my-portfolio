@@ -5,7 +5,7 @@
   justify-content: center;
   flex-wrap: wrap;
   padding: 80px 5%;
-  background: #F8F8F8;
+  
   color: #310031;
   font-family: "Nunito", sans-serif;
   position: relative;
@@ -111,7 +111,7 @@
 /* About Me Text */
 .about-text p {
   font-size: 18px;
-  line-height: 1.6;
+  line-height: 2px;
   max-width: 500px;
   margin: 0 auto;
   opacity: 0;
@@ -132,22 +132,27 @@
 
 .marquee {
   display: flex;
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
   white-space: nowrap;
+  text-transform: uppercase;
 }
 
 .marquee-filled {
   display: inline-block;
-  padding-right: 50px;
-  animation: marqueeLeft 10s linear infinite;
+  padding-right: 60px;
+  animation: marqueeLeft 24s linear infinite;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.06);
 }
 
 /* Bottom Marquee (Moves Right) */
 .marquee-stroke {
   display: inline-block;
-  padding-left: 50px;
-  animation: marqueeRight 10s linear infinite;
+  padding-left: 60px;
+  animation: marqueeRight 24s linear infinite;
+  -webkit-text-stroke: 2px #310031;            /* was 1px → bolder */
+  color: transparent;
 }
 
 .marquee-stroke {
@@ -171,6 +176,15 @@
   }
   to {
     transform: translateX(100%);
+  }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-filled,
+  .marquee-stroke {
+    animation: none !important;  /* stop scrolling */
+    transform: none !important;
   }
 }
 

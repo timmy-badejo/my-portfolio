@@ -12,7 +12,7 @@
 .ap-hero-section {
   position: relative;
   margin-top: 100px;
-  background-color: #690B22;
+  background-color: #ffff;
   color: #fff;
   text-align: center;
   padding: 50px 20px;
@@ -22,7 +22,7 @@
 }
 
 .ap-hero-container {
-  position: relative; /* So floating circles are absolutely positioned within */
+  position: relative;
 }
 
 .ap-hero-container h1 {
@@ -53,7 +53,7 @@
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: -1; /* behind hero text */
+  z-index: -1;
 }
 
 .ap-floating-circle {
@@ -61,6 +61,7 @@
   border-radius: 50%;
   mix-blend-mode: multiply;
   opacity: 0.9;
+  /* Initially center; GSAP will animate it randomly */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -93,7 +94,7 @@
   text-transform: uppercase;
 }
 
-/* Education Items */
+/* EDUCATION ITEMS */
 .ap-edu-item {
   display: flex;
   align-items: flex-start;
@@ -119,7 +120,7 @@
   margin: 5px 0;
 }
 
-/* Experience Items */
+/* EXPERIENCE ITEMS */
 .ap-exp-item {
   display: flex;
   align-items: flex-start;
@@ -149,6 +150,105 @@
   font-size: 0.9rem;
   color: #888;
   margin: 5px 0;
+}
+
+/* CORE VALUES FLIP CARD CAROUSEL SECTION */
+.ap-core-values-section {
+  margin: 60px 0;
+  text-align: center;
+  position: relative;
+}
+
+.ap-core-values-title {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  color: #310000;
+}
+
+.ap-core-values-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto 30px auto;
+}
+
+/* thIS SLIDER DISPLAY ONE CARD AT A TIME, CENNTERED */
+
+.ap-core-value-slider {
+  margin: 0 auto;
+  width: 320px;
+  perspective: 1000px;
+}
+
+.ap-core-values-container {
+  display: flex;
+  gap: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  width: max-content;
+  margin: 0 auto;
+}
+
+
+
+.ap-core-value-card {
+  background: transparent;
+  width: 300px;
+  height: 200px;
+  transition: transfrom 0.6s;
+  transform-style: preserve-3d;
+  
+}
+
+.ap-core-value-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+}
+
+.ap-core-value-card:hover .ap-core-value-inner {
+  transform: rotateY(180deg);
+}
+
+.ap-core-value-front,
+.ap-core-value-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border: 2px solid #310000;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ap-core-value-front {
+  background: #fff;
+  color: #310000;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.ap-core-value-back {
+  background: #310000;
+  color: #fff;
+  transform: rotateY(180deg);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.ap-core-values-conclusion {
+  font-size: 1.2rem;
+  margin-top: 20px;
+  color: #666;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* FUN FACT SECTION */
@@ -202,6 +302,7 @@
   gap: 20px;
   justify-content: center;
   margin-top: 2rem;
+  width: 100%;
 }
 
 .ap-skill-card {
@@ -223,9 +324,8 @@
   box-shadow: 0 12px 24px rgba(0,0,0,0.2);
 }
 
-/* ========== RESPONSIVE MEDIA QUERIES ========== */
+/* RESPONSIVE MEDIA QUERIES */
 @media (max-width: 768px) {
-  /* Hero text & image smaller */
   .ap-hero-container h1 {
     font-size: 30px;
   }
@@ -236,13 +336,9 @@
     width: 180px;
     height: 180px;
   }
-
-  /* 2-Column layout becomes single column */
   .ap-edu-exp-container {
-    grid-template-columns: 1fr; /* single column on mobile */
+    grid-template-columns: 1fr;
   }
-
-  /* Possibly reduce font sizes */
   .ap-section-title {
     font-size: 1.5rem;
   }
@@ -252,8 +348,6 @@
   .ap-edu-date, .ap-exp-date, .ap-exp-company {
     font-size: 0.8rem;
   }
-
-  /* Fun Facts & Skills become single column if you want smaller cards */
   .ap-fun-fact-container {
     grid-template-columns: 1fr;
   }

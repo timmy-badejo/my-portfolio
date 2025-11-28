@@ -4,14 +4,14 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Tilt from "react-parallax-tilt";
 import timmyhaircare1 from "../assests/timmyhaircare1.jpg";
-import ronzalko from "../assests/RonZalkowebdesign.jpg";
+import ronzalko from "../assests/Ron Zalko web design.jpg";
+import ronZalkoWireframe from "../assests/Ron-Zalko-Web-Design-Wireframe.pdf";
 import melodycard1 from "../assests/MelodyCard1.jpg";
 import scwcharity from "../assests/scwcharitywebpage.png";
 import astroPlaceholder from "../assests/AstorMatchlogo.jpg";
 import motionPlaceholder from "../assests/motion graphics.webp";
 import "./FeaturedProjects.css";
 
-// Register GSAP plugin
 gsap.registerPlugin(ScrollTrigger);
 
 const FeaturedProjects = () => {
@@ -24,6 +24,7 @@ const FeaturedProjects = () => {
       description: "Enhancing UX, accessibility, and engagement.",
       image: ronzalko,
       software: ["Figma", "HTML", "CSS", "JavaScript"],
+      pdf: ronZalkoWireframe,
       link: "/projects/1",
     },
     {
@@ -69,7 +70,7 @@ const FeaturedProjects = () => {
   ];
 
   useEffect(() => {
-    // Fade in entire section on scroll
+    // Keep the section fade-in on scroll
     gsap.fromTo(
       ".fp-featured-projects",
       { opacity: 0, y: 50 },
@@ -84,24 +85,6 @@ const FeaturedProjects = () => {
         },
       }
     );
-
-    // For each project card, set up image slide animation on hover
-    projectRefs.current.forEach((cardEl) => {
-      const imgEl = cardEl.querySelector(".fp-project-image");
-
-      // Initially hide the image by shifting it left
-      gsap.set(imgEl, { x: "-100%", opacity: 0 });
-
-      // Slide image in on mouse enter
-      cardEl.addEventListener("mouseenter", () => {
-        gsap.to(imgEl, { x: "0%", opacity: 1, duration: 0.5, ease: "power2.out" });
-      });
-
-      // Slide image out on mouse leave
-      cardEl.addEventListener("mouseleave", () => {
-        gsap.to(imgEl, { x: "-100%", opacity: 0, duration: 0.5, ease: "power2.in" });
-      });
-    });
   }, []);
 
   return (
@@ -113,14 +96,25 @@ const FeaturedProjects = () => {
 
       <div className="fp-projects-grid">
         {projects.map((project, index) => (
-          <Tilt key={project.id} tiltMaxAngleX={5} tiltMaxAngleY={5} glareEnable={true} glareMaxOpacity={0.3}>
+          <Tilt
+            key={project.id}
+            tiltMaxAngleX={5}
+            tiltMaxAngleY={5}
+            glareEnable={true}
+            glareMaxOpacity={0.3}
+          >
             <div
               ref={(el) => (projectRefs.current[index] = el)}
               className="fp-project-card"
             >
               {/* Image Container */}
               <div className="fp-project-image-container">
-                <img src={project.image} alt={project.title} className="fp-project-image" />
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  loading="lazy"
+                  className="fp-project-image"
+                />
               </div>
 
               {/* Project Details */}
