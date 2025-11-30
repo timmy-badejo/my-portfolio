@@ -12,6 +12,8 @@ import scwCharity from '../assests/scwcharitywebpage.png';
 import timmyHairCare from '../assests/timmyhaircare4.jpg';
 import timmyHairCareDocument from '../assests/timmyHairCareDocument.pdf';
 import scwCharityDocument from '../assests/scwCharityDocument.pdf';
+import astroPlaceholder from "../assests/AstorMatchlogo.jpg";
+import motionPlaceholder from "../assests/motion graphics.webp"
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   'pdfjs-dist/build/pdf.worker.min.js',
@@ -77,6 +79,22 @@ const getProjectDataById = (id) => {
       ],
       technicalInfo: "Web Development, Content Management",
     },
+    {
+      id: 5,
+      title: "AstroMatch App",
+      description: "Placeholder for AstroMatch App project.",
+      image: astroPlaceholder,
+      software: ["React", "Node.js"],
+      link: "/projects/5",
+    },
+    {
+      id: 6,
+      title: "Motion Graphic",
+      description: "Placeholder for Motion Graphic project.",
+      image: motionPlaceholder,
+      software: ["After Effects", "Illustrator"],
+      link: "/projects/6",
+    },
   ];
 
   return projects.find((project) => project.id === id);
@@ -134,24 +152,7 @@ const ProjectDetailPage = () => {
       {/* PDF Viewer */}
       {projectData.pdf && (
         <div className="project-section">
-          <h2>Supporting Documentation</h2>
-          <div style={{ width: '100%', height: '600px', border: '1px solid #ddd' }}>
-            <Document
-              file={projectData.pdf}
-              onLoadSuccess={onDocumentLoadSuccess}
-              onLoadError={onDocumentError}
-              onSourceError={onDocumentError}
-              loading={<p className="project-doc-loading">Loading PDF…</p>}
-            >
-              {numPages ? (
-                Array.from({ length: numPages }, (_, index) => (
-                  <Page key={`page_${index + 1}`} pageNumber={index + 1} />
-                ))
-              ) : (
-                <p className="project-doc-loading">Preparing PDF…</p>
-              )}
-            </Document>
-          </div>
+          
           {pdfError && <p className="project-doc-error">{pdfError}</p>}
           <div className="project-doc-actions">
             <a
