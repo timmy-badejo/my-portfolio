@@ -1,5 +1,4 @@
 import React from 'react';
-import { Document, Page, pdfjs } from 'react-pdf';
 import { useParams } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
 import Tilt from 'react-parallax-tilt';
@@ -30,7 +29,18 @@ import melodyPost6 from '../assests/Yomi-Badejo Timilehin_Indesign Exploration P
 import melodyBlue from '../assests/melody blue for melody.png';
 import melodyHeadphones from '../assests/melody head phones for melody.png';
 import melodyShape from '../assests/melody shape logo for melody.png';
-import melodyBeatsDocument from '../assests/melodyBeatsDocument.pdf';
+import melodyPdf1 from '../assests/melodyBeatsDocument_Page_01.jpg';
+import melodyPdf2 from '../assests/melodyBeatsDocument_Page_02.jpg';
+import melodyPdf3 from '../assests/melodyBeatsDocument_Page_03.jpg';
+import melodyPdf4 from '../assests/melodyBeatsDocument_Page_04.jpg';
+import melodyPdf5 from '../assests/melodyBeatsDocument_Page_05.jpg';
+import melodyPdf6 from '../assests/melodyBeatsDocument_Page_06.jpg';
+import melodyPdf7 from '../assests/melodyBeatsDocument_Page_07.jpg';
+import melodyPdf8 from '../assests/melodyBeatsDocument_Page_08.jpg';
+import melodyPdf9 from '../assests/melodyBeatsDocument_Page_09.jpg';
+import melodyPdf10 from '../assests/melodyBeatsDocument_Page_10.jpg';
+import melodyPdf11 from '../assests/melodyBeatsDocument_Page_11.jpg';
+import melodyPdf12 from '../assests/melodyBeatsDocument_Page_12.jpg';
 import scwCharity from '../assests/scwcharitywebpage.png';
 import scwWire1 from '../assests/SCW Charity Website Wireframe A 2_Page_01.jpg';
 import scwWire2 from '../assests/SCW Charity Website Wireframe A 2_Page_02.jpg';
@@ -52,8 +62,6 @@ import astroPlaceholder from '../assests/AstorMatchlogo.jpg';
 import astroMatchPdf from '../assests/Astro-Match-App.pdf';
 import motionPlaceholder from '../assests/motion graphics.webp';
 import motionGraphicVideo from '../assests/Jujitsu_Kaisen_Intro_Bumper_Timilehin Yomi-Badejo_Final comp.mp4';
-
-pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 const ParallaxGallery = ({ images }) => {
   const containerRef = React.useRef(null);
@@ -122,7 +130,6 @@ const getProjectDataById = (id) => {
       id: "2",
       title: "Melody Beats Branding",
       image: melodyBeats,
-      pdf: melodyBeatsDocument,
       overview: "Created cohesive branding for Melody Beats through logo and business card design to establish a strong visual identity.",
       challenges: "Balancing creative design with strict client requirements and tight deadlines.",
       outcome: "Rolled out a unified brand system and print-ready assets that boosted recognizability across cards, posters, and digital touchpoints.",
@@ -141,6 +148,18 @@ const getProjectDataById = (id) => {
         melodyLogoBlue,
         melodyLogoPoster,
         melodyBeatsAlt,
+        melodyPdf1,
+        melodyPdf2,
+        melodyPdf3,
+        melodyPdf4,
+        melodyPdf5,
+        melodyPdf6,
+        melodyPdf7,
+        melodyPdf8,
+        melodyPdf9,
+        melodyPdf10,
+        melodyPdf11,
+        melodyPdf12,
         melodyCard1,
         melodyCard2,
         melodyCard3,
@@ -238,8 +257,6 @@ const ProjectDetailPage = () => {
   const { projectId } = useParams();
   const projectData = getProjectDataById(projectId);
   const isMelody = projectData?.id === "2";
-  const [melodyNumPages, setMelodyNumPages] = React.useState(null);
-  const [melodyPdfError, setMelodyPdfError] = React.useState(null);
 
   if (!projectData) {
     return <p>Project not found</p>;
@@ -251,38 +268,27 @@ const ProjectDetailPage = () => {
       <div className={`project-hero ${isMelody ? 'melody-hero' : ''}`}>
         {isMelody ? (
           <div className="melody-pdf-sticky">
-            <Document
-              file={projectData.pdf}
-              onLoadSuccess={({ numPages }) => setMelodyNumPages(numPages)}
-              onLoadError={() =>
-                setMelodyPdfError('Unable to preview PDF. Please use the download button.')
-              }
-              loading={<p className="project-doc-loading">Loading PDF...</p>}
-            >
-              {melodyNumPages
-                ? Array.from({ length: melodyNumPages }, (_, index) => (
-                    <Page
-                      key={index + 1}
-                      pageNumber={index + 1}
-                      renderTextLayer={false}
-                      renderAnnotationLayer={false}
-                    />
-                ))
-                : null}
-            </Document>
-            {melodyPdfError && (
-              <div className="project-doc-error">
-                {melodyPdfError}{' '}
-                <a
-                  href={projectData.pdf}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="project-doc-link inline"
-                >
-                  Open PDF in new tab
-                </a>
-              </div>
-            )}
+            <div className="melody-doc-images">
+              {[
+                melodyPdf1,
+                melodyPdf2,
+                melodyPdf3,
+                melodyPdf4,
+                melodyPdf5,
+                melodyPdf6,
+                melodyPdf7,
+                melodyPdf8,
+                melodyPdf9,
+                melodyPdf10,
+                melodyPdf11,
+                melodyPdf12,
+              ].map((img, idx) => (
+                <div key={idx} className="melody-doc-image">
+                  <img src={img} alt={`Melody Beats Document page ${idx + 1}`} />
+                  <span className="melody-doc-page">Page {idx + 1}</span>
+                </div>
+              ))}
+            </div>
           </div>
         ) : (
           <img src={projectData.image} alt={projectData.title} className="project-image" />
@@ -292,69 +298,36 @@ const ProjectDetailPage = () => {
       </div>
 
       {/* Cards Section */}
-      {isMelody ? (
-        <div className="cards-container melody-sticky-cards">
-          <div className="melody-floating-circles">
-            <span className="melody-circle c1" />
-            <span className="melody-circle c2" />
-            <span className="melody-circle c3" />
-          </div>
-          {[
-            { title: "Project Overview", content: projectData.overview },
-            { title: "Challenges Overcome", content: projectData.challenges },
-            { title: "Outcome", content: projectData.outcome },
-            { title: "Details", list: projectData.details },
-          ].map((section, idx) => (
-            <div className="card melody-sticky-card" key={idx}>
-              <h2>{section.title}</h2>
-              {section.list ? (
-                <ul>
-                  {section.list.map((detail, index) => (
-                    <li key={index}>{detail}</li>
-                  ))}
-                </ul>
-              ) : (
-                <p>{section.content}</p>
-              )}
-            </div>
-          ))}
+      <div className="cards-container">
+        <div className="card">
+          <h2>Project Overview</h2>
+          <p>{projectData.overview}</p>
         </div>
-      ) : (
-        <div className="cards-container">
-          <div className="card">
-            <h2>Project Overview</h2>
-            <p>{projectData.overview}</p>
-          </div>
-          <div className="card">
-            <h2>Challenges Overcome</h2>
-            <p>{projectData.challenges}</p>
-          </div>
-          <div className="card">
-            <h2>Details</h2>
-            <ul>
-              {projectData.details?.map((detail, index) => (
-                <li key={index}>{detail}</li>
-              ))}
-            </ul>
-          </div>
+        <div className="card">
+          <h2>Challenges Overcome</h2>
+          <p>{projectData.challenges}</p>
         </div>
-      )}
+        {projectData.outcome && (
+          <div className="card">
+            <h2>Outcome</h2>
+            <p>{projectData.outcome}</p>
+          </div>
+        )}
+        <div className="card">
+          <h2>Details</h2>
+          <ul>
+            {projectData.details?.map((detail, index) => (
+              <li key={index}>{detail}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
 
       {/* PDF Viewer */}
       {(projectData.pdf || projectData.image) && (
         <div className="project-section">
           <h2>Project Files</h2>
           <div className="project-doc-actions project-doc-actions-centered">
-            {projectData.pdf && (
-              <a
-                href={projectData.pdf}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="project-doc-link"
-              >
-                Open PDF in new tab
-              </a>
-            )}
             {projectData.image && (
               <a
                 href={projectData.image}
