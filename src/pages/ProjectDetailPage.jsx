@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
+import Tilt from 'react-parallax-tilt';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './ProjectDetailPage.css';
 import RonZalkoWebDesign from '../assests/Ron Zalko web design.jpg';
@@ -40,7 +41,8 @@ const ParallaxGallery = ({ images }) => {
         const speed = parseFloat(card.dataset.speed || '0.12');
         const rect = card.getBoundingClientRect();
         const offset = rect.top + rect.height / 2 - window.innerHeight / 2;
-        card.style.transform = `translateY(${offset * speed * -0.4}px) scale(1.02)`;
+        card.style.setProperty('--parallax-translate', `${offset * speed * -0.4}px`);
+        card.style.setProperty('--parallax-base-scale', '1.02');
         card.style.opacity = Math.max(0.4, 1 - Math.abs(offset) / 800);
       });
     };
@@ -53,14 +55,22 @@ const ParallaxGallery = ({ images }) => {
   return (
     <div className="parallax-gallery" ref={containerRef}>
       {images.map((image, index) => (
-        <div
+        <Tilt
           key={index}
-          className="parallax-card"
-          data-speed={index % 2 === 0 ? 0.12 : 0.18}
+          tiltMaxAngleX={5}
+          tiltMaxAngleY={5}
+          glareEnable
+          glareMaxOpacity={0.2}
+          className="parallax-tilt"
         >
-          <img src={image} alt={`SCW Charity Wireframe ${index + 1}`} />
-          <span className="parallax-label">Wireframe {index + 1}</span>
-        </div>
+          <div
+            className="parallax-card"
+            data-speed={index % 2 === 0 ? 0.12 : 0.18}
+          >
+            <img src={image} alt={`SCW Charity Wireframe ${index + 1}`} />
+            <span className="parallax-label">Wireframe {index + 1}</span>
+          </div>
+        </Tilt>
       ))}
     </div>
   );
