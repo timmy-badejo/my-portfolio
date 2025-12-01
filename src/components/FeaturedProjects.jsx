@@ -54,17 +54,17 @@ const FeaturedProjects = () => {
     {
       id: 5,
       title: "AstroMatch App",
-      description: "Placeholder for AstroMatch App project.",
+      description: "Swipe-based astrology dating experience with compatibility scoring.",
       image: astroPlaceholder,
-      software: ["React", "Node.js"],
+      software: ["Product Design", "UI/UX", "Prototyping"],
       link: "/projects/5",
     },
     {
       id: 6,
-      title: "Motion Graphic",
-      description: "Placeholder for Motion Graphic project.",
+      title: "Motion Graphic Intro",
+      description: "Anime-inspired kinetic typography bumper, optimized for web playback.",
       image: motionPlaceholder,
-      software: ["After Effects", "Illustrator"],
+      software: ["After Effects", "Premiere Pro"],
       link: "/projects/6",
     },
   ];

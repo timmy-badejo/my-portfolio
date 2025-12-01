@@ -12,8 +12,10 @@ import scwCharity from '../assests/scwcharitywebpage.png';
 import timmyHairCare from '../assests/timmyhaircare4.jpg';
 import timmyHairCareDocument from '../assests/timmyHairCareDocument.pdf';
 import scwCharityDocument from '../assests/scwCharityDocument.pdf';
-import astroPlaceholder from "../assests/AstorMatchlogo.jpg";
-import motionPlaceholder from "../assests/motion graphics.webp"
+import astroPlaceholder from '../assests/AstorMatchlogo.jpg';
+import astroMatchPdf from '../assests/Astro-Match-App.pdf';
+import motionPlaceholder from '../assests/motion graphics.webp';
+import motionGraphicVideo from '../assests/Jujitsu_Kaisen_Intro_Bumper_Timilehin Yomi-Badejo_Final comp.mp4';
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   'pdfjs-dist/build/pdf.worker.min.js',
@@ -80,20 +82,32 @@ const getProjectDataById = (id) => {
       technicalInfo: "Web Development, Content Management",
     },
     {
-      id: 5,
+      id: "5",
       title: "AstroMatch App",
-      description: "Placeholder for AstroMatch App project.",
       image: astroPlaceholder,
-      software: ["React", "Node.js"],
-      link: "/projects/5",
+      pdf: astroMatchPdf,
+      overview: "Designed a swipe-based astrology dating experience that pairs users with matches based on compatibility scores and shared interests.",
+      challenges: "Keeping the brand playful while ensuring onboarding, compatibility summaries, and chat flows stay intuitive on small screens.",
+      details: [
+        "Created mid- and high-fidelity flows for onboarding, matching, and messaging.",
+        "Documented compatibility logic, UI states, and motion cues for developer handoff.",
+        "Packaged the case study with visuals and flow explanations for stakeholders.",
+      ],
+      technicalInfo: "Product Design, UI/UX, Prototyping",
     },
     {
-      id: 6,
-      title: "Motion Graphic",
-      description: "Placeholder for Motion Graphic project.",
+      id: "6",
+      title: "Motion Graphic Intro",
       image: motionPlaceholder,
-      software: ["After Effects", "Illustrator"],
-      link: "/projects/6",
+      video: motionGraphicVideo,
+      overview: "Produced a fast-paced anime-inspired intro bumper with kinetic typography, lighting, and camera moves.",
+      challenges: "Balancing legibility at high speed while syncing animation beats to audio cues and keeping export quality high.",
+      details: [
+        "Storyboarded timing beats to lock pacing before heading into After Effects.",
+        "Animated typography, particle bursts, and camera sweeps to build momentum.",
+        "Exported a web-friendly MP4 for smooth portfolio playback.",
+      ],
+      technicalInfo: "After Effects, Premiere Pro, Motion Graphics",
     },
   ];
 
@@ -142,7 +156,7 @@ const ProjectDetailPage = () => {
         <div className="card">
           <h2>Details</h2>
           <ul>
-            {projectData.details.map((detail, index) => (
+            {projectData.details?.map((detail, index) => (
               <li key={index}>{detail}</li>
             ))}
           </ul>
@@ -152,7 +166,20 @@ const ProjectDetailPage = () => {
       {/* PDF Viewer */}
       {projectData.pdf && (
         <div className="project-section">
-          
+          <h2>Project Document</h2>
+          <div className="project-doc-viewer">
+            <Document
+              file={projectData.pdf}
+              onLoadSuccess={onDocumentLoadSuccess}
+              onLoadError={onDocumentError}
+              loading={<p className="project-doc-loading">Loading PDF preview...</p>}
+            >
+              <Page pageNumber={1} renderTextLayer={false} renderAnnotationLayer={false} />
+            </Document>
+          </div>
+          {numPages && (
+            <p className="project-doc-loading">Previewing page 1 of {numPages}</p>
+          )}
           {pdfError && <p className="project-doc-error">{pdfError}</p>}
           <div className="project-doc-actions">
             <a
@@ -173,6 +200,22 @@ const ProjectDetailPage = () => {
                 Open JPG preview
               </a>
             )}
+          </div>
+        </div>
+      )}
+
+      {projectData.video && (
+        <div className="project-section">
+          <h2>Project Video</h2>
+          <div className="project-video-wrapper">
+            <video
+              className="project-video"
+              src={projectData.video}
+              controls
+              poster={projectData.image}
+            >
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       )}

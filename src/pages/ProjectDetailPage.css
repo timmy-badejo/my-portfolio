@@ -111,9 +111,36 @@
   line-height: 1.6;
 }
 
+.project-doc-viewer {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.project-doc-viewer canvas {
+  max-width: 900px;
+  width: 100% !important;
+  height: auto !important;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
 .carousel .slide img {
   max-height: 500px;
   object-fit: cover;
+}
+
+.project-video-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.project-video {
+  width: 100%;
+  max-width: 960px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 /* Responsive Design */
