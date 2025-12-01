@@ -1,5 +1,4 @@
 import React from 'react';
-import { Document, Page, pdfjs } from 'react-pdf';
 import { useParams } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
@@ -16,11 +15,6 @@ import astroPlaceholder from '../assests/AstorMatchlogo.jpg';
 import astroMatchPdf from '../assests/Astro-Match-App.pdf';
 import motionPlaceholder from '../assests/motion graphics.webp';
 import motionGraphicVideo from '../assests/Jujitsu_Kaisen_Intro_Bumper_Timilehin Yomi-Badejo_Final comp.mp4';
-
-pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-  'pdfjs-dist/build/pdf.worker.min.js',
-  import.meta.url
-).toString();
 
 // Project Data
 const getProjectDataById = (id) => {
@@ -118,18 +112,6 @@ const ProjectDetailPage = () => {
   const { projectId } = useParams();
   const projectData = getProjectDataById(projectId);
 
-  const [numPages, setNumPages] = React.useState(null);
-  const [pdfError, setPdfError] = React.useState(null);
-
-  const onDocumentLoadSuccess = ({ numPages }) => {
-    setNumPages(numPages);
-    setPdfError(null);
-  };
-
-  const onDocumentError = () => {
-    setPdfError('Unable to load PDF here. Please use the open links below.');
-  };
-
   if (!projectData) {
     return <p>Project not found</p>;
   }
@@ -164,32 +146,20 @@ const ProjectDetailPage = () => {
       </div>
 
       {/* PDF Viewer */}
-      {projectData.pdf && (
+      {(projectData.pdf || projectData.image) && (
         <div className="project-section">
-          <h2>Project Document</h2>
-          <div className="project-doc-viewer">
-            <Document
-              file={projectData.pdf}
-              onLoadSuccess={onDocumentLoadSuccess}
-              onLoadError={onDocumentError}
-              loading={<p className="project-doc-loading">Loading PDF preview...</p>}
-            >
-              <Page pageNumber={1} renderTextLayer={false} renderAnnotationLayer={false} />
-            </Document>
-          </div>
-          {numPages && (
-            <p className="project-doc-loading">Previewing page 1 of {numPages}</p>
-          )}
-          {pdfError && <p className="project-doc-error">{pdfError}</p>}
-          <div className="project-doc-actions">
-            <a
-              href={projectData.pdf}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="project-doc-link"
-            >
-              Open PDF in new tab
-            </a>
+          <h2>Project Files</h2>
+          <div className="project-doc-actions project-doc-actions-centered">
+            {projectData.pdf && (
+              <a
+                href={projectData.pdf}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-doc-link"
+              >
+                Open PDF in new tab
+              </a>
+            )}
             {projectData.image && (
               <a
                 href={projectData.image}

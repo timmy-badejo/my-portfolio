@@ -73,6 +73,10 @@
   margin-top: 12px;
 }
 
+.project-doc-actions-centered {
+  justify-content: center;
+}
+
 .project-doc-loading,
 .project-doc-error {
   margin-top: 10px;
@@ -109,20 +113,6 @@
 .project-section p {
   font-size: 16px;
   line-height: 1.6;
-}
-
-.project-doc-viewer {
-  display: flex;
-  justify-content: center;
-  margin-top: 12px;
-}
-
-.project-doc-viewer canvas {
-  max-width: 900px;
-  width: 100% !important;
-  height: auto !important;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 .carousel .slide img {
