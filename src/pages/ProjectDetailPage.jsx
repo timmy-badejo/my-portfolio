@@ -125,6 +125,7 @@ const getProjectDataById = (id) => {
       pdf: melodyBeatsDocument,
       overview: "Created cohesive branding for Melody Beats through logo and business card design to establish a strong visual identity.",
       challenges: "Balancing creative design with strict client requirements and tight deadlines.",
+      outcome: "Rolled out a unified brand system and print-ready assets that boosted recognizability across cards, posters, and digital touchpoints.",
       details: [
         "Designed vibrant logos using Adobe Illustrator.",
         "Developed branding strategy and collateral.",
@@ -291,24 +292,53 @@ const ProjectDetailPage = () => {
       </div>
 
       {/* Cards Section */}
-      <div className="cards-container">
-        <div className="card">
-          <h2>Project Overview</h2>
-          <p>{projectData.overview}</p>
+      {isMelody ? (
+        <div className="cards-container melody-sticky-cards">
+          <div className="melody-floating-circles">
+            <span className="melody-circle c1" />
+            <span className="melody-circle c2" />
+            <span className="melody-circle c3" />
+          </div>
+          {[
+            { title: "Project Overview", content: projectData.overview },
+            { title: "Challenges Overcome", content: projectData.challenges },
+            { title: "Outcome", content: projectData.outcome },
+            { title: "Details", list: projectData.details },
+          ].map((section, idx) => (
+            <div className="card melody-sticky-card" key={idx}>
+              <h2>{section.title}</h2>
+              {section.list ? (
+                <ul>
+                  {section.list.map((detail, index) => (
+                    <li key={index}>{detail}</li>
+                  ))}
+                </ul>
+              ) : (
+                <p>{section.content}</p>
+              )}
+            </div>
+          ))}
         </div>
-        <div className="card">
-          <h2>Challenges Overcome</h2>
-          <p>{projectData.challenges}</p>
+      ) : (
+        <div className="cards-container">
+          <div className="card">
+            <h2>Project Overview</h2>
+            <p>{projectData.overview}</p>
+          </div>
+          <div className="card">
+            <h2>Challenges Overcome</h2>
+            <p>{projectData.challenges}</p>
+          </div>
+          <div className="card">
+            <h2>Details</h2>
+            <ul>
+              {projectData.details?.map((detail, index) => (
+                <li key={index}>{detail}</li>
+              ))}
+            </ul>
+          </div>
         </div>
-        <div className="card">
-          <h2>Details</h2>
-          <ul>
-            {projectData.details?.map((detail, index) => (
-              <li key={index}>{detail}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
+      )}
 
       {/* PDF Viewer */}
       {(projectData.pdf || projectData.image) && (

@@ -88,6 +88,96 @@
   padding-left: 20px;
 }
 
+.melody-sticky-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  position: relative;
+  padding: 24px 12px 360px;
+  overflow: visible;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.melody-floating-circles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.melody-circle {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(105, 11, 34, 0.18);
+  filter: blur(2px);
+  mix-blend-mode: multiply;
+  animation: floatCircle 14s ease-in-out infinite;
+}
+
+.melody-circle.c1 {
+  top: -80px;
+  left: 2%;
+  background: rgba(105, 11, 34, 0.26);
+}
+
+.melody-circle.c2 {
+  top: 30%;
+  right: 10%;
+  background: rgba(255, 179, 142, 0.22);
+  animation-duration: 18s;
+  animation-direction: reverse;
+}
+
+.melody-circle.c3 {
+  bottom: -120px;
+  left: 38%;
+  background: rgba(105, 11, 34, 0.16);
+  width: 180px;
+  height: 180px;
+  animation-duration: 20s;
+}
+
+@keyframes floatCircle {
+  0% { transform: translate3d(-14px, -6px, 0) scale(1); }
+  50% { transform: translate3d(24px, 22px, 0) scale(1.06); }
+  100% { transform: translate3d(-14px, -6px, 0) scale(1); }
+}
+
+.melody-sticky-card {
+  position: sticky;
+  top: var(--stack-top, 80px);
+  z-index: var(--stack-z, 1);
+  width: min(760px, 100%);
+  margin: 0 auto;
+  border: 2px solid #690B22;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(2px);
+  position: relative;
+  padding: 24px;
+  text-align: left;
+}
+
+.melody-sticky-card:nth-child(1) {
+  --stack-top: 80px;
+  --stack-z: 4;
+}
+.melody-sticky-card:nth-child(2) {
+  --stack-top: 120px;
+  --stack-z: 3;
+}
+.melody-sticky-card:nth-child(3) {
+  --stack-top: 160px;
+  --stack-z: 2;
+}
+.melody-sticky-card:nth-child(4) {
+  --stack-top: 200px;
+  --stack-z: 1;
+}
+
 .project-section {
   margin: 20px 0;
 }
