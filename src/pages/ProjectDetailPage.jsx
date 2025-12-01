@@ -8,6 +8,19 @@ import ronZalkoWireframe from '../assests/Ron-Zalko-Web-Design-Wireframe.pdf';
 import melodyBeats from '../assests/MelodyCard1.jpg';
 import melodyBeatsDocument from '../assests/melodyBeatsDocument.pdf';
 import scwCharity from '../assests/scwcharitywebpage.png';
+import scwWire1 from '../assests/SCW Charity Website Wireframe A 2_Page_01.jpg';
+import scwWire2 from '../assests/SCW Charity Website Wireframe A 2_Page_02.jpg';
+import scwWire3 from '../assests/SCW Charity Website Wireframe A 2_Page_03.jpg';
+import scwWire4 from '../assests/SCW Charity Website Wireframe A 2_Page_04.jpg';
+import scwWire5 from '../assests/SCW Charity Website Wireframe A 2_Page_05.jpg';
+import scwWire6 from '../assests/SCW Charity Website Wireframe A 2_Page_06.jpg';
+import scwWire7 from '../assests/SCW Charity Website Wireframe A 2_Page_07.jpg';
+import scwWire8 from '../assests/SCW Charity Website Wireframe A 2_Page_08.jpg';
+import scwWire9 from '../assests/SCW Charity Website Wireframe A 2_Page_09.jpg';
+import scwWire10 from '../assests/SCW Charity Website Wireframe A 2_Page_10.jpg';
+import scwWire11 from '../assests/SCW Charity Website Wireframe A 2_Page_11.jpg';
+import scwWire12 from '../assests/SCW Charity Website Wireframe A 2_Page_12.jpg';
+import scwWire13 from '../assests/SCW Charity Website Wireframe A 2_Page_13.jpg';
 import timmyHairCare from '../assests/timmyhaircare4.jpg';
 import timmyHairCareDocument from '../assests/timmyHairCareDocument.pdf';
 import scwCharityDocument from '../assests/scwCharityDocument.pdf';
@@ -15,6 +28,43 @@ import astroPlaceholder from '../assests/AstorMatchlogo.jpg';
 import astroMatchPdf from '../assests/Astro-Match-App.pdf';
 import motionPlaceholder from '../assests/motion graphics.webp';
 import motionGraphicVideo from '../assests/Jujitsu_Kaisen_Intro_Bumper_Timilehin Yomi-Badejo_Final comp.mp4';
+
+const ParallaxGallery = ({ images }) => {
+  const containerRef = React.useRef(null);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      if (!containerRef.current) return;
+      const cards = containerRef.current.querySelectorAll('.parallax-card');
+      cards.forEach((card, idx) => {
+        const speed = parseFloat(card.dataset.speed || '0.12');
+        const rect = card.getBoundingClientRect();
+        const offset = rect.top + rect.height / 2 - window.innerHeight / 2;
+        card.style.transform = `translateY(${offset * speed * -0.4}px) scale(1.02)`;
+        card.style.opacity = Math.max(0.4, 1 - Math.abs(offset) / 800);
+      });
+    };
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <div className="parallax-gallery" ref={containerRef}>
+      {images.map((image, index) => (
+        <div
+          key={index}
+          className="parallax-card"
+          data-speed={index % 2 === 0 ? 0.12 : 0.18}
+        >
+          <img src={image} alt={`SCW Charity Wireframe ${index + 1}`} />
+          <span className="parallax-label">Wireframe {index + 1}</span>
+        </div>
+      ))}
+    </div>
+  );
+};
 
 // Project Data
 const getProjectDataById = (id) => {
@@ -74,6 +124,21 @@ const getProjectDataById = (id) => {
         "Received positive feedback from stakeholders.",
       ],
       technicalInfo: "Web Development, Content Management",
+      galleryImages: [
+        scwWire1,
+        scwWire2,
+        scwWire3,
+        scwWire4,
+        scwWire5,
+        scwWire6,
+        scwWire7,
+        scwWire8,
+        scwWire9,
+        scwWire10,
+        scwWire11,
+        scwWire12,
+        scwWire13,
+      ],
     },
     {
       id: "5",
@@ -193,11 +258,15 @@ const ProjectDetailPage = () => {
       {/* Carousel for Images */}
       <div className="project-section">
         <h2>Gallery</h2>
-        <Carousel showThumbs={false} dynamicHeight>
-          <div>
-            <img src={projectData.image} alt="Project" />
-          </div>
-        </Carousel>
+        {projectData.galleryImages ? (
+          <ParallaxGallery images={projectData.galleryImages} />
+        ) : (
+          <Carousel showThumbs={false} dynamicHeight>
+            <div>
+              <img src={projectData.image} alt="Project" />
+            </div>
+          </Carousel>
+        )}
       </div>
     </div>
   );
