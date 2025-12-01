@@ -1,4 +1,5 @@
 import React from 'react';
+import { Document, Page, pdfjs } from 'react-pdf';
 import { useParams } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
 import Tilt from 'react-parallax-tilt';
@@ -7,6 +8,28 @@ import './ProjectDetailPage.css';
 import RonZalkoWebDesign from '../assests/Ron Zalko web design.jpg';
 import ronZalkoWireframe from '../assests/Ron-Zalko-Web-Design-Wireframe.pdf';
 import melodyBeats from '../assests/MelodyCard1.jpg';
+import melodyBeatsAlt from '../assests/MelodyCard2.jpg';
+import melody3d from '../assests/3D for melody.png';
+import melodyBeatsLogo from '../assests/Beats for melody.png';
+import melodyBusiness from '../assests/Buisness name for melody.png';
+import melodyEntertainment from '../assests/Entertainment Text Layer for melody.png';
+import melodyLogoBlue from '../assests/Melody Logo 2 blue for melody.png';
+import melodyLogoPoster from '../assests/Melody Logo poster cards for melody.png';
+import melodyCard1 from '../assests/Yomi-Badejo Timilehin_InDesign Exploration Buisness Card for melody.jpg';
+import melodyCard2 from '../assests/Yomi-Badejo Timilehin_InDesign Exploration Buisness Card2 for melody.jpg';
+import melodyCard3 from '../assests/Yomi-Badejo Timilehin_InDesign Exploration Buisness Card3 for melody.jpg';
+import melodyCard4 from '../assests/Yomi-Badejo Timilehin_InDesign Exploration Buisness Card4 for melody.jpg';
+import melodyCard5 from '../assests/Yomi-Badejo Timilehin_InDesign Exploration Buisness Card5 for melody.jpg';
+import melodyCard6 from '../assests/Yomi-Badejo Timilehin_InDesign Exploration Buisness Card6 for melody.jpg';
+import melodyPost1 from '../assests/Yomi-Badejo Timilehin_Indesign Exploration Post Cards for melody.jpg';
+import melodyPost2 from '../assests/Yomi-Badejo Timilehin_Indesign Exploration Post Cards2 for melody.jpg';
+import melodyPost3 from '../assests/Yomi-Badejo Timilehin_Indesign Exploration Post Cards3 for melody.jpg';
+import melodyPost4 from '../assests/Yomi-Badejo Timilehin_Indesign Exploration Post Cards4 for melody.jpg';
+import melodyPost5 from '../assests/Yomi-Badejo Timilehin_Indesign Exploration Post Cards5 for melody.jpg';
+import melodyPost6 from '../assests/Yomi-Badejo Timilehin_Indesign Exploration Post Cards6 for melody.jpg';
+import melodyBlue from '../assests/melody blue for melody.png';
+import melodyHeadphones from '../assests/melody head phones for melody.png';
+import melodyShape from '../assests/melody shape logo for melody.png';
 import melodyBeatsDocument from '../assests/melodyBeatsDocument.pdf';
 import scwCharity from '../assests/scwcharitywebpage.png';
 import scwWire1 from '../assests/SCW Charity Website Wireframe A 2_Page_01.jpg';
@@ -29,6 +52,8 @@ import astroPlaceholder from '../assests/AstorMatchlogo.jpg';
 import astroMatchPdf from '../assests/Astro-Match-App.pdf';
 import motionPlaceholder from '../assests/motion graphics.webp';
 import motionGraphicVideo from '../assests/Jujitsu_Kaisen_Intro_Bumper_Timilehin Yomi-Badejo_Final comp.mp4';
+
+pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 const ParallaxGallery = ({ images }) => {
   const containerRef = React.useRef(null);
@@ -106,6 +131,31 @@ const getProjectDataById = (id) => {
         "Iterated on designs based on client feedback.",
       ],
       technicalInfo: "Adobe Illustrator, Branding Strategy",
+      galleryImages: [
+        melodyBeats,
+        melody3d,
+        melodyBeatsLogo,
+        melodyBusiness,
+        melodyEntertainment,
+        melodyLogoBlue,
+        melodyLogoPoster,
+        melodyBeatsAlt,
+        melodyCard1,
+        melodyCard2,
+        melodyCard3,
+        melodyCard4,
+        melodyCard5,
+        melodyCard6,
+        melodyPost1,
+        melodyPost2,
+        melodyPost3,
+        melodyPost4,
+        melodyPost5,
+        melodyPost6,
+        melodyBlue,
+        melodyHeadphones,
+        melodyShape,
+      ],
     },
     {
       id: "3",
@@ -186,6 +236,9 @@ const getProjectDataById = (id) => {
 const ProjectDetailPage = () => {
   const { projectId } = useParams();
   const projectData = getProjectDataById(projectId);
+  const isMelody = projectData?.id === "2";
+  const [melodyNumPages, setMelodyNumPages] = React.useState(null);
+  const [melodyPdfError, setMelodyPdfError] = React.useState(null);
 
   if (!projectData) {
     return <p>Project not found</p>;
@@ -194,8 +247,45 @@ const ProjectDetailPage = () => {
   return (
     <div className="project-detail">
       {/* Hero Section */}
-      <div className="project-hero">
-        <img src={projectData.image} alt={projectData.title} className="project-image" />
+      <div className={`project-hero ${isMelody ? 'melody-hero' : ''}`}>
+        {isMelody ? (
+          <div className="melody-pdf-sticky">
+            <Document
+              file={projectData.pdf}
+              onLoadSuccess={({ numPages }) => setMelodyNumPages(numPages)}
+              onLoadError={() =>
+                setMelodyPdfError('Unable to preview PDF. Please use the download button.')
+              }
+              loading={<p className="project-doc-loading">Loading PDF...</p>}
+            >
+              {melodyNumPages
+                ? Array.from({ length: melodyNumPages }, (_, index) => (
+                    <Page
+                      key={index + 1}
+                      pageNumber={index + 1}
+                      renderTextLayer={false}
+                      renderAnnotationLayer={false}
+                    />
+                ))
+                : null}
+            </Document>
+            {melodyPdfError && (
+              <div className="project-doc-error">
+                {melodyPdfError}{' '}
+                <a
+                  href={projectData.pdf}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-doc-link inline"
+                >
+                  Open PDF in new tab
+                </a>
+              </div>
+            )}
+          </div>
+        ) : (
+          <img src={projectData.image} alt={projectData.title} className="project-image" />
+        )}
         <h1>{projectData.title}</h1>
         <h3>{projectData.technicalInfo}</h3>
       </div>

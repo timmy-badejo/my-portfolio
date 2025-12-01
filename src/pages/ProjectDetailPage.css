@@ -15,6 +15,32 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.melody-hero {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.melody-pdf-sticky {
+  position: sticky;
+  top: 80px;
+  max-height: 75vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  background: #fff;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+}
+
+.melody-pdf-sticky canvas {
+  width: 100% !important;
+  height: auto !important;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
 .project-hero h1 {
   font-size: 36px;
   color: #BCA58E;
@@ -133,6 +159,11 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
+.project-doc-error .project-doc-link.inline {
+  margin-left: 6px;
+  padding: 6px 10px;
+}
+
 .parallax-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -195,5 +226,13 @@
   .cards-container {
     flex-direction: column;
     align-items: center;
+  }
+
+  .melody-pdf-sticky {
+    max-height: 65vh;
+  }
+
+  .melody-sticky-gallery {
+    top: 64px;
   }
 }
