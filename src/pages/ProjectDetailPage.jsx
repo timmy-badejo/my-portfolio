@@ -1,9 +1,7 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
 import Tilt from 'react-parallax-tilt';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './ProjectDetailPage.css';
 import RonZalkoWebDesign from '../assests/Ron Zalko web design.jpg';
@@ -101,7 +99,6 @@ import astroMatch3 from '../assests/Astro-Match-App_Page_3.jpg';
 import astroMatch4 from '../assests/Astro-Match-App_Page_4.jpg';
 import motionPlaceholder from '../assests/motion graphics.webp';
 import motionGraphicVideo from '../assests/Jujitsu_Kaisen_Intro_Bumper_Timilehin Yomi-Badejo_Final comp.mp4';
-gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollTrigger);
 
 const ParallaxGallery = ({ images }) => {
@@ -334,39 +331,6 @@ const ProjectDetailPage = () => {
   const isTimmyCare = projectData?.id === "3";
   const isAstro = projectData?.id === "5";
 
-  const ronViewportRef = useRef(null);
-  const ronTrackRef = useRef(null);
-
-  useEffect(() => {
-    if (!isRon || !ronViewportRef.current || !ronTrackRef.current) return;
-
-    const viewport = ronViewportRef.current;
-    const track = ronTrackRef.current;
-
-    const updatePosition = (self) => {
-      const trackHeight = track.scrollHeight;
-      const viewHeight = viewport.offsetHeight;
-      const maxMove = Math.max(0, trackHeight - viewHeight);
-      gsap.to(track, { y: -maxMove * self.progress, ease: "none", overwrite: true });
-    };
-
-    const trigger = ScrollTrigger.create({
-      trigger: viewport,
-      start: "top center",
-      end: () => `+=${track.scrollHeight}`,
-      scrub: true,
-      onUpdate: updatePosition,
-    });
-
-    const handleResize = () => trigger.refresh();
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      trigger.kill();
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [isRon]);
-
   if (!projectData) {
     return <p>Project not found</p>;
   }
@@ -441,8 +405,8 @@ const ProjectDetailPage = () => {
           </div>
         ) : isRon ? (
           <div className="ron-scroll-hero">
-            <div className="ron-scroll-viewport" ref={ronViewportRef}>
-              <div className="ron-scroll-track" ref={ronTrackRef}>
+            <div className="ron-scroll-viewport">
+              <div className="ron-scroll-track">
               {[
                 ronUiUx1,
                 ronUiUx2,
