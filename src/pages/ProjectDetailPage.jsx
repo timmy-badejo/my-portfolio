@@ -57,6 +57,7 @@ import scwWire12 from '../assests/SCW Charity Website Wireframe A 2_Page_12.jpg'
 import scwWire13 from '../assests/SCW Charity Website Wireframe A 2_Page_13.jpg';
 import timmyHairCare from '../assests/timmyhaircare4.jpg';
 import timmyHairCareDocument from '../assests/timmyHairCareDocument.pdf';
+import timmyCareMobilePdf from '../assests/TimmyCare Mobile app.pdf';
 import scwCharityDocument from '../assests/scwCharityDocument.pdf';
 import astroPlaceholder from '../assests/AstorMatchlogo.jpg';
 import astroMatchPdf from '../assests/Astro-Match-App.pdf';
@@ -181,9 +182,10 @@ const getProjectDataById = (id) => {
       id: "3",
       title: "TimmyCare App Redesign",
       image: timmyHairCare,
-      pdf: timmyHairCareDocument,
+      pdf: timmyCareMobilePdf,
       overview: "Redesigned TimmyCare Hair App to improve navigation and user engagement, making it user-friendly.",
       challenges: "Simplifying navigation while maintaining brand aesthetics and addressing inconsistent user feedback.",
+      outcome: "Delivered a cleaner interface with streamlined flows that reduced friction for booking and product discovery, lifting user satisfaction and retention metrics.",
       details: [
         "Redesigned app UI with a focus on simplicity.",
         "Enhanced user flows and wireframes using Figma.",
@@ -259,6 +261,7 @@ const ProjectDetailPage = () => {
   const projectData = getProjectDataById(projectId);
   const isMelody = projectData?.id === "2";
   const isScw = projectData?.id === "4";
+  const isTimmyCare = projectData?.id === "3";
 
   if (!projectData) {
     return <p>Project not found</p>;
@@ -267,7 +270,11 @@ const ProjectDetailPage = () => {
   return (
     <div className="project-detail">
       {/* Hero Section */}
-      <div className={`project-hero ${isMelody ? 'melody-hero' : ''} ${isScw ? 'scw-hero' : ''}`}>
+      <div
+        className={`project-hero ${isMelody ? 'melody-hero' : ''} ${isScw ? 'scw-hero' : ''} ${
+          isTimmyCare ? 'timmy-hero' : ''
+        }`}
+      >
         {isMelody ? (
           <div className="melody-pdf-sticky">
             <div className="melody-doc-images">
@@ -291,6 +298,24 @@ const ProjectDetailPage = () => {
                 </div>
               ))}
             </div>
+          </div>
+        ) : isTimmyCare ? (
+          <div className="timmy-scroll-hero">
+            <div className="timmy-scroll-viewport">
+              <object
+                data={projectData.pdf || timmyHairCareDocument}
+                type="application/pdf"
+                className="timmy-scroll-pdf"
+              >
+                <p>
+                  PDF preview not available.{" "}
+                  <a href={projectData.pdf || timmyHairCareDocument} target="_blank" rel="noreferrer">
+                    Open the TimmyCare case study
+                  </a>
+                </p>
+              </object>
+            </div>
+            <span className="timmy-scroll-hint">Scroll to browse the TimmyCare case study</span>
           </div>
         ) : isScw ? (
           <div className="scw-scroll-hero">
