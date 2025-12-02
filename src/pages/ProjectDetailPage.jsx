@@ -6,6 +6,18 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './ProjectDetailPage.css';
 import RonZalkoWebDesign from '../assests/Ron Zalko web design.jpg';
 import ronZalkoWireframe from '../assests/Ui:Ux RonZalko-WebDesign.pdf';
+import ronWire1 from '../assests/Ron-Zalko-Web-Design-Wireframe_Page_01.jpg';
+import ronWire2 from '../assests/Ron-Zalko-Web-Design-Wireframe_Page_02.jpg';
+import ronWire3 from '../assests/Ron-Zalko-Web-Design-Wireframe_Page_03.jpg';
+import ronWire4 from '../assests/Ron-Zalko-Web-Design-Wireframe_Page_04.jpg';
+import ronWire5 from '../assests/Ron-Zalko-Web-Design-Wireframe_Page_05.jpg';
+import ronWire6 from '../assests/Ron-Zalko-Web-Design-Wireframe_Page_06.jpg';
+import ronWire7 from '../assests/Ron-Zalko-Web-Design-Wireframe_Page_07.jpg';
+import ronWire8 from '../assests/Ron-Zalko-Web-Design-Wireframe_Page_08.jpg';
+import ronWire9 from '../assests/Ron-Zalko-Web-Design-Wireframe_Page_09.jpg';
+import ronWire10 from '../assests/Ron-Zalko-Web-Design-Wireframe_Page_10.jpg';
+import ronWire11 from '../assests/Ron-Zalko-Web-Design-Wireframe_Page_11.jpg';
+import ronWire12 from '../assests/Ron-Zalko-Web-Design-Wireframe_Page_12.jpg';
 import melodyBeats from '../assests/MelodyCard1.jpg';
 import melodyBeatsAlt from '../assests/MelodyCard2.jpg';
 import melody3d from '../assests/3D for melody.png';
@@ -111,7 +123,7 @@ const ParallaxGallery = ({ images }) => {
   }, []);
 
   return (
-    <div className="parallax-gallery" ref={containerRef}>
+        <div className="parallax-gallery" ref={containerRef}>
       {images.map((image, index) => (
         <Tilt
           key={index}
@@ -151,23 +163,18 @@ const getProjectDataById = (id) => {
         "Incorporated modern design aesthetics for improved engagement.",
       ],
       galleryImages: [
-        ronUiUx1,
-        ronUiUx2,
-        ronUiUx3,
-        ronUiUx4,
-        ronUiUx5,
-        ronUiUx6,
-        ronUiUx7,
-        ronUiUx8,
-        ronUiUx9,
-        ronUiUx10,
-        ronUiUx11,
-        ronUiUx12,
-        ronUiUx13,
-        ronUiUx14,
-        ronUiUx15,
-        ronUiUx16,
-        ronUiUx17,
+        ronWire1,
+        ronWire2,
+        ronWire3,
+        ronWire4,
+        ronWire5,
+        ronWire6,
+        ronWire7,
+        ronWire8,
+        ronWire9,
+        ronWire10,
+        ronWire11,
+        ronWire12,
       ],
       technicalInfo: "UI/UX Design, Web Development, Accessibility Improvements",
     },
