@@ -2,6 +2,8 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
 import Tilt from 'react-parallax-tilt';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './ProjectDetailPage.css';
 import RonZalkoWebDesign from '../assests/Ron Zalko web design.jpg';
@@ -332,10 +334,6 @@ const ProjectDetailPage = () => {
   const ronViewportRef = React.useRef(null);
   const ronTrackRef = React.useRef(null);
 
-  if (!projectData) {
-    return <p>Project not found</p>;
-  }
-
   React.useEffect(() => {
     if (!isRon || !ronViewportRef.current || !ronTrackRef.current) return;
 
@@ -347,8 +345,6 @@ const ProjectDetailPage = () => {
       const viewportHeight = viewport.offsetHeight;
       return Math.max(0, trackHeight - viewportHeight);
     };
-
-    const maxMove = calcMaxMove();
 
     const tween = gsap.fromTo(
       track,
@@ -378,6 +374,10 @@ const ProjectDetailPage = () => {
       tween.kill();
     };
   }, [isRon]);
+
+  if (!projectData) {
+    return <p>Project not found</p>;
+  }
 
   return (
     <div className="project-detail">
