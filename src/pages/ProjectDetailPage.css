@@ -181,6 +181,66 @@
   text-transform: uppercase;
 }
 
+.ron-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.ron-scroll-hero {
+  position: sticky;
+  top: 80px;
+  width: min(1080px, 100%);
+  max-height: 78vh;
+  padding: 14px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #fff 0%, #fdf8f1 100%);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+  border: 2px solid rgba(188, 165, 142, 0.3);
+}
+
+.ron-scroll-viewport {
+  max-height: 64vh;
+  overflow-y: auto;
+  padding: 10px;
+  border-radius: 12px;
+  background: #fff;
+  scroll-behavior: smooth;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.ron-scroll-pdf {
+  width: 100%;
+  height: 64vh;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.ron-scroll-viewport::-webkit-scrollbar {
+  width: 8px;
+}
+
+.ron-scroll-viewport::-webkit-scrollbar-track {
+  background: rgba(188, 165, 142, 0.12);
+  border-radius: 999px;
+}
+
+.ron-scroll-viewport::-webkit-scrollbar-thumb {
+  background: #bca58e;
+  border-radius: 999px;
+}
+
+.ron-scroll-hint {
+  display: block;
+  margin-top: 8px;
+  font-size: 12px;
+  color: #b4803a;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
 .project-hero h1 {
   font-size: 36px;
   color: #BCA58E;
@@ -485,6 +545,19 @@
   }
 
   .timmy-scroll-pdf {
+    height: 58vh;
+  }
+
+  .ron-scroll-hero {
+    top: 64px;
+    max-height: 70vh;
+  }
+
+  .ron-scroll-viewport {
+    max-height: 58vh;
+  }
+
+  .ron-scroll-pdf {
     height: 58vh;
   }
 }

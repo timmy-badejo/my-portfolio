@@ -5,7 +5,7 @@ import Tilt from 'react-parallax-tilt';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './ProjectDetailPage.css';
 import RonZalkoWebDesign from '../assests/Ron Zalko web design.jpg';
-import ronZalkoWireframe from '../assests/Ron-Zalko-Web-Design-Wireframe.pdf';
+import ronZalkoWireframe from '../assests/Ui:Ux RonZalko-WebDesign.pdf';
 import melodyBeats from '../assests/MelodyCard1.jpg';
 import melodyBeatsAlt from '../assests/MelodyCard2.jpg';
 import melody3d from '../assests/3D for melody.png';
@@ -61,6 +61,18 @@ import timmyCareMobilePdf from '../assests/TimmyCare Mobile app.pdf';
 import timmyHairCare1 from '../assests/timmyhaircare1.jpg';
 import timmyHairCare2 from '../assests/timmyhaircare2.jpg';
 import timmyHairCare3 from '../assests/timmyhaircare3.jpg';
+import ronWire1 from '../assests/Ron-Zalko-Web-Design-Wireframe_Page_01.jpg';
+import ronWire2 from '../assests/Ron-Zalko-Web-Design-Wireframe_Page_02.jpg';
+import ronWire3 from '../assests/Ron-Zalko-Web-Design-Wireframe_Page_03.jpg';
+import ronWire4 from '../assests/Ron-Zalko-Web-Design-Wireframe_Page_04.jpg';
+import ronWire5 from '../assests/Ron-Zalko-Web-Design-Wireframe_Page_05.jpg';
+import ronWire6 from '../assests/Ron-Zalko-Web-Design-Wireframe_Page_06.jpg';
+import ronWire7 from '../assests/Ron-Zalko-Web-Design-Wireframe_Page_07.jpg';
+import ronWire8 from '../assests/Ron-Zalko-Web-Design-Wireframe_Page_08.jpg';
+import ronWire9 from '../assests/Ron-Zalko-Web-Design-Wireframe_Page_09.jpg';
+import ronWire10 from '../assests/Ron-Zalko-Web-Design-Wireframe_Page_10.jpg';
+import ronWire11 from '../assests/Ron-Zalko-Web-Design-Wireframe_Page_11.jpg';
+import ronWire12 from '../assests/Ron-Zalko-Web-Design-Wireframe_Page_12.jpg';
 import scwCharityDocument from '../assests/scwCharityDocument.pdf';
 import astroPlaceholder from '../assests/AstorMatchlogo.jpg';
 import astroMatchPdf from '../assests/Astro-Match-App.pdf';
@@ -104,8 +116,8 @@ const ParallaxGallery = ({ images }) => {
             className="parallax-card"
             data-speed={index % 2 === 0 ? 0.12 : 0.18}
           >
-            <img src={image} alt={`SCW Charity Wireframe ${index + 1}`} />
-            <span className="parallax-label">Wireframe {index + 1}</span>
+            <img src={image} alt={`Gallery image ${index + 1}`} />
+            <span className="parallax-label">Slide {index + 1}</span>
           </div>
         </Tilt>
       ))}
@@ -123,10 +135,25 @@ const getProjectDataById = (id) => {
       pdf: ronZalkoWireframe,
       overview: "Redesigned Ron Zalko Fitness & Yoga website to enhance user experience and provide seamless navigation.",
       challenges: "Overcame challenges in integrating complex booking forms, enhancing accessibility, and optimizing loading times.",
+      outcome: "Shipped a modernized experience that increased session duration and simplified class discovery, giving members clearer paths to book sessions.",
       details: [
         "Implemented an intuitive navigation system.",
         "Enhanced accessibility for users with disabilities.",
         "Incorporated modern design aesthetics for improved engagement.",
+      ],
+      galleryImages: [
+        ronWire1,
+        ronWire2,
+        ronWire3,
+        ronWire4,
+        ronWire5,
+        ronWire6,
+        ronWire7,
+        ronWire8,
+        ronWire9,
+        ronWire10,
+        ronWire11,
+        ronWire12,
       ],
       technicalInfo: "UI/UX Design, Web Development, Accessibility Improvements",
     },
@@ -268,6 +295,7 @@ const getProjectDataById = (id) => {
 const ProjectDetailPage = () => {
   const { projectId } = useParams();
   const projectData = getProjectDataById(projectId);
+  const isRon = projectData?.id === "1";
   const isMelody = projectData?.id === "2";
   const isScw = projectData?.id === "4";
   const isTimmyCare = projectData?.id === "3";
@@ -282,7 +310,7 @@ const ProjectDetailPage = () => {
       <div
         className={`project-hero ${isMelody ? 'melody-hero' : ''} ${isScw ? 'scw-hero' : ''} ${
           isTimmyCare ? 'timmy-hero' : ''
-        }`}
+        } ${isRon ? 'ron-hero' : ''}`}
       >
         {isMelody ? (
           <div className="melody-pdf-sticky">
@@ -325,6 +353,24 @@ const ProjectDetailPage = () => {
               </object>
             </div>
             <span className="timmy-scroll-hint">Scroll to browse the TimmyCare case study</span>
+          </div>
+        ) : isRon ? (
+          <div className="ron-scroll-hero">
+            <div className="ron-scroll-viewport">
+              <object
+                data={projectData.pdf || ronZalkoWireframe}
+                type="application/pdf"
+                className="ron-scroll-pdf"
+              >
+                <p>
+                  PDF preview not available.{" "}
+                  <a href={projectData.pdf || ronZalkoWireframe} target="_blank" rel="noreferrer">
+                    Open the Ron Zalko case study
+                  </a>
+                </p>
+              </object>
+            </div>
+            <span className="ron-scroll-hint">Scroll to browse the Ron Zalko case study</span>
           </div>
         ) : isScw ? (
           <div className="scw-scroll-hero">
