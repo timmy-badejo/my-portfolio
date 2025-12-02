@@ -58,6 +58,9 @@ import scwWire13 from '../assests/SCW Charity Website Wireframe A 2_Page_13.jpg'
 import timmyHairCare from '../assests/timmyhaircare4.jpg';
 import timmyHairCareDocument from '../assests/timmyHairCareDocument.pdf';
 import timmyCareMobilePdf from '../assests/TimmyCare Mobile app.pdf';
+import timmyHairCare1 from '../assests/timmyhaircare1.jpg';
+import timmyHairCare2 from '../assests/timmyhaircare2.jpg';
+import timmyHairCare3 from '../assests/timmyhaircare3.jpg';
 import scwCharityDocument from '../assests/scwCharityDocument.pdf';
 import astroPlaceholder from '../assests/AstorMatchlogo.jpg';
 import astroMatchPdf from '../assests/Astro-Match-App.pdf';
@@ -190,6 +193,12 @@ const getProjectDataById = (id) => {
         "Redesigned app UI with a focus on simplicity.",
         "Enhanced user flows and wireframes using Figma.",
         "Improved app responsiveness across devices.",
+      ],
+      galleryImages: [
+        timmyHairCare,
+        timmyHairCare1,
+        timmyHairCare2,
+        timmyHairCare3,
       ],
       technicalInfo: "Figma, Prototyping, Wireframing",
     },
