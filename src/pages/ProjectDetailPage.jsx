@@ -135,7 +135,7 @@ const getProjectDataById = (id) => {
       pdf: ronZalkoWireframe,
       overview: "Redesigned Ron Zalko Fitness & Yoga website to enhance user experience and provide seamless navigation.",
       challenges: "Overcame challenges in integrating complex booking forms, enhancing accessibility, and optimizing loading times.",
-      outcome: "Shipped a modernized experience that increased session duration and simplified class discovery, giving members clearer paths to book sessions.",
+      outcome: "Delivered a presentation-ready UX case study with annotated wireframes and a clearer booking path for class review.",
       details: [
         "Implemented an intuitive navigation system.",
         "Enhanced accessibility for users with disabilities.",
@@ -163,7 +163,7 @@ const getProjectDataById = (id) => {
       image: melodyBeats,
       overview: "Created cohesive branding for Melody Beats through logo and business card design to establish a strong visual identity.",
       challenges: "Balancing creative design with strict client requirements and tight deadlines.",
-      outcome: "Rolled out a unified brand system and print-ready assets that boosted recognizability across cards, posters, and digital touchpoints.",
+      outcome: "Packaged a cohesive brand system with mockups and print-ready files that met critique goals for the course.",
       details: [
         "Designed vibrant logos using Adobe Illustrator.",
         "Developed branding strategy and collateral.",
@@ -215,7 +215,7 @@ const getProjectDataById = (id) => {
       pdf: timmyCareMobilePdf,
       overview: "Redesigned TimmyCare Hair App to improve navigation and user engagement, making it user-friendly.",
       challenges: "Simplifying navigation while maintaining brand aesthetics and addressing inconsistent user feedback.",
-      outcome: "Delivered a cleaner interface with streamlined flows that reduced friction for booking and product discovery, lifting user satisfaction and retention metrics.",
+      outcome: "Produced an interactive prototype and usability summary showing smoother booking and product discovery for the course submission.",
       details: [
         "Redesigned app UI with a focus on simplicity.",
         "Enhanced user flows and wireframes using Figma.",
@@ -236,7 +236,7 @@ const getProjectDataById = (id) => {
       pdf: scwCharityDocument,
       overview: "Developed a user-focused website to promote social welfare initiatives and community outreach.",
       challenges: "Limited resources required creative problem-solving to deliver impactful results and ensure stakeholder satisfaction.",
-      outcome: "Launched a responsive site with streamlined donation pathways and clear program storytelling, increasing engagement from volunteers and donors.",
+      outcome: "Published a responsive prototype with accessible layouts and a storytelling deck for the outreach case study rubric.",
       details: [
         "Developed responsive layouts for mobile and desktop.",
         "Integrated CMS for easy content management.",
@@ -266,6 +266,7 @@ const getProjectDataById = (id) => {
       pdf: astroMatchPdf,
       overview: "Designed a swipe-based astrology dating experience that pairs users with matches based on compatibility scores and shared interests.",
       challenges: "Keeping the brand playful while ensuring onboarding, compatibility summaries, and chat flows stay intuitive on small screens.",
+      outcome: "Documented compatibility flows and motion cues in a polished case study prepared for class critique.",
       details: [
         "Created mid- and high-fidelity flows for onboarding, matching, and messaging.",
         "Documented compatibility logic, UI states, and motion cues for developer handoff.",
@@ -280,6 +281,7 @@ const getProjectDataById = (id) => {
       video: motionGraphicVideo,
       overview: "Produced a fast-paced anime-inspired intro bumper with kinetic typography, lighting, and camera moves.",
       challenges: "Balancing legibility at high speed while syncing animation beats to audio cues and keeping export quality high.",
+      outcome: "Rendered a web-optimized bumper that matched storyboard beats and playback requirements for the motion assignment.",
       details: [
         "Storyboarded timing beats to lock pacing before heading into After Effects.",
         "Animated typography, particle bursts, and camera sweeps to build momentum.",

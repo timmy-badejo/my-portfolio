@@ -1,20 +1,23 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import {
   FaGraduationCap, FaBriefcase, FaLightbulb, FaMusic, FaFilm, FaChurch, FaCog,
   FaPaintBrush, FaUserEdit, FaBullhorn, FaComments, FaFont, FaHeadset, FaPenNib,
   FaLaptopCode, FaBoxOpen, FaPrint, FaCameraRetro, FaTasks, FaCode, FaEdit
 } from 'react-icons/fa';
-import HeroSection from '../components/HeroSection';
-import AboutHeroComposite from "../components/AboutHeroComposite";
 import {
   SiHtml5, SiJavascript, SiReact, SiAdobexd,
   SiAdobephotoshop, SiAdobeillustrator
 } from 'react-icons/si';
 import { Tilt } from 'react-tilt';
 import profileImage from '../assests/profile_image.jpg';
+import ideaIcon from '../assests/idea.svg';
+import prototypeWire from '../assests/prototypewireframe.png';
+import webdevIcon from '../assests/webdev.png';
 import './AboutMePage.css';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+gsap.registerPlugin(ScrollTrigger);
 
 
 
@@ -51,9 +54,11 @@ const getSkillIcon = (skill, size = 40) => {
 const AboutMePage = () => {
   const nameRef = useRef(null);
   const titleRef = useRef(null);
-  const coreValuesContainerRef = useRef(null);
-  // Declare currentCoreIndex only once.
-  const [currentCoreIndex, setCurrentCoreIndex] = useState(0);
+  const coreStackRefs = useRef([]);
+  const eduRefs = useRef([]);
+  const expRefs = useRef([]);
+  const storyRefs = useRef([]);
+  const skillsRef = useRef(null);
 
   const profileData = {
     name: "Timilehin Yomi-Badejo",
@@ -187,147 +192,272 @@ const AboutMePage = () => {
     ]
   };
 
+  const storyArc = [
+    {
+      title: "Origin — How I Got Here",
+      text: "I’ve always been that person who loves making things look good and work smoothly. That curiosity led me into BCIT’s New Media Design & Web Development program, where I’ve been building a foundation in UX/UI, front-end development, and digital design. Along the way, I’ve picked up skills in React/React Native, motion and visual design, and learned how much I enjoy turning messy ideas into clear, interactive experiences.",
+      badge: "Foundations",
+      visual: ideaIcon,
+    },
+    {
+      title: "Right Now — What I’m Building",
+      text: "I’m in the final stretch of my diploma, polishing my portfolio and shipping projects that feel like real products, not just assignments. Right now I’m focusing on Astro-Match, an astrology-themed matchmaking app that combines UI design, React Native development, and data-driven features like compatibility logic and favorites. I’m also refining my personal brand and case studies so everything—from code to visuals—shows how I think, design, test, and iterate.",
+      badge: "In Progress",
+      visual: prototypeWire,
+    },
+    {
+      title: "What’s Next — Where I’m Heading",
+      text: "Next, I’m aiming for an internship or junior role where I can grow as a digital designer and front-end developer, ideally in a team that values thoughtful UX, clean interfaces, and experimentation. I want to keep leveling up in interaction design, motion, and product thinking while contributing to real-world apps and experiences. Long term, I see myself leading or co-creating products that sit at the intersection of design, storytelling, and technology.",
+      badge: "Next Steps",
+      visual: webdevIcon,
+    },
+  ];
+
   useEffect(() => {
     // Animate hero name & title
     const tl = gsap.timeline();
     tl.fromTo(
       nameRef.current,
-      { opacity: 0, y: -50 },
-      { opacity: 1, y: 0, duration: 2, ease: "power4.out" }
+      { opacity: 0, y: -40 },
+      { opacity: 1, y: 0, duration: 1.2, ease: "power3.out" }
     );
     gsap.fromTo(
       titleRef.current,
-      { opacity: 0, x: -50 },
-      { opacity: 1, x: 0, duration: 1.5, ease: "elastic.out(1, 0.5)" }
+      { opacity: 0, x: -30 },
+      { opacity: 1, x: 0, duration: 1, ease: "power2.out", delay: 0.2 }
     );
+  }, []);
 
-    // Animate floating circles inside hero container
-    gsap.to('.ap-floating-circle', {
-      x: "random(-150,150)",
-      y: "random(-150,150)",
-      repeat: -1,
-      yoyo: true,
-      duration: 4,
-      ease: "power1.inOut"
+  useEffect(() => {
+    if (!storyRefs.current.length) return;
+
+    gsap.set(storyRefs.current, (card, i) => ({
+      y: i * 28,
+      scale: 1 - i * 0.06,
+      opacity: 0,
+      rotateX: -6,
+    }));
+
+    gsap.to(storyRefs.current, {
+      opacity: 1,
+      rotateX: 0,
+      y: (i) => i * 18,
+      scale: (i) => 1 - i * 0.03,
+      ease: "power3.out",
+      stagger: 0.12,
+      scrollTrigger: {
+        trigger: ".ap-story-arc",
+        start: "top 70%",
+        end: "bottom 20%",
+        scrub: true,
+      },
     });
   }, []);
 
-  // Auto-rotate the Core Values flip card every 8 seconds
   useEffect(() => {
-    const interval = setInterval(() => {
-      gsap.to(coreValuesContainerRef.current, {
-        rotationY: 90,
-        duration: 0.5,
-        ease: "power1.in",
-        onComplete: () => {
-          setCurrentCoreIndex((prev) => (prev + 1) % profileData.coreValues.length);
-          gsap.fromTo(coreValuesContainerRef.current, { rotationY: -90 }, { rotationY: 0, duration: 0.5, ease: "power1.out" });
-        }
+    const container = skillsRef.current;
+    if (!container) return;
+
+    const cards = container.querySelectorAll('.ap-skill-card');
+    const handleScroll = () => {
+      const rect = container.getBoundingClientRect();
+      const progress = gsap.utils.clamp(
+        0,
+        1,
+        (window.innerHeight - rect.top) / (window.innerHeight + rect.height)
+      );
+
+      cards.forEach((card, idx) => {
+        const depth = -20 * (idx % 6);
+        const tilt = (progress * 16 - 8) + (idx % 2 ? 3 : -3);
+        const yShift = -10 * progress * (idx % 3);
+        const scale = 0.9 + progress * 0.1;
+        card.style.transform = `translateZ(${depth}px) rotateX(${tilt}deg) rotateY(${tilt / 2}deg) translateY(${yShift}px) scale(${scale})`;
+        card.style.opacity = 0.5 + progress * 0.5;
       });
-    }, 8000);
-    return () => clearInterval(interval);
-  }, [profileData.coreValues.length]);
+    };
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const edCards = eduRefs.current;
+    const exCards = expRefs.current;
+    if (!edCards.length && !exCards.length) return;
+
+    const animateStack = (cards, trigger) => {
+      if (!cards.length) return;
+      gsap.set(cards, (card, i) => ({
+        y: i * 24,
+        scale: 1 - i * 0.05,
+        opacity: 0,
+        rotate: i % 2 ? -2 : 2,
+      }));
+
+      gsap.to(cards, {
+        opacity: 1,
+        y: (i) => i * 12,
+        scale: (i) => 1 - i * 0.02,
+        rotate: 0,
+        ease: "power3.out",
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger,
+          start: "top 75%",
+        },
+      });
+    };
+
+    animateStack(edCards, ".ap-edu-exp-grid");
+    animateStack(exCards, ".ap-edu-exp-grid");
+  }, []);
+
+  useEffect(() => {
+    const cards = coreStackRefs.current;
+    if (!cards.length) return;
+
+    gsap.set(cards, (card, i) => ({
+      y: i * 20,
+      scale: 1 - i * 0.04,
+      opacity: 0,
+      rotateX: -8,
+    }));
+
+    gsap.to(cards, {
+      opacity: 1,
+      rotateX: 0,
+      y: (i) => i * 10,
+      scale: (i) => 1 - i * 0.015,
+      ease: "power3.out",
+      stagger: 0.12,
+      scrollTrigger: {
+        trigger: ".ap-core-values-grid",
+        start: "top 70%",
+      },
+    });
+  }, []);
 
   return (
     <div className="ap-about-me-page">
-      {/* Shared Hero Section */}
-<HeroSection />
-{/* Composite hero: profile + circles + marquee + about text */}
-    <AboutHeroComposite />
-
       <section className="ap-hero-section">
-  <div className="ap-hero-container">
-    <div className="ap-floating-circles-container">
-      {[...Array(12)].map((_, index) => (
-        <div
-          key={index}
-          className="ap-floating-circle"
-          style={{
-            backgroundColor: index % 2 === 0 ? "#310000" : "#BCA58E",
-            width: `${Math.random() * 80 + 40}px`,
-            height: `${Math.random() * 80 + 40}px`,
-          }}
-        ></div>
-      ))}
-    </div>
-
-    <h1 ref={nameRef}>{profileData.name}</h1>
-    <p ref={titleRef}>{profileData.title}</p>
-
-    <Tilt>
-      <img src={profileImage} alt="Profile" className="profile-img" />
-    </Tilt>
-  </div>
-</section>
+        <div className="ap-hero-grid">
+          <div className="ap-hero-copy">
+            <p className="ap-hero-kicker">About Me</p>
+            <h1 ref={nameRef}>{profileData.name}</h1>
+            <p ref={titleRef} className="ap-hero-title">{profileData.title}</p>
+            <p className="ap-hero-bio">
+              Creative and disciplined designer/developer crafting interfaces, motion, and brand systems that make digital products feel polished and human.
+            </p>
+            <div className="ap-hero-pills">
+              <span>UI/UX</span>
+              <span>Front-end</span>
+              <span>Motion</span>
+              <span>Brand Systems</span>
+            </div>
+          </div>
+          <div className="ap-hero-visual">
+            <div className="ap-hero-orb"></div>
+            <Tilt options={{ max: 12, scale: 1.02 }}>
+              <img src={profileImage} alt="Profile" className="ap-hero-img" />
+            </Tilt>
+          </div>
+        </div>
+      </section>
 
       {/* EDUCATION & EXPERIENCE SECTION */}
       <section className="ap-edu-exp-section">
-        <div className="ap-edu-exp-container">
-          {/* Education Column */}
-          <div className="ap-edu-column">
-            <h2 className="ap-section-title">My Education</h2>
+        <div className="ap-edu-exp-head">
+          <h2 className="ap-section-title">Education & Experience</h2>
+          <p>Coursework, client work, and roles that shaped how I build and design.</p>
+        </div>
+        <div className="ap-edu-exp-grid">
+          <div className="ap-edu-stack">
             {profileData.education.map((edu, index) => (
-              <div key={index} className="ap-edu-item">
-                <Tilt>
-                  <div className="ap-edu-icon">
-                    <FaGraduationCap size={40} />
-                  </div>
-                </Tilt>
-                <div className="ap-edu-content">
-                  <h3>{edu.degree}</h3>
-                  <p className="ap-edu-date">{edu.date}</p>
-                  <p>{edu.school}</p>
-                  <p>{edu.details}</p>
+              <div
+                key={index}
+                className="ap-edu-card"
+                ref={(el) => (eduRefs.current[index] = el)}
+              >
+                <div className="ap-edu-top">
+                  <span className="ap-pill">Education</span>
+                  <span className="ap-edu-date">{edu.date}</span>
                 </div>
+                <h3>{edu.degree}</h3>
+                <p className="ap-edu-school">{edu.school}</p>
+                <p className="ap-edu-details">{edu.details}</p>
               </div>
             ))}
           </div>
-          {/* Experience Column */}
-          <div className="ap-exp-column">
-            <h2 className="ap-section-title">My Experience</h2>
+          <div className="ap-exp-stack">
             {profileData.experience.map((exp, index) => (
-              <div key={index} className="ap-exp-item">
-                <Tilt>
-                  <div className="ap-exp-icon">
-                    <FaBriefcase size={40} />
-                  </div>
-                </Tilt>
-                <div className="ap-exp-content">
-                  <h3>{exp.role}</h3>
-                  <p className="ap-exp-company">{exp.company}</p>
-                  <p className="ap-exp-date">{exp.date} - {exp.location}</p>
-                  <p>{exp.description}</p>
-                  <p><strong>Skills:</strong> {exp.skills.join(', ')}</p>
+              <div
+                key={index}
+                className="ap-exp-card"
+                ref={(el) => (expRefs.current[index] = el)}
+              >
+                <div className="ap-exp-top">
+                  <span className="ap-pill ap-pill-warm">Experience</span>
+                  <span className="ap-exp-date">{exp.date}</span>
                 </div>
+                <h3>{exp.role}</h3>
+                <p className="ap-exp-company">{exp.company}</p>
+                <p className="ap-exp-location">{exp.location}</p>
+                <p className="ap-exp-description">{exp.description}</p>
+                <p className="ap-exp-skills">
+                  <strong>Skills:</strong> {exp.skills.join(', ')}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CORE VALUES FLIP CARD CAROUSEL SECTION */}
+      {/* CORE VALUES STACK */}
       <section className="ap-core-values-section">
-        <h2 className="ap-core-values-title">My Core Values as a Designer & Developer</h2>
-        <p className="ap-core-values-subtitle">
-          As a digital designer and developer, I strive to embody certain values that guide my work and fuel my creativity. These values are at the heart of everything I do, whether I’m building a sleek portfolio, developing an engaging app, or crafting user-centered designs.
-        </p>
-        <div className="ap-core-value-slider">
-          <Tilt options={{ max: 10, scale: 1.02 }}>
-            <div className="ap-core-value-card" ref={coreValuesContainerRef}>
-              <div className="ap-core-value-inner">
-                <div className="ap-core-value-front">
-                  <h3>{profileData.coreValues[currentCoreIndex].front}</h3>
-                </div>
-                <div className="ap-core-value-back">
-                  <p>{profileData.coreValues[currentCoreIndex].back}</p>
-                </div>
-              </div>
-            </div>
-          </Tilt>
+        <div className="ap-core-header">
+          <h2 className="ap-core-values-title">Core Values</h2>
+          <p className="ap-core-values-subtitle">
+            The principles that steer how I design, code, communicate, and ship.
+          </p>
         </div>
-        <p className="ap-core-values-conclusion">
-          These values shape my approach to every project I take on, driving me to create experiences that are not only visually stunning but also intuitive and effective.
-        </p>
+        <div className="ap-core-values-grid">
+          {profileData.coreValues.map((val, index) => (
+            <div
+              key={val.title}
+              className="ap-core-card"
+              ref={(el) => (coreStackRefs.current[index] = el)}
+            >
+              <div className="ap-core-tag">{val.title}</div>
+              <p>{val.back}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* STORY ARC SECTION */}
+      <section className="ap-story-arc">
+        <div className="ap-story-header">
+          <h2 className="ap-section-title">Story Arc</h2>
+          <p>Where I started, what I’m shipping now, and where I’m headed next.</p>
+        </div>
+        <div className="ap-story-stack">
+          {storyArc.map((story, index) => (
+            <div
+              key={story.title}
+              className="ap-story-card"
+              ref={(el) => (storyRefs.current[index] = el)}
+            >
+              <div className="ap-story-top">
+                <span className="ap-story-badge">{story.badge}</span>
+                <img src={story.visual} alt={story.title} className="ap-story-visual" />
+              </div>
+              <h3>{story.title}</h3>
+              <p>{story.text}</p>
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* FUN FACTS SECTION */}
@@ -351,7 +481,8 @@ const AboutMePage = () => {
       {/* SKILLS SECTION */}
       <section className="ap-skills-section">
         <h2 className="ap-section-title">Skills</h2>
-        <div className="ap-skills-container">
+        <p className="ap-skills-subtitle">A 3D stack of tools and practices I’m growing through BCIT projects and client work.</p>
+        <div className="ap-skills-container ap-skills-stack" ref={skillsRef}>
           {profileData.skills.map((skill, index) => (
             <Tilt key={index} options={{ max: 25 }}>
               <div className="ap-skill-card">

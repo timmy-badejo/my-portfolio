@@ -10,61 +10,84 @@
 
 /* HERO SECTION */
 .ap-hero-section {
-  position: relative;
-  margin-top: 100px;
-  background-color: #ffff;
-  color: #fff;
-  text-align: center;
-  padding: 50px 20px;
-  border-radius: 10px;
-  margin-bottom: 40px;
-  z-index: 1;
+  margin: 40px 0 60px;
 }
 
-.ap-hero-container {
-  position: relative;
+.ap-hero-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  align-items: center;
+  background: linear-gradient(135deg, #fff, #fdf3ec);
+  border: 2px solid rgba(188, 165, 142, 0.3);
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 18px 32px rgba(0, 0, 0, 0.1);
 }
 
-.ap-hero-container h1 {
-  font-size: 40px;
-  font-weight: bold;
-  margin: 10px 0;
+.ap-hero-copy h1 {
+  font-size: 2.6rem;
+  margin: 8px 0;
+  color: #310000;
+}
+
+.ap-hero-title {
+  font-size: 1.3rem;
+  color: #5a4738;
+  margin-bottom: 12px;
+}
+
+.ap-hero-kicker {
   text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #b4803a;
+  font-weight: 700;
+  font-size: 0.85rem;
 }
 
-.ap-hero-container p {
-  font-size: 20px;
-  margin: 10px 0;
+.ap-hero-bio {
+  color: #4a3b30;
+  line-height: 1.6;
+  margin-bottom: 16px;
 }
 
-.profile-img {
+.ap-hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.ap-hero-pills span {
+  background: #310000;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+}
+
+.ap-hero-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ap-hero-orb {
+  position: absolute;
   width: 220px;
   height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(188, 165, 142, 0.5), rgba(49, 0, 0, 0.2));
+  filter: blur(4px);
+}
+
+.ap-hero-img {
+  width: 240px;
+  height: 240px;
   object-fit: cover;
-  border-radius: 50%;
-  margin-top: 20px;
-}
-
-/* FLOATING CIRCLES INSIDE HERO */
-.ap-floating-circles-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: -1;
-}
-
-.ap-floating-circle {
-  position: absolute;
-  border-radius: 50%;
-  mix-blend-mode: multiply;
-  opacity: 0.9;
-  /* Initially center; GSAP will animate it randomly */
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  border-radius: 22px;
+  border: 3px solid #fff;
+  box-shadow: 0 18px 30px rgba(0,0,0,0.15);
 }
 
 /* 2-COLUMN EDUCATION & EXPERIENCE SECTION */
@@ -73,18 +96,86 @@
   width: 100%;
 }
 
-.ap-edu-exp-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 30px;
-  align-items: start;
+.ap-edu-exp-head {
+  text-align: center;
+  margin-bottom: 28px;
 }
 
-.ap-edu-column, .ap-exp-column {
-  background: #f9f9f9;
-  border-radius: 12px;
-  padding: 30px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+.ap-edu-exp-head p {
+  color: #555;
+  max-width: 720px;
+  margin: 0.5rem auto 0;
+}
+
+.ap-edu-exp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.ap-edu-stack,
+.ap-exp-stack {
+  position: relative;
+  perspective: 1200px;
+}
+
+.ap-edu-card,
+.ap-exp-card {
+  position: relative;
+  background: linear-gradient(135deg, #fff, #f8f2ec);
+  border: 2px solid rgba(188, 165, 142, 0.35);
+  border-radius: 14px;
+  padding: 18px 18px 16px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.12);
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
+}
+
+.ap-edu-top,
+.ap-exp-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.ap-pill {
+  background: #310000;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+}
+
+.ap-pill-warm {
+  background: #b4803a;
+}
+
+.ap-edu-date,
+.ap-exp-date {
+  color: #7a6757;
+  font-weight: 600;
+}
+
+.ap-edu-card h3,
+.ap-exp-card h3 {
+  margin: 6px 0;
+  color: #310000;
+}
+
+.ap-edu-school,
+.ap-exp-company,
+.ap-exp-location {
+  color: #5a4738;
+  margin: 0 0 6px;
+}
+
+.ap-edu-details,
+.ap-exp-description,
+.ap-exp-skills {
+  color: #444;
+  line-height: 1.5;
 }
 
 .ap-section-title {
@@ -95,160 +186,61 @@
 }
 
 /* EDUCATION ITEMS */
-.ap-edu-item {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 20px;
-}
-
-.ap-edu-icon {
-  margin-right: 15px;
-  color: #310000;
-  flex-shrink: 0;
-}
-
-.ap-edu-content h3 {
-  margin: 0;
-  font-size: 1.3rem;
-  font-weight: bold;
-  color: #310000;
-}
-
-.ap-edu-date {
-  font-size: 0.9rem;
-  color: #888;
-  margin: 5px 0;
-}
-
-/* EXPERIENCE ITEMS */
-.ap-exp-item {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 20px;
-}
-
-.ap-exp-icon {
-  margin-right: 15px;
-  color: #310000;
-  flex-shrink: 0;
-}
-
-.ap-exp-content h3 {
-  margin: 0;
-  font-size: 1.3rem;
-  font-weight: bold;
-  color: #310000;
-}
-
-.ap-exp-company {
-  font-size: 0.9rem;
-  font-style: italic;
-  color: #666;
-}
-
-.ap-exp-date {
-  font-size: 0.9rem;
-  color: #888;
-  margin: 5px 0;
-}
-
-/* CORE VALUES FLIP CARD CAROUSEL SECTION */
 .ap-core-values-section {
-  margin: 60px 0;
+  margin: 70px 0;
+}
+
+.ap-core-header {
   text-align: center;
-  position: relative;
+  margin-bottom: 26px;
 }
 
 .ap-core-values-title {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
+  font-size: 2.2rem;
+  margin-bottom: 8px;
   text-transform: uppercase;
   color: #310000;
 }
 
 .ap-core-values-subtitle {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-  color: #666;
-  max-width: 800px;
-  margin: 0 auto 30px auto;
-}
-
-/* thIS SLIDER DISPLAY ONE CARD AT A TIME, CENNTERED */
-
-.ap-core-value-slider {
-  margin: 0 auto;
-  width: 320px;
-  perspective: 1000px;
-}
-
-.ap-core-values-container {
-  display: flex;
-  gap: 20px;
-  white-space: nowrap;
-  overflow: hidden;
-  width: max-content;
+  font-size: 1.05rem;
+  color: #555;
+  max-width: 760px;
   margin: 0 auto;
 }
 
-
-
-.ap-core-value-card {
-  background: transparent;
-  width: 300px;
-  height: 200px;
-  transition: transfrom 0.6s;
-  transform-style: preserve-3d;
-  
+.ap-core-values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  perspective: 1200px;
 }
 
-.ap-core-value-inner {
+.ap-core-card {
   position: relative;
-  width: 100%;
-  height: 100%;
-
+  background: linear-gradient(135deg, #fff, #f6eef2);
+  border: 2px solid rgba(49, 0, 0, 0.15);
+  border-radius: 14px;
+  padding: 16px 16px 14px;
+  box-shadow: 0 12px 26px rgba(0,0,0,0.1);
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
 }
 
-.ap-core-value-card:hover .ap-core-value-inner {
-  transform: rotateY(180deg);
+.ap-core-card p {
+  margin: 0;
+  color: #452b35;
+  line-height: 1.6;
 }
 
-.ap-core-value-front,
-.ap-core-value-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border: 2px solid #310000;
-  border-radius: 10px;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.ap-core-value-front {
-  background: #fff;
-  color: #310000;
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.ap-core-value-back {
+.ap-core-tag {
+  display: inline-block;
   background: #310000;
   color: #fff;
-  transform: rotateY(180deg);
+  padding: 8px 12px;
+  border-radius: 999px;
   font-size: 0.9rem;
-  line-height: 1.4;
-}
-
-.ap-core-values-conclusion {
-  font-size: 1.2rem;
-  margin-top: 20px;
-  color: #666;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-bottom: 8px;
 }
 
 /* FUN FACT SECTION */
@@ -296,6 +288,13 @@
   text-align: center;
 }
 
+.ap-skills-subtitle {
+  color: #555;
+  max-width: 640px;
+  margin: 0.4rem auto 1.8rem;
+  font-size: 1rem;
+}
+
 .ap-skills-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -303,6 +302,11 @@
   justify-content: center;
   margin-top: 2rem;
   width: 100%;
+}
+
+.ap-skills-stack {
+  perspective: 1200px;
+  transform-style: preserve-3d;
 }
 
 .ap-skill-card {
@@ -324,34 +328,101 @@
   box-shadow: 0 12px 24px rgba(0,0,0,0.2);
 }
 
+/* STORY ARC */
+.ap-story-arc {
+  margin: 70px 0;
+}
+
+.ap-story-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.ap-story-header p {
+  color: #555;
+  max-width: 720px;
+  margin: 0.5rem auto 0;
+}
+
+.ap-story-stack {
+  position: relative;
+  max-width: 960px;
+  margin: 0 auto;
+  perspective: 1400px;
+}
+
+.ap-story-card {
+  position: relative;
+  background: linear-gradient(135deg, #fff, #fdf3ec);
+  border: 2px solid rgba(188, 165, 142, 0.4);
+  border-radius: 16px;
+  padding: 22px 20px;
+  box-shadow: 0 18px 36px rgba(0,0,0,0.12);
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
+}
+
+.ap-story-card h3 {
+  margin: 12px 0 10px;
+  color: #310000;
+}
+
+.ap-story-card p {
+  color: #444;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.ap-story-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.ap-story-badge {
+  display: inline-block;
+  background: #310000;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.ap-story-visual {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.12));
+}
+
 /* RESPONSIVE MEDIA QUERIES */
 @media (max-width: 768px) {
-  .ap-hero-container h1 {
-    font-size: 30px;
-  }
-  .ap-hero-container p {
-    font-size: 16px;
-  }
-  .profile-img {
-    width: 180px;
-    height: 180px;
-  }
-  .ap-edu-exp-container {
+  .ap-hero-grid {
     grid-template-columns: 1fr;
+  }
+  .ap-hero-img {
+    width: 200px;
+    height: 200px;
   }
   .ap-section-title {
     font-size: 1.5rem;
-  }
-  .ap-edu-content h3, .ap-exp-content h3 {
-    font-size: 1.2rem;
-  }
-  .ap-edu-date, .ap-exp-date, .ap-exp-company {
-    font-size: 0.8rem;
   }
   .ap-fun-fact-container {
     grid-template-columns: 1fr;
   }
   .ap-skills-container {
     grid-template-columns: 1fr;
+  }
+
+  .ap-story-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ap-story-visual {
+    align-self: flex-end;
   }
 }
