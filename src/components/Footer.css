@@ -33,14 +33,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px; /* tighter spacing */
+  gap: 8px; /* tighter spacing */
+  margin-top: 8px;
 }
 
 .social-icon {
   color: white; /* Default color of icons */
-  font-size: 18px; /* Match closer to logo visual weight */
+  font-size: 16px; /* Smaller to stay subtle */
   transition: transform 0.2s ease, color 0.3s ease, background 0.2s ease, border 0.2s ease;
-  padding: 5px;
+  padding: 4px;
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.25);
   background: rgba(255, 255, 255, 0.08);

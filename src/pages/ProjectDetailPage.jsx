@@ -76,6 +76,10 @@ import ronWire12 from '../assests/Ron-Zalko-Web-Design-Wireframe_Page_12.jpg';
 import scwCharityDocument from '../assests/scwCharityDocument.pdf';
 import astroPlaceholder from '../assests/AstorMatchlogo.jpg';
 import astroMatchPdf from '../assests/Astro-Match-App.pdf';
+import astroMatch1 from '../assests/Astro-Match-App_Page_1.jpg';
+import astroMatch2 from '../assests/Astro-Match-App_Page_2.jpg';
+import astroMatch3 from '../assests/Astro-Match-App_Page_3.jpg';
+import astroMatch4 from '../assests/Astro-Match-App_Page_4.jpg';
 import motionPlaceholder from '../assests/motion graphics.webp';
 import motionGraphicVideo from '../assests/Jujitsu_Kaisen_Intro_Bumper_Timilehin Yomi-Badejo_Final comp.mp4';
 
@@ -273,6 +277,12 @@ const getProjectDataById = (id) => {
         "Packaged the case study with visuals and flow explanations for stakeholders.",
       ],
       technicalInfo: "Product Design, UI/UX, Prototyping",
+      galleryImages: [
+        astroMatch1,
+        astroMatch2,
+        astroMatch3,
+        astroMatch4,
+      ],
     },
     {
       id: "6",
@@ -301,6 +311,7 @@ const ProjectDetailPage = () => {
   const isMelody = projectData?.id === "2";
   const isScw = projectData?.id === "4";
   const isTimmyCare = projectData?.id === "3";
+  const isAstro = projectData?.id === "5";
 
   if (!projectData) {
     return <p>Project not found</p>;
@@ -312,7 +323,7 @@ const ProjectDetailPage = () => {
       <div
         className={`project-hero ${isMelody ? 'melody-hero' : ''} ${isScw ? 'scw-hero' : ''} ${
           isTimmyCare ? 'timmy-hero' : ''
-        } ${isRon ? 'ron-hero' : ''}`}
+        } ${isRon ? 'ron-hero' : ''} ${isAstro ? 'astro-hero' : ''}`}
       >
         {isMelody ? (
           <div className="melody-pdf-sticky">
@@ -355,6 +366,24 @@ const ProjectDetailPage = () => {
               </object>
             </div>
             <span className="timmy-scroll-hint">Scroll to browse the TimmyCare case study</span>
+          </div>
+        ) : isAstro ? (
+          <div className="astro-scroll-hero">
+            <div className="astro-scroll-viewport">
+              <object
+                data={projectData.pdf || astroMatchPdf}
+                type="application/pdf"
+                className="astro-scroll-pdf"
+              >
+                <p>
+                  PDF preview not available.{" "}
+                  <a href={projectData.pdf || astroMatchPdf} target="_blank" rel="noreferrer">
+                    Open the AstroMatch case study
+                  </a>
+                </p>
+              </object>
+            </div>
+            <span className="astro-scroll-hint">Scroll to browse AstroMatch</span>
           </div>
         ) : isRon ? (
           <div className="ron-scroll-hero">
