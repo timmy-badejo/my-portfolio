@@ -6,6 +6,10 @@ import './WorkPage.css';
 import ronZalko from '../assests/Ron Zalko web design.jpg';
 import timmyCare from '../assests/timmyhaircare4.jpg';
 import scwCharity from '../assests/scwcharitywebpage.png';
+import ideaIcon from '../assests/idea.svg';
+import smartWorkIcon from '../assests/smart_work.svg';
+import codingIcon from '../assests/coding & development.svg';
+import collaborationIcon from '../assests/collaboration.svg';
 import ronWire1 from '../assests/Ron-Zalko-Web-Design-Wireframe_Page_01.jpg';
 import ronWire2 from '../assests/Ron-Zalko-Web-Design-Wireframe_Page_02.jpg';
 import ronWire3 from '../assests/Ron-Zalko-Web-Design-Wireframe_Page_03.jpg';
@@ -118,21 +122,25 @@ const WorkPage = () => {
       title: 'Discover',
       desc: 'Clarify the problem, audience, and constraints. Align on goals and success signals.',
       badge: 'Step 1',
+      visual: ideaIcon,
     },
     {
       title: 'Define & Plan',
       desc: 'Map flows, scope the deliverables, and pick the right fidelity for prototypes.',
       badge: 'Step 2',
+      visual: smartWorkIcon,
     },
     {
       title: 'Design & Prototype',
       desc: 'Create visuals, motion cues, and interactive prototypes with quick feedback loops.',
       badge: 'Step 3',
+      visual: collaborationIcon,
     },
     {
       title: 'Validate & Ship',
       desc: 'Usability checks, polish, and handoff—or implement directly with React/GSAP.',
       badge: 'Step 4',
+      visual: codingIcon,
     },
   ];
 
@@ -253,11 +261,17 @@ const WorkPage = () => {
               key={step.title}
               ref={(el) => (processRefs.current[idx] = el)}
             >
+              <div className="work-process-pip pip-top">
+                <img src={step.visual} alt="" />
+              </div>
               <div className="work-process-top">
                 <span className="work-process-badge">{step.badge}</span>
                 <span className="work-process-title">{step.title}</span>
               </div>
               <p>{step.desc}</p>
+              <div className="work-process-pip pip-bottom">
+                <img src={step.visual} alt="" />
+              </div>
             </div>
           ))}
         </div>
