@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
 import Tilt from 'react-parallax-tilt';
@@ -101,6 +101,8 @@ import astroMatch3 from '../assests/Astro-Match-App_Page_3.jpg';
 import astroMatch4 from '../assests/Astro-Match-App_Page_4.jpg';
 import motionPlaceholder from '../assests/motion graphics.webp';
 import motionGraphicVideo from '../assests/Jujitsu_Kaisen_Intro_Bumper_Timilehin Yomi-Badejo_Final comp.mp4';
+gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
 
 const ParallaxGallery = ({ images }) => {
   const containerRef = React.useRef(null);
@@ -331,47 +333,37 @@ const ProjectDetailPage = () => {
   const isScw = projectData?.id === "4";
   const isTimmyCare = projectData?.id === "3";
   const isAstro = projectData?.id === "5";
-  const ronViewportRef = React.useRef(null);
-  const ronTrackRef = React.useRef(null);
 
-  React.useEffect(() => {
+  const ronViewportRef = useRef(null);
+  const ronTrackRef = useRef(null);
+
+  useEffect(() => {
     if (!isRon || !ronViewportRef.current || !ronTrackRef.current) return;
 
     const viewport = ronViewportRef.current;
     const track = ronTrackRef.current;
 
-    const calcMaxMove = () => {
+    const updatePosition = (self) => {
       const trackHeight = track.scrollHeight;
-      const viewportHeight = viewport.offsetHeight;
-      return Math.max(0, trackHeight - viewportHeight);
+      const viewHeight = viewport.offsetHeight;
+      const maxMove = Math.max(0, trackHeight - viewHeight);
+      gsap.to(track, { y: -maxMove * self.progress, ease: "none", overwrite: true });
     };
 
-    const tween = gsap.fromTo(
-      track,
-      { y: 0 },
-      {
-        y: () => -calcMaxMove(),
-        ease: "none",
-        scrollTrigger: {
-          trigger: viewport,
-          start: "top top",
-          end: () => `+=${calcMaxMove() + viewport.offsetHeight}`,
-          scrub: true,
-        },
-      }
-    );
+    const trigger = ScrollTrigger.create({
+      trigger: viewport,
+      start: "top center",
+      end: () => `+=${track.scrollHeight}`,
+      scrub: true,
+      onUpdate: updatePosition,
+    });
 
-    const resize = () => {
-      if (tween.scrollTrigger) {
-        tween.scrollTrigger.refresh();
-      }
-    };
+    const handleResize = () => trigger.refresh();
+    window.addEventListener("resize", handleResize);
 
-    window.addEventListener("resize", resize);
     return () => {
-      window.removeEventListener("resize", resize);
-      if (tween.scrollTrigger) tween.scrollTrigger.kill();
-      tween.kill();
+      trigger.kill();
+      window.removeEventListener("resize", handleResize);
     };
   }, [isRon]);
 
