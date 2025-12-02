@@ -319,6 +319,10 @@ textarea {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .landing-page {
+    padding-top: 70px;
+  }
+
   .contact-section {
     padding: 60px 5%;
   }

@@ -171,4 +171,27 @@
   .contact-page {
     padding: 40px 6%;
   }
+
+  .contact-body {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-hero {
+    padding: 20px;
+  }
+
+  .contact-hero-copy h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.95rem;
+  }
 }

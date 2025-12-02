@@ -98,4 +98,26 @@
   .services-page {
     padding: 40px 6%;
   }
+
+  .services-hero {
+    padding: 18px;
+  }
+
+  .services-hero h1 {
+    font-size: 2rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-card h3 {
+    font-size: 1.05rem;
+  }
+
+  .service-card p {
+    font-size: 0.95rem;
+  }
 }

@@ -254,4 +254,47 @@
   .work-page {
     padding: 40px 6%;
   }
+
+  .work-hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .work-hero h1 {
+    font-size: 2rem;
+  }
+
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .work-gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+
+  .work-gallery-card img {
+    height: 140px;
+  }
+
+  .work-process-stack {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .work-hero {
+    padding: 18px;
+  }
+
+  .work-card-body h3 {
+    font-size: 1rem;
+  }
+
+  .work-card-body p {
+    font-size: 0.95rem;
+  }
+
+  .work-gallery-label {
+    font-size: 0.75rem;
+  }
 }

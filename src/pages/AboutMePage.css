@@ -476,4 +476,43 @@
   .ap-fun-fact-nav {
     display: none;
   }
+
+  .ap-about-me-page {
+    padding: 30px 18px;
+  }
+
+  .ap-hero-grid {
+    padding: 20px;
+  }
+
+  .ap-hero-copy h1 {
+    font-size: 2.1rem;
+  }
+
+  .ap-hero-title {
+    font-size: 1.1rem;
+  }
+
+  .ap-skills-container {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .ap-hero-img {
+    width: 160px;
+    height: 160px;
+  }
+
+  .ap-edu-exp-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ap-core-values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ap-fun-fact-track {
+    gap: 24px;
+  }
 }

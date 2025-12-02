@@ -634,3 +634,30 @@
     height: 58vh;
   }
 }
+
+@media (max-width: 480px) {
+  .project-detail {
+    margin: 12px;
+  }
+
+  .project-hero h1 {
+    font-size: 24px;
+  }
+
+  .project-hero h3 {
+    font-size: 14px;
+  }
+
+  .project-doc-link {
+    width: 100%;
+    text-align: center;
+  }
+
+  .parallax-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .project-video {
+    max-width: 100%;
+  }
+}
