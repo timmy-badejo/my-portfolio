@@ -33,24 +33,27 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px; /* Adds space between icons */
+  gap: 10px; /* tighter spacing */
 }
 
 .social-icon {
   color: white; /* Default color of icons */
-  font-size: 24px; /* Increased icon size */
-  transition: transform 0.3s ease, color 0.3s ease;
-  padding: 10px;
-  border-radius: 100%; /* Circular background effect */
+  font-size: 18px; /* Match closer to logo visual weight */
+  transition: transform 0.2s ease, color 0.3s ease, background 0.2s ease, border 0.2s ease;
+  padding: 5px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .social-icon:hover {
   color: #BCA58E; /* Gold color on hover */
-  transform: scale(1.2); /* Slightly enlarges the icons on hover */
+  transform: translateY(-2px); /* Subtle lift without blocking view */
+  background: rgba(255, 255, 255, 0.14);
 }
 
 .social-icon:active {
-  transform: scale(1.1); /* Slight shrink effect when clicked */
+  transform: translateY(-1px); /* Slight shrink effect when clicked */
 }
 
 /* Media Queries for Responsiveness */

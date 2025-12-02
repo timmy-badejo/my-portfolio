@@ -19,24 +19,23 @@ const Footer = () => {
         Let’s discuss your vision and explore how we can make it a reality!
       </p>
 
-      {/* Copyright */}
-      <p className="footer-copyright">© 2024 Timmy Badejo | All rights reserved</p>
-
       {/* Social Icons */}
       <div className="social-icons">
-        <a href="https://www.instagram.com" className="social-icon" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.instagram.com/" className="social-icon" target="_blank" rel="noopener noreferrer">
           <FaInstagram />
         </a>
-        <a href="https://www.linkedin.com" className="social-icon" target="_blank" rel="noopener noreferrer">
+        <a href="https://linkedin.com/in/timmy-yomi-badejo-b9b773251" className="social-icon" target="_blank" rel="noopener noreferrer">
           <FaLinkedinIn />
         </a>
       </div>
+
+      {/* Copyright */}
+      <p className="footer-copyright">© 2024 Timmy Badejo | All rights reserved</p>
     </footer>
   );
 };
 
 export default Footer;
-
 
 
 
