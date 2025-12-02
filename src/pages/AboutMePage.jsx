@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import {
-  FaGraduationCap, FaBriefcase, FaLightbulb, FaMusic, FaFilm, FaChurch, FaCog,
+  FaLightbulb, FaMusic, FaFilm, FaChurch, FaCog,
   FaPaintBrush, FaUserEdit, FaBullhorn, FaComments, FaFont, FaHeadset, FaPenNib,
   FaLaptopCode, FaBoxOpen, FaPrint, FaCameraRetro, FaTasks, FaCode, FaEdit
 } from 'react-icons/fa';

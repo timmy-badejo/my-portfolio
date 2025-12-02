@@ -120,7 +120,7 @@ const ParallaxGallery = ({ images }) => {
             className="parallax-card"
             data-speed={index % 2 === 0 ? 0.12 : 0.18}
           >
-            <img src={image} alt={`Gallery image ${index + 1}`} />
+            <img src={image} alt={`Gallery ${index + 1}`} />
             <span className="parallax-label">Slide {index + 1}</span>
           </div>
         </Tilt>
