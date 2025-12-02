@@ -68,8 +68,10 @@ const AboutMeSection = () => {
 
       {/* Profile Image with Tilt */}
       <div className="profile-container">
-        <Tilt tiltMaxAngleX={15} tiltMaxAngleY={15} glareEnable={true}>
-          <img ref={profileRef} src={profileImage} alt="Profile" className="profilei_mage" />
+        <Tilt tiltMaxAngleX={15} tiltMaxAngleY={15} glareEnable glareMaxOpacity={0.2} scale={1.02}>
+          <div className="profile-tilt-off">
+            <img ref={profileRef} src={profileImage} alt="Profile" className="profilei_mage" />
+          </div>
         </Tilt>
       </div>
 

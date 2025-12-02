@@ -358,10 +358,12 @@ const AboutMePage = () => {
               <span>Brand Systems</span>
             </div>
           </div>
-          <div className="ap-hero-visual">
+            <div className="ap-hero-visual">
             <div className="ap-hero-orb"></div>
             <Tilt tiltMaxAngleX={10} tiltMaxAngleY={10} glareEnable glareMaxOpacity={0.12} scale={1.02}>
-              <img src={profileImage} alt="Profile" className="ap-hero-img" />
+              <div className="ap-hero-img-wrap">
+                <img src={profileImage} alt="Profile" className="ap-hero-img" />
+              </div>
             </Tilt>
           </div>
         </div>

@@ -226,7 +226,7 @@ const WorkPage = () => {
 
       <section className="work-grid">
         {workItems.map((item, idx) => (
-          <Tilt key={item.title} tiltMaxAngleX={6} tiltMaxAngleY={6} glareEnable glareMaxOpacity={0.2}>
+          <Tilt key={item.title} tiltMaxAngleX={6} tiltMaxAngleY={6} glareEnable glareMaxOpacity={0.2} scale={1.02}>
             <a
               href={item.link}
               className="work-card"

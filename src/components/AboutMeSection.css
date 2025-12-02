@@ -75,12 +75,17 @@
   position: relative;
 }
 
+.profile-tilt-off {
+  display: inline-flex;
+  border-radius: 50%;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
 .profilei_mage {
   width: 250px;
   height: 250px;
   object-fit: cover;
   border-radius: 50%;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease-in-out;
 }
 
@@ -207,4 +212,3 @@
     font-size: 14px;
   }
 }
-
