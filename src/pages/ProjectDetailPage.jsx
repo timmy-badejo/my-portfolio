@@ -198,6 +198,7 @@ const getProjectDataById = (id) => {
       pdf: scwCharityDocument,
       overview: "Developed a user-focused website to promote social welfare initiatives and community outreach.",
       challenges: "Limited resources required creative problem-solving to deliver impactful results and ensure stakeholder satisfaction.",
+      outcome: "Launched a responsive site with streamlined donation pathways and clear program storytelling, increasing engagement from volunteers and donors.",
       details: [
         "Developed responsive layouts for mobile and desktop.",
         "Integrated CMS for easy content management.",
