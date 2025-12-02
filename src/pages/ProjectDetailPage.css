@@ -263,14 +263,15 @@
 .ron-scroll-viewport {
   max-height: 64vh;
   overflow-y: auto;
-  padding: 10px;
+  padding: 12px;
   border-radius: 12px;
   background: #fff;
   scroll-behavior: smooth;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4);
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
+  border: 1px solid rgba(188, 165, 142, 0.25);
 }
 
 .ron-scroll-pdf {
@@ -286,11 +287,14 @@
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  background: #fff;
+  border: 1px solid rgba(188, 165, 142, 0.2);
 }
 
 .ron-scroll-frame img {
   width: 100%;
   display: block;
+  height: auto;
 }
 
 .ron-scroll-page {
