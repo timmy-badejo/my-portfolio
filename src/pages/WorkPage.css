@@ -109,6 +109,50 @@
   font-size: 0.85rem;
 }
 
+.work-gallery {
+  margin-top: 40px;
+}
+
+.work-gallery-head {
+  margin-bottom: 16px;
+}
+
+.work-gallery-head p {
+  color: #4a3b30;
+}
+
+.work-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.work-gallery-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid rgba(188, 165, 142, 0.3);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.work-gallery-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.work-gallery-label {
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+  background: rgba(49, 0, 0, 0.8);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
 @media (max-width: 768px) {
   .work-page {
     padding: 40px 6%;
