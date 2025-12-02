@@ -329,10 +329,55 @@ const ProjectDetailPage = () => {
   const isScw = projectData?.id === "4";
   const isTimmyCare = projectData?.id === "3";
   const isAstro = projectData?.id === "5";
+  const ronViewportRef = React.useRef(null);
+  const ronTrackRef = React.useRef(null);
 
   if (!projectData) {
     return <p>Project not found</p>;
   }
+
+  React.useEffect(() => {
+    if (!isRon || !ronViewportRef.current || !ronTrackRef.current) return;
+
+    const viewport = ronViewportRef.current;
+    const track = ronTrackRef.current;
+
+    const calcMaxMove = () => {
+      const trackHeight = track.scrollHeight;
+      const viewportHeight = viewport.offsetHeight;
+      return Math.max(0, trackHeight - viewportHeight);
+    };
+
+    const maxMove = calcMaxMove();
+
+    const tween = gsap.fromTo(
+      track,
+      { y: 0 },
+      {
+        y: () => -calcMaxMove(),
+        ease: "none",
+        scrollTrigger: {
+          trigger: viewport,
+          start: "top top",
+          end: () => `+=${calcMaxMove() + viewport.offsetHeight}`,
+          scrub: true,
+        },
+      }
+    );
+
+    const resize = () => {
+      if (tween.scrollTrigger) {
+        tween.scrollTrigger.refresh();
+      }
+    };
+
+    window.addEventListener("resize", resize);
+    return () => {
+      window.removeEventListener("resize", resize);
+      if (tween.scrollTrigger) tween.scrollTrigger.kill();
+      tween.kill();
+    };
+  }, [isRon]);
 
   return (
     <div className="project-detail">
@@ -404,7 +449,8 @@ const ProjectDetailPage = () => {
           </div>
         ) : isRon ? (
           <div className="ron-scroll-hero">
-            <div className="ron-scroll-viewport">
+            <div className="ron-scroll-viewport" ref={ronViewportRef}>
+              <div className="ron-scroll-track" ref={ronTrackRef}>
               {[
                 ronUiUx1,
                 ronUiUx2,
@@ -429,6 +475,7 @@ const ProjectDetailPage = () => {
                   <span className="ron-scroll-page">Page {idx + 1}</span>
                 </div>
               ))}
+              </div>
             </div>
             <span className="ron-scroll-hint">Scroll to browse the Ron Zalko case study</span>
           </div>

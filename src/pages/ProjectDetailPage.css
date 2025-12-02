@@ -253,7 +253,7 @@
   top: 80px;
   width: min(1080px, 100%);
   max-height: 78vh;
-  padding: 18px;
+  padding: 16px;
   border-radius: 14px;
   background: linear-gradient(135deg, #fff 0%, #fdf8f1 100%);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
@@ -261,9 +261,10 @@
 }
 
 .ron-scroll-viewport {
-  max-height: 70vh;
-  height: 70vh;
-  overflow-y: auto;
+  max-height: 72vh;
+  height: 72vh;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
   padding: 14px;
   border-radius: 12px;
   background: #fff;
@@ -271,8 +272,15 @@
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4);
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 16px;
   border: 1px solid rgba(188, 165, 142, 0.25);
+  position: relative;
+}
+
+.ron-scroll-track {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .ron-scroll-pdf {
@@ -646,7 +654,8 @@
   }
 
   .ron-scroll-viewport {
-    max-height: 58vh;
+    max-height: 62vh;
+    height: 62vh;
   }
 
   .ron-scroll-frame img {
