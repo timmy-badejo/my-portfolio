@@ -32,10 +32,6 @@ body {
       padding: 15px;
     }
   
-    header, footer {
-      padding: 8px;
-    }
-  
     .button {
       width: 100%;  /* Make buttons full width on smaller screens */
     }

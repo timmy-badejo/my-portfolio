@@ -9,7 +9,7 @@ import {
   SiHtml5, SiJavascript, SiReact, SiAdobexd,
   SiAdobephotoshop, SiAdobeillustrator
 } from 'react-icons/si';
-import { Tilt } from 'react-tilt';
+import Tilt from 'react-parallax-tilt';
 import profileImage from '../assests/profile_image.jpg';
 import ideaIcon from '../assests/idea.svg';
 import prototypeWire from '../assests/prototypewireframe.png';
