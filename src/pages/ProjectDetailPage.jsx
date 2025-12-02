@@ -257,6 +257,7 @@ const ProjectDetailPage = () => {
   const { projectId } = useParams();
   const projectData = getProjectDataById(projectId);
   const isMelody = projectData?.id === "2";
+  const isScw = projectData?.id === "4";
 
   if (!projectData) {
     return <p>Project not found</p>;
@@ -265,7 +266,7 @@ const ProjectDetailPage = () => {
   return (
     <div className="project-detail">
       {/* Hero Section */}
-      <div className={`project-hero ${isMelody ? 'melody-hero' : ''}`}>
+      <div className={`project-hero ${isMelody ? 'melody-hero' : ''} ${isScw ? 'scw-hero' : ''}`}>
         {isMelody ? (
           <div className="melody-pdf-sticky">
             <div className="melody-doc-images">
@@ -289,6 +290,17 @@ const ProjectDetailPage = () => {
                 </div>
               ))}
             </div>
+          </div>
+        ) : isScw ? (
+          <div className="scw-scroll-hero">
+            <div className="scw-scroll-viewport">
+              <img
+                src={projectData.image}
+                alt={projectData.title}
+                className="scw-scroll-image"
+              />
+            </div>
+            <span className="scw-scroll-hint">Scroll to explore the full page</span>
           </div>
         ) : (
           <img src={projectData.image} alt={projectData.title} className="project-image" />
