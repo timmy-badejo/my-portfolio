@@ -76,6 +76,7 @@ const WorkPage = () => {
   const cardsRef = useRef([]);
   const heroRef = useRef(null);
   const galleryRef = useRef(null);
+  const processRefs = useRef([]);
 
   const workItems = [
     {
@@ -110,6 +111,29 @@ const WorkPage = () => {
     melodyCard1, melodyCard2, melodyCard3, melodyCard4, melodyCard5, melodyCard6,
     melodyPost1, melodyPost2, melodyPost3, melodyPost4, melodyPost5, melodyPost6,
     melodyBlue, melodyHeadphones, melodyShape,
+  ];
+
+  const processSteps = [
+    {
+      title: 'Discover',
+      desc: 'Clarify the problem, audience, and constraints. Align on goals and success signals.',
+      badge: 'Step 1',
+    },
+    {
+      title: 'Define & Plan',
+      desc: 'Map flows, scope the deliverables, and pick the right fidelity for prototypes.',
+      badge: 'Step 2',
+    },
+    {
+      title: 'Design & Prototype',
+      desc: 'Create visuals, motion cues, and interactive prototypes with quick feedback loops.',
+      badge: 'Step 3',
+    },
+    {
+      title: 'Validate & Ship',
+      desc: 'Usability checks, polish, and handoff—or implement directly with React/GSAP.',
+      badge: 'Step 4',
+    },
   ];
 
   useEffect(() => {
@@ -151,6 +175,27 @@ const WorkPage = () => {
           },
         }
       );
+    }
+
+    if (processRefs.current.length) {
+      gsap.set(processRefs.current, (card, i) => ({
+        y: i * 22,
+        scale: 1 - i * 0.04,
+        opacity: 0,
+        rotateX: -6,
+      }));
+      gsap.to(processRefs.current, {
+        opacity: 1,
+        rotateX: 0,
+        y: (i) => i * 10,
+        scale: (i) => 1 - i * 0.02,
+        stagger: 0.12,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '.work-process',
+          start: 'top 75%',
+        },
+      });
     }
   }, []);
 
@@ -194,6 +239,28 @@ const WorkPage = () => {
             </a>
           </Tilt>
         ))}
+      </section>
+
+      <section className="work-process">
+        <div className="work-process-head">
+          <h2>My Process</h2>
+          <p>How I move from brief to shipped deliverables.</p>
+        </div>
+        <div className="work-process-stack">
+          {processSteps.map((step, idx) => (
+            <div
+              className="work-process-card"
+              key={step.title}
+              ref={(el) => (processRefs.current[idx] = el)}
+            >
+              <div className="work-process-top">
+                <span className="work-process-badge">{step.badge}</span>
+                <span className="work-process-title">{step.title}</span>
+              </div>
+              <p>{step.desc}</p>
+            </div>
+          ))}
+        </div>
       </section>
 
       <section className="work-gallery" ref={galleryRef}>

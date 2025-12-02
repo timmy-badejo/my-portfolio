@@ -113,6 +113,65 @@
   margin-top: 40px;
 }
 
+.work-process {
+  margin-top: 34px;
+}
+
+.work-process-head {
+  margin-bottom: 14px;
+}
+
+.work-process-head p {
+  color: #4a3b30;
+}
+
+.work-process-stack {
+  position: relative;
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  gap: 14px;
+  perspective: 1400px;
+}
+
+.work-process-card {
+  background: linear-gradient(135deg, #fff, #f6eef2);
+  border: 2px solid rgba(49, 0, 0, 0.15);
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
+}
+
+.work-process-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.work-process-badge {
+  background: #310000;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.work-process-title {
+  font-weight: 700;
+  color: #310000;
+  letter-spacing: 0.01em;
+}
+
+.work-process-card p {
+  margin: 0;
+  color: #452b35;
+  line-height: 1.5;
+}
+
 .work-gallery-head {
   margin-bottom: 16px;
 }
