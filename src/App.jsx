@@ -9,6 +9,8 @@ import AboutMePage from "./pages/AboutMePage";
 import ContactPage from "./pages/ContactPage";
 import ProjectsPage from "./pages/ProjectsPage";
 import ProjectDetailPage from "./pages/ProjectDetailPage";
+import WorkPage from "./pages/WorkPage";
+import ServicesPage from "./pages/ServicesPage";
 import LoadingScreen from "./components/LoadingScreen";
 import "./global.css";
 
@@ -39,6 +41,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="about" element={<AboutMePage />} />
+        <Route path="work" element={<WorkPage />} />
+        <Route path="services" element={<ServicesPage />} />
         <Route path="contact" element={<ContactPage />} />
         <Route path="projects" element={<ProjectsPage />} />
         <Route path="projects/:projectId" element={<ProjectDetailPage />} />
@@ -74,7 +78,6 @@ export default App;
 //Thank you for your understanding and support!
 
 //Best regards, timmy badejo
-
 
 
 

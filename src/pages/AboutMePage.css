@@ -249,6 +249,50 @@
   text-align: center;
 }
 
+.ap-fun-fact-slider {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.ap-fun-fact-track {
+  display: flex;
+  gap: 42px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 8px 2px 12px;
+}
+
+.ap-fun-fact-track::-webkit-scrollbar {
+  height: 8px;
+}
+
+.ap-fun-fact-track::-webkit-scrollbar-thumb {
+  background: #310000;
+  border-radius: 999px;
+}
+
+.ap-fun-fact-nav {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: #310000;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ap-fun-fact-nav:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+}
+
 .ap-fun-fact-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -263,6 +307,8 @@
   background: #f4f4f4;
   border-radius: 10px;
   box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  min-width: 320px;
+  scroll-snap-align: start;
 }
 
 .ap-fun-fact-icon {
@@ -410,9 +456,6 @@
   .ap-section-title {
     font-size: 1.5rem;
   }
-  .ap-fun-fact-container {
-    grid-template-columns: 1fr;
-  }
   .ap-skills-container {
     grid-template-columns: 1fr;
   }
@@ -424,5 +467,13 @@
 
   .ap-story-visual {
     align-self: flex-end;
+  }
+
+  .ap-fun-fact-slider {
+    grid-template-columns: 1fr;
+  }
+
+  .ap-fun-fact-nav {
+    display: none;
   }
 }

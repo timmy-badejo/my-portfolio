@@ -59,6 +59,7 @@ const AboutMePage = () => {
   const expRefs = useRef([]);
   const storyRefs = useRef([]);
   const skillsRef = useRef(null);
+  const funFactsRef = useRef(null);
 
   const profileData = {
     name: "Timilehin Yomi-Badejo",
@@ -463,18 +464,38 @@ const AboutMePage = () => {
       {/* FUN FACTS SECTION */}
       <section className="ap-fun-fact-section">
         <h2 className="ap-section-title">Fun Facts About Me</h2>
-        <div className="ap-fun-fact-container">
-          {profileData.funFacts.map((fact, index) => (
-            <div key={index} className="ap-fun-fact-item">
-              <div className="ap-fun-fact-icon">
-                {fact.icon}
+        <div className="ap-fun-fact-slider">
+          <button
+            className="ap-fun-fact-nav"
+            onClick={() => {
+              funFactsRef.current?.scrollBy({ left: -320, behavior: 'smooth' });
+            }}
+            aria-label="Scroll fun facts left"
+          >
+            ‹
+          </button>
+          <div className="ap-fun-fact-track" ref={funFactsRef}>
+            {profileData.funFacts.map((fact, index) => (
+              <div key={index} className="ap-fun-fact-item">
+                <div className="ap-fun-fact-icon">
+                  {fact.icon}
+                </div>
+                <div className="ap-fun-fact-content">
+                  <h3>{fact.title}</h3>
+                  <p>{fact.description}</p>
+                </div>
               </div>
-              <div className="ap-fun-fact-content">
-                <h3>{fact.title}</h3>
-                <p>{fact.description}</p>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
+          <button
+            className="ap-fun-fact-nav"
+            onClick={() => {
+              funFactsRef.current?.scrollBy({ left: 320, behavior: 'smooth' });
+            }}
+            aria-label="Scroll fun facts right"
+          >
+            ›
+          </button>
         </div>
       </section>
 

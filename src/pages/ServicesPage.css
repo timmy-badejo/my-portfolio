@@ -1,0 +1,101 @@
+.services-page {
+  padding: 60px 7%;
+  font-family: 'Nunito', sans-serif;
+  background: #fff;
+  color: #310000;
+}
+
+.services-hero {
+  background: linear-gradient(135deg, #fff, #f5f0ff);
+  border: 2px solid rgba(49, 0, 0, 0.12);
+  border-radius: 18px;
+  padding: 24px;
+  margin-bottom: 28px;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+}
+
+.services-kicker {
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #b4803a;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.services-hero h1 {
+  margin: 6px 0;
+  font-size: 2.4rem;
+}
+
+.services-sub {
+  color: #4a3b30;
+  max-width: 720px;
+  line-height: 1.6;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.service-card {
+  background: #f9f7f4;
+  border-radius: 16px;
+  padding: 18px;
+  border: 1px solid rgba(188, 165, 142, 0.3);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+  transform-style: preserve-3d;
+}
+
+.service-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 12px;
+}
+
+.service-visual {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+}
+
+.service-pill {
+  background: #310000;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+.service-card h3 {
+  margin: 8px 0 6px;
+}
+
+.service-card p {
+  color: #4a3b30;
+  margin: 0 0 10px 0;
+  line-height: 1.5;
+}
+
+.service-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.service-tags span {
+  background: #310000;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+  .services-page {
+    padding: 40px 6%;
+  }
+}
