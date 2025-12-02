@@ -61,6 +61,23 @@ import timmyCareMobilePdf from '../assests/TimmyCare Mobile app.pdf';
 import timmyHairCare1 from '../assests/timmyhaircare1.jpg';
 import timmyHairCare2 from '../assests/timmyhaircare2.jpg';
 import timmyHairCare3 from '../assests/timmyhaircare3.jpg';
+import ronUiUx1 from '../assests/Ui-Ux Ron Zalko Web Design_Page_01.jpg';
+import ronUiUx2 from '../assests/Ui-Ux Ron Zalko Web Design_Page_02.jpg';
+import ronUiUx3 from '../assests/Ui-Ux Ron Zalko Web Design_Page_03.jpg';
+import ronUiUx4 from '../assests/Ui-Ux Ron Zalko Web Design_Page_04.jpg';
+import ronUiUx5 from '../assests/Ui-Ux Ron Zalko Web Design_Page_05.jpg';
+import ronUiUx6 from '../assests/Ui-Ux Ron Zalko Web Design_Page_06.jpg';
+import ronUiUx7 from '../assests/Ui-Ux Ron Zalko Web Design_Page_07.jpg';
+import ronUiUx8 from '../assests/Ui-Ux Ron Zalko Web Design_Page_08.jpg';
+import ronUiUx9 from '../assests/Ui-Ux Ron Zalko Web Design_Page_09.jpg';
+import ronUiUx10 from '../assests/Ui-Ux Ron Zalko Web Design_Page_10.jpg';
+import ronUiUx11 from '../assests/Ui-Ux Ron Zalko Web Design_Page_11.jpg';
+import ronUiUx12 from '../assests/Ui-Ux Ron Zalko Web Design_Page_12.jpg';
+import ronUiUx13 from '../assests/Ui-Ux Ron Zalko Web Design_Page_13.jpg';
+import ronUiUx14 from '../assests/Ui-Ux Ron Zalko Web Design_Page_14.jpg';
+import ronUiUx15 from '../assests/Ui-Ux Ron Zalko Web Design_Page_15.jpg';
+import ronUiUx16 from '../assests/Ui-Ux Ron Zalko Web Design_Page_16.jpg';
+import ronUiUx17 from '../assests/Ui-Ux Ron Zalko Web Design_Page_17.jpg';
 import ronWire1 from '../assests/Ron-Zalko-Web-Design-Wireframe_Page_01.jpg';
 import ronWire2 from '../assests/Ron-Zalko-Web-Design-Wireframe_Page_02.jpg';
 import ronWire3 from '../assests/Ron-Zalko-Web-Design-Wireframe_Page_03.jpg';
@@ -146,18 +163,23 @@ const getProjectDataById = (id) => {
         "Incorporated modern design aesthetics for improved engagement.",
       ],
       galleryImages: [
-        ronWire1,
-        ronWire2,
-        ronWire3,
-        ronWire4,
-        ronWire5,
-        ronWire6,
-        ronWire7,
-        ronWire8,
-        ronWire9,
-        ronWire10,
-        ronWire11,
-        ronWire12,
+        ronUiUx1,
+        ronUiUx2,
+        ronUiUx3,
+        ronUiUx4,
+        ronUiUx5,
+        ronUiUx6,
+        ronUiUx7,
+        ronUiUx8,
+        ronUiUx9,
+        ronUiUx10,
+        ronUiUx11,
+        ronUiUx12,
+        ronUiUx13,
+        ronUiUx14,
+        ronUiUx15,
+        ronUiUx16,
+        ronUiUx17,
       ],
       technicalInfo: "UI/UX Design, Web Development, Accessibility Improvements",
     },
@@ -388,18 +410,30 @@ const ProjectDetailPage = () => {
         ) : isRon ? (
           <div className="ron-scroll-hero">
             <div className="ron-scroll-viewport">
-              <object
-                data={projectData.pdf || ronZalkoWireframe}
-                type="application/pdf"
-                className="ron-scroll-pdf"
-              >
-                <p>
-                  PDF preview not available.{" "}
-                  <a href={projectData.pdf || ronZalkoWireframe} target="_blank" rel="noreferrer">
-                    Open the Ron Zalko case study
-                  </a>
-                </p>
-              </object>
+              {[
+                ronUiUx1,
+                ronUiUx2,
+                ronUiUx3,
+                ronUiUx4,
+                ronUiUx5,
+                ronUiUx6,
+                ronUiUx7,
+                ronUiUx8,
+                ronUiUx9,
+                ronUiUx10,
+                ronUiUx11,
+                ronUiUx12,
+                ronUiUx13,
+                ronUiUx14,
+                ronUiUx15,
+                ronUiUx16,
+                ronUiUx17,
+              ].map((img, idx) => (
+                <div className="ron-scroll-frame" key={idx}>
+                  <img src={img} alt={`Ron Zalko page ${idx + 1}`} />
+                  <span className="ron-scroll-page">Page {idx + 1}</span>
+                </div>
+              ))}
             </div>
             <span className="ron-scroll-hint">Scroll to browse the Ron Zalko case study</span>
           </div>
