@@ -360,7 +360,7 @@ const AboutMePage = () => {
           </div>
           <div className="ap-hero-visual">
             <div className="ap-hero-orb"></div>
-            <Tilt options={{ max: 12, scale: 1.02 }}>
+            <Tilt tiltMaxAngleX={10} tiltMaxAngleY={10} glareEnable glareMaxOpacity={0.12} scale={1.02}>
               <img src={profileImage} alt="Profile" className="ap-hero-img" />
             </Tilt>
           </div>
@@ -505,7 +505,14 @@ const AboutMePage = () => {
         <p className="ap-skills-subtitle">A 3D stack of tools and practices I’m growing through BCIT projects and client work.</p>
         <div className="ap-skills-container ap-skills-stack" ref={skillsRef}>
           {profileData.skills.map((skill, index) => (
-            <Tilt key={index} options={{ max: 25 }}>
+            <Tilt
+              key={index}
+              tiltMaxAngleX={10}
+              tiltMaxAngleY={10}
+              glareEnable
+              glareMaxOpacity={0.08}
+              scale={1.02}
+            >
               <div className="ap-skill-card">
                 {getSkillIcon(skill, 40)}
                 <h3>{skill}</h3>
