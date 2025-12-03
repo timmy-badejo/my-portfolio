@@ -207,6 +207,63 @@
   box-shadow: 0 8px 16px rgba(0,0,0,0.06);
 }
 
+.services-testimonials {
+  margin: 36px 0 18px;
+}
+
+.services-testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.service-testimonial-card {
+  background: #fff;
+  border: 1px solid rgba(49, 0, 0, 0.1);
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.testimonial-quote {
+  margin: 0 0 8px 0;
+  color: #4a3b30;
+}
+
+.testimonial-author {
+  margin: 0;
+  font-weight: 700;
+  color: #310000;
+}
+
+.services-faq {
+  margin: 32px 0;
+}
+
+.services-faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+}
+
+.service-faq-card {
+  background: #f9f7f4;
+  border: 1px solid rgba(188,165,142,0.25);
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+}
+
+.service-faq-card h3 {
+  margin: 0 0 6px 0;
+}
+
+.service-faq-card p {
+  margin: 0;
+  color: #4a3b30;
+  line-height: 1.5;
+}
+
 @media (max-width: 768px) {
   .services-page {
     padding: 40px 6%;

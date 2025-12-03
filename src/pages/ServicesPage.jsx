@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './ServicesPage.css';
@@ -15,6 +16,8 @@ const ServicesPage = () => {
   const processRefs = useRef([]);
   const whyRefs = useRef([]);
   const toolsRefs = useRef([]);
+  const testimonialRefs = useRef([]);
+  const faqRefs = useRef([]);
 
   const services = [
     {
@@ -105,26 +108,24 @@ const ServicesPage = () => {
     },
   ];
 
-  const whyMe = [
-    {
-      title: 'Creative + Technical',
-      desc: 'I bridge design and development—your visuals and site stay aligned.',
-    },
-    {
-      title: 'Fast, Reliable, Easy',
-      desc: 'Clear communication, quick turnarounds, and real collaboration.',
-    },
-    {
-      title: 'User-First',
-      desc: 'Every color, line, and interaction serves a purpose.',
-    },
-    {
-      title: 'Clean. Modern. Impactful.',
-      desc: 'A simple, bold style focused on telling your story right.',
-    },
-  ];
+
 
   const tools = ['Figma', 'React / React Native', 'JavaScript', 'HTML & CSS', 'Adobe Photoshop', 'Illustrator', 'Premiere Pro', 'After Effects'];
+
+  const testimonials = [
+    { author: 'Mahdieh (BCIT partner)', quote: 'Timmy is always willing to put the work in and effort.' },
+    { author: 'Nancy (BCIT teammate)', quote: 'Timmy is very detailed and patient when he worked in my group project.' },
+    { author: 'Precious (Qualicare/BC client)', quote: 'Can always trust Timmy to deliver quick work for banners and social media flyers.' },
+    { author: 'Mr. Hart (Church tech lead)', quote: 'Always like Timmy’s design and his willingness to adjust design to what is requested—even a thousand times lol.' },
+    { author: 'Daniel (KVDST project)', quote: 'Coolest, chillest coding buddy.' },
+  ];
+
+  const faqs = [
+    { q: 'How long does a project take?', a: 'Most projects run 2–6 weeks depending on scope, assets, and feedback speed.' },
+    { q: 'Can you help with brand strategy?', a: 'Yes—brand story discovery, positioning, and style direction are part of the process.' },
+    { q: 'Do you build mobile apps?', a: 'I design app UI/UX and can prototype in React Native; I collaborate with devs for full builds.' },
+    { q: 'Do you work with small budgets?', a: 'We can right-size scope to fit budgets—starting with a discovery call to prioritize essentials.' },
+  ];
 
   useEffect(() => {
     if (heroRef.current) {
@@ -190,6 +191,34 @@ const ServicesPage = () => {
         },
       });
     }
+
+    if (testimonialRefs.current.length) {
+      gsap.set(testimonialRefs.current, { opacity: 0, y: 18 });
+      gsap.to(testimonialRefs.current, {
+        opacity: 1,
+        y: 0,
+        stagger: 0.08,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '.services-testimonials',
+          start: 'top 80%',
+        },
+      });
+    }
+
+    if (faqRefs.current.length) {
+      gsap.set(faqRefs.current, { opacity: 0, y: 14 });
+      gsap.to(faqRefs.current, {
+        opacity: 1,
+        y: 0,
+        stagger: 0.06,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '.services-faq',
+          start: 'top 80%',
+        },
+      });
+    }
   }, []);
 
   return (
@@ -246,6 +275,22 @@ const ServicesPage = () => {
         </div>
       </section>
 
+      <section className="services-why">
+        <h2>Why work with me?</h2>
+        <div className="services-why-grid">
+          {whyMe.map((item, idx) => (
+            <div
+              key={item.title}
+              className="service-why-card"
+              ref={(el) => (whyRefs.current[idx] = el)}
+            >
+              <h3>{item.title}</h3>
+              <p>{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section className="services-process">
         <div className="services-process-head">
           <h2>Process</h2>
@@ -269,10 +314,42 @@ const ServicesPage = () => {
         </div>
       </section>
 
+      <section className="services-testimonials">
+        <h2>Testimonials</h2>
+        <div className="services-testimonials-grid">
+          {testimonials.map((item, idx) => (
+            <div
+              key={item.author}
+              className="service-testimonial-card"
+              ref={(el) => (testimonialRefs.current[idx] = el)}
+            >
+              <p className="testimonial-quote">“{item.quote}”</p>
+              <p className="testimonial-author">{item.author}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="services-faq">
+        <h2>FAQ</h2>
+        <div className="services-faq-grid">
+          {faqs.map((item, idx) => (
+            <div
+              key={item.q}
+              className="service-faq-card"
+              ref={(el) => (faqRefs.current[idx] = el)}
+            >
+              <h3>{item.q}</h3>
+              <p>{item.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section className="services-cta">
-        <h2>Let’s Build Something Amazing</h2>
+        <h2>Let’s build something unforgettable.</h2>
         <p>Ready to start a project? Reach out at <a href="mailto:hello@timmybad.com">hello@timmybad.com</a> or use the contact form.</p>
-        <a className="services-btn" href="mailto:hello@timmybad.com">Email me</a>
+        <Link className="services-btn" to="/contact">Work With Me</Link>
       </section>
 
       <section className="services-tools">
