@@ -7,7 +7,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './ProjectDetailPage.css';
 import RonZalkoWebDesign from '../assests/Ron Zalko web design.jpg';
-import ronZalkoWireframe from '../assests/Ui:Ux RonZalko-WebDesign.pdf';
+import ronZalkoWireframe from '../assests/Ron-Zalko-Web-Design-Wireframe.pdf';
 import ronWire1 from '../assests/Ron-Zalko-Web-Design-Wireframe_Page_01.jpg';
 import ronWire2 from '../assests/Ron-Zalko-Web-Design-Wireframe_Page_02.jpg';
 import ronWire3 from '../assests/Ron-Zalko-Web-Design-Wireframe_Page_03.jpg';
