@@ -69,7 +69,7 @@ const ServicesPage = () => {
         <p className="services-kicker">Services</p>
         <h1>How I can help</h1>
         <p className="services-sub">
-          From research to prototypes, visual systems to front-end builds—here’s how I partner on projects.
+          From research to prototypes, visual systems to front-end builds here’s how I partner on projects.
         </p>
       </section>
 
