@@ -5,7 +5,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Tilt from "react-parallax-tilt";
 import timmyhaircare1 from "../assests/timmyhaircare1.jpg";
 import ronzalko from "../assests/Ron Zalko web design.jpg";
-import ronZalkoWireframe from "../assests/Ron-Zalko-Web-Design-Wireframe.pdf";
 import melodycard1 from "../assests/MelodyCard1.jpg";
 import scwcharity from "../assests/scwcharitywebpage.png";
 import astroPlaceholder from "../assests/AstorMatchlogo.jpg";
@@ -24,7 +23,6 @@ const FeaturedProjects = () => {
       description: "Enhancing UX, accessibility, and engagement.",
       image: ronzalko,
       software: ["Figma", "HTML", "CSS", "JavaScript"],
-      pdf: ronZalkoWireframe,
       link: "/projects/1",
     },
     {

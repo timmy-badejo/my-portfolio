@@ -7,7 +7,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './ProjectDetailPage.css';
 import RonZalkoWebDesign from '../assests/Ron Zalko web design.jpg';
-import ronZalkoWireframe from '../assests/Ron-Zalko-Web-Design-Wireframe.pdf';
 import ronWire1 from '../assests/Ron-Zalko-Web-Design-Wireframe_Page_01.jpg';
 import ronWire2 from '../assests/Ron-Zalko-Web-Design-Wireframe_Page_02.jpg';
 import ronWire3 from '../assests/Ron-Zalko-Web-Design-Wireframe_Page_03.jpg';
@@ -156,7 +155,6 @@ const getProjectDataById = (id) => {
       id: "1",
       title: "Ron Zalko Web Design",
       image: RonZalkoWebDesign,
-      pdf: ronZalkoWireframe,
       overview: "Redesigned Ron Zalko Fitness & Yoga website to enhance user experience and provide seamless navigation.",
       challenges: "Overcame challenges in integrating complex booking forms, enhancing accessibility, and optimizing loading times.",
       outcome: "Delivered a presentation-ready UX case study with annotated wireframes and a clearer booking path for class review.",
