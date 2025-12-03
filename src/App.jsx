@@ -23,7 +23,7 @@ const App = () => {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 6000); 
+    }, 2000); 
   }, []);
 
   if (loading) {
@@ -78,7 +78,6 @@ export default App;
 //Thank you for your understanding and support!
 
 //Best regards, timmy badejo
-
 
 
 
