@@ -74,6 +74,7 @@ import timmyCareMobilePdf from '../assests/TimmyCare Mobile app.pdf';
 import timmyHairCare1 from '../assests/timmyhaircare1.jpg';
 import timmyHairCare2 from '../assests/timmyhaircare2.jpg';
 import timmyHairCare3 from '../assests/timmyhaircare3.jpg';
+import timmyHairCare4 from '../assests/timmyhaircare4.jpg';
 import timicare1 from '../assests/timicare-hair-brand-2_Page_01.jpg';
 import timicare2 from '../assests/timicare-hair-brand-2_Page_02.jpg';
 import timicare3 from '../assests/timicare-hair-brand-2_Page_03.jpg';
@@ -265,6 +266,10 @@ const getProjectDataById = (id) => {
         timicare9,
         timicare10,
         timicare11,
+        timmyHairCare1,
+        timmyHairCare2,
+        timmyHairCare3,
+        timmyHairCare4,
       ],
       technicalInfo: "Figma, Prototyping, Wireframing",
     },
