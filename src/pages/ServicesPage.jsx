@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './ServicesPage.css';
-import designIcon from '../assests/designservice.svg';
-import collabIcon from '../assests/collaboration.svg';
-import codeIcon from '../assests/webdev.svg';
-import motionIcon from '../assests/idea.svg';
+import designIcon from '../assests/graphic.svg';
+import collabIcon from '../assests/coding & development.svg';
+import codeIcon from '../assests/uiux.svg';
+import motionIcon from '../assests/prototypewireframing.svg';
 
 gsap.registerPlugin(ScrollTrigger);
 

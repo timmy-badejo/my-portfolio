@@ -11,7 +11,7 @@ import {
 } from 'react-icons/si';
 import Tilt from 'react-parallax-tilt';
 import profileImage from '../assests/profile_image.jpg';
-import ideaIcon from '../assests/idea.svg';
+import ideaIcon from '../assests/branding.svg';
 import prototypeWire from '../assests/prototypewireframe.png';
 import webdevIcon from '../assests/webdev.png';
 import './AboutMePage.css';
