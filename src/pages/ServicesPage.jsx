@@ -83,6 +83,37 @@ const ServicesPage = () => {
         'Visual storytelling',
       ],
     },
+    {
+      title: '✨ Creative Strategy / Extras',
+      desc: 'Thinking + consulting value to guide your brand and product.',
+      visual: motionIcon,
+      tags: ['Brand story', 'Social identity', 'Audits', 'Planning'],
+      offers: [
+        'Brand Story Discovery',
+        'Content Strategy & Social Identity',
+        'App UI/UX Audit & Redesign',
+        'Project Planning + Creative Direction',
+      ],
+    },
+  ];
+
+  const whyMe = [
+    {
+      title: 'Creative + Technical',
+      desc: 'I bridge design and development—your visuals and site stay aligned.',
+    },
+    {
+      title: 'Fast, Reliable, Easy',
+      desc: 'Clear communication, quick turnarounds, and real collaboration.',
+    },
+    {
+      title: 'User-First',
+      desc: 'Every color, line, and interaction serves a purpose.',
+    },
+    {
+      title: 'Clean. Modern. Impactful.',
+      desc: 'A simple, bold style focused on telling your story right.',
+    },
   ];
 
   const process = [
@@ -257,22 +288,6 @@ const ServicesPage = () => {
             </ul>
           </div>
         ))}
-      </section>
-
-      <section className="services-why">
-        <h2>Why work with me?</h2>
-        <div className="services-why-grid">
-          {whyMe.map((item, idx) => (
-            <div
-              key={item.title}
-              className="service-why-card"
-              ref={(el) => (whyRefs.current[idx] = el)}
-            >
-              <h3>{item.title}</h3>
-              <p>{item.desc}</p>
-            </div>
-          ))}
-        </div>
       </section>
 
       <section className="services-why">
