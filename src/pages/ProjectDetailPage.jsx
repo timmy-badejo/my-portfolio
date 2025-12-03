@@ -74,6 +74,17 @@ import timmyCareMobilePdf from '../assests/TimmyCare Mobile app.pdf';
 import timmyHairCare1 from '../assests/timmyhaircare1.jpg';
 import timmyHairCare2 from '../assests/timmyhaircare2.jpg';
 import timmyHairCare3 from '../assests/timmyhaircare3.jpg';
+import timicare1 from '../assests/timicare-hair-brand-2_Page_01.jpg';
+import timicare2 from '../assests/timicare-hair-brand-2_Page_02.jpg';
+import timicare3 from '../assests/timicare-hair-brand-2_Page_03.jpg';
+import timicare4 from '../assests/timicare-hair-brand-2_Page_04.jpg';
+import timicare5 from '../assests/timicare-hair-brand-2_Page_05.jpg';
+import timicare6 from '../assests/timicare-hair-brand-2_Page_06.jpg';
+import timicare7 from '../assests/timicare-hair-brand-2_Page_07.jpg';
+import timicare8 from '../assests/timicare-hair-brand-2_Page_08.jpg';
+import timicare9 from '../assests/timicare-hair-brand-2_Page_09.jpg';
+import timicare10 from '../assests/timicare-hair-brand-2_Page_10.jpg';
+import timicare11 from '../assests/timicare-hair-brand-2_Page_11.jpg';
 import ronUiUx1 from '../assests/Ui-Ux RonZalko-WebDesign_Page_01.jpg';
 import ronUiUx2 from '../assests/Ui-Ux RonZalko-WebDesign_Page_02.jpg';
 import ronUiUx3 from '../assests/Ui-Ux RonZalko-WebDesign_Page_03.jpg';
@@ -234,7 +245,6 @@ const getProjectDataById = (id) => {
       id: "3",
       title: "TimmyCare App Redesign",
       image: timmyHairCare,
-      pdf: timmyCareMobilePdf,
       overview: "Redesigned TimmyCare Hair App to improve navigation and user engagement, making it user-friendly.",
       challenges: "Simplifying navigation while maintaining brand aesthetics and addressing inconsistent user feedback.",
       outcome: "Produced an interactive prototype and usability summary showing smoother booking and product discovery for the course submission.",
@@ -244,10 +254,17 @@ const getProjectDataById = (id) => {
         "Improved app responsiveness across devices.",
       ],
       galleryImages: [
-        timmyHairCare,
-        timmyHairCare1,
-        timmyHairCare2,
-        timmyHairCare3,
+        timicare1,
+        timicare2,
+        timicare3,
+        timicare4,
+        timicare5,
+        timicare6,
+        timicare7,
+        timicare8,
+        timicare9,
+        timicare10,
+        timicare11,
       ],
       technicalInfo: "Figma, Prototyping, Wireframing",
     },
@@ -401,18 +418,26 @@ const ProjectDetailPage = () => {
         ) : isTimmyCare ? (
           <div className="timmy-scroll-hero">
             <div className="timmy-scroll-viewport">
-              <object
-                data={projectData.pdf || timmyHairCareDocument}
-                type="application/pdf"
-                className="timmy-scroll-pdf"
-              >
-                <p>
-                  PDF preview not available.{" "}
-                  <a href={projectData.pdf || timmyHairCareDocument} target="_blank" rel="noreferrer">
-                    Open the TimmyCare case study
-                  </a>
-                </p>
-              </object>
+              <div className="timmy-scroll-track">
+                {[
+                  timicare1,
+                  timicare2,
+                  timicare3,
+                  timicare4,
+                  timicare5,
+                  timicare6,
+                  timicare7,
+                  timicare8,
+                  timicare9,
+                  timicare10,
+                  timicare11,
+                ].map((img, idx) => (
+                  <div className="timmy-scroll-frame" key={idx}>
+                    <img src={img} alt={`TimmyCare page ${idx + 1}`} />
+                    <span className="timmy-scroll-page">Page {idx + 1}</span>
+                  </div>
+                ))}
+              </div>
             </div>
             <span className="timmy-scroll-hint">Scroll to browse the TimmyCare case study</span>
           </div>
