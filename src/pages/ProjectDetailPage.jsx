@@ -103,10 +103,17 @@ import ronUiUx16 from '../assests/Ui-Ux RonZalko-WebDesign_Page_16.jpg';
 import ronUiUx17 from '../assests/Ui-Ux RonZalko-WebDesign_Page_17.jpg';
 import astroPlaceholder from '../assests/AstorMatchlogo.jpg';
 import astroMatchPdf from '../assests/Astro-Match-App.pdf';
-import astroMatch1 from '../assests/Astro-Match-App_Page_1.jpg';
-import astroMatch2 from '../assests/Astro-Match-App_Page_2.jpg';
-import astroMatch3 from '../assests/Astro-Match-App_Page_3.jpg';
-import astroMatch4 from '../assests/Astro-Match-App_Page_4.jpg';
+import astroMatchA from '../assests/astro-match-app_Page_0a.jpg';
+import astroMatchB from '../assests/astro-match-app_Page_0b.jpg';
+import astroMatchC from '../assests/astro-match-app_Page_0c.jpg';
+import astroMatchD from '../assests/astro-match-app_Page_0d.jpg';
+import astroMatchE from '../assests/astro-match-app_Page_0e.jpg';
+import astroMatchF from '../assests/astro-match-app_Page_0f.jpg';
+import astroMatchG from '../assests/astro-match-app_Page_0g.jpg';
+import astroMatchH from '../assests/astro-match-app_Page_0h.jpg';
+import astroMatchI from '../assests/astro-match-app_Page_0i.jpg';
+import astroMatchJ from '../assests/astro-match-app_Page_0j.jpg';
+import astroMatchK from '../assests/astro-match-app_Page_0k.jpg';
 import motionPlaceholder from '../assests/motion graphics.webp';
 import motionGraphicVideo from '../assests/Jujitsu_Kaisen_Intro_Bumper_Timilehin Yomi-Badejo_Final comp.mp4';
 gsap.registerPlugin(ScrollTrigger);
@@ -303,7 +310,6 @@ const getProjectDataById = (id) => {
       id: "5",
       title: "AstroMatch App",
       image: astroPlaceholder,
-      pdf: astroMatchPdf,
       overview: "Designed a swipe-based astrology dating experience that pairs users with matches based on compatibility scores and shared interests.",
       challenges: "Keeping the brand playful while ensuring onboarding, compatibility summaries, and chat flows stay intuitive on small screens.",
       outcome: "Documented compatibility flows and motion cues in a polished case study prepared for class critique.",
@@ -314,10 +320,17 @@ const getProjectDataById = (id) => {
       ],
       technicalInfo: "Product Design, UI/UX, Prototyping",
       galleryImages: [
-        astroMatch1,
-        astroMatch2,
-        astroMatch3,
-        astroMatch4,
+        astroMatchA,
+        astroMatchB,
+        astroMatchC,
+        astroMatchD,
+        astroMatchE,
+        astroMatchF,
+        astroMatchG,
+        astroMatchH,
+        astroMatchI,
+        astroMatchJ,
+        astroMatchK,
       ],
     },
     {
@@ -445,18 +458,26 @@ const ProjectDetailPage = () => {
         ) : isAstro ? (
           <div className="astro-scroll-hero">
             <div className="astro-scroll-viewport">
-              <object
-                data={projectData.pdf || astroMatchPdf}
-                type="application/pdf"
-                className="astro-scroll-pdf"
-              >
-                <p>
-                  PDF preview not available.{" "}
-                  <a href={projectData.pdf || astroMatchPdf} target="_blank" rel="noreferrer">
-                    Open the AstroMatch case study
-                  </a>
-                </p>
-              </object>
+              <div className="astro-scroll-track">
+                {[
+                  astroMatchA,
+                  astroMatchB,
+                  astroMatchC,
+                  astroMatchD,
+                  astroMatchE,
+                  astroMatchF,
+                  astroMatchG,
+                  astroMatchH,
+                  astroMatchI,
+                  astroMatchJ,
+                  astroMatchK,
+                ].map((img, idx) => (
+                  <div className="astro-scroll-frame" key={idx}>
+                    <img src={img} alt={`AstroMatch page ${idx + 1}`} />
+                    <span className="astro-scroll-page">Page {idx + 1}</span>
+                  </div>
+                ))}
+              </div>
             </div>
             <span className="astro-scroll-hint">Scroll to browse AstroMatch</span>
           </div>
