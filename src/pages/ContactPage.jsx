@@ -85,7 +85,7 @@ const ContactPage = () => {
         </div>
         <div className="contact-hero-card">
           <FaPaperPlane size={42} />
-          <p>Drop a line—I'll reply within 24–48 hours.</p>
+          <p>Drop a line I'll reply within 24–48 hours.</p>
         </div>
       </section>
 
@@ -134,10 +134,10 @@ const ContactPage = () => {
           <h3>Contact details</h3>
           <ul>
             <li>
-              <FaEnvelope /> <a href="mailto:timmybadejo@gmail.com">timmybadejo@gmail.com</a>
+              <FaEnvelope /> <a href="mailto:timmybadejo@gmail.com">timmybad@gmail.com</a>
             </li>
             <li>
-              <FaPhoneAlt /> <a href="tel:+1234567890">+1 (234) 567-890</a>
+              <FaPhoneAlt /> <a href="tel:+1234567890">+1 (236) 662-9328</a>
             </li>
             <li>
               <FaLocationArrow /> Vancouver, BC

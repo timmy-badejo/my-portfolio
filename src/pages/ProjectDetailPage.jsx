@@ -317,7 +317,7 @@ const getProjectDataById = (id) => {
       challenges: "Keeping the brand playful while ensuring onboarding, compatibility summaries, and chat flows stay intuitive on small screens.",
       outcome: "Documented compatibility flows and motion cues in a polished case study prepared for class critique.",
       details: [
-        "Created mid- and high-fidelity flows for onboarding, matching, and messaging.",
+        "Created mid and high-fidelity flows for onboarding, matching, and messaging.",
         "Documented compatibility logic, UI states, and motion cues for developer handoff.",
         "Packaged the case study with visuals and flow explanations for stakeholders.",
       ],

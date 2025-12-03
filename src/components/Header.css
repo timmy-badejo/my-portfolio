@@ -104,12 +104,18 @@
       padding: 10px 0;
       border-radius: 5px;
     }
-    .header__nav-menu.active {
-      display: flex;
-    }
-    .header__nav-links {
-      flex-direction: column;
-    }
-   
+  .header__nav-menu.active {
+    display: flex;
   }
+  .header__nav-links {
+    flex-direction: column;
+  }
+  .header__nav-menu .header__nav-link {
+    color: #310000;
+  }
+  .header__nav-menu .header__nav-link:hover {
+    color: #690B22;
+  }
+  
+}
   
