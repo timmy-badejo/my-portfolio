@@ -38,41 +38,9 @@ import scwWire10 from '../assests/SCW Charity Website Wireframe A 2_Page_10.jpg'
 import scwWire11 from '../assests/SCW Charity Website Wireframe A 2_Page_11.jpg';
 import scwWire12 from '../assests/SCW Charity Website Wireframe A 2_Page_12.jpg';
 import scwWire13 from '../assests/SCW Charity Website Wireframe A 2_Page_13.jpg';
+import astroPlaceholder from '../assests/AstorMatchlogo.jpg';
+import motionPlaceholder from '../assests/motion graphics.webp';
 import melodyBeats from '../assests/MelodyCard1.jpg';
-import melody3d from '../assests/3D for melody.png';
-import melodyBeatsLogo from '../assests/Beats for melody.png';
-import melodyBusiness from '../assests/Buisness name for melody.png';
-import melodyEntertainment from '../assests/Entertainment Text Layer for melody.png';
-import melodyLogoBlue from '../assests/Melody Logo 2 blue for melody.png';
-import melodyLogoPoster from '../assests/Melody Logo poster cards for melody.png';
-import melodyBeatsAlt from '../assests/MelodyCard2.jpg';
-import melodyPdf1 from '../assests/melodyBeatsDocument_Page_01.jpg';
-import melodyPdf2 from '../assests/melodyBeatsDocument_Page_02.jpg';
-import melodyPdf3 from '../assests/melodyBeatsDocument_Page_03.jpg';
-import melodyPdf4 from '../assests/melodyBeatsDocument_Page_04.jpg';
-import melodyPdf5 from '../assests/melodyBeatsDocument_Page_05.jpg';
-import melodyPdf6 from '../assests/melodyBeatsDocument_Page_06.jpg';
-import melodyPdf7 from '../assests/melodyBeatsDocument_Page_07.jpg';
-import melodyPdf8 from '../assests/melodyBeatsDocument_Page_08.jpg';
-import melodyPdf9 from '../assests/melodyBeatsDocument_Page_09.jpg';
-import melodyPdf10 from '../assests/melodyBeatsDocument_Page_10.jpg';
-import melodyPdf11 from '../assests/melodyBeatsDocument_Page_11.jpg';
-import melodyPdf12 from '../assests/melodyBeatsDocument_Page_12.jpg';
-import melodyCard1 from '../assests/Yomi-Badejo Timilehin_InDesign Exploration Buisness Card for melody.jpg';
-import melodyCard2 from '../assests/Yomi-Badejo Timilehin_InDesign Exploration Buisness Card2 for melody.jpg';
-import melodyCard3 from '../assests/Yomi-Badejo Timilehin_InDesign Exploration Buisness Card3 for melody.jpg';
-import melodyCard4 from '../assests/Yomi-Badejo Timilehin_InDesign Exploration Buisness Card4 for melody.jpg';
-import melodyCard5 from '../assests/Yomi-Badejo Timilehin_InDesign Exploration Buisness Card5 for melody.jpg';
-import melodyCard6 from '../assests/Yomi-Badejo Timilehin_InDesign Exploration Buisness Card6 for melody.jpg';
-import melodyPost1 from '../assests/Yomi-Badejo Timilehin_Indesign Exploration Post Cards for melody.jpg';
-import melodyPost2 from '../assests/Yomi-Badejo Timilehin_Indesign Exploration Post Cards2 for melody.jpg';
-import melodyPost3 from '../assests/Yomi-Badejo Timilehin_Indesign Exploration Post Cards3 for melody.jpg';
-import melodyPost4 from '../assests/Yomi-Badejo Timilehin_Indesign Exploration Post Cards4 for melody.jpg';
-import melodyPost5 from '../assests/Yomi-Badejo Timilehin_Indesign Exploration Post Cards5 for melody.jpg';
-import melodyPost6 from '../assests/Yomi-Badejo Timilehin_Indesign Exploration Post Cards6 for melody.jpg';
-import melodyBlue from '../assests/melody blue for melody.png';
-import melodyHeadphones from '../assests/melody head phones for melody.png';
-import melodyShape from '../assests/melody shape logo for melody.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -91,6 +59,13 @@ const WorkPage = () => {
       link: '/projects/1',
     },
     {
+      title: 'Melody Beats Branding',
+      desc: 'Designed branding and business cards for Melody Beats.',
+      image: melodyBeats,
+      tags: ['Illustrator', 'Photoshop'],
+      link: '/projects/2',
+    },
+    {
       title: 'TimmyCare App Redesign',
       desc: 'Mobile flows, usability findings, and interactive prototype.',
       image: timmyCare,
@@ -104,17 +79,26 @@ const WorkPage = () => {
       tags: ['Web', 'Accessibility', 'CMS'],
       link: '/projects/4',
     },
+    {
+      title: 'AstroMatch App',
+      desc: 'Swipe-based astrology dating experience with compatibility scoring.',
+      image: astroPlaceholder,
+      tags: ['Product Design', 'UI/UX', 'Prototyping'],
+      link: '/projects/5',
+    },
+    {
+      title: 'Motion Graphic Intro',
+      desc: 'Anime-inspired kinetic typography bumper, optimized for web playback.',
+      image: motionPlaceholder,
+      tags: ['After Effects', 'Premiere Pro'],
+      link: '/projects/6',
+    },
   ];
 
   const galleryImages = [
     ronWire1, ronWire2, ronWire3, ronWire4, ronWire5, ronWire6, ronWire7, ronWire8, ronWire9, ronWire10, ronWire11, ronWire12,
     timmyCare, timmyHairCare1, timmyHairCare2, timmyHairCare3,
     scwWire1, scwWire2, scwWire3, scwWire4, scwWire5, scwWire6, scwWire7, scwWire8, scwWire9, scwWire10, scwWire11, scwWire12, scwWire13,
-    melodyBeats, melody3d, melodyBeatsLogo, melodyBusiness, melodyEntertainment, melodyLogoBlue, melodyLogoPoster, melodyBeatsAlt,
-    melodyPdf1, melodyPdf2, melodyPdf3, melodyPdf4, melodyPdf5, melodyPdf6, melodyPdf7, melodyPdf8, melodyPdf9, melodyPdf10, melodyPdf11, melodyPdf12,
-    melodyCard1, melodyCard2, melodyCard3, melodyCard4, melodyCard5, melodyCard6,
-    melodyPost1, melodyPost2, melodyPost3, melodyPost4, melodyPost5, melodyPost6,
-    melodyBlue, melodyHeadphones, melodyShape,
   ];
 
   const processSteps = [

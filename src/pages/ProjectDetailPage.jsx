@@ -69,8 +69,6 @@ import scwWire11 from '../assests/SCW Charity Website Wireframe A 2_Page_11.jpg'
 import scwWire12 from '../assests/SCW Charity Website Wireframe A 2_Page_12.jpg';
 import scwWire13 from '../assests/SCW Charity Website Wireframe A 2_Page_13.jpg';
 import timmyHairCare from '../assests/timmyhaircare4.jpg';
-import timmyHairCareDocument from '../assests/timmyHairCareDocument.pdf';
-import timmyCareMobilePdf from '../assests/TimmyCare Mobile app.pdf';
 import timmyHairCare1 from '../assests/timmyhaircare1.jpg';
 import timmyHairCare2 from '../assests/timmyhaircare2.jpg';
 import timmyHairCare3 from '../assests/timmyhaircare3.jpg';
@@ -103,7 +101,6 @@ import ronUiUx14 from '../assests/Ui-Ux RonZalko-WebDesign_Page_14.jpg';
 import ronUiUx15 from '../assests/Ui-Ux RonZalko-WebDesign_Page_15.jpg';
 import ronUiUx16 from '../assests/Ui-Ux RonZalko-WebDesign_Page_16.jpg';
 import ronUiUx17 from '../assests/Ui-Ux RonZalko-WebDesign_Page_17.jpg';
-import scwCharityDocument from '../assests/scwCharityDocument.pdf';
 import astroPlaceholder from '../assests/AstorMatchlogo.jpg';
 import astroMatchPdf from '../assests/Astro-Match-App.pdf';
 import astroMatch1 from '../assests/Astro-Match-App_Page_1.jpg';
@@ -277,7 +274,6 @@ const getProjectDataById = (id) => {
       id: "4",
       title: "SCW Charity Website",
       image: scwCharity,
-      pdf: scwCharityDocument,
       overview: "Developed a user-focused website to promote social welfare initiatives and community outreach.",
       challenges: "Limited resources required creative problem-solving to deliver impactful results and ensure stakeholder satisfaction.",
       outcome: "Published a responsive prototype with accessible layouts and a storytelling deck for the outreach case study rubric.",
