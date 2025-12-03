@@ -94,6 +94,119 @@
   font-size: 0.85rem;
 }
 
+.service-offers {
+  margin: 10px 0 0;
+  padding-left: 18px;
+  color: #4a3b30;
+  line-height: 1.5;
+}
+
+.service-offers li {
+  margin-bottom: 4px;
+}
+
+.services-process {
+  margin-top: 32px;
+}
+
+.services-process-head {
+  margin-bottom: 18px;
+}
+
+.services-process-head p {
+  color: #4a3b30;
+}
+
+.services-process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.service-process-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 16px;
+  border: 1px solid rgba(188, 165, 142, 0.3);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.service-process-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.services-why {
+  margin: 40px 0 20px;
+}
+
+.services-why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.service-why-card {
+  background: #fff;
+  border: 1px solid rgba(49, 0, 0, 0.12);
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.services-cta {
+  margin: 40px 0;
+  text-align: center;
+  background: linear-gradient(135deg, #fff7ef, #f5f0ff);
+  border: 1px solid rgba(49,0,0,0.12);
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.services-cta h2 {
+  margin: 0 0 10px 0;
+}
+
+.services-cta p {
+  color: #4a3b30;
+  margin: 0 0 12px 0;
+}
+
+.services-btn {
+  display: inline-block;
+  background: #310000;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.services-tools {
+  margin: 30px 0;
+}
+
+.services-tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px;
+}
+
+.service-tool {
+  background: #f9f7f4;
+  border: 1px solid rgba(188, 165, 142, 0.3);
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+  font-weight: 700;
+  color: #310000;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.06);
+}
+
 @media (max-width: 768px) {
   .services-page {
     padding: 40px 6%;
