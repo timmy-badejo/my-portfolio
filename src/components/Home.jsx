@@ -36,7 +36,6 @@ const Home = () => {
     <section className="home">
       <Header />
 
-      {/* Social Icons */}
       
 
       {/* Banner Section */}
