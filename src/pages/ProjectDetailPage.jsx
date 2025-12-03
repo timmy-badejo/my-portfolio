@@ -102,7 +102,6 @@ import ronUiUx15 from '../assests/Ui-Ux RonZalko-WebDesign_Page_15.jpg';
 import ronUiUx16 from '../assests/Ui-Ux RonZalko-WebDesign_Page_16.jpg';
 import ronUiUx17 from '../assests/Ui-Ux RonZalko-WebDesign_Page_17.jpg';
 import astroPlaceholder from '../assests/AstorMatchlogo.jpg';
-import astroMatchPdf from '../assests/Astro-Match-App.pdf';
 import astroMatchA from '../assests/astro-match-app_Page_0a.jpg';
 import astroMatchB from '../assests/astro-match-app_Page_0b.jpg';
 import astroMatchC from '../assests/astro-match-app_Page_0c.jpg';

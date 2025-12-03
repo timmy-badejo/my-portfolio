@@ -341,6 +341,7 @@ const AboutMePage = () => {
   }, []);
 
   return (
+    
     <div className="ap-about-me-page">
       <section className="ap-hero-section">
         <div className="ap-hero-grid">

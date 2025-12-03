@@ -4,7 +4,6 @@ import AboutMeSection from '../components/AboutMeSection';
 import SkillsSection from '../components/SkillsSection';
 import OfferSection from '../components/OfferSection';
 import FeaturedProjects from '../components/FeaturedProjects';
-import ContactSection from '../components/ContactSection';
 import MyProcessSection from '../components/MyProcessSection'; 
 import BackgroundCanvas from "../components/BackgroundCanvas";
 import Card from "../components/Card";
@@ -88,10 +87,7 @@ const LandingPage = () => {
         <MyProcessSection />
       </section>
 
-      {/* Contact Section */}
-      <section className="contact-section">
-        <ContactSection />
-      </section>
+      
     </div>
   );
 };
