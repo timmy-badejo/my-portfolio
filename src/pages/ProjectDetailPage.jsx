@@ -114,6 +114,10 @@ import astroMatchH from '../assests/astro-match-app_Page_0h.jpg';
 import astroMatchI from '../assests/astro-match-app_Page_0i.jpg';
 import astroMatchJ from '../assests/astro-match-app_Page_0j.jpg';
 import astroMatchK from '../assests/astro-match-app_Page_0k.jpg';
+import astroMatch1 from '../assests/Astro-Match-App_Page_1.jpg';
+import astroMatch2 from '../assests/Astro-Match-App_Page_2.jpg';
+import astroMatch3 from '../assests/Astro-Match-App_Page_3.jpg';
+import astroMatch4 from '../assests/Astro-Match-App_Page_4.jpg';
 import motionPlaceholder from '../assests/motion graphics.webp';
 import motionGraphicVideo from '../assests/Jujitsu_Kaisen_Intro_Bumper_Timilehin Yomi-Badejo_Final comp.mp4';
 gsap.registerPlugin(ScrollTrigger);
@@ -320,17 +324,10 @@ const getProjectDataById = (id) => {
       ],
       technicalInfo: "Product Design, UI/UX, Prototyping",
       galleryImages: [
-        astroMatchA,
-        astroMatchB,
-        astroMatchC,
-        astroMatchD,
-        astroMatchE,
-        astroMatchF,
-        astroMatchG,
-        astroMatchH,
-        astroMatchI,
-        astroMatchJ,
-        astroMatchK,
+        astroMatch1,
+        astroMatch2,
+        astroMatch3,
+        astroMatch4,
       ],
     },
     {
