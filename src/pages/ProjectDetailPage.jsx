@@ -6,6 +6,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './ProjectDetailPage.css';
+import BackToHomeButton from '../components/BackToHomeButton';
 import RonZalkoWebDesign from '../assests/Ron Zalko web design.jpg';
 import ronWire1 from '../assests/Ron-Zalko-Web-Design-Wireframe_Page_01.jpg';
 import ronWire2 from '../assests/Ron-Zalko-Web-Design-Wireframe_Page_02.jpg';
@@ -395,6 +396,7 @@ const ProjectDetailPage = () => {
 
   return (
     <div className="project-detail">
+      <BackToHomeButton />
       {/* Hero Section */}
       <div
         className={`project-hero ${isMelody ? 'melody-hero' : ''} ${isScw ? 'scw-hero' : ''} ${
