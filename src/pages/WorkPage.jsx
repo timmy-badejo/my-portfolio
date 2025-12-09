@@ -42,6 +42,7 @@ import scwWire13 from '../assests/SCW Charity Website Wireframe A 2_Page_13.jpg'
 import astroPlaceholder from '../assests/AstorMatchlogo.jpg';
 import motionPlaceholder from '../assests/motion graphics.webp';
 import melodyBeats from '../assests/MelodyCard1.jpg';
+import kvdstLogo from '../assests/KVDST LOGO.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -83,7 +84,7 @@ const WorkPage = () => {
     {
       title: 'KVDST Social Media Marketing',
       desc: 'Collaborative landing page for a social campaign with smooth scroll storytelling.',
-      image: collaborationIcon,
+      image: kvdstLogo,
       tags: ['Web', 'Collab', 'Marketing'],
       link: '/projects/7',
     },
