@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Tilt from 'react-parallax-tilt';
 import './WorkPage.css';
+import BackToHomeButton from '../components/BackToHomeButton';
 import ronZalko from '../assests/Ron Zalko web design.jpg';
 import timmyCare from '../assests/timmyhaircare4.jpg';
 import scwCharity from '../assests/scwcharitywebpage.png';
@@ -193,6 +194,7 @@ const WorkPage = () => {
 
   return (
     <div className="work-page">
+      <BackToHomeButton />
       <section className="work-hero" ref={heroRef}>
         <div>
           <p className="work-kicker">Selected Work</p>

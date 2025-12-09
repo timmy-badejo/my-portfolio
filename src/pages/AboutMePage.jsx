@@ -15,6 +15,7 @@ import ideaIcon from '../assests/branding.svg';
 import prototypeWire from '../assests/prototypewireframe.png';
 import webdevIcon from '../assests/webdev.png';
 import './AboutMePage.css';
+import BackToHomeButton from '../components/BackToHomeButton';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -343,6 +344,7 @@ const AboutMePage = () => {
   return (
     
     <div className="ap-about-me-page">
+      <BackToHomeButton />
       <section className="ap-hero-section">
         <div className="ap-hero-grid">
           <div className="ap-hero-copy">

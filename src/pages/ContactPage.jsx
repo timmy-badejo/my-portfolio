@@ -4,6 +4,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { FaEnvelope, FaPhoneAlt, FaLocationArrow, FaPaperPlane } from 'react-icons/fa';
 import './ContactPage.css';
+import BackToHomeButton from '../components/BackToHomeButton';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -70,6 +71,7 @@ const ContactPage = () => {
 
   return (
     <div className="contact-page">
+      <BackToHomeButton />
       <section className="contact-hero" ref={heroRef}>
         <div className="contact-hero-copy">
           <p className="contact-kicker">Let’s collaborate</p>
