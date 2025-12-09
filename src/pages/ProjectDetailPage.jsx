@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
 import Tilt from 'react-parallax-tilt';
@@ -123,6 +123,8 @@ import motionPlaceholder from '../assests/motion graphics.webp';
 import motionGraphicVideo from '../assests/Jujitsu_Kaisen_Intro_Bumper_Timilehin Yomi-Badejo_Final comp.mp4';
 gsap.registerPlugin(ScrollTrigger);
 
+const CODE_TABS = ["html", "css", "js"];
+
 const ParallaxGallery = ({ images }) => {
   const containerRef = React.useRef(null);
 
@@ -165,6 +167,42 @@ const ParallaxGallery = ({ images }) => {
           </div>
         </Tilt>
       ))}
+    </div>
+  );
+};
+
+const CodeViewer = ({ samples }) => {
+  const [activeTab, setActiveTab] = useState(
+    CODE_TABS.find((key) => samples?.[key]) || "html"
+  );
+
+  useEffect(() => {
+    const firstTab = CODE_TABS.find((key) => samples?.[key]);
+    if (firstTab) {
+      setActiveTab((current) => (current === firstTab ? current : firstTab));
+    }
+  }, [samples]);
+
+  const tabs = CODE_TABS.filter((key) => samples?.[key]);
+  const activeCode = samples?.[activeTab] || "";
+
+  return (
+    <div className="code-viewer">
+      <div className="code-tabs">
+        {tabs.map((tab) => (
+          <button
+            key={tab}
+            className={`code-tab ${activeTab === tab ? "active" : ""}`}
+            onClick={() => setActiveTab(tab)}
+            type="button"
+          >
+            {tab.toUpperCase()}
+          </button>
+        ))}
+      </div>
+      <pre className="code-block">
+        <code>{activeCode}</code>
+      </pre>
     </div>
   );
 };
@@ -360,6 +398,641 @@ const getProjectDataById = (id) => {
         "Added subtle motion/hover accents while keeping performance lean for fast load on mobile.",
       ],
       technicalInfo: "Web Design, Collaboration, Social Media Marketing",
+      codeSamples: {
+        js: `$(function() {
+
+    $("input,textarea").jqBootstrapValidation({
+        preventSubmit: true,
+        submitError: function($form, event, errors) {
+            // additional error messages or events
+        },
+        submitSuccess: function($form, event) {
+            event.preventDefault(); // prevent default submit behaviour
+            // get values from FORM
+            var name = $("input#name").val();
+            var email = $("input#email").val();
+            var phone = $("input#phone").val();
+            var message = $("textarea#message").val();
+            var firstName = name; // For Success/Failure Message
+            // Check for white space in name for Success/Fail message
+            if (firstName.indexOf(' ') >= 0) {
+                firstName = name.split(' ').slice(0, -1).join(' ');
+            }
+            $.ajax({
+                url: "http://jennylynpereira.com/themeforest/antelope/assets/submit.php",
+                type: "POST",
+                data: {
+                    name: name,
+                    phone: phone,
+                    email: email,
+                    message: message
+                },
+                cache: false,
+                success: function() {
+                    // Success message
+                    $('#success').html("<div class='alert alert-success'>");
+                    $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+                        .append("</button>");
+                    $('#success > .alert-success')
+                        .append("<strong>Your message has been sent. </strong>");
+                    $('#success > .alert-success')
+                        .append('</div>');
+
+                    //clear all fields
+                    $('#contact-form').trigger("reset");
+                },
+                error: function() {
+                    // Fail message
+                    $('#success').html("<div class='alert alert-danger'>");
+                    $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+                        .append("</button>");
+                    $('#success > .alert-danger').append("<strong>Sorry " + firstName + ", it seems that my mail server is not responding. Please try again later!");
+                    $('#success > .alert-danger').append('</div>');
+                    //clear all fields
+                    $('#contact-form').trigger("reset");
+                },
+            })
+        },
+        filter: function() {
+            return $(this).is(":visible");
+        },
+    });
+
+    $("a[data-toggle=\\"tab\\"]").click(function(e) {
+        e.preventDefault();
+        $(this).tab("show");
+    });
+});
+
+
+/*When clicking on Full hide fail/success boxes */
+$('#name').focus(function() {
+    $('#success').html('');
+});`,
+        css: `.owl-carousel .owl-wrapper:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+/* display none until init */
+.owl-carousel{
+    display: none;
+    position: relative;
+    width: 100%;
+    -ms-touch-action: pan-y;
+}
+.owl-carousel .owl-wrapper{
+    display: none;
+    position: relative;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+}
+.owl-carousel .owl-wrapper-outer{
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+.owl-carousel .owl-wrapper-outer.autoHeight{
+    -webkit-transition: height 500ms ease-in-out;
+    -moz-transition: height 500ms ease-in-out;
+    -ms-transition: height 500ms ease-in-out;
+    -o-transition: height 500ms ease-in-out;
+    transition: height 500ms ease-in-out;
+}
+    
+.owl-carousel .owl-item{
+    float: left;
+}
+.owl-controls .owl-page,
+.owl-controls .owl-buttons div{
+    cursor: pointer;
+}
+.owl-controls {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* mouse grab icon */
+.grabbing { 
+    cursor:url(grabbing.png) 8 8, move;
+}
+
+/* fix */
+.owl-carousel  .owl-wrapper,
+.owl-carousel  .owl-item{
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility:    hidden;
+    -ms-backface-visibility:     hidden;
+  -webkit-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+}`,
+        html: `<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KVDST Music Label</title>
+    <meta name="description" content="KVDST Music Label. It is built using bootstrap 3.3.2 framework, works totally responsive, easy to customise, well commented codes and seo friendly.">
+    <meta name="keywords" content="KVDST Music Label, music, industry, records, entertainment">
+    
+    
+    <!-- ==============================================
+    Favicons
+    =============================================== -->
+    <link rel="shortcut icon" href="images/kvdst 72.png">
+    <link rel="apple-touch-icon" href="images/kvdst-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/kvdst 72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/kvdst 114.png">
+    
+    <!-- ==============================================
+    CSS
+    =============================================== -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="css/owl.theme.css">
+    <link rel="stylesheet" type="text/css" href="css/magnific-popup.css">
+    <link rel="stylesheet" type="text/css" href="css/superslides.css">
+    
+    <!-- ==============================================
+    Google Fonts
+    =============================================== -->
+    <link href='https://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    
+    <!-- ==============================================
+    Custom Stylesheet
+    =============================================== -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    
+    
+    
+    <script type="text/javascript" src="js/modernizr.min.js"></script>
+    
+    
+
+</head>
+
+<body>
+    
+    <!-- Load page -->
+    <div class="animationload">
+        <div class="loader"></div>
+    </div>
+    
+    <!-- NAVBAR SECTION -->
+    <div class="navbar navbar-main navbar-fixed-top">
+        <div class="container">
+        
+            <div class="top-sosmed pull-right">
+                <a href="#" title=""><span class="fa fa-facebook"></span></a>
+                <a href="#" title=""><span class="fa fa-twitter"></span></a>
+                <a href="#" title=""><span class="fa fa-soundcloud"></span></a>
+            </div>
+            
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/KVDST LOGO.png" alt="" />
+                </a>
+            </div>
+            
+            <nav id="navbar-spy" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#slides">Home</a></li>
+                    <li><a href="#studio">About Us</a></li>
+                    <li><a href="#services">Events</a></li>
+                    <li><a href="#gallery">Merch</a></li>
+                    <li><a href="#team">TEAM</a></li>
+                    <li><a href="#news">NEWS</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">About Us</a></li>
+                        <li><a href="gallery.html">Merch</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="news-detail.html">News Detail</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="blog-detail.html">Blog</a></li>
+                      </ul>
+                    </li>
+
+                </ul>
+            </nav>
+            
+        </div>
+    </div>
+ 
+    <!-- BANNER -->
+    <div class="section subbanner">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
+                    <div class="caption">RUST CHAINS MERCH</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- GALLERY SECTION -->
+    <div class="section gallery">
+        <div class="container">
+            
+            <div class="row popup-gallery">
+                <div class="col-xs-4 col-sm-3 col-md-3">
+                    <div class="w-item">
+                        <a href="images/chaotic collapse black tee.png" title="Gallery #1">
+                            <img src="images/chaotic collapse black tee.png" alt="" class="img-responsive">
+                            <div class="project-info">
+                                <div class="project-icon">
+                                    <span class="fa fa-search"></span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xs-4 col-sm-3 col-md-3">
+                    <div class="w-item">
+                        <a href="images/chaotic collapse inverted.png" title="Gallery #2">
+                            <img src="images/chaotic collapse inverted.png" alt="" class="img-responsive">
+                            <div class="project-info">
+                                <div class="project-icon">
+                                    <span class="fa fa-search"></span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xs-4 col-sm-3 col-md-3">
+                    <div class="w-item">
+                        <a href="images/chaotic collapse vinyl.png" title="Gallery #3">
+                            <img src="images/chaotic collapse vinyl.png" alt="" class="img-responsive">
+                            <div class="project-info">
+                                <div class="project-icon">
+                                    <span class="fa fa-search"></span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xs-4 col-sm-3 col-md-3">
+                    <div class="w-item">
+                        <a href="images/chaotic collapse tee.png" title="Gallery #4">
+                            <img src="images/chaotic collapse tee.png" alt="" class="img-responsive">
+                            <div class="project-info">
+                                <div class="project-icon">
+                                    <span class="fa fa-search"></span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xs-4 col-sm-3 col-md-3">
+                    <div class="w-item">
+                        <a href="images/chaotic collapse hoodie.png" title="Gallery #5">
+                            <img src="images/chaotic collapse hoodie.png" alt="" class="img-responsive">
+                            <div class="project-info">
+                                <div class="project-icon">
+                                    <span class="fa fa-search"></span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xs-4 col-sm-3 col-md-3">
+                    <div class="w-item">
+                        <a href="images/the revolution graphic.png" title="Gallery #6">
+                            <img src="images/the revolution graphic.png" alt="" class="img-responsive">
+                            <div class="project-info">
+                                <div class="project-icon">
+                                    <span class="fa fa-search"></span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xs-4 col-sm-3 col-md-3">
+                    <div class="w-item">
+                        <a href="images/the revolution vinly.png" title="Gallery #1">
+                            <img src="images/the revolution vinly.png" alt="" class="img-responsive">
+                            <div class="project-info">
+                                <div class="project-icon">
+                                    <span class="fa fa-search"></span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xs-4 col-sm-3 col-md-3">
+                    <div class="w-item">
+                        <a href="images/logo tshirt.png" title="Gallery #1">
+                            <img src="images/logo tshirt.png" alt="" class="img-responsive">
+                            <div class="project-info">
+                                <div class="project-icon">
+                                    <span class="fa fa-search"></span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xs-4 col-sm-3 col-md-3">
+                    <div class="w-item">
+                        <a href="images/chaotic collapse.png" title="Gallery #1">
+                            <img src="images/chaotic collapse.png" alt="" class="img-responsive">
+                            <div class="project-info">
+                                <div class="project-icon">
+                                    <span class="fa fa-search"></span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xs-4 col-sm-3 col-md-3">
+                    <div class="w-item">
+                        <a href="images/logo hoodie.png" title="Gallery #2">
+                            <img src="images/logo hoodie.png" alt="" class="img-responsive">
+                            <div class="project-info">
+                                <div class="project-icon">
+                                    <span class="fa fa-search"></span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xs-4 col-sm-3 col-md-3">
+                    <div class="w-item">
+                        <a href="iimages/hoodiemockup.png" title="Gallery #3">
+                            <img src="images/hoodiemockup.png" alt="" class="img-responsive">
+                            <div class="project-info">
+                                <div class="project-icon">
+                                    <span class="fa fa-search"></span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xs-4 col-sm-3 col-md-3">
+                    <div class="w-item">
+                        <a href="images/rust chains vinyl sticker.png" title="Gallery #4">
+                            <img src="images/rust chains vinyl sticker.png" alt="" class="img-responsive">
+                            <div class="project-info">
+                                <div class="project-icon">
+                                    <span class="fa fa-search"></span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+        
+        </div>
+    </div>
+    
+    <!-- VIDEO SECTION -->
+    <div class="section video bg2">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-md-offset-3">
+                    <div class="section-title">
+                        <h3 class="lead">LATEST VIDEO</h3>
+                        <div class="border-style"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-8 col-md-offset-2">
+                    <!-- 16:9 aspect ratio -->
+                    <div class="embed-responsive embed-responsive-16by9">
+                      <iframe class="embed-responsive-item" src="http://www.youtube.com/embed/RVBPu9sPKkU"></iframe>
+                    </div>
+
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- AUDIO SECTION -->
+    <div class="section audio">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-md-offset-3">
+                    <div class="section-title">
+                        <h3 class="lead">LATEST AUDIO</h3>
+                        <div class="border-style"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-8 col-md-offset-2">
+                    <!-- 16:9 aspect ratio -->
+                    <div class="embed-responsive embed-responsive-16by9">
+                      <iframe class="embed-responsive-item" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/61082232&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+                    </div>
+
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- CONNECT SECTION -->
+    <div class="section connect bg5">
+        <div class="container">
+            
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
+                    <a href="#" title="">
+                        <div class="item">
+                            <i class="fa fa-facebook"></i>
+                        </div>
+                    </a>
+                    <a href="#" title="">
+                        <div class="item">
+                            <i class="fa fa-twitter"></i>
+                        </div>
+                    </a>
+                    <a href="#" title="">
+                        <div class="item">
+                            <i class="fa fa-pinterest"></i>
+                        </div>
+                    </a>
+                    <a href="#" title="">
+                        <div class="item">
+                            <i class="fa fa-google"></i>
+                        </div>
+                    </a>
+                    <a href="#" title="">
+                        <div class="item">
+                            <i class="fa fa-instagram"></i>
+                        </div>
+                    </a>
+                    <a href="#" title="">
+                        <div class="item">
+                            <i class="fa fa-soundcloud"></i>
+                        </div>
+                    </a>
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- FOOTER SECTION -->
+    <div class="footer">
+    
+        <div class="f-desc">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4 col-md-4">
+                        <div class="footer-item">
+                            <div class="footer-title">
+                                <h4>ABOUT US</h4>
+                            </div>
+                            <p> Welcome to KVDST Record Label, your gateway to the vibrant world of Canadian music. At KVDST, we are dedicated to discovering and nurturing musical talent from across the country. Our mission is to provide a platform for emerging and local artists, giving them the support and resources they need to thrive in the music industry.</p>
+                            <div class="about-info">
+                                <p>
+                                    KVDST Record Label <br />
+                                    KVDST Record Label
+                                    123 Music Lane
+                                    Vancouver, BC
+                                    V6B 1A1 <br />
+                                    Office Hours: Monday to Friday, 9:00 AM - 5:00 PM (PST) <br />
+                                P:+1 (604) 555-6789
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-md-4">
+                        <div class="footer-item">
+                            <div class="footer-title">
+                                <h4>LATEST POST</h4>
+                            </div>
+                            <div class="widget-wrap">
+                                <div class="media">
+                                    <div class="media-left">
+                                        <a href="#">
+                                          <img class="media-object" src="images/upcomingevent.jpg" alt="...">
+                                        </a>
+                                    </div>
+                                    <div class="media-body">
+                                        <p><a href="#" title="">Upcoming Events: Summer Concert Series.</a></p>
+                                        <div class="meta-comment">
+                                            <i class="fa fa-comments"></i>Mark your calendars for the KVDST Summer Concert Series! Join us for unforgettable nights of live music featuring some of our best artists.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="media">
+                                    <div class="media-left">
+                                        <a href="#">
+                                          <img class="media-object" src="images/meettheteam.jpg" alt="...">
+                                        </a>
+                                    </div>
+                                    <div class="media-body">
+                                        <p><a href="#" title="">Meet the Team: Behind the Scenes at KVDST.</a></p>
+                                        <div class="meta-comment">
+                                            <i class="fa fa-comments"></i>Get to know the passionate individuals who make KVDST Record Label possible. From our dedicated A&R team to our innovative marketing experts, meet the people working tirelessly to bring you the best in music
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="media">
+                                    <div class="media-left">
+                                        <a href="#">
+                                          <img class="media-object" src="images/luna echo.jpg" alt="...">
+                                        </a>
+                                    </div>
+                                    <div class="media-body">
+                                        <p><a href="#" title="">Review: "Luna Wave's 'Cosmic Drift' redefines genre boundaries, offering a fresh and captivating listening experience." </a></p>
+                                        <div class="meta-comment">
+                                            <i class="fa fa-comments"></i>20 Comments
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-md-4">
+                        <div class="footer-item">
+                            <div class="footer-title">
+                                <h4>NEWSLETTER</h4>
+                            </div>
+                            <div class="footer-form">
+                                <form action="#">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Name">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Email">
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-default">SUBSCRIBE</button>
+                                    </div>
+                                    
+                                </form>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+                
+        </div>
+        
+        <div class="fcopy">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <p class="ftex">&copy;2024 KVDST Record Label. All rights reserved.</p> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+     
+     
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.superslides.js"></script>
+    <script type='text/javascript' src='https://maps.google.com/maps/api/js?sensor=false&#038;ver=4.1.5'></script>
+    <script type="text/javascript" src="js/waypoints.min.js"></script>
+    
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-hover-dropdown.min.js"></script>
+    <!-- sendmail -->
+    <script type="text/javascript" src="js/validator.min.js"></script>
+    <script type="text/javascript" src="js/form-scripts.js"></script>
+    
+    <script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    
+</body>
+</html>`
+      },
     },
   ];
 
@@ -656,19 +1329,28 @@ const ProjectDetailPage = () => {
         </div>
       )}
 
-      {/* Carousel for Images */}
-      <div className="project-section">
-        <h2>Gallery</h2>
-        {projectData.galleryImages ? (
-          <ParallaxGallery images={projectData.galleryImages} />
-        ) : (
-          <Carousel showThumbs={false} dynamicHeight>
-            <div>
-              <img src={projectData.image} alt="Project" />
-            </div>
-          </Carousel>
-        )}
-      </div>
+      {isKvdst && projectData.codeSamples && (
+        <div className="project-section">
+          <h2>View code</h2>
+          <p className="code-note">HTML, CSS, and JS pulled straight from the campaign repo.</p>
+          <CodeViewer samples={projectData.codeSamples} />
+        </div>
+      )}
+
+      {!isKvdst && (
+        <div className="project-section">
+          <h2>Gallery</h2>
+          {projectData.galleryImages ? (
+            <ParallaxGallery images={projectData.galleryImages} />
+          ) : (
+            <Carousel showThumbs={false} dynamicHeight>
+              <div>
+                <img src={projectData.image} alt="Project" />
+              </div>
+            </Carousel>
+          )}
+        </div>
+      )}
     </div>
   );
 };

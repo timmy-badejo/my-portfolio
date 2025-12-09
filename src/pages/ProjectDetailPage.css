@@ -635,6 +635,62 @@
   line-height: 1.6;
 }
 
+.code-viewer {
+  background: linear-gradient(135deg, #0f1117, #0d0f14);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+.code-tabs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.code-tab {
+  background: #1c1f29;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #dfe9ff;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.code-tab:hover {
+  transform: translateY(-1px);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.code-tab.active {
+  background: linear-gradient(120deg, #9c6cff, #ff5e9f);
+  color: #0d0f14;
+  border-color: transparent;
+  box-shadow: 0 8px 20px rgba(156, 108, 255, 0.2);
+}
+
+.code-block {
+  background: #0a0c11;
+  color: #c9dafc;
+  padding: 14px;
+  border-radius: 10px;
+  overflow: auto;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.code-note {
+  color: #4a4f63;
+  margin-bottom: 8px;
+}
+
 .carousel .slide img {
   max-height: 500px;
   object-fit: cover;
