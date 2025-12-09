@@ -396,7 +396,7 @@ const ProjectDetailPage = () => {
 
   return (
     <div className="project-detail">
-      <BackToHomeButton />
+      <BackToHomeButton to="/work" label="Back to Work" />
       {/* Hero Section */}
       <div
         className={`project-hero ${isMelody ? 'melody-hero' : ''} ${isScw ? 'scw-hero' : ''} ${
