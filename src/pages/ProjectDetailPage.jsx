@@ -7,6 +7,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './ProjectDetailPage.css';
 import BackToHomeButton from '../components/BackToHomeButton';
+import kvdstThumb from '../assests/branding.svg';
 import RonZalkoWebDesign from '../assests/Ron Zalko web design.jpg';
 import ronWire1 from '../assests/Ron-Zalko-Web-Design-Wireframe_Page_01.jpg';
 import ronWire2 from '../assests/Ron-Zalko-Web-Design-Wireframe_Page_02.jpg';
@@ -345,6 +346,21 @@ const getProjectDataById = (id) => {
       ],
       technicalInfo: "After Effects, Premiere Pro, Motion Graphics",
     },
+    {
+      id: "7",
+      title: "KVDST Social Media Marketing Site",
+      image: kvdstThumb,
+      liveUrl: "https://kvdst.danielkolpakov.com/index.html",
+      overview: "Co-built a collaborative marketing site for a school social campaign, pairing content strategy with a clean, scroll-friendly layout.",
+      challenges: "Aligning design, copy, and handoff across GitHub while keeping the landing focused on a single CTA and smooth scroll experience.",
+      outcome: "Launched a responsive landing that showcased the campaign narrative and made it simple to explore services and contact options.",
+      details: [
+        "Co-coded with Daniel Kolpakov using GitHub for version control, documentation, and PR reviews.",
+        "Structured a hero, services, and results story that kept visitors moving down-page with anchored CTAs.",
+        "Added subtle motion/hover accents while keeping performance lean for fast load on mobile.",
+      ],
+      technicalInfo: "Web Design, Collaboration, Social Media Marketing",
+    },
   ];
 
   return projects.find((project) => project.id === id);
@@ -358,8 +374,10 @@ const ProjectDetailPage = () => {
   const isScw = projectData?.id === "4";
   const isTimmyCare = projectData?.id === "3";
   const isAstro = projectData?.id === "5";
+  const isKvdst = projectData?.id === "7";
   const ronViewportRef = useRef(null);
   const ronTrackRef = useRef(null);
+  const liveFrameRef = useRef(null);
 
   useEffect(() => {
     if (!isRon) return;
@@ -390,6 +408,25 @@ const ProjectDetailPage = () => {
     };
   }, [isRon]);
 
+  useEffect(() => {
+    if (!projectData?.liveUrl || !liveFrameRef.current) return;
+    gsap.fromTo(
+      liveFrameRef.current,
+      { opacity: 0, y: 40, scale: 0.97 },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: liveFrameRef.current,
+          start: "top 75%",
+        },
+      }
+    );
+  }, [projectData]);
+
   if (!projectData) {
     return <p>Project not found</p>;
   }
@@ -401,7 +438,7 @@ const ProjectDetailPage = () => {
       <div
         className={`project-hero ${isMelody ? 'melody-hero' : ''} ${isScw ? 'scw-hero' : ''} ${
           isTimmyCare ? 'timmy-hero' : ''
-        } ${isRon ? 'ron-hero' : ''} ${isAstro ? 'astro-hero' : ''}`}
+        } ${isRon ? 'ron-hero' : ''} ${isAstro ? 'astro-hero' : ''} ${isKvdst ? 'kvdst-hero' : ''}`}
       >
         {isMelody ? (
           <div className="melody-pdf-sticky">
@@ -528,6 +565,35 @@ const ProjectDetailPage = () => {
         <h1>{projectData.title}</h1>
         <h3>{projectData.technicalInfo}</h3>
       </div>
+
+      {projectData.liveUrl && (
+        <div className="live-site-section" ref={liveFrameRef}>
+          <div className="live-site-head">
+            <h2>Live site preview</h2>
+            <a
+              className="project-doc-link"
+              href={projectData.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open live site
+            </a>
+          </div>
+          <div className="live-site-frame">
+            <div className="live-site-bar">
+              <span></span><span></span><span></span>
+              <p>kvdst.danielkolpakov.com</p>
+            </div>
+            <iframe
+              className="live-site-iframe"
+              src={projectData.liveUrl}
+              title={`${projectData.title} live preview`}
+              loading="lazy"
+            />
+          </div>
+          <p className="live-site-note">Scroll inside to explore the campaign site.</p>
+        </div>
+      )}
 
       {/* Cards Section */}
       <div className="cards-container">

@@ -81,6 +81,13 @@ const WorkPage = () => {
       link: '/projects/4',
     },
     {
+      title: 'KVDST Social Media Marketing',
+      desc: 'Collaborative landing page for a social campaign with smooth scroll storytelling.',
+      image: collaborationIcon,
+      tags: ['Web', 'Collab', 'Marketing'],
+      link: '/projects/7',
+    },
+    {
       title: 'AstroMatch App',
       desc: 'Swipe-based astrology dating experience with compatibility scoring.',
       image: astroPlaceholder,
