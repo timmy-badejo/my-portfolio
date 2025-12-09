@@ -56,7 +56,7 @@ const Header = () => {
             <FaFileDownload /> Download CV
           </a>
           <a href={altCv} download className="header__btn-resume header__btn-resume--ghost">
-            <FaFileDownload /> Alternate CV
+            <FaFileDownload /> Download Resume
           </a>
         </div>
       </nav>
