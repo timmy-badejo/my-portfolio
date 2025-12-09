@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import Tclogo from '../assests/Tclogo.svg';
+import mainCv from '../assests/Timilehin Yomi-Badejo CV.pdf';
+import altCv from '../assests/Timmy Badejo resume.pdf';
 import { FaBars, FaTimes, FaHome, FaUser, FaFolderOpen, FaEnvelope, FaFileDownload } from 'react-icons/fa';
 import './Header.css';
 
@@ -49,9 +51,14 @@ const Header = () => {
             </Link>
           </li>
         </ul>
-        <Link to="/resume.pdf" target="_blank" className="header__btn-resume">
-          <FaFileDownload /> Download CV
-        </Link>
+        <div className="header__resume-group">
+          <a href={mainCv} download className="header__btn-resume">
+            <FaFileDownload /> Download CV
+          </a>
+          <a href={altCv} download className="header__btn-resume header__btn-resume--ghost">
+            <FaFileDownload /> Alternate CV
+          </a>
+        </div>
       </nav>
     </header>
   );
