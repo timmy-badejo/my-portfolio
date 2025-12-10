@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Tilt from 'react-parallax-tilt';
@@ -49,6 +49,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const WorkPage = () => {
   const cardsRef = useRef([]);
+  const navigate = useNavigate();
   const heroRef = useRef(null);
   const galleryRef = useRef(null);
   const processRefs = useRef([]);
@@ -221,12 +222,18 @@ const WorkPage = () => {
 
       <section className="work-grid">
         {workItems.map((item, idx) => (
-          <Tilt key={item.title} tiltMaxAngleX={6} tiltMaxAngleY={6} glareEnable glareMaxOpacity={0.2} scale={1.02}>
-            <Link
-              to={item.link}
-              className="work-card"
-              ref={(el) => (cardsRef.current[idx] = el)}
-            >
+          <Link
+            key={item.title}
+            to={item.link}
+            className="work-card-link"
+            ref={(el) => (cardsRef.current[idx] = el)}
+            onClick={(e) => {
+              // Ensure navigation still fires if tilt ever swallows the click
+              e.preventDefault();
+              navigate(item.link);
+            }}
+          >
+            <Tilt tiltMaxAngleX={6} tiltMaxAngleY={6} glareEnable glareMaxOpacity={0.2} scale={1.02} className="work-card">
               <div className="work-image-wrap">
                 <img src={item.image} alt={item.title} />
               </div>
@@ -239,8 +246,8 @@ const WorkPage = () => {
                   ))}
                 </div>
               </div>
-            </Link>
-          </Tilt>
+            </Tilt>
+          </Link>
         ))}
       </section>
 
