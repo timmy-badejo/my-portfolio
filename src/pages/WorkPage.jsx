@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Tilt from 'react-parallax-tilt';
@@ -221,8 +222,8 @@ const WorkPage = () => {
       <section className="work-grid">
         {workItems.map((item, idx) => (
           <Tilt key={item.title} tiltMaxAngleX={6} tiltMaxAngleY={6} glareEnable glareMaxOpacity={0.2} scale={1.02}>
-            <a
-              href={item.link}
+            <Link
+              to={item.link}
               className="work-card"
               ref={(el) => (cardsRef.current[idx] = el)}
             >
@@ -238,7 +239,7 @@ const WorkPage = () => {
                   ))}
                 </div>
               </div>
-            </a>
+            </Link>
           </Tilt>
         ))}
       </section>
