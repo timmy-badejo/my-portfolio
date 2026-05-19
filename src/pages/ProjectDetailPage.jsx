@@ -1104,9 +1104,29 @@ const ProjectDetailPage = () => {
     return <p>Project not found</p>;
   }
 
+  const projectOrder = ["1", "2", "3", "4", "5", "6", "7"];
+  const currentProjectIndex = projectOrder.indexOf(projectData.id);
+  const nextProjectId =
+    projectOrder[(currentProjectIndex + 1) % projectOrder.length] || projectOrder[0];
+
   return (
     <div className="project-detail">
-      <BackToHomeButton to="/" label="Back to Home" />
+      <BackToHomeButton
+        to="/work"
+        label="Return to Project Library"
+        className="project-nav-btn-left"
+      />
+      <BackToHomeButton
+        to="/#work"
+        label="Return to Work Section"
+        className="project-nav-btn-work"
+      />
+      <BackToHomeButton
+        to={`/projects/${nextProjectId}`}
+        label="View Next Project"
+        direction="right"
+        className="project-nav-btn-next"
+      />
       {/* Hero Section */}
       <div
         className={`project-hero ${isMelody ? 'melody-hero' : ''} ${isScw ? 'scw-hero' : ''} ${

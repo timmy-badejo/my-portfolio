@@ -28,11 +28,43 @@
   height: 18px;
 }
 
+.project-nav-btn-left {
+  left: 20px;
+}
+
+.project-nav-btn-work,
+.project-nav-btn-next {
+  left: auto;
+  right: 20px;
+}
+
+.project-nav-btn-work {
+  top: 90px;
+}
+
+.project-nav-btn-next {
+  top: 144px;
+}
+
 @media (max-width: 768px) {
   .back-home-btn {
     top: 80px;
     left: 12px;
     padding: 9px 12px;
     font-size: 0.95rem;
+  }
+
+  .project-nav-btn-work,
+  .project-nav-btn-next {
+    left: auto;
+    right: 12px;
+  }
+
+  .project-nav-btn-work {
+    top: 80px;
+  }
+
+  .project-nav-btn-next {
+    top: 130px;
   }
 }

@@ -6,8 +6,7 @@ import {
   FaLaptopCode, FaBoxOpen, FaPrint, FaCameraRetro, FaTasks, FaCode, FaEdit
 } from 'react-icons/fa';
 import {
-  SiHtml5, SiJavascript, SiReact, SiAdobexd,
-  SiAdobephotoshop, SiAdobeillustrator
+  SiHtml5, SiJavascript, SiReact
 } from 'react-icons/si';
 import Tilt from 'react-parallax-tilt';
 import profileImage from '../assests/profile_image.jpg';
@@ -31,11 +30,11 @@ const getSkillIcon = (skill, size = 40) => {
     case "React.js":                 return <SiReact size={size} />;
     case "Graphic Design":           return <FaPaintBrush size={size} />;
     case "UI/UX":                    return <FaUserEdit size={size} />;
-    case "Adobe XD":                 return <SiAdobexd size={size} />;
+    case "Adobe XD":                 return <FaEdit size={size} />;
     case "Branding":                 return <FaBullhorn size={size} />;
     case "Communication":            return <FaComments size={size} />;
-    case "Adobe Photoshop":          return <SiAdobephotoshop size={size} />;
-    case "Adobe Illustrator":        return <SiAdobeillustrator size={size} />;
+    case "Adobe Photoshop":          return <FaPaintBrush size={size} />;
+    case "Adobe Illustrator":        return <FaPenNib size={size} />;
     case "Adobe InDesign":           return <FaPrint size={size} />;
     case "Typography":               return <FaFont size={size} />;
     case "Social Media Advertising": return <FaBullhorn size={size} />;
