@@ -69,6 +69,13 @@
   text-decoration: none;
 }
 
+.work-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+}
+
 .work-image-wrap {
   height: 180px;
   overflow: hidden;
