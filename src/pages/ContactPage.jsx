@@ -1,10 +1,15 @@
-
-import React, { useEffect, useRef, useState } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { FaEnvelope, FaPhoneAlt, FaLocationArrow, FaPaperPlane } from 'react-icons/fa';
-import './ContactPage.css';
-import BackToHomeButton from '../components/BackToHomeButton';
+import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import {
+  FaEnvelope,
+  FaPhoneAlt,
+  FaLocationArrow,
+  FaPaperPlane,
+  FaLinkedin,
+} from "react-icons/fa";
+import "./ContactPage.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,46 +17,35 @@ const ContactPage = () => {
   const heroRef = useRef(null);
   const formRef = useRef(null);
   const infoRef = useRef(null);
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [submitted, setSubmitted] = useState(false);
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
   useEffect(() => {
     if (heroRef.current) {
       gsap.fromTo(
         heroRef.current,
         { opacity: 0, y: 40 },
-        { opacity: 1, y: 0, duration: 1.1, ease: 'power3.out' }
+        { opacity: 1, y: 0, duration: 1.1, ease: "power3.out" }
       );
     }
-    if (formRef.current) {
+
+    if (formRef.current && infoRef.current) {
       gsap.fromTo(
-        formRef.current,
+        [formRef.current, infoRef.current],
         { opacity: 0, y: 40 },
         {
           opacity: 1,
           y: 0,
           duration: 1,
-          ease: 'power3.out',
+          stagger: 0.15,
+          ease: "power3.out",
           scrollTrigger: {
-            trigger: formRef.current,
-            start: 'top 80%',
-          },
-        }
-      );
-    }
-    if (infoRef.current) {
-      gsap.fromTo(
-        infoRef.current,
-        { opacity: 0, y: 40 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: 'power3.out',
-          delay: 0.1,
-          scrollTrigger: {
-            trigger: infoRef.current,
-            start: 'top 85%',
+            trigger: ".contact-body",
+            start: "top 80%",
           },
         }
       );
@@ -60,100 +54,165 @@ const ContactPage = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
+
+    const subject = encodeURIComponent(
+      `Portfolio message from ${formData.name}`
+    );
+
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    );
+
+    window.location.href = `mailto:studio@timmybad.com?subject=${subject}&body=${body}`;
   };
 
   return (
-    <div className="contact-page">
-      <BackToHomeButton />
+    <main className="contact-page">
+      <Link to="/" className="contact-back-indicator">
+        <div className="contact-back-line"></div>
+
+        <div className="contact-back-content">
+          <span className="contact-back-arrow">↑</span>
+          <p>Return to Landing Page</p>
+        </div>
+      </Link>
+
       <section className="contact-hero" ref={heroRef}>
         <div className="contact-hero-copy">
-          <p className="contact-kicker">Let’s collaborate</p>
-          <h1>Say hello</h1>
+          <p className="contact-kicker">Let’s Work Together</p>
+
+          <h1>Have a project, role, or idea? Let’s build something sharp.</h1>
+
           <p className="contact-sub">
-            Share a project idea, feedback, or a quick hello. I’m open to roles, collaborations, and critiques.
+            Send a message about design work, front-end projects, branding,
+            collaborations, internships, or opportunities.
           </p>
+
           <div className="contact-tags">
+            <span>Visual Design</span>
+            <span>Front-End</span>
+            <span>Brand Systems</span>
             <span>UI/UX</span>
-            <span>Front-end</span>
-            <span>Motion</span>
           </div>
         </div>
+
         <div className="contact-hero-card">
-          <FaPaperPlane size={42} />
-          <p>Drop a line I'll reply within 24–48 hours.</p>
+          <FaPaperPlane />
+
+          <div>
+            <h3>Open for conversations</h3>
+            <p>I usually reply within 24–48 hours.</p>
+          </div>
         </div>
       </section>
 
       <section className="contact-body">
         <div className="contact-form" ref={formRef}>
-          <h2>Send a message</h2>
+          <p className="contact-kicker">Message Form</p>
+          <h2>Send me a message</h2>
+
           <form onSubmit={handleSubmit}>
             <label>
               Name
               <input
                 type="text"
                 name="name"
+                placeholder="Your name"
                 value={formData.name}
                 onChange={handleChange}
                 required
               />
             </label>
+
             <label>
               Email
               <input
                 type="email"
                 name="email"
+                placeholder="your@email.com"
                 value={formData.email}
                 onChange={handleChange}
                 required
               />
             </label>
+
             <label>
               Message
               <textarea
                 name="message"
+                placeholder="Tell me what you’re working on..."
                 value={formData.message}
                 onChange={handleChange}
-                rows="5"
+                rows="6"
                 required
               />
             </label>
+
             <button type="submit" className="contact-btn">
-              Send it over
+              Send Message ↗
             </button>
-            {submitted && <p className="contact-success">Message sent! I’ll get back to you soon.</p>}
           </form>
         </div>
 
-        <div className="contact-info" ref={infoRef}>
-          <h3>Contact details</h3>
+        <aside className="contact-info" ref={infoRef}>
+          <p className="contact-kicker">Contact Info</p>
+          <h3>Direct details</h3>
+
           <ul>
             <li>
-              <FaEnvelope /> <a href="mailto:timmybadejo@gmail.com">timmybad@gmail.com</a>
+              <FaPhoneAlt />
+              <a href="tel:+1236669328">236-669-328</a>
             </li>
+
             <li>
-              <FaPhoneAlt /> <a href="tel:+1234567890">+1 (236) 662-9328</a>
+              <FaEnvelope />
+              <a href="mailto:timmybad06@gmail.com">timmybad06@gmail.com</a>
             </li>
+
             <li>
-              <FaLocationArrow /> Vancouver, BC
+              <FaEnvelope />
+              <a href="mailto:studio@timmybad.com">studio@timmybad.com</a>
+            </li>
+
+            <li>
+              <FaLinkedin />
+              <a
+                href="https://linkedin.com/in/timmy-yomi-badejo-b9b773251"
+                target="_blank"
+                rel="noreferrer"
+              >
+                LinkedIn Profile
+              </a>
+            </li>
+
+            <li>
+              <FaLocationArrow />
+              <span>Vancouver, BC, Canada</span>
             </li>
           </ul>
+
           <div className="contact-cta">
-            <p>Prefer a quick note? Email me directly.</p>
-            <a className="contact-btn ghost" href="mailto:timmybadejo@gmail.com">
-              Email me
+            <p>
+              Prefer direct email? Use the studio email for portfolio,
+              collaboration, and design-related work.
+            </p>
+
+            <a className="contact-btn ghost" href="mailto:studio@timmybad.com">
+              Email Studio ↗
             </a>
           </div>
-        </div>
+        </aside>
       </section>
-    </div>
+    </main>
   );
 };
 

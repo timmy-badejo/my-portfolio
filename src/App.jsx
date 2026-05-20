@@ -1,76 +1,38 @@
-// src/App.jsx
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import $ from 'jquery'; // Ensure this is at the top
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ScrollToHash from "./components/ScrollToHash";
+import LoadingScreen from "./components/LoadingScreen";
+import ThemeToggle from "./components/ThemeToggle";
+
 import LandingPage from "./pages/LandingPage";
-import AboutMePage from "./pages/AboutMePage";
-import ContactPage from "./pages/ContactPage";
-import ProjectsPage from "./pages/ProjectsPage";
-import ProjectDetailPage from "./pages/ProjectDetailPage";
 import WorkPage from "./pages/WorkPage";
 import ServicesPage from "./pages/ServicesPage";
-import LoadingScreen from "./components/LoadingScreen";
-import "./global.css";
+import ContactPage from "./pages/ContactPage";
+import AboutMePage from "./pages/AboutMePage";
+import ProjectDetailPage from "./pages/ProjectDetailPage";
+import BcrpaPage from "./pages/BcrpaPage";
+import StudioSystemPage from "./pages/StudioSystemPage";
 
-// Ensure jQuery is available globally
-window.$ = window.jQuery = $;
+import "./App.css";
 
-const App = () => {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000); 
-  }, []);
-
-  if (loading) {
-    return (
-      <div className="loading-screen">
-        <LoadingScreen />
-        <h2>Loading...</h2>
-      </div>
-    );
-  }
-
+function App() {
   return (
-    <Router>
-      <Header />
+    <BrowserRouter>
+      <LoadingScreen />
+      <ThemeToggle />
+      <ScrollToHash />
+
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="about" element={<AboutMePage />} />
-        <Route path="work" element={<WorkPage />} />
-        <Route path="services" element={<ServicesPage />} />
-        <Route path="contact" element={<ContactPage />} />
-        <Route path="projects" element={<ProjectsPage />} />
-        <Route path="projects/:projectId" element={<ProjectDetailPage />} />
-        
+        <Route path="/work" element={<WorkPage />} />
+        <Route path="/services" element={<ServicesPage />} />
+        <Route path="/about" element={<AboutMePage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/bcrpa" element={<BcrpaPage />} />
+        <Route path="/studio-system" element={<StudioSystemPage />} />
+        <Route path="/projects/:id" element={<ProjectDetailPage />} />
       </Routes>
-      <Footer />
-    </Router>
+    </BrowserRouter>
   );
-};
+}
 
 export default App;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// https://github.com/timmy-badejo/my-portfolio.git
-
-
-
-

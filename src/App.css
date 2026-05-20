@@ -1,38 +1,84 @@
-.App {
-  text-align: center;
+:root,
+:root[data-theme="dark"] {
+  --true-black: #0b0b0b;
+  --rich-maroon: #800020;
+  --warm-cream: #f5e9e2;
+  --soft-gold: rgb(201, 164, 108);
+  --vibrant-maroon: rgb(166, 94, 70);
+  --dim-grey: rgb(26, 26, 26);
+  --warm-grey: rgb(46, 45, 46);
+  --charcoal-grey: rgb(86, 86, 86);
+  --burgundy: rgb(46, 12, 27);
+  --error-red: rgb(212, 40, 59);
+  --dark-beige: rgb(174, 165, 157);
+  --success-green: rgb(14, 114, 68);
+  --bcrpa-coral-energy: #ee6f57;
+  --kvdst-blue: #29abe2;
+
+  --page-bg: #0b0b0b;
+  --page-bg-soft: #14070b;
+  --surface: rgba(26, 26, 26, 0.88);
+  --surface-soft: rgba(255, 255, 255, 0.04);
+  --text-main: #f5e9e2;
+  --text-muted: rgb(174, 165, 157);
+  --text-on-accent: #f5e9e2;
+  --border-soft: rgba(245, 233, 226, 0.1);
+  --page-glow: rgba(128, 0, 32, 0.28);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root[data-theme="light"] {
+  --true-black: #ffffff;
+  --rich-maroon: #800020;
+  --warm-cream: #0b0b0b;
+  --soft-gold: rgb(201, 164, 108);
+  --vibrant-maroon: rgb(166, 94, 70);
+  --dim-grey: #ffffff;
+  --warm-grey: #f7f7f7;
+  --charcoal-grey: rgb(86, 86, 86);
+  --burgundy: #ead8cf;
+  --error-red: rgb(212, 40, 59);
+  --dark-beige: #565656;
+  --success-green: var(--bcrpa-coral-energy);
+  --bcrpa-coral-energy: #ee6f57;
+  --kvdst-blue: #29abe2;
+
+  --page-bg: #ffffff;
+  --page-bg-soft: #ffffff;
+  --surface: rgba(255, 255, 255, 0.94);
+  --surface-soft: rgba(128, 0, 32, 0.055);
+  --text-main: #0b0b0b;
+  --text-muted: #565656;
+  --text-on-accent: #f5e9e2;
+  --border-soft: rgba(128, 0, 32, 0.16);
+  --page-glow: rgba(128, 0, 32, 0);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: "Nunito", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--page-bg);
+  color: var(--text-main);
 }
 
-.App-header {
-  
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+a { color: inherit; }
+
+button,
+input,
+textarea {
+  font: inherit;
 }
 
-.App-link {
-  color: #61dafb;
+img,
+video,
+iframe {
+  max-width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+::selection {
+  background: var(--rich-maroon);
+  color: var(--warm-cream);
 }

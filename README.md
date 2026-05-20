@@ -68,3 +68,46 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# TimmyBad Portfolio Recovery Pack
+
+This pack contains the rebuilt JSX/CSS files based on the updates discussed in the chat and the uploaded Codex change logs.
+
+## Important asset notes
+
+Some imports assume these files exist in `src/assets/`:
+- timmybadlogo.png
+- prototypewireframe.png
+- uiux.svg
+- profile_image.jpg
+- bcit-downtown.jpg
+- BCRPASYPOSUM.mp4
+- EventSetup.jpeg
+- PrintWork.jpeg
+- Signage.jpeg
+- Ron Zalko web design.jpg
+- MelodyCard1.jpg
+- timmyhaircare4.jpg
+- scwcharitywebpage.png
+- scw-logo.png
+- scw-full-logo-display.png
+- scw-user-persona.png
+- scw-sitemap.png
+- AstorMatchlogo.jpg
+- motion graphics.webp
+- sukuna-domain-theme.mp3
+- Jujitsu_Kaisen_Intro_Bumper_with_audio.mp4
+- KVDST LOGO.png
+- branding.svg
+- frontend.svg
+- graphic.svg
+- webdev.png
+- webdev.svg
+
+Public folder assumptions:
+- public/kvdst-site/index.html
+- public/kvdst-record-label-style-guide.pdf
+- public/scw-wireframes/SCW Charity Website Wireframe A 2_Page_01.jpg through Page_13.jpg
+- public/timmycare-research/ files listed inside ProjectDetailPage.jsx
+
+If a file does not exist, rename the import/path to match your actual asset filename.
