@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./BcrpaPage.css";
 
-import bcrpaLogo from "../assets/BCRPA midnight naive blue logo.png";
+import bcrpaLogo from "../assets/BCRPA-primary-logo.png";
 import bcrpaVideo from "../assets/BCRPASYPOSUM.mp4";
 import eventSetup from "../assets/EventSetup.jpeg";
 import printWork from "../assets/PrintWork.jpeg";
@@ -40,6 +40,58 @@ import healthyLivingDraft from "../assets/Healthy-Living-Banner-BCRPA-Primary-Dr
 import healthyLivingFinal from "../assets/Healthy-Living-Banner-BCRPA-Primary-Final-Draft-01.jpg";
 import eLearningDraft from "../assets/E-learning fitness workshop drafts-05.jpg";
 import patchTemplate from "../assets/BCRPA-Patch Design _template.png";
+
+import healthyDraft01 from "../assets/bcrpa/internship/Healthy-Living-Banner-BCRPA-Primary-Draft-01.jpg";
+import healthyDraft02 from "../assets/bcrpa/internship/Healthy-Living-Banner-BCRPA-Primary-Draft-02.jpg";
+import healthyDraft03 from "../assets/bcrpa/internship/Healthy-Living-Banner-BCRPA-Primary-Draft-03.jpg";
+import healthyDraft04 from "../assets/bcrpa/internship/Healthy-Living-Banner-BCRPA-Primary-Draft-04.jpg";
+import healthyDraft05 from "../assets/bcrpa/internship/Healthy-Living-Banner-BCRPA-Primary-Draft-05.jpg";
+import healthyDraft06 from "../assets/bcrpa/internship/Healthy-Living-Banner-BCRPA-Primary-Draft-06.jpg";
+import healthyDraft07 from "../assets/bcrpa/internship/Healthy-Living-Banner-BCRPA-Primary-Draft-07.jpg";
+import healthyDraft08 from "../assets/bcrpa/internship/Healthy-Living-Banner-BCRPA-Primary-Draft-08.jpg";
+import healthyDraft09 from "../assets/bcrpa/internship/Healthy-Living-Banner-BCRPA-Primary-Draft-09.jpg";
+import healthyDraft10 from "../assets/bcrpa/internship/Healthy-Living-Banner-BCRPA-Primary-Draft-10.jpg";
+import healthyFinal01 from "../assets/bcrpa/internship/Healthy-Living-Banner-BCRPA-Primary-Final-Draft-01.jpg";
+import healthyFinal02 from "../assets/bcrpa/internship/Healthy-Living-Banner-BCRPA-Primary-Final-Draft-02.jpg";
+import healthyFinal03 from "../assets/bcrpa/internship/Healthy-Living-Banner-BCRPA-Primary-Final-Draft-03.jpg";
+import healthyFinal04 from "../assets/bcrpa/internship/Healthy-Living-Banner-BCRPA-Primary-Final-Draft-04.jpg";
+
+import registryDraft01 from "../assets/bcrpa/internship/BCRPA FITNESS REGISTERY BANNER DRAFT-01.jpg";
+import registryDraft02 from "../assets/bcrpa/internship/BCRPA FITNESS REGISTERY BANNER DRAFT-02.jpg";
+import registryDraft03 from "../assets/bcrpa/internship/BCRPA FITNESS REGISTERY BANNER DRAFT-03.jpg";
+import registryDraft04 from "../assets/bcrpa/internship/BCRPA FITNESS REGISTERY BANNER DRAFT-04.jpg";
+import registryDraft05 from "../assets/bcrpa/internship/BCRPA FITNESS REGISTERY BANNER DRAFT-05.jpg";
+import registryFinal from "../assets/bcrpa/internship/BCRPA FITNESS REGISTRY WEB BANNER FINAL.jpg";
+
+import workshopDraft01 from "../assets/bcrpa/internship/E-learning fitness workshop drafts-01.jpg";
+import workshopDraft02 from "../assets/bcrpa/internship/E-learning fitness workshop drafts-02.jpg";
+import workshopDraft03 from "../assets/bcrpa/internship/E-learning fitness workshop drafts-03.jpg";
+import workshopDraft04 from "../assets/bcrpa/internship/E-learning fitness workshop drafts-04.jpg";
+import workshopDraft05 from "../assets/bcrpa/internship/E-learning fitness workshop drafts-05.jpg";
+import workshopDraft06 from "../assets/bcrpa/internship/E-learning fitness workshop drafts-06.jpg";
+import workshopDraft07 from "../assets/bcrpa/internship/E-learning fitness workshop drafts-07.jpg";
+import workshopDraft08 from "../assets/bcrpa/internship/E-learning fitness workshop drafts-08.jpg";
+import workshopFinal01 from "../assets/bcrpa/internship/E-learning fitness workshop final-01.jpg";
+import workshopFinal02 from "../assets/bcrpa/internship/E-learning fitness workshop final-02.jpg";
+
+import thankYouOptionA from "../assets/bcrpa/internship/BCRPA THANK YOU CARD_Thank You Card Option A.jpg";
+import thankYouOptionA2 from "../assets/bcrpa/internship/BCRPA THANK YOU CARD_Thank You Card Option A2.jpg";
+import thankYouOptionB from "../assets/bcrpa/internship/BCRPA THANK YOU CARD_Thank You Card Option B.jpg";
+import thankYouOptionB2 from "../assets/bcrpa/internship/BCRPA THANK YOU CARD_Thank You Card Option B2.jpg";
+
+import welcomeDraft01 from "../assets/bcrpa/internship/BCRPA SYMPOSIUM WELCOME SIGN drafts-01.jpg";
+import welcomeDraft02 from "../assets/bcrpa/internship/BCRPA SYMPOSIUM WELCOME SIGN drafts-02.jpg";
+import welcomeDraft03 from "../assets/bcrpa/internship/BCRPA SYMPOSIUM WELCOME SIGN drafts-03.jpg";
+
+import ambassadorButton01 from "../assets/bcrpa/internship/BCRPA Ambassador Buttons-01.jpg";
+import ambassadorButton02 from "../assets/bcrpa/internship/BCRPA Ambassador Buttons-02.jpg";
+import ambassadorButton03 from "../assets/bcrpa/internship/BCRPA Ambassador Buttons-03.jpg";
+import ambassadorButton04 from "../assets/bcrpa/internship/BCRPA Ambassador Buttons-04.jpg";
+import ambassadorButton05 from "../assets/bcrpa/internship/BCRPA Ambassador Buttons-05.jpg";
+import ambassadorButton06 from "../assets/bcrpa/internship/BCRPA Ambassador Buttons-06.jpg";
+import ambassadorButton07 from "../assets/bcrpa/internship/BCRPA Ambassador Buttons-07.jpg";
+import ambassadorButton08 from "../assets/bcrpa/internship/BCRPA Ambassador Buttons-08.jpg";
+import ambassadorButton09 from "../assets/bcrpa/internship/BCRPA Ambassador Buttons-09.jpg";
 
 const supervisors = [
   {
@@ -237,6 +289,120 @@ const workflowSteps = [
   "After Kat signs off, send the updated design to Katie for final review before delivery or production handoff.",
 ];
 
+const brandColours = [
+  { name: "Midnight Navy", value: "#253058", use: "Primary type, deep backgrounds, logo applications" },
+  { name: "Pale Lime", value: "#e5edbe", use: "Fresh brand fields, highlights, optimistic contrast" },
+  { name: "Ice Blue", value: "#dceff0", use: "Fitness and learning support colour" },
+  { name: "Meadow Green", value: "#28542d", use: "Grounding accent, borders, movement-line support" },
+  { name: "Coral Energy", value: "#ee6f57", use: "Warm accent, focus states, motion detail" },
+  { name: "White", value: "#ffffff", use: "Production space, clarity, print-friendly layouts" },
+];
+
+const healthyLivingAssets = [
+  { label: "Draft 01", image: healthyDraft01 },
+  { label: "Draft 02", image: healthyDraft02 },
+  { label: "Draft 03", image: healthyDraft03 },
+  { label: "Draft 04", image: healthyDraft04 },
+  { label: "Draft 05", image: healthyDraft05 },
+  { label: "Draft 06", image: healthyDraft06 },
+  { label: "Draft 07", image: healthyDraft07 },
+  { label: "Draft 08", image: healthyDraft08 },
+  { label: "Draft 09", image: healthyDraft09 },
+  { label: "Draft 10", image: healthyDraft10 },
+  { label: "Final Direction 01", image: healthyFinal01 },
+  { label: "Final Direction 02", image: healthyFinal02 },
+  { label: "Final Direction 03", image: healthyFinal03 },
+  { label: "Final Direction 04", image: healthyFinal04 },
+];
+
+const registryAssets = [
+  { label: "Draft 01", image: registryDraft01 },
+  { label: "Draft 02", image: registryDraft02 },
+  { label: "Draft 03", image: registryDraft03 },
+  { label: "Draft 04", image: registryDraft04 },
+  { label: "Draft 05", image: registryDraft05 },
+  { label: "Final Web Banner", image: registryFinal },
+];
+
+const workshopAssets = [
+  { label: "Draft 01", image: workshopDraft01 },
+  { label: "Draft 02", image: workshopDraft02 },
+  { label: "Draft 03", image: workshopDraft03 },
+  { label: "Draft 04", image: workshopDraft04 },
+  { label: "Draft 05", image: workshopDraft05 },
+  { label: "Draft 06", image: workshopDraft06 },
+  { label: "Draft 07", image: workshopDraft07 },
+  { label: "Draft 08", image: workshopDraft08 },
+  { label: "Final 01", image: workshopFinal01 },
+  { label: "Final 02", image: workshopFinal02 },
+];
+
+const welcomeAssets = [
+  { label: "Welcome Sign Draft 01", image: welcomeDraft01 },
+  { label: "Welcome Sign Draft 02", image: welcomeDraft02 },
+  { label: "Welcome Sign Draft 03", image: welcomeDraft03 },
+];
+
+const ambassadorAssets = [
+  { label: "Ambassador Button 01", image: ambassadorButton01, square: true },
+  { label: "Ambassador Button 02", image: ambassadorButton02, square: true },
+  { label: "Ambassador Button 03", image: ambassadorButton03, square: true },
+  { label: "Ambassador Button 04", image: ambassadorButton04, square: true },
+  { label: "Ambassador Button 05", image: ambassadorButton05, square: true },
+  { label: "Ambassador Button 06", image: ambassadorButton06, square: true },
+  { label: "Ambassador Button 07", image: ambassadorButton07, square: true },
+  { label: "Ambassador Button 08", image: ambassadorButton08, square: true },
+  { label: "Ambassador Button 09", image: ambassadorButton09, square: true },
+];
+
+const expandedCampaigns = [
+  {
+    title: "Healthy Living Matters",
+    type: "Brand Launch / Digital Direction",
+    text: "Program banner explorations testing BCRPA movement lines, logo hierarchy, colour balance, and final campaign direction.",
+    feature: { label: "Featured final direction", image: healthyFinal01 },
+    rail: healthyLivingAssets,
+  },
+  {
+    title: "Fitness Registry Banner",
+    type: "Fitness Brand / Web Banner",
+    text: "Registry banner drafts and final execution using the BCRPA Fitness mark, strong readability, and Ice Blue/Midnight Navy hierarchy.",
+    feature: { label: "Final Registry web banner", image: registryFinal },
+    rail: registryAssets,
+  },
+  {
+    title: "E-learning Fitness Workshop",
+    type: "Learning Template / Slide System",
+    text: "Intro and outro slide directions for video workshops, exploring icon opacity, workshop titles, Good Luck messaging, and brand consistency.",
+    feature: { label: "Final workshop slide", image: workshopFinal02 },
+    rail: workshopAssets,
+  },
+  {
+    title: "Thank You Card",
+    type: "Print Card / Front and Back System",
+    text: "Foldable card options grouped as complete front/back concepts, with Option A featured as the strongest display direction.",
+    feature: { label: "Featured Option A front", image: thankYouOptionA, compact: true },
+    rail: [
+      { label: "Option A front/back", images: [thankYouOptionA, thankYouOptionA2] },
+      { label: "Option B front/back", images: [thankYouOptionB, thankYouOptionB2] },
+    ],
+  },
+  {
+    title: "Symposium Welcome Sign",
+    type: "Event Signage / On-site Context",
+    text: "Welcome sign explorations supported arrival, wayfinding, and event atmosphere; the feature image shows the sign work in the event setup context.",
+    feature: { label: "Event setup feature", image: eventSetup, photo: true },
+    rail: welcomeAssets,
+  },
+  {
+    title: "Ambassador Buttons",
+    type: "Campaign Button Options",
+    text: "Button concepts explored short connection prompts, circular type, BCRPA icon placement, and Pale Lime/Ice Blue variations on Midnight Navy.",
+    feature: { label: "Featured ambassador button", image: ambassadorButton07, square: true },
+    rail: ambassadorAssets,
+  },
+];
+
 export default function BcrpaPage() {
   return (
     <main className="bcrpa-page">
@@ -251,6 +417,7 @@ export default function BcrpaPage() {
       <nav className="bcrpa-page-nav" aria-label="BCRPA page navigation">
         <a href="#overview">Overview</a>
         <a href="#finals">Finals</a>
+        <a href="#expanded">Expanded</a>
         <a href="#process">Process</a>
         <a href="#workflow">Workflow</a>
         <a href="#reflection">Reflection</a>
@@ -348,6 +515,31 @@ export default function BcrpaPage() {
         </div>
       </section>
 
+      <section className="bcrpa-section bcrpa-colour-system">
+        <div className="bcrpa-section-head split">
+          <div>
+            <p className="bcrpa-kicker">BCRPA Colour System</p>
+            <h2>A production palette built around movement, clarity, and trust.</h2>
+          </div>
+          <p>
+            I used the refreshed BCRPA colours as a practical system: navy for
+            authority, pale and cool tones for freshness, green for grounding,
+            coral for energy, and white for production-ready breathing room.
+          </p>
+        </div>
+
+        <div className="bcrpa-colour-grid">
+          {brandColours.map((colour) => (
+            <article key={colour.name}>
+              <span style={{ background: colour.value }} aria-hidden="true"></span>
+              <h3>{colour.name}</h3>
+              <p>{colour.use}</p>
+              <small>{colour.value}</small>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section className="bcrpa-section" id="finals">
         <div className="bcrpa-section-head split">
           <div>
@@ -396,6 +588,67 @@ export default function BcrpaPage() {
 
               <p>{card.role}</p>
               <h3>{card.name}</h3>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="bcrpa-section bcrpa-expanded-work" id="expanded">
+        <div className="bcrpa-section-head split">
+          <div>
+            <p className="bcrpa-kicker">Expanded Internship Work</p>
+            <h2>Campaign tracks showing final direction and selected exploration.</h2>
+          </div>
+          <p>
+            This section keeps the work organized by campaign so the page shows
+            breadth without turning into an unfiltered asset dump.
+          </p>
+        </div>
+
+        <div className="bcrpa-campaign-stack">
+          {expandedCampaigns.map((track) => (
+            <article className="bcrpa-campaign" key={track.title}>
+              <div className="bcrpa-campaign-copy">
+                <p className="bcrpa-campaign-type">{track.type}</p>
+                <h3>{track.title}</h3>
+                <span>{track.text}</span>
+              </div>
+
+              <div
+                className={`bcrpa-campaign-feature ${track.feature.compact ? "compact" : ""} ${
+                  track.feature.square ? "square" : ""
+                } ${track.feature.photo ? "photo" : ""}`}
+              >
+                <img src={track.feature.image} alt={`${track.title} ${track.feature.label}`} loading="lazy" />
+                <span>{track.feature.label}</span>
+              </div>
+
+              <div className="bcrpa-asset-rail" aria-label={`${track.title} assets`}>
+                {track.rail.map((item) => (
+                  <article
+                    className={`bcrpa-asset-card ${item.images ? "paired" : ""} ${item.square ? "square" : ""}`}
+                    key={`${track.title}-${item.label}`}
+                  >
+                    <div className="bcrpa-asset-frame">
+                      {item.images ? (
+                        <div className="bcrpa-paired-assets">
+                          {item.images.map((image, imageIndex) => (
+                            <img
+                              src={image}
+                              alt={`${item.label} ${imageIndex === 0 ? "front" : "back"}`}
+                              loading="lazy"
+                              key={`${item.label}-${image}`}
+                            />
+                          ))}
+                        </div>
+                      ) : (
+                        <img src={item.image} alt={`${track.title} ${item.label}`} loading="lazy" />
+                      )}
+                    </div>
+                    <span>{item.label}</span>
+                  </article>
+                ))}
+              </div>
             </article>
           ))}
         </div>

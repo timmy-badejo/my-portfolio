@@ -107,6 +107,11 @@ export default function WorkPage() {
           const isMotion = project.cardTheme === "motion" || project.id === "6";
           const isKvdst = project.id === "7";
           const isBcrpa = project.id === "8";
+          const isRon = project.id === "1";
+          const isMelody = project.id === "2";
+          const isTimmyCare = project.id === "3";
+          const isScw = project.id === "4";
+          const isAstro = project.id === "5";
 
           return (
             <Link
@@ -114,6 +119,11 @@ export default function WorkPage() {
               className={[
                 "tb-project-card",
                 "magnetic-card",
+                isRon ? "tb-project-card-ron" : "",
+                isMelody ? "tb-project-card-melody" : "",
+                isTimmyCare ? "tb-project-card-timmycare" : "",
+                isScw ? "tb-project-card-scw" : "",
+                isAstro ? "tb-project-card-astro" : "",
                 isMotion ? "tb-project-card-motion" : "",
                 isKvdst ? "tb-project-card-kvdst" : "",
                 isBcrpa ? "tb-project-card-bcrpa" : "",
