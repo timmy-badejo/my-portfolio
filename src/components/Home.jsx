@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
-import MusicIcon from '../assests/music.svg';
-import IdeaIcon from '../assests/idea.svg';
-import WebpageIcon from '../assests/webpage.svg';
+import MusicIcon from '../assets/music.svg';
+import IdeaIcon from '../assets/idea.svg';
+import WebpageIcon from '../assets/webpage.svg';
 import Header from './Header';
 import "./Home.css";
 

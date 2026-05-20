@@ -332,8 +332,8 @@ function DetailCards({ projectData }) {
 }
 
 export default function ProjectDetailPage() {
-  const { id, projectId } = useParams();
-  const projectData = getProjectDataById(id || projectId);
+  const { id } = useParams();
+  const projectData = getProjectDataById(id);
 
   if (!projectData) {
     return (
@@ -648,7 +648,9 @@ export default function ProjectDetailPage() {
         <div className="project-footer-actions">
           <Link to="/work">Back to Project Library</Link>
           <Link to={`/projects/${nextProjectId}`}>Next Project →</Link>
-          <Link to="/contact">Let’s Work Together ↗</Link>
+          <Link to="/contact" className="tb-btn tb-btn-primary">
+            Let’s Work Together ↗
+          </Link>
         </div>
       </footer>
     </main>

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import profileImage from "../assests/profile_image.jpg";
+import profileImage from "../assets/profile_image.jpg";
 import Tilt from "react-parallax-tilt";
 import "./AboutMeSection.css";
 

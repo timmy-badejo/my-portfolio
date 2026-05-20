@@ -1,14 +1,13 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
-import './BackToHomeButton.css';
+import { Link } from "react-router-dom";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import "./BackToHomeButton.css";
 
-const BackToHomeButton = ({
+export default function BackToHomeButton({
   to = "/",
   label = "Back",
   direction = "left",
   className = "",
-}) => {
+}) {
   const Icon = direction === "right" ? FaArrowRight : FaArrowLeft;
 
   return (
@@ -30,6 +29,4 @@ const BackToHomeButton = ({
       )}
     </Link>
   );
-};
-
-export default BackToHomeButton;
+}

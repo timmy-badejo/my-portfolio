@@ -1,7 +1,7 @@
 // src/components/AboutHeroComposite.jsx
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import profileImage from "../assests/profile_image.jpg";
+import profileImage from "../assets/profile_image.jpg";
 import Tilt from "react-parallax-tilt";
 import "./AboutHeroComposite.css";
 

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
-import Tclogo from '../assests/Tclogo.svg';
-import mainCv from '../assests/Timilehin Yomi-Badejo CV.pdf';
-import altCv from '../assests/Timmy Badejo resume.pdf';
+import Tclogo from '../assets/Tclogo.svg';
+import mainCv from '../assets/Timilehin Yomi-Badejo CV.pdf';
+import altCv from '../assets/Timmy Badejo resume.pdf';
 import { FaBars, FaTimes, FaHome, FaUser, FaFolderOpen, FaEnvelope, FaFileDownload } from 'react-icons/fa';
 import './Header.css';
 

@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import VanillaTilt from 'vanilla-tilt';
-import PrototypeWireframing from '../assests/prototypewireframing.svg';
-import Branding from '../assests/branding.svg';
-import DesignService from '../assests/designservice.svg';
-import WebDev from '../assests/webdev.svg';
-import Graphic from '../assests/graphic.svg';
-import UiUx from '../assests/uiux.svg';
+import PrototypeWireframing from '../assets/prototypewireframing.svg';
+import Branding from '../assets/branding.svg';
+import DesignService from '../assets/designservice.svg';
+import WebDev from '../assets/webdev.svg';
+import Graphic from '../assets/graphic.svg';
+import UiUx from '../assets/uiux.svg';
 import './OfferSection.css';
 
 const OfferSection = () => {

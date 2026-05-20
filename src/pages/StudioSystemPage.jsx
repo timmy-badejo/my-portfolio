@@ -199,7 +199,9 @@ export default function StudioSystemPage() {
             cleaner, more intentional digital experience.
           </p>
         </div>
-        <Link to="/contact">Let’s Work Together ↗</Link>
+        <Link to="/contact" className="tb-btn tb-btn-primary">
+          Let’s Work Together ↗
+        </Link>
       </footer>
     </main>
   );

@@ -1,10 +1,12 @@
 import ronzalko from "../assets/Ron Zalko web design.jpg";
 import melodycard1 from "../assets/MelodyCard1.jpg";
-import timmyhaircare1 from "../assets/timmyhaircare1.jpg";
+import timmyhaircare from "../assets/timmyhaircare4.jpg";
 import scwcharity from "../assets/scwcharitywebpage.png";
+import scwLogo from "../assets/scw logo.png";
 import astroPlaceholder from "../assets/AstorMatchlogo.jpg";
 import motionPlaceholder from "../assets/motion graphics.webp";
-import kvdstThumb from "../assets/KVDST LOGO.png";
+import motionCardAudio from "../assets/sukuna-domain-theme.mp3";
+import kvdstLogo from "../assets/KVDST LOGO.png";
 import eventSetup from "../assets/EventSetup.jpeg";
 
 export const projectsData = [
@@ -32,9 +34,9 @@ export const projectsData = [
     id: "3",
     title: "TimmyCare App Redesign",
     category: "UI/UX",
-    description: "Mobile app redesign focused on usability, flow, and visual clarity.",
-    image: timmyhaircare1,
-    software: ["Figma", "React Native"],
+    description: "Haircare app redesign with research, flows, wireframes, personas, and prototype structure.",
+    image: timmyhaircare,
+    software: ["Figma", "Adobe XD", "UI/UX"],
     link: "/projects/3",
     featured: true,
   },
@@ -42,9 +44,9 @@ export const projectsData = [
     id: "4",
     title: "SCW Charity Website",
     category: "Web",
-    description: "Responsive charity website built for storytelling and community engagement.",
-    image: scwcharity,
-    software: ["WordPress", "Elementor"],
+    description: "Charity website case study with research artifacts, sitemap, low-fidelity wireframes, and brand identity.",
+    image: scwcharity || scwLogo,
+    software: ["UX Research", "Wireframes", "Branding"],
     link: "/projects/4",
     featured: true,
   },
@@ -62,21 +64,25 @@ export const projectsData = [
     id: "6",
     title: "Motion Graphic Intro",
     category: "Motion",
-    description: "Anime-inspired kinetic typography intro bumper.",
+    description: "Anime-inspired kinetic typography bumper, optimized for web playback.",
     image: motionPlaceholder,
     software: ["After Effects", "Premiere Pro"],
     link: "/projects/6",
+    cardTheme: "motion",
+    audio: motionCardAudio,
     featured: false,
   },
   {
     id: "7",
-    title: "KVDST Social Media Marketing Site",
+    title: "KVDST-MUSIC-LABEL-site",
     category: "Front-End",
-    description: "Collaborative campaign site built with GitHub workflow and web design structure.",
-    image: kvdstThumb,
+    description: "Music label website redesign with refreshed UI/UX, live preview, style guide, and code showcase.",
+    image: kvdstLogo,
+    logo: kvdstLogo,
     software: ["HTML", "CSS", "JavaScript", "GitHub"],
     link: "/projects/7",
-    liveUrl: "https://kvdst.danielkolpakov.com/index.html",
+    liveUrl: "http://kvdst.timmybad.com/",
+    previewUrl: "/kvdst-site/index.html",
     featured: false,
   },
   {

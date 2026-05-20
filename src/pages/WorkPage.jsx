@@ -44,6 +44,7 @@ export default function WorkPage() {
 
     if (playingId === project.id && !audio.paused) {
       audio.pause();
+      audio.currentTime = 0;
       setPlayingId(null);
     } else {
       audio.play().then(() => setPlayingId(project.id)).catch(() => setPlayingId(null));

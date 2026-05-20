@@ -1,3 +1,4 @@
+import { useCallback, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToHash from "./components/ScrollToHash";
 import LoadingScreen from "./components/LoadingScreen";
@@ -15,22 +16,32 @@ import StudioSystemPage from "./pages/StudioSystemPage";
 import "./App.css";
 
 function App() {
+  const [isAppReady, setIsAppReady] = useState(false);
+  const handleLoadingComplete = useCallback(() => {
+    setIsAppReady(true);
+  }, []);
+
   return (
     <BrowserRouter>
-      <LoadingScreen />
+      {!isAppReady && <LoadingScreen onComplete={handleLoadingComplete} />}
       <ThemeToggle />
-      <ScrollToHash />
 
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/work" element={<WorkPage />} />
-        <Route path="/services" element={<ServicesPage />} />
-        <Route path="/about" element={<AboutMePage />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/bcrpa" element={<BcrpaPage />} />
-        <Route path="/studio-system" element={<StudioSystemPage />} />
-        <Route path="/projects/:id" element={<ProjectDetailPage />} />
-      </Routes>
+      {isAppReady && (
+        <>
+          <ScrollToHash />
+
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/work" element={<WorkPage />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/about" element={<AboutMePage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/bcrpa" element={<BcrpaPage />} />
+            <Route path="/studio-system" element={<StudioSystemPage />} />
+            <Route path="/projects/:id" element={<ProjectDetailPage />} />
+          </Routes>
+        </>
+      )}
     </BrowserRouter>
   );
 }

@@ -1,71 +1,45 @@
-import React, { useRef, useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Tilt from "react-parallax-tilt";
-import timmyhaircare1 from "../assests/timmyhaircare1.jpg";
-import ronzalko from "../assests/Ron Zalko web design.jpg";
-import melodycard1 from "../assests/MelodyCard1.jpg";
-import scwcharity from "../assests/scwcharitywebpage.png";
-import astroPlaceholder from "../assests/AstorMatchlogo.jpg";
-import motionPlaceholder from "../assests/motion graphics.webp";
+import { FaPause, FaPlay } from "react-icons/fa";
+import { projectsData } from "../data/projectsData";
 import "./FeaturedProjects.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const FeaturedProjects = () => {
   const projectRefs = useRef([]);
+  const audioRefs = useRef({});
+  const [playingId, setPlayingId] = useState(null);
+  const projects = projectsData.slice(0, 6);
 
-  const projects = [
-    {
-      id: 1,
-      title: "Ron Zalko Fitness Website Redesign",
-      description: "Enhancing UX, accessibility, and engagement.",
-      image: ronzalko,
-      software: ["Figma", "HTML", "CSS", "JavaScript"],
-      link: "/projects/1",
-    },
-    {
-      id: 2,
-      title: "Melody Beats Branding",
-      description: "Designed branding and business cards for Melody Beats.",
-      image: melodycard1,
-      software: ["Illustrator", "Photoshop"],
-      link: "/projects/2",
-    },
-    {
-      id: 3,
-      title: "Timmy Care Hair App",
-      description: "Revamped the UI/UX of Timmy Care Hair App.",
-      image: timmyhaircare1,
-      software: ["Adobe XD", "React Native"],
-      link: "/projects/3",
-    },
-    {
-      id: 4,
-      title: "SCW Charity Web Design",
-      description: "Developed a charity website for social engagement.",
-      image: scwcharity,
-      software: ["WordPress", "Elementor"],
-      link: "/projects/4",
-    },
-    {
-      id: 5,
-      title: "AstroMatch App",
-      description: "Swipe-based astrology dating experience with compatibility scoring.",
-      image: astroPlaceholder,
-      software: ["Product Design", "UI/UX", "Prototyping"],
-      link: "/projects/5",
-    },
-    {
-      id: 6,
-      title: "Motion Graphic Intro",
-      description: "Anime-inspired kinetic typography bumper, optimized for web playback.",
-      image: motionPlaceholder,
-      software: ["After Effects", "Premiere Pro"],
-      link: "/projects/6",
-    },
-  ];
+  const handleAudioToggle = (event, project) => {
+    event.preventDefault();
+    event.stopPropagation();
+
+    if (!project.audio) return;
+
+    Object.entries(audioRefs.current).forEach(([id, audio]) => {
+      if (id !== project.id && audio) {
+        audio.pause();
+        audio.currentTime = 0;
+      }
+    });
+
+    const audio = audioRefs.current[project.id];
+    if (!audio) return;
+
+    if (playingId === project.id && !audio.paused) {
+      audio.pause();
+      audio.currentTime = 0;
+      setPlayingId(null);
+      return;
+    }
+
+    audio.play().then(() => setPlayingId(project.id)).catch(() => setPlayingId(null));
+  };
 
   useEffect(() => {
     // Keep the section fade-in on scroll
@@ -83,6 +57,9 @@ const FeaturedProjects = () => {
         },
       }
     );
+    return () => {
+      Object.values(audioRefs.current).forEach((audio) => audio?.pause());
+    };
   }, []);
 
   return (
@@ -93,45 +70,69 @@ const FeaturedProjects = () => {
       </div>
 
       <div className="fp-projects-grid">
-        {projects.map((project, index) => (
-          <Tilt
-            key={project.id}
-            tiltMaxAngleX={5}
-            tiltMaxAngleY={5}
-            glareEnable={true}
-            glareMaxOpacity={0.3}
-          >
-            <div
-              ref={(el) => (projectRefs.current[index] = el)}
-              className="fp-project-card"
-            >
-              {/* Image Container */}
-              <div className="fp-project-image-container">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  loading="lazy"
-                  className="fp-project-image"
-                />
-              </div>
+        {projects.map((project, index) => {
+          const isMotion = project.cardTheme === "motion" || project.id === "6";
 
-              {/* Project Details */}
-              <div className="fp-project-details">
-                <h3 className="fp-project-title">{project.title}</h3>
-                <p className="fp-project-desc">{project.description}</p>
-                <div className="fp-software-used">
-                  <strong>Software Used:</strong>{" "}
-                  {project.software.map((tool, i) => (
-                    <span key={i}>{tool}</span>
-                  ))}
+          return (
+            <Tilt
+              key={project.id}
+              tiltMaxAngleX={5}
+              tiltMaxAngleY={5}
+              glareEnable={true}
+              glareMaxOpacity={0.3}
+            >
+              <div
+                ref={(el) => (projectRefs.current[index] = el)}
+                className={`fp-project-card ${isMotion ? "fp-project-card-motion" : ""}`}
+              >
+                <div className="fp-project-image-container">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    loading="lazy"
+                    className="fp-project-image"
+                  />
                 </div>
-                <Link to={project.link} className="fp-view-project-btn">
-                  View Project
-                </Link>
+
+                {project.audio && (
+                  <audio
+                    ref={(el) => {
+                      if (el) audioRefs.current[project.id] = el;
+                    }}
+                    src={project.audio}
+                    preload="auto"
+                    onEnded={() => setPlayingId(null)}
+                  />
+                )}
+
+                <div className="fp-project-details">
+                  <h3 className="fp-project-title">{project.title}</h3>
+                  <p className="fp-project-desc">{project.description}</p>
+                  <div className="fp-software-used">
+                    <strong>Software Used:</strong>{" "}
+                    {project.software.map((tool) => (
+                      <span key={tool}>{tool}</span>
+                    ))}
+                  </div>
+                  <Link to={project.link} className="fp-view-project-btn">
+                    View Project
+                  </Link>
+
+                  {project.audio && (
+                    <button
+                      type="button"
+                      className="fp-audio-btn"
+                      onClick={(event) => handleAudioToggle(event, project)}
+                    >
+                      {playingId === project.id ? <FaPause /> : <FaPlay />}
+                      <span>{playingId === project.id ? "Stop Audio" : "Play Audio"}</span>
+                    </button>
+                  )}
+                </div>
               </div>
-            </div>
-          </Tilt>
-        ))}
+            </Tilt>
+          );
+        })}
       </div>
     </section>
   );

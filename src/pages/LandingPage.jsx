@@ -118,8 +118,8 @@ export default function LandingPage() {
           <Link to="/contact">Contact</Link>
         </div>
 
-        <Link to="/contact" className="tb-nav-cta">
-          Let’s Work Together
+        <Link to="/contact" className="tb-btn tb-btn-primary">
+          Let’s Work Together ↗
         </Link>
       </nav>
 
@@ -136,7 +136,7 @@ export default function LandingPage() {
 
           <div className="tb-hero-actions">
             <a href="#work" className="tb-btn tb-btn-primary">View My Work</a>
-            <Link to="/contact" className="tb-btn tb-btn-secondary">Let’s Work Together</Link>
+            <Link to="/contact" className="tb-btn tb-btn-primary">Let’s Work Together ↗</Link>
           </div>
         </div>
 

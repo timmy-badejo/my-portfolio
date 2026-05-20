@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaInstagram, FaLinkedinIn } from 'react-icons/fa'; // Import social icons
-import Tclogo from '../assests/Tclogo.svg'; // Import the SVG logo
+import Tclogo from '../assets/Tclogo.svg'; // Import the SVG logo
 import './Footer.css'; // Import the updated CSS file for styling
 
 const Footer = () => {

@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Asset2 from "../assests/Asset2.svg";
-import Asset3 from "../assests/Asset3.svg";
-import Asset4 from "../assests/Asset4.svg";
-import Asset5 from "../assests/Asset5.svg";
-import Asset6 from "../assests/Asset6.svg";
-import Asset7 from "../assests/Asset7.svg";
+import Asset2 from "../assets/Asset2.svg";
+import Asset3 from "../assets/Asset3.svg";
+import Asset4 from "../assets/Asset4.svg";
+import Asset5 from "../assets/Asset5.svg";
+import Asset6 from "../assets/Asset6.svg";
+import Asset7 from "../assets/Asset7.svg";
 import "./HeroSection.css";
 
 gsap.registerPlugin(ScrollTrigger);
