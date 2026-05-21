@@ -194,14 +194,62 @@
 
 .tb-project-card-melody {
   background:
-    radial-gradient(circle at 18% 12%, rgba(11, 58, 117, 0.2), transparent 34%),
-    radial-gradient(circle at 88% 18%, rgba(239, 111, 97, 0.18), transparent 28%),
-    var(--surface);
+    radial-gradient(circle at 18% 12%, rgba(33, 69, 130, 0.24), transparent 34%),
+    radial-gradient(circle at 88% 18%, rgba(239, 111, 97, 0.2), transparent 28%),
+    linear-gradient(145deg, #071c36 0%, #0b2e55 58%, #061b35 100%);
+  border-color: rgba(255, 145, 36, 0.24);
+}
+
+.tb-project-card-melody .tb-project-image {
+  background:
+    linear-gradient(135deg, rgba(239, 111, 97, 0.16), transparent 42%),
+    #214582;
 }
 
 .tb-project-card-melody .tb-project-content p,
 .tb-project-card-melody .tb-project-content strong {
   color: #ef6f61;
+}
+
+.tb-project-card-melody .tb-project-content h2 {
+  color: #fff8ef;
+}
+
+.tb-project-card-melody .tb-project-tools small,
+.tb-project-card-melody .tb-preview-btn {
+  background: rgba(239, 111, 97, 0.14);
+  border-color: rgba(255, 145, 36, 0.26);
+  color: #fff8ef;
+}
+
+:root[data-theme="light"] .tb-project-card-melody {
+  background:
+    radial-gradient(circle at 18% 12%, rgba(239, 111, 97, 0.18), transparent 34%),
+    radial-gradient(circle at 88% 18%, rgba(33, 69, 130, 0.12), transparent 28%),
+    linear-gradient(145deg, #fff8f4 0%, #f3eee6 58%, #eef4f6 100%);
+  border-color: rgba(33, 69, 130, 0.2);
+}
+
+:root[data-theme="light"] .tb-project-card-melody .tb-project-image {
+  background:
+    linear-gradient(135deg, rgba(239, 111, 97, 0.12), transparent 42%),
+    #fff8f4;
+}
+
+:root[data-theme="light"] .tb-project-card-melody .tb-project-content h2 {
+  color: #09213f;
+}
+
+:root[data-theme="light"] .tb-project-card-melody .tb-project-content p,
+:root[data-theme="light"] .tb-project-card-melody .tb-project-content strong {
+  color: #214582;
+}
+
+:root[data-theme="light"] .tb-project-card-melody .tb-project-tools small,
+:root[data-theme="light"] .tb-project-card-melody .tb-preview-btn {
+  background: rgba(239, 111, 97, 0.12);
+  border-color: rgba(33, 69, 130, 0.18);
+  color: #09213f;
 }
 
 .tb-project-card-timmycare {

@@ -161,7 +161,7 @@ export default function LandingPage() {
             <h2>Building digital experiences that solve real problems.</h2>
           </div>
 
-          <Link to="/work" className="view-link tb-section-link">
+          <Link to="/work" className="view-link">
             View all projects →
           </Link>
         </div>
@@ -170,7 +170,7 @@ export default function LandingPage() {
           {featuredWork.map((project) => (
             <Link
               to={project.link}
-              className="tb-work-card"
+              className={`tb-work-card ${project.id === "2" ? "tb-work-card-melody" : ""}`}
               key={project.id}
               onMouseMove={handleTiltMove}
               onMouseLeave={handleTiltLeave}

@@ -73,6 +73,7 @@ const FeaturedProjects = () => {
         {projects.map((project, index) => {
           const isMotion = project.cardTheme === "motion" || project.id === "6";
           const isAstro = project.id === "5";
+          const isMelody = project.id === "2";
 
           return (
             <Tilt
@@ -86,6 +87,7 @@ const FeaturedProjects = () => {
                 ref={(el) => (projectRefs.current[index] = el)}
                 className={[
                   "fp-project-card",
+                  isMelody ? "fp-project-card-melody" : "",
                   isAstro ? "fp-project-card-astro" : "",
                   isMotion ? "fp-project-card-motion" : "",
                 ].join(" ").trim()}

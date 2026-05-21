@@ -19,15 +19,21 @@ export default function ThemeToggle() {
   }, [theme]);
 
   const isBcrpa = location.pathname.startsWith("/bcrpa");
+  const isMelody = location.pathname === "/projects/2";
 
   const label = useMemo(() => {
     if (isBcrpa) return theme === "dark" ? "BCRPA Light" : "BCRPA Dark";
+    if (isMelody) return theme === "dark" ? "Melody Light" : "Melody Dark";
     return theme === "dark" ? "Light" : "Dark";
-  }, [isBcrpa, theme]);
+  }, [isBcrpa, isMelody, theme]);
 
   return (
     <button
-      className={`theme-toggle ${isBcrpa ? "theme-toggle-bcrpa" : ""}`}
+      className={[
+        "theme-toggle",
+        isBcrpa ? "theme-toggle-bcrpa" : "",
+        isMelody ? "theme-toggle-melody" : "",
+      ].join(" ").trim()}
       type="button"
       onClick={() => setTheme((current) => (current === "dark" ? "light" : "dark"))}
       aria-label={`Switch to ${label} mode`}

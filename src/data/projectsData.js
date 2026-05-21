@@ -1,5 +1,5 @@
 import ronzalko from "../assets/Ron Zalko web design.jpg";
-import melodycard1 from "../assets/MelodyCard1.jpg";
+import melodyBeatsItem from "../assets/Melody-beats-item.jpg";
 import timmyhaircare from "../assets/timmyhaircare4.jpg";
 import scwcharity from "../assets/scwcharitywebpage.png";
 import scwLogo from "../assets/scw logo.png";
@@ -24,9 +24,9 @@ export const projectsData = [
     id: "2",
     title: "Melody Beats Branding",
     category: "Visual Design",
-    description: "Brand identity, logo exploration, and business card system.",
-    image: melodycard1,
-    software: ["Illustrator", "Photoshop", "InDesign"],
+    description: "Music brand identity case study with logo development, business cards, poster cards, and package design.",
+    image: melodyBeatsItem,
+    software: ["Photoshop", "Adobe After Effects", "Brand System"],
     link: "/projects/2",
     featured: true,
   },

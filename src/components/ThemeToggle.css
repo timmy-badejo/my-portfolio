@@ -44,6 +44,19 @@
   border-color: color-mix(in srgb, var(--bcrpa-coral-energy) 60%, transparent);
 }
 
+.theme-toggle-melody {
+  border-color: rgba(255, 145, 36, 0.28);
+}
+
+.theme-toggle-melody span {
+  background: linear-gradient(135deg, #ef6f61, #ff9124);
+  color: #fff8ef;
+}
+
+.theme-toggle-melody:hover {
+  border-color: rgba(239, 111, 97, 0.62);
+}
+
 @media (max-width: 680px) {
   .theme-toggle {
     right: 14px;

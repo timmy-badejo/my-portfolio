@@ -6,8 +6,9 @@ import ronzalko from "../assets/Ron Zalko web design.jpg";
 import ronLogo from "../assets/Ron-Zalko-Logo.png";
 import ronPoster from "../assets/Ron Zalko zoster.jpg";
 import ronUserFlow from "../assets/User flow for ron zalko fitness web redesignn.png";
-import ronBusinessCard from "../assets/ron zalko gym card.jpg";
-import ronBusinessCardTwo from "../assets/ron zalko gym card 2.jpg";
+import ronSitemap from "../assets/Ui-Ux RonZalko-WebDesign_Page_16.jpg";
+import ronBusinessCardFront from "../assets/ron-zalko-buisness-card-front.jpg";
+import ronBusinessCardBack from "../assets/ron-zalko-buisness-card-back.jpg";
 import ronInvoice from "../assets/ron zalko gym invoice.jpg";
 import ronEnvelope from "../assets/Ron Zalko Mail Envelope-01.jpg";
 import ronWire1 from "../assets/Ron-Zalko-Web-Design-Wireframe_Page_01.jpg";
@@ -23,8 +24,20 @@ import ronWire10 from "../assets/Ron-Zalko-Web-Design-Wireframe_Page_10.jpg";
 import ronWire11 from "../assets/Ron-Zalko-Web-Design-Wireframe_Page_11.jpg";
 import ronWire12 from "../assets/Ron-Zalko-Web-Design-Wireframe_Page_12.jpg";
 import ronStyleGuidePdf from "../assets/Ron-zalko-style-guide.pdf";
-import melodycard1 from "../assets/MelodyCard1.jpg";
-import melodycard2 from "../assets/MelodyCard2.jpg";
+import melodyBusinessCard1 from "../assets/melody-beats-buisness-card-1.jpg";
+import melodyBusinessCard2 from "../assets/melody-beats-buisness-card-2.jpg";
+import melodyBusinessCard4 from "../assets/melody-beats-buisness-card-4.jpg";
+import melodyBusinessCard5 from "../assets/melody-beats-buisness-card-5.jpg";
+import melodyBusinessCard6 from "../assets/melody-beats-buisness-card-6.jpg";
+import melodyBusinessCard7 from "../assets/melody-beats-buisness-card-7.jpg";
+import melodyBeatsItem from "../assets/Melody-beats-item.jpg";
+import melodyPosterCard1 from "../assets/melody-beats-poster-card-1.jpg";
+import melodyPosterCard2 from "../assets/melody-beats-poster-card-2.jpg";
+import melodyPosterCard3 from "../assets/melody-beats-poster-card-3.jpg";
+import melodyPosterCard4 from "../assets/melody-beats-poster-card-4.jpg";
+import melodyPosterCard5 from "../assets/melody-beats-poster-card-5.jpg";
+import melodyPosterCard6 from "../assets/melody-beats-poster-card-6.jpg";
+import melodyPackageUnfolded from "../assets/Melody-beats-package-design-unfolded.jpg";
 import melodyDoc1 from "../assets/melodyBeatsDocument_Page_01.jpg";
 import melodyDoc2 from "../assets/melodyBeatsDocument_Page_02.jpg";
 import melodyDoc3 from "../assets/melodyBeatsDocument_Page_03.jpg";
@@ -40,6 +53,9 @@ import melodyLogoSketch from "../assets/melody shape logo for melody.png";
 import melodyLogoFinal from "../assets/Melody Logo 2 blue for melody.png";
 import melodyPosterCard from "../assets/Melody Logo poster cards for melody.png";
 import melodyProduct from "../assets/melody-beats-package-design-1.png";
+import melodyProductBox from "../assets/melody-beats-package-design-2.jpg";
+import melodyHeadphone from "../assets/Melody beats headphone.jpg";
+import melodyBlueLogo from "../assets/melody blue for melody.png";
 import timmyhaircare from "../assets/timmyhaircare4.jpg";
 import timmyhaircare1 from "../assets/timmyhaircare1.jpg";
 import timmyhaircare2 from "../assets/timmyhaircare2.jpg";
@@ -96,17 +112,54 @@ const scwWireframes = [
 ];
 
 const melodyBrandSystem = [
-  melodyDoc1,
-  melodyDoc2,
+  { title: "Brand Style and Package", note: "Opening brand-system page", image: melodyDoc1 },
+  { title: "Brand Values and Palette", note: "Voice, mood, and color direction", image: melodyDoc2 },
+  { title: "Moodboard and Logo Sketches", note: "Early visual research and logo exploration", image: melodyDoc3 },
+  { title: "Logo Sketch Development", note: "Hand-drawn logo direction", image: melodyDoc4 },
+  { title: "Logo Variations", note: "Refined mark options", image: melodyDoc5 },
+  { title: "Logo and Brand Story", note: "Primary mark and brand narrative", image: melodyDoc6 },
+  { title: "Brand Overview and Type", note: "Identity rules and typography", image: melodyDoc7 },
+  { title: "Palette and Pattern Design", note: "Color system and waveform pattern", image: melodyDoc9 },
+  { title: "Package and Card Design", note: "Product box and business card system", image: melodyDoc10 },
+  { title: "Postcard Design", note: "Poster-card applications", image: melodyDoc11 },
+  { title: "Product Mockup and Final Logo", note: "Headphone product direction and final mark", image: melodyDoc12 },
+];
+
+const melodyLogoSystem = [
   melodyDoc3,
   melodyDoc4,
   melodyDoc5,
   melodyDoc6,
-  melodyDoc7,
-  melodyDoc9,
-  melodyDoc10,
-  melodyDoc11,
-  melodyDoc12,
+  melodyLogoSketch,
+  melodyLogoFinal,
+  melodyBlueLogo,
+  melodyPosterCard,
+];
+
+const melodyBusinessCards = [
+  melodyBusinessCard1,
+  melodyBusinessCard2,
+  melodyBusinessCard4,
+  melodyBusinessCard5,
+  melodyBusinessCard6,
+  melodyBusinessCard7,
+];
+
+const melodyPostcards = [
+  melodyPosterCard1,
+  melodyPosterCard2,
+  melodyPosterCard3,
+  melodyPosterCard4,
+  melodyPosterCard5,
+  melodyPosterCard6,
+];
+
+const melodyProductDesign = [
+  melodyProduct,
+  melodyProductBox,
+  melodyPackageUnfolded,
+  melodyHeadphone,
+  melodyBeatsItem,
 ];
 
 const timmyCareScreens = [
@@ -120,10 +173,26 @@ const timmyCareScreens = [
 
 const astroMockups = [astroPlaceholder, astro1, astro2, astro3, astro4, astro5];
 const ronBrandCollateral = [
-  { title: "Business Card Front", image: ronBusinessCard },
-  { title: "Business Card Alternate", image: ronBusinessCardTwo },
-  { title: "Invoice System", image: ronInvoice },
-  { title: "Mail Envelope", image: ronEnvelope },
+  {
+    title: "Business Card Front",
+    image: ronBusinessCardFront,
+    note: "Front-facing trainer contact card with logo-first hierarchy and strong black/red contrast.",
+  },
+  {
+    title: "Business Card Back",
+    image: ronBusinessCardBack,
+    note: "Brand statement side built around the Unity, Balance, Power positioning.",
+  },
+  {
+    title: "Mail Envelope",
+    image: ronEnvelope,
+    note: "Stationery system carrying the logo, address, and supporting brand pattern.",
+  },
+  {
+    title: "Invoice Layout",
+    image: ronInvoice,
+    note: "Operational document template with branded table styling and payment hierarchy.",
+  },
 ];
 
 const astroUpgradeGroups = [
@@ -179,10 +248,10 @@ const caseStudyMetadata = {
     delivery: "Delivered a refreshed brand system, horizontal wireframe browser, Adobe XD prototype, and vertical style-guide preview.",
   },
   "2": {
-    snapshot: ["Visual identity system", "Logo exploration, cards, posters, and product packaging", "Music-focused Photoshop/InDesign direction"],
-    context: "Melody Beats needed a cohesive identity that could work across promotional and product touchpoints.",
-    process: ["Explored logo shape language.", "Built business card and postal card layouts.", "Applied the identity across packaging and presentation pages."],
-    delivery: "Delivered a full brand-system gallery with card, poster, product, and identity artifacts.",
+    snapshot: ["Music brand identity system", "Logo sketches, final marks, business cards, poster cards, and package design", "Melody blue, coral, teal, green, purple, and warm gold palette"],
+    context: "Melody Beats needed a cohesive music identity that could feel energetic on promotional pieces while still working across practical brand collateral and product packaging.",
+    process: ["Explored logo sketches around waveforms, rhythm, motion, and the Melody name.", "Refined final logo directions and built a color system for blue, coral, teal, green, purple, and warm gold applications.", "Applied the identity across business cards, poster cards, headphone visuals, and product package mockups."],
+    delivery: "Delivered a detailed brand-system case study with a slider for the full design system and grouped sections for logo work, business cards, poster cards, and package design.",
   },
   "3": {
     snapshot: ["Mobile app redesign", "Research artifacts, flows, personas, and high-fidelity screens", "Haircare shopping and wishlist experience"],
@@ -209,10 +278,10 @@ const caseStudyMetadata = {
     delivery: "Delivered a focused motion showcase with final video and synchronized soundtrack.",
   },
   "7": {
-    snapshot: ["Music label website redesign", "Front-end UI/UX, live preview direction, and style guide", "Black and KVDST blue visual system"],
-    context: "KVDST needed stronger brand alignment, clearer page hierarchy, and a case study that felt connected to music, events, artists, and merch.",
-    process: ["Reworked navigation, hero, content hierarchy, and responsive polish.", "Aligned the case study to the KVDST brand.", "Added code and style-guide presentation."],
-    delivery: "Delivered a stronger label website case study with live-site link, brand-focused PDF section, and code showcase.",
+    snapshot: ["Music label website redesign", "Front-end UI/UX with live + backup delivery path", "Black and KVDST blue visual system"],
+    context: "KVDST needed stronger brand alignment, cleaner UX architecture, and a professional web presence connecting artists, events, merch, and label storytelling.",
+    process: ["Reworked information architecture and page hierarchy around user intent.", "Aligned the visual language to the KVDST identity system.", "Added live deployment, backup code continuity, style-guide framing, and code evidence."],
+    delivery: "Delivered a production-ready case study with professional structure, live preview access, fallback backup path, and implementation documentation.",
   },
 };
 
@@ -229,6 +298,23 @@ const ronWireframes = [
   ronWire10,
   ronWire11,
   ronWire12,
+];
+
+const ronWireframeGallery = ronWireframes.map((image, index) => ({
+  title: `High-Fidelity Wireframe ${String(index + 1).padStart(2, "0")}`,
+  note: "Responsive website screen direction from the Ron Zalko redesign.",
+  image,
+}));
+
+const ronScrollArtifacts = [
+  { title: "Ron Zalko Logo", note: "Primary identity mark", image: ronLogo },
+  { title: "Site Map", note: "Navigation and page-path planning", image: ronSitemap },
+  ...ronWireframeGallery,
+  { title: "Business Card Front", note: "Brand collateral", image: ronBusinessCardFront },
+  { title: "Business Card Back", note: "Brand collateral", image: ronBusinessCardBack },
+  { title: "Mail Envelope", note: "Stationery collateral", image: ronEnvelope },
+  { title: "Invoice", note: "Business document styling", image: ronInvoice },
+  { title: "Poster Ad", note: "Campaign direction", image: ronPoster },
 ];
 
 const kvdstCodeSamples = {
@@ -275,6 +361,64 @@ navLinks.forEach((link) => {
 });`,
 };
 
+const kvdstFramework = [
+  {
+    phase: "01",
+    title: "Discovery and Audit",
+    points: [
+      "Reviewed page flow and navigation clarity across the original site.",
+      "Mapped hierarchy gaps between artists, events, merch, and editorial content.",
+    ],
+  },
+  {
+    phase: "02",
+    title: "UX Architecture",
+    points: [
+      "Rebuilt content architecture around user intent and faster path selection.",
+      "Grouped high-value actions so visitors can move from discovery to action with less friction.",
+    ],
+  },
+  {
+    phase: "03",
+    title: "UI and Brand System",
+    points: [
+      "Aligned the interface to KVDST's stage-black and electric-blue identity system.",
+      "Standardized spacing, card rhythm, and contrast hierarchy for cleaner readability.",
+    ],
+  },
+  {
+    phase: "04",
+    title: "Front-End Delivery",
+    points: [
+      "Prepared live deployment with a mirrored local backup path for reliability.",
+      "Kept responsive behavior, hover states, and page transitions consistent.",
+    ],
+  },
+];
+
+const kvdstUxUpgrades = [
+  "Clearer navigation hierarchy and stronger first-screen orientation.",
+  "Improved information grouping for artists, events, merch, and updates.",
+  "More consistent spacing and typography rhythm across long-form sections.",
+  "Higher visual contrast and cleaner component states for legibility.",
+  "Live-first delivery with local backup continuity when hosting is unavailable.",
+];
+
+const kvdstQualitySignals = [
+  {
+    title: "Live Availability",
+    detail: "Primary public URL drives the embedded preview and direct-open action.",
+  },
+  {
+    title: "Backup Reliability",
+    detail: "Full static backup runs from `/kvdst-site/index.html` with linked assets preserved.",
+  },
+  {
+    title: "System Consistency",
+    detail: "Design language, style guide, and implementation evidence all align to one KVDST system.",
+  },
+];
+
 const timmyCareResearch = {
   logo: timmyLogo,
   researchMaps: [
@@ -318,8 +462,8 @@ const projects = [
       "Documented the full project in a UI/UX style guide PDF covering research, competitive analysis, personas, and results.",
     ],
     scrollBrowseTitle: "Wireframe Browser",
-    scrollBrowseText: "Scroll to view Ron Zalko wireframes and design explorations.",
-    scrollImages: [ronzalko, ronUserFlow, ...ronWireframes, ronPoster, ronBusinessCard, ronBusinessCardTwo, ronEnvelope, ronInvoice],
+    scrollBrowseText: "Scroll to view the Ron Zalko logo, sitemap, wireframes, and collateral sequence.",
+    scrollImages: ronScrollArtifacts,
     oldSiteUrl: "https://ronzalko.com/",
     prototypeUrl: "https://xd.adobe.com/view/20f25a09-a9b7-4b46-a4cd-6158c74e6a52-75a1/",
     prototypeEmbedUrl: "https://xd.adobe.com/embed/20f25a09-a9b7-4b46-a4cd-6158c74e6a52-75a1/",
@@ -331,19 +475,19 @@ const projects = [
     id: "2",
     title: "Melody Beats Branding",
     category: "Visual Design",
-    image: melodycard1,
-    technicalInfo: "Brand Identity • Photoshop • Print & Package Design",
-    overview: "A brand identity project focused on a music brand system: logo exploration, final identity direction, business cards, postal cards, and package/product design.",
-    challenges: "The challenge was making the identity feel energetic and music-focused while still working across practical print and product applications.",
-    outcome: "The final brand system presents Melody Beats as a more complete identity, with clear logo direction, card systems, promotional pieces, and product packaging.",
+    image: melodyBeatsItem,
+    technicalInfo: "Brand Identity • Photoshop • Adobe After Effects",
+    overview: "A Melody Beats brand identity case study for a music-focused product system. The work covers logo sketches and final designs, business cards, poster cards, product visuals, and package design.",
+    challenges: "The challenge was making the identity feel sonic, energetic, and vibrant while still staying consistent across cards, poster layouts, brand documentation, and product packaging.",
+    outcome: "The final brand system presents Melody Beats as a complete music identity with a clear waveform logo, flexible color palette, business card system, poster-card campaign direction, and package/product design.",
     details: [
-      "Built a brand-system slider using the strongest Melody Beats document pages.",
-      "Separated the work into logo system, business cards, postal cards, and product/package design.",
-      "Used full-display image treatment so artwork is presented instead of cropped.",
-      "Applied the Melody palette to the case study and card treatment.",
+      "Updated the case study slider into a brand-system design slider using the Melody Beats presentation pages.",
+      "Grouped the project into logo sketches and final designs, business cards, poster cards, and product package design.",
+      "Featured Melody Beats items as designed artifacts instead of relying on a click-to-open image preview gallery.",
+      "Applied the Melody Beats palette across the case study page, project card, and light/dark themed treatments.",
     ],
-    scrollBrowseTitle: "Scroll to Browse the Melody Beats Brand System",
-    scrollBrowseText: "A full-display brand-system slider showing the identity, card, poster, and product design direction.",
+    scrollBrowseTitle: "Melody Beats Brand System Slider",
+    scrollBrowseText: "Browse the brand-system pages for logo development, color, typography, cards, poster cards, product mockups, and package design.",
     scrollImages: melodyBrandSystem,
     isMelody: true,
   },
@@ -447,16 +591,16 @@ const projects = [
     image: kvdstLogo,
     logo: kvdstLogo,
     technicalInfo: "Front-End • UI/UX Redesign • Music Label Website",
-    overview: "I took the KVDST music label project and redesigned the interface to feel more aligned with a modern record label: stronger hero presence, cleaner navigation, clearer content sections, and sharper visual hierarchy.",
-    challenges: "The original structure needed more polish, stronger brand alignment, better spacing, clearer page flow, and a UI direction that felt connected to music, artists, events, merch, and label storytelling.",
-    outcome: "The updated direction gives KVDST a stronger visual identity, improved UX structure, live preview support, project-specific page styling, and a more complete front-end case study presentation.",
+    overview: "KVDST was redesigned as a complete label web experience with stronger UX architecture, cleaner content hierarchy, and a clearer path through artists, events, merchandise, and label stories.",
+    challenges: "The initial direction lacked a professional UX foundation: inconsistent hierarchy, scattered page flow, weaker brand continuity, and no explicit reliability path when live hosting is unavailable.",
+    outcome: "The project now presents KVDST at a professional case-study level with refined UI/UX structure, a cohesive brand system, live deployment, and a verified backup code route.",
     details: [
-      "Reworked the navigation, hero, content flow, and visual hierarchy.",
-      "Aligned the case study to the KVDST brand with a black/neon stage, #29ABE2 accents, grid texture, record-style visual, and equalizer motion.",
-      "Added a live preview iframe using the copied static website at /kvdst-site/index.html.",
-      "Kept the external live-site button pointing to https://timmybad.com/kvdst/.",
-      "Added the KVDST record label style guide PDF section with right-to-left horizontal movement.",
-      "Added code showcase sections for HTML, CSS, and JavaScript.",
+      "Rebuilt navigation, hero, and section flow around clearer user actions and faster wayfinding.",
+      "Aligned visual direction to the KVDST brand system using stage-black surfaces and #29ABE2 accents.",
+      "Organized artists, events, merch, and updates into clearer structural groups.",
+      "Integrated live deployment (`https://timmybad.com/kvdst/`) with a mirrored local backup route (`/kvdst-site/index.html`).",
+      "Added a full style-guide documentation section to support consistent implementation.",
+      "Expanded implementation evidence with HTML, CSS, and JavaScript code structure.",
     ],
     liveUrl: "https://timmybad.com/kvdst/",
     previewUrl: "/kvdst-site/index.html",
@@ -490,15 +634,21 @@ function ScrollBrowse({ title, text, images, theme = "" }) {
       </div>
 
       <div className="scroll-browse-track">
-        {images.map((image, index) => (
+        {images.map((item, index) => {
+          const image = typeof item === "string" ? item : item.image;
+          const itemTitle = typeof item === "string" ? `Page ${index + 1}` : item.title;
+          const itemNote = typeof item === "string" ? "Project screen / artifact preview." : item.note;
+
+          return (
           <figure className="scroll-browse-frame" key={`${image}-${index}`}>
-            <img src={image} alt={`${title} ${index + 1}`} />
+            <img src={image} alt={`${title} ${itemTitle}`} />
             <figcaption>
-              <span>Page {index + 1}</span>
-              <p>Project screen / artifact preview.</p>
+              <span>{itemTitle}</span>
+              <p>{itemNote}</p>
             </figcaption>
           </figure>
-        ))}
+          );
+        })}
       </div>
     </section>
   );
@@ -508,13 +658,25 @@ function RonHeroBrowser({ images }) {
   return (
     <div className="ron-hero-browser" aria-label="Ron Zalko wireframes and design explorations">
       <div className="ron-hero-browser-head">
-        <span>Scroll left to right</span>
-        <p>Ron Zalko wireframes and design explorations</p>
+        <div className="ron-scroll-indicator">
+          <span></span>
+          <p>Scroll to View</p>
+        </div>
+        <div className="ron-hero-head-copy">
+          <span>Horizontal case study browser</span>
+          <p>Logo, sitemap, high-fidelity wireframes, business cards, envelope, invoice, and poster.</p>
+        </div>
       </div>
       <div className="ron-hero-track">
-        {images.map((image, index) => (
-          <figure className="ron-hero-frame" key={`${image}-${index}`}>
-            <img src={image} alt={`Ron Zalko project artifact ${index + 1}`} />
+        {images.map((item, index) => (
+          <figure className="ron-hero-frame" key={`${item.image}-${index}`}>
+            <div className="ron-hero-image-wrap">
+              <img src={item.image} alt={`Ron Zalko ${item.title}`} />
+            </div>
+            <figcaption>
+              <h3>{item.title}</h3>
+              <p>{item.note ?? "Project artifact preview"}</p>
+            </figcaption>
           </figure>
         ))}
       </div>
@@ -1021,6 +1183,32 @@ export default function ProjectDetailPage() {
             </div>
           </section>
 
+          <section className="project-section ron-wireframe-section">
+            <div className="ron-section-headline">
+              <div>
+                <p className="project-kicker">Wireframes and Mockups</p>
+                <h2>High-fidelity website screens from Page 01 through Page 12.</h2>
+              </div>
+              <p>
+                The mockup sequence translates the sitemap into a complete web experience:
+                hero messaging, programs, pricing, product touchpoints, newsletter capture,
+                and contact flow are all presented as a cohesive responsive system.
+              </p>
+            </div>
+
+            <div className="ron-wireframe-grid">
+              {ronWireframeGallery.map((item) => (
+                <figure className="ron-wireframe-card" key={item.title}>
+                  <img src={item.image} alt={`Ron Zalko ${item.title}`} />
+                  <figcaption>
+                    <span>{item.title}</span>
+                    <p>{item.note}</p>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </section>
+
           <section className="project-section ron-artifact-section">
             <p className="project-kicker">Poster Ad Design</p>
             <h2>Unity. Balance. Power. in print.</h2>
@@ -1046,29 +1234,80 @@ export default function ProjectDetailPage() {
           </section>
 
           <section className="project-section ron-collateral-section">
-            <p className="project-kicker">Brand Collateral</p>
-            <h2>Cards, envelope, and invoice system.</h2>
-            <p className="ron-section-note">
-              The rebrand extends into operational touchpoints so the Ron Zalko
-              identity stays consistent beyond the website.
-            </p>
+            <div className="ron-section-headline">
+              <div>
+                <p className="project-kicker">Brand Collateral</p>
+                <h2>Cards, stationery, and operational brand touchpoints.</h2>
+              </div>
+              <p>
+                The collateral system turns the refreshed identity into practical
+                deliverables staff can use every day: trainer contact cards,
+                client-facing stationery, branded invoices, and campaign material.
+              </p>
+            </div>
+            <div className="ron-insight-grid">
+              <article>
+                <span>01</span>
+                <h3>Recognition</h3>
+                <p>Repeated logo placement and red/black contrast make the brand easy to identify across every item.</p>
+              </article>
+              <article>
+                <span>02</span>
+                <h3>Consistency</h3>
+                <p>The same typography rhythm, wave motif, and spacing language connect print and digital assets.</p>
+              </article>
+              <article>
+                <span>03</span>
+                <h3>Utility</h3>
+                <p>Business cards, invoice, and envelope support real communication needs beyond the website launch.</p>
+              </article>
+            </div>
             <div className="ron-collateral-grid">
               {ronBrandCollateral.map((item) => (
                 <figure className="ron-collateral-card" key={item.title}>
                   <img src={item.image} alt={`Ron Zalko ${item.title}`} />
-                  <figcaption>{item.title}</figcaption>
+                  <figcaption>
+                    <span>{item.title}</span>
+                    <p>{item.note}</p>
+                  </figcaption>
                 </figure>
               ))}
             </div>
           </section>
 
           <section className="project-section ron-artifact-section">
-            <p className="project-kicker">User Flow</p>
-            <h2>How users move through the redesigned experience.</h2>
+            <div className="ron-section-headline">
+              <div>
+                <p className="project-kicker">User Flow</p>
+                <h2>How users move from discovery to membership action.</h2>
+              </div>
+              <p>
+                The flow defines a clearer journey for new visitors and returning
+                members, connecting homepage orientation, program discovery,
+                pricing evaluation, and final sign-up moments.
+              </p>
+            </div>
             <figure className="ron-userflow-card">
               <img src={ronUserFlow} alt="Ron Zalko user flow diagram" />
               <figcaption>User flow - from homepage landing to membership decision</figcaption>
             </figure>
+            <div className="ron-insight-grid ron-userflow-insights">
+              <article>
+                <span>Entry</span>
+                <h3>Clear first decision</h3>
+                <p>Homepage pathways guide users toward programs, classes, pricing, or contact without forcing a long search.</p>
+              </article>
+              <article>
+                <span>Explore</span>
+                <h3>Better evaluation</h3>
+                <p>Program and trainer pages help visitors compare options before they commit to a trial or membership.</p>
+              </article>
+              <article>
+                <span>Convert</span>
+                <h3>Direct action path</h3>
+                <p>Pricing and sign-up actions stay close to the content that builds confidence and intent.</p>
+              </article>
+            </div>
           </section>
 
           <section className="live-site-section ron-prototype-section">
@@ -1118,13 +1357,33 @@ export default function ProjectDetailPage() {
       {projectData.isMelody && (
         <section className="project-section melody-brand-sections">
           <p className="project-kicker">Melody Beats Items</p>
-          <h2>Logo, business cards, postal cards, and product package design.</h2>
+          <h2>Logo, business cards, poster cards, and package design.</h2>
           <div className="melody-section-grid">
             {[
-              { title: "Logo Sketches and Final Designs", tool: "Designed in Photoshop", images: [melodyLogoSketch, melodyLogoFinal] },
-              { title: "Business Card System", tool: "Designed in Photoshop", images: [melodycard1, melodycard2] },
-              { title: "Postal Card System", tool: "Designed in Photoshop", images: [melodyPosterCard, melodyDoc10] },
-              { title: "Product / Package Design", tool: "Designed with Adobe After Effects", images: [melodyProduct, melodyDoc12] },
+              {
+                title: "Logo Sketches and Final Designs",
+                tool: "Designed in Photoshop",
+                description: "Sketch exploration, waveform concepts, logo variations, and final Melody Beats marks.",
+                images: melodyLogoSystem,
+              },
+              {
+                title: "Business Card System",
+                tool: "Designed in Photoshop",
+                description: "Front and back card applications using the Melody blue, coral, teal, and warm gold palette.",
+                images: melodyBusinessCards,
+              },
+              {
+                title: "Poster Card System",
+                tool: "Designed in Photoshop",
+                description: "Promotional poster cards for the headphone/music campaign and postcard-style brand touchpoints.",
+                images: melodyPostcards,
+              },
+              {
+                title: "Product Package Design",
+                tool: "Designed with Adobe After Effects",
+                description: "Headphone product visuals, package mockups, unfolded box artwork, and final branded items.",
+                images: melodyProductDesign,
+              },
             ].map((section) => (
               <article className="melody-item-card" key={section.title}>
                 <div className="melody-item-images">
@@ -1134,6 +1393,7 @@ export default function ProjectDetailPage() {
                 </div>
                 <p className="project-kicker">{section.tool}</p>
                 <h3>{section.title}</h3>
+                <p>{section.description}</p>
               </article>
             ))}
           </div>
@@ -1253,20 +1513,32 @@ export default function ProjectDetailPage() {
           </section>
 
           <section className="project-section kvdst-process-section">
-            <p className="project-kicker">Redesign Structure</p>
-            <h2>How I aligned the page to the KVDST brand.</h2>
-            <div className="kvdst-process-grid">
-              {[
-                ["Navigation / Hero", "Strengthened first impression, logo presence, and label storytelling."],
-                ["Artist / Event Flow", "Improved content hierarchy so users can understand the music-label structure faster."],
-                ["Merch / News", "Organized supporting content so it feels connected instead of scattered."],
-                ["Front-End Polish", "Tightened spacing, responsiveness, hover states, and visual consistency."],
-              ].map(([title, text]) => (
-                <article key={title}>
-                  <h3>{title}</h3>
-                  <p>{text}</p>
-                </article>
-              ))}
+            <p className="project-kicker">Case Study Framework</p>
+            <h2>KVDST redesign from strategy to delivery.</h2>
+            <div className="kvdst-framework-layout">
+              <div className="kvdst-framework-grid">
+                {kvdstFramework.map((item) => (
+                  <article key={item.title}>
+                    <span>{item.phase}</span>
+                    <h3>{item.title}</h3>
+                    <ul>
+                      {item.points.map((point) => (
+                        <li key={point}>{point}</li>
+                      ))}
+                    </ul>
+                  </article>
+                ))}
+              </div>
+
+              <aside className="kvdst-ux-panel">
+                <p className="project-kicker">UX Upgrades</p>
+                <h3>What was improved in the experience</h3>
+                <ul>
+                  {kvdstUxUpgrades.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </aside>
             </div>
           </section>
 
@@ -1291,13 +1563,29 @@ export default function ProjectDetailPage() {
           />
 
           <section className="project-section kvdst-code-section">
-            <p className="project-kicker">View Code</p>
-            <h2>HTML, CSS, and JavaScript structure.</h2>
+            <p className="project-kicker">Implementation</p>
+            <h2>Code structure and backup architecture.</h2>
+            <p className="kvdst-code-note">
+              The implementation model supports public live hosting and a mirrored local backup build for continuity.
+            </p>
             <div className="kvdst-code-grid">
               {["HTML", "CSS", "JavaScript"].map((label) => (
                 <article className="kvdst-code-card" key={label}>
                   <h3>{label}</h3>
                   <pre><code>{kvdstCodeSamples[label]}</code></pre>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section className="project-section kvdst-quality-section">
+            <p className="project-kicker">Delivery Quality</p>
+            <h2>Professional release signals.</h2>
+            <div className="kvdst-quality-grid">
+              {kvdstQualitySignals.map((item) => (
+                <article key={item.title}>
+                  <h3>{item.title}</h3>
+                  <p>{item.detail}</p>
                 </article>
               ))}
             </div>
