@@ -395,15 +395,23 @@
 
 .gallery-card {
   position: relative;
-  border-radius: 20px;
+  border-radius: 18px;
   overflow: hidden;
-  height: 125px;
+  height: 104px;
 }
 
 .gallery-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
+  display: block;
+  transform: scale(1.02);
+  transition: transform 0.35s ease;
+}
+
+.gallery-card:hover img {
+  transform: scale(1.08);
 }
 
 .gallery-overlay {
@@ -446,6 +454,190 @@
   left: 0;
   color: var(--success-green);
   font-weight: 900;
+}
+
+.bcrpa-brand-card {
+  --bcrpa-midnight-blue: #253058;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: min(100%, 420px);
+  margin: 24px 0 4px;
+  padding: 16px;
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 85% 18%, rgba(201, 164, 108, 0.18), transparent 34%),
+    linear-gradient(135deg, color-mix(in srgb, var(--bcrpa-midnight-blue) 78%, transparent), var(--surface));
+  border: 1px solid rgba(201, 164, 108, 0.28);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.22);
+  overflow: hidden;
+}
+
+.bcrpa-brand-card::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(245, 233, 226, 0.12),
+    transparent
+  );
+  transform: translateX(-70%) rotate(12deg);
+  transition: transform 0.7s ease;
+}
+
+.bcrpa-brand-card:hover::before {
+  transform: translateX(70%) rotate(12deg);
+}
+
+.bcrpa-brand-card:hover {
+  border-color: rgba(201, 164, 108, 0.52);
+  box-shadow: 0 26px 68px rgba(37, 48, 88, 0.32);
+}
+
+.bcrpa-brand-mark {
+  position: relative;
+  z-index: 2;
+  width: 76px;
+  height: 76px;
+  flex: 0 0 76px;
+  border-radius: 20px;
+  display: grid;
+  place-items: center;
+  background: var(--bcrpa-midnight-blue);
+  color: #f5e9e2;
+  border: 1px solid rgba(201, 164, 108, 0.38);
+  font-size: 0.78rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+}
+
+.bcrpa-brand-mark img {
+  width: 82%;
+  height: 82%;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.bcrpa-brand-card:hover .bcrpa-brand-mark img {
+  filter:
+    brightness(0) saturate(100%) invert(88%) sepia(21%) saturate(345%) hue-rotate(22deg) brightness(105%) contrast(90%);
+}
+
+.bcrpa-brand-copy {
+  position: relative;
+  z-index: 2;
+}
+
+.bcrpa-brand-copy span {
+  display: inline-block;
+  margin-bottom: 5px;
+  color: var(--soft-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.68rem;
+  font-weight: 900;
+}
+
+.bcrpa-brand-copy h3 {
+  margin: 0;
+  color: var(--text-main);
+  font-size: 1rem;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+:root[data-theme="light"] .bcrpa-brand-card {
+  background:
+    radial-gradient(circle at 85% 18%, rgba(201, 164, 108, 0.18), transparent 34%),
+    linear-gradient(135deg, rgba(37, 48, 88, 0.1), #ffffff);
+}
+
+/* ── BCRPA Org Card ─────────────────────────── */
+
+.bcrpa-org-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: 20px;
+  padding: 18px 22px;
+  margin: 22px 0 12px;
+  transition: border-color 0.3s ease, transform 0.25s ease, box-shadow 0.3s ease;
+}
+
+.bcrpa-org-card:hover {
+  border-color: rgba(201, 164, 108, 0.65);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 42px rgba(128, 0, 32, 0.22);
+}
+
+.bcrpa-logo-wrap {
+  width: 80px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bcrpa-logo-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  /* Dark mode: logo is navy, invert to make it light */
+  filter: brightness(0) invert(1);
+  opacity: 0.88;
+  transition: opacity 0.3s ease;
+}
+
+.bcrpa-org-card:hover .bcrpa-logo-img {
+  opacity: 1;
+}
+
+.bcrpa-text-block {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border-left: 1px solid var(--border-soft);
+  padding-left: 18px;
+}
+
+
+.bcrpa-full-name {
+  font-size: 0.82rem;
+  font-weight: 900;
+  color: var(--text-main);
+  line-height: 1.35;
+}
+
+.bcrpa-role {
+  font-size: 0.78rem;
+  color: var(--soft-gold);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+/* Light mode overrides */
+:root[data-theme="light"] .bcrpa-org-card {
+  border-color: rgba(128, 0, 32, 0.18);
+}
+
+:root[data-theme="light"] .bcrpa-org-card:hover {
+  border-color: rgba(128, 0, 32, 0.48);
+  box-shadow: 0 16px 42px rgba(128, 0, 32, 0.10);
+}
+
+/* Light mode: logo is navy so it shows naturally, no invert needed */
+:root[data-theme="light"] .bcrpa-logo-img {
+  filter: none;
+  opacity: 0.9;
+}
+
+:root[data-theme="light"] .bcrpa-org-card:hover .bcrpa-logo-img {
+  opacity: 1;
 }
 
 .tb-about {
@@ -700,7 +892,7 @@
   .tb-hero-visual-card { min-height: 320px; }
 
   .experience-gallery { grid-template-columns: 1fr; }
-  .gallery-card { height: 180px; }
+  .gallery-card { height: 145px; }
 
   .tb-section-head {
     flex-direction: column;

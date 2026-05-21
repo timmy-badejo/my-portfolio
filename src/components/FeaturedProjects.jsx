@@ -72,6 +72,7 @@ const FeaturedProjects = () => {
       <div className="fp-projects-grid">
         {projects.map((project, index) => {
           const isMotion = project.cardTheme === "motion" || project.id === "6";
+          const isAstro = project.id === "5";
 
           return (
             <Tilt
@@ -83,7 +84,11 @@ const FeaturedProjects = () => {
             >
               <div
                 ref={(el) => (projectRefs.current[index] = el)}
-                className={`fp-project-card ${isMotion ? "fp-project-card-motion" : ""}`}
+                className={[
+                  "fp-project-card",
+                  isAstro ? "fp-project-card-astro" : "",
+                  isMotion ? "fp-project-card-motion" : "",
+                ].join(" ").trim()}
               >
                 <div className="fp-project-image-container">
                   <img

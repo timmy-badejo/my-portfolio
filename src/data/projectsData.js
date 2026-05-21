@@ -7,16 +7,16 @@ import astroPlaceholder from "../assets/AstorMatchlogo.jpg";
 import motionPlaceholder from "../assets/motion graphics.webp";
 import motionCardAudio from "../assets/sukuna-domain-theme.mp3";
 import kvdstLogo from "../assets/KVDST LOGO.png";
-import eventSetup from "../assets/EventSetup.jpeg";
+import bcrpaLogo from "../assets/BCRPA-primary-logo.png";
 
 export const projectsData = [
   {
     id: "1",
-    title: "Ron Zalko Fitness Website Redesign",
+    title: "Ron Zalko Fitness - Rebrand & Website Redesign",
     category: "UI/UX",
-    description: "UX redesign focused on navigation, accessibility, and clearer booking flow.",
+    description: "Rebrand, logo redesign, wireframes, user flow, poster ad, and Adobe XD website prototype.",
     image: ronzalko,
-    software: ["Figma", "HTML", "CSS", "JavaScript"],
+    software: ["Adobe XD", "UI/UX", "Brand System"],
     link: "/projects/1",
     featured: true,
   },
@@ -54,10 +54,11 @@ export const projectsData = [
     id: "5",
     title: "AstroMatch App",
     category: "UI/UX",
-    description: "Astrology dating app concept with compatibility-based matching.",
+    description: "Live astrology dating app upgrade with compatibility results, discovery, profiles, messaging, favorites, beginner guidance, and premium flows.",
     image: astroPlaceholder,
-    software: ["Product Design", "UI/UX", "Prototyping"],
+    software: ["React Native", "Expo", "Product Design", "UI/UX", "Design System"],
     link: "/projects/5",
+    liveUrl: "http://website-b862f62d.pef.fai.mybluehost.me/",
     featured: false,
   },
   {
@@ -81,7 +82,7 @@ export const projectsData = [
     logo: kvdstLogo,
     software: ["HTML", "CSS", "JavaScript", "GitHub"],
     link: "/projects/7",
-    liveUrl: "http://kvdst.timmybad.com/",
+    liveUrl: "https://timmybad.com/kvdst/",
     previewUrl: "/kvdst-site/index.html",
     featured: false,
   },
@@ -90,7 +91,7 @@ export const projectsData = [
     title: "BCRPA Internship Experience",
     category: "Internship",
     description: "Visual communication, event design, signage, print collateral, and Symposium support.",
-    image: eventSetup,
+    image: bcrpaLogo,
     software: ["Print Design", "Brand Systems", "Event Design"],
     link: "/bcrpa",
     featured: false,

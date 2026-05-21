@@ -37,6 +37,7 @@ import uiuxIcon from "../assets/uiux.svg";
 import brandingIcon from "../assets/branding.svg";
 import frontendIcon from "../assets/webdev.svg";
 import graphicIcon from "../assets/graphic.svg";
+import bcrpaLogo from "../assets/BCRPA-primary-logo.png";
 
 const coreSkills = [
   {
@@ -187,53 +188,93 @@ export default function LandingPage() {
       </section>
 
       <section id="experience" className="tb-section experience-section">
-        <div className="experience-left">
-          <p className="tb-kicker">Experience Highlight</p>
-          <h2>BCRPA Internship Experience</h2>
-          <p className="experience-text">
-            Contributed to real-world communications, event support, visual
-            branding, print and digital design for the BC Recreation & Parks Association.
-          </p>
-          <Link to="/bcrpa" className="tb-section-link">View Experience →</Link>
-        </div>
+  <div className="experience-left">
+    <p className="tb-kicker">Experience Highlight</p>
+    <h2>BCRPA Internship Experience</h2>
+    <p className="experience-text">
+      Contributed to real-world communications, event support, visual
+      branding, print and digital design for the BC Recreation & Parks Association.
+    </p>
 
-        <div className="experience-media">
-          <div className="experience-video tilt-card" onMouseMove={handleTiltMove} onMouseLeave={handleTiltLeave}>
-            <video src={bcrpaVideo} autoPlay muted loop playsInline />
-            <div className="experience-video-overlay">
-              <span>BCRPA Symposium</span>
-            </div>
+    <div
+      className="bcrpa-brand-card tilt-card"
+      onMouseMove={handleTiltMove}
+      onMouseLeave={handleTiltLeave}
+    >
+      <div className="bcrpa-brand-mark">
+        <img src={bcrpaLogo} alt="BCRPA logo" />
+      </div>
+
+      <div className="bcrpa-brand-copy">
+        <span>Visual Communication Designer</span>
+        <h3>British Columbia Recreation and Parks Association</h3>
+      </div>
+    </div>
+
+    <Link to="/bcrpa" className="tb-section-link">
+      View Experience →
+    </Link>
+  </div>
+
+  <div className="experience-media">
+    <div className="experience-video tilt-card" onMouseMove={handleTiltMove} onMouseLeave={handleTiltLeave}>
+      <video src={bcrpaVideo} autoPlay muted loop playsInline />
+      <div className="experience-video-overlay">
+        <span>BCRPA Symposium</span>
+      </div>
+    </div>
+
+    <div className="experience-gallery">
+      {[
+        {
+          image: eventSetup,
+          label: "Event Setup",
+          className: "event-setup",
+          position: "center center",
+        },
+        {
+          image: printWork,
+          label: "Print & Branding",
+          className: "print-branding",
+          position: "center 45%",
+        },
+        {
+          image: signage,
+          label: "Wayfinding",
+          className: "wayfinding",
+          position: "center 42%",
+        },
+      ].map((item) => (
+        <div
+          className={`gallery-card tilt-card ${item.className}`}
+          onMouseMove={handleTiltMove}
+          onMouseLeave={handleTiltLeave}
+          key={item.label}
+        >
+          <img
+            src={item.image}
+            alt={`BCRPA ${item.label}`}
+            style={{ objectPosition: item.position }}
+          />
+
+          <div className="gallery-overlay">
+            <span>{item.label}</span>
           </div>
-
-          <div className="experience-gallery">
-            {[
-              [eventSetup, "Event Setup"],
-              [printWork, "Print & Branding"],
-              [signage, "Wayfinding"],
-            ].map(([image, label]) => (
-              <div
-                className="gallery-card tilt-card"
-                onMouseMove={handleTiltMove}
-                onMouseLeave={handleTiltLeave}
-                key={label}
-              >
-                <img src={image} alt={`BCRPA ${label}`} />
-                <div className="gallery-overlay"><span>{label}</span></div>
-              </div>
-            ))}
-          </div>
         </div>
+      ))}
+    </div>
+  </div>
 
-        <div className="experience-right tilt-card" onMouseMove={handleTiltMove} onMouseLeave={handleTiltLeave}>
-          <h3>Key Contributions</h3>
-          <ul>
-            <li>Supported planning and execution of BCRPA Symposium assets.</li>
-            <li>Worked on print, signage, and brand communication materials.</li>
-            <li>Created design assets within real brand guidelines.</li>
-            <li>Supported visual communication for event and launch needs.</li>
-          </ul>
-        </div>
-      </section>
+  <div className="experience-right tilt-card" onMouseMove={handleTiltMove} onMouseLeave={handleTiltLeave}>
+    <h3>Key Contributions</h3>
+    <ul>
+      <li>Supported planning and execution of BCRPA Symposium assets.</li>
+      <li>Worked on print, signage, and brand communication materials.</li>
+      <li>Created design assets within real brand guidelines.</li>
+      <li>Supported visual communication for event and launch needs.</li>
+    </ul>
+  </div>
+</section>
 
       <section id="about" className="tb-section tb-about">
         <div className="tb-about-copy">

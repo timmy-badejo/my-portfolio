@@ -6,9 +6,23 @@ import ronzalko from "../assets/Ron Zalko web design.jpg";
 import ronLogo from "../assets/Ron-Zalko-Logo.png";
 import ronPoster from "../assets/Ron Zalko zoster.jpg";
 import ronUserFlow from "../assets/User flow for ron zalko fitness web redesignn.png";
-import ronCardOne from "../assets/ron zalko gym card.jpg";
-import ronCardTwo from "../assets/ron zalko gym card 2.jpg";
+import ronBusinessCard from "../assets/ron zalko gym card.jpg";
+import ronBusinessCardTwo from "../assets/ron zalko gym card 2.jpg";
 import ronInvoice from "../assets/ron zalko gym invoice.jpg";
+import ronEnvelope from "../assets/Ron Zalko Mail Envelope-01.jpg";
+import ronWire1 from "../assets/Ron-Zalko-Web-Design-Wireframe_Page_01.jpg";
+import ronWire2 from "../assets/Ron-Zalko-Web-Design-Wireframe_Page_02.jpg";
+import ronWire3 from "../assets/Ron-Zalko-Web-Design-Wireframe_Page_03.jpg";
+import ronWire4 from "../assets/Ron-Zalko-Web-Design-Wireframe_Page_04.jpg";
+import ronWire5 from "../assets/Ron-Zalko-Web-Design-Wireframe_Page_05.jpg";
+import ronWire6 from "../assets/Ron-Zalko-Web-Design-Wireframe_Page_06.jpg";
+import ronWire7 from "../assets/Ron-Zalko-Web-Design-Wireframe_Page_07.jpg";
+import ronWire8 from "../assets/Ron-Zalko-Web-Design-Wireframe_Page_08.jpg";
+import ronWire9 from "../assets/Ron-Zalko-Web-Design-Wireframe_Page_09.jpg";
+import ronWire10 from "../assets/Ron-Zalko-Web-Design-Wireframe_Page_10.jpg";
+import ronWire11 from "../assets/Ron-Zalko-Web-Design-Wireframe_Page_11.jpg";
+import ronWire12 from "../assets/Ron-Zalko-Web-Design-Wireframe_Page_12.jpg";
+import ronStyleGuidePdf from "../assets/Ron-zalko-style-guide.pdf";
 import melodycard1 from "../assets/MelodyCard1.jpg";
 import melodycard2 from "../assets/MelodyCard2.jpg";
 import melodyDoc1 from "../assets/melodyBeatsDocument_Page_01.jpg";
@@ -39,6 +53,7 @@ import scwPersona from "../assets/scw user persona 1.jpg";
 import scwPersonaTwo from "../assets/scw user persona 2.jpg";
 import scwSitemap from "../assets/scw-sitemap.png";
 import scwFullDisplay from "../assets/scw-full-display.jpg";
+import scwBrandSystemPdf from "../assets/SCW-BRAND-DESIGN-SYSTEM.pdf";
 import scwWire1 from "../assets/SCW Charity Website Wireframe A 2_Page_01.jpg";
 import scwWire2 from "../assets/SCW Charity Website Wireframe A 2_Page_02.jpg";
 import scwWire3 from "../assets/SCW Charity Website Wireframe A 2_Page_03.jpg";
@@ -62,6 +77,7 @@ import motionPlaceholder from "../assets/motion graphics.webp";
 import motionGraphicVideo from "../assets/Jujitsu_Kaisen_Intro_Bumper_Timilehin Yomi-Badejo_Final comp.mp4";
 import motionGraphicAudio from "../assets/jujitsu_kaisen_intro_Bumper-audio.mp3";
 import kvdstLogo from "../assets/KVDST LOGO.png";
+import kvdstStyleGuidePdf from "../assets/KVDST-record-label-style-guide.pdf";
 
 const scwWireframes = [
   scwWire1,
@@ -103,6 +119,117 @@ const timmyCareScreens = [
 ];
 
 const astroMockups = [astroPlaceholder, astro1, astro2, astro3, astro4, astro5];
+const ronBrandCollateral = [
+  { title: "Business Card Front", image: ronBusinessCard },
+  { title: "Business Card Alternate", image: ronBusinessCardTwo },
+  { title: "Invoice System", image: ronInvoice },
+  { title: "Mail Envelope", image: ronEnvelope },
+];
+
+const astroUpgradeGroups = [
+  {
+    title: "App Shell",
+    items: [
+      "Rebuilt App.jsx with a web phone-frame layout, AppUiProvider, global toast host, online status banner, and new Beginner Guide and Subscription routes.",
+      "Improved tab bar styling so the product feels more polished across the app shell.",
+    ],
+  },
+  {
+    title: "Results Screen",
+    items: [
+      "Added themed layouts, beginner guide support, loading skeletons, empty states, compatibility hero, insight tiles, compatible sign cards, and a sign comparison tool.",
+      "Added live compatibility messaging, candidate match cards, shared favorite behavior, free favorite limit toasts, premium report content, and bottom actions.",
+    ],
+  },
+  {
+    title: "Discovery and Matching",
+    items: [
+      "Improved CompatibleUsers, FilteredUserList, and HomeScreen with better match ranking, sorting, element filters, match bars, saved tracking, online indicators, and faster FlatList rendering.",
+      "Added discovery stats, profile funnel sections, and stronger empty states.",
+    ],
+  },
+  {
+    title: "Profile System",
+    items: [
+      "Added ethnicity, profile image personalization, completion progress, zodiac auto-detection preview, and beginner guide routing after profile creation.",
+      "Rebuilt profile dashboards and user profiles with stats, saved activity, badges, quick actions, photo grids, compatibility breakdowns, astrology charts, conversation starters, and safety controls.",
+    ],
+  },
+  {
+    title: "Messaging and Favorites",
+    items: [
+      "Improved chat headers, avatars, online states, safety reminders, conversation starters, message bubbles, local sent toasts, and profile navigation.",
+      "Added shared favorite profile service, saved people/signs behavior, removal toasts, tab-style organization, and stronger empty states.",
+    ],
+  },
+  {
+    title: "System and Build",
+    items: [
+      "Added beginner guide, subscription, EmptyState, GuideCard, LoadingSkeleton, OnlineStatusBanner, ScreenSection, ToastHost, UI context, premium status, storage, profile image, and favorite services.",
+      "Updated themes with a premium light/dark palette, cleaner 8px-style cards, improved line heights, new element colors, profile assets, PWA metadata, docs, build output, and a Bluehost upload zip.",
+    ],
+  },
+];
+
+const caseStudyMetadata = {
+  "1": {
+    snapshot: ["Rebrand and website redesign", "Logo, cards, envelope, invoice, poster, wireframes, user flow, and prototype", "Deep crimson, black, and white fitness identity"],
+    context: "Ron Zalko needed a stronger digital and brand presence that could carry both fitness intensity and yoga balance across web and print collateral.",
+    process: ["Redesigned the logo around unity, balance, and power.", "Mapped the new website flow before moving into wireframes.", "Extended the identity into business cards, envelope, invoice, poster, and PDF style guide."],
+    delivery: "Delivered a refreshed brand system, horizontal wireframe browser, Adobe XD prototype, and vertical style-guide preview.",
+  },
+  "2": {
+    snapshot: ["Visual identity system", "Logo exploration, cards, posters, and product packaging", "Music-focused Photoshop/InDesign direction"],
+    context: "Melody Beats needed a cohesive identity that could work across promotional and product touchpoints.",
+    process: ["Explored logo shape language.", "Built business card and postal card layouts.", "Applied the identity across packaging and presentation pages."],
+    delivery: "Delivered a full brand-system gallery with card, poster, product, and identity artifacts.",
+  },
+  "3": {
+    snapshot: ["Mobile app redesign", "Research artifacts, flows, personas, and high-fidelity screens", "Haircare shopping and wishlist experience"],
+    context: "TimmyCare needed clearer mobile flows grounded in user research and product browsing behavior.",
+    process: ["Mapped personas, empathy maps, scenarios, sitemap, journey map, and user flow.", "Separated low-fidelity planning from polished screen presentation.", "Kept the interface aligned to the TimmyCare palette."],
+    delivery: "Delivered a cleaner mobile-first UI/UX case study with research support and screen gallery.",
+  },
+  "4": {
+    snapshot: ["Charity website case study", "Personas, sitemap, wireframes, logo, full-page preview, and brand system", "Warm, accessible SCW visual language"],
+    context: "SCW needed a warmer, clearer charity website structure that made audience needs, navigation, and brand consistency visible.",
+    process: ["Built personas and sitemap before wireframes.", "Prepared the full-page website as the scrollable hero preview.", "Connected logo, color, and brand-system rules to the page UI."],
+    delivery: "Delivered a full SCW case study with website preview, research artifacts, wireframes, and embedded brand design system PDF.",
+  },
+  "5": {
+    snapshot: ["Live app upgrade", "React Native/Expo product UI", "Compatibility, discovery, profiles, messaging, favorites, guide, and subscription flows"],
+    context: "AstroMatch moved from an app concept into a broader interactive product case study with real flows, states, navigation, and live preview.",
+    process: ["Rebuilt the app shell and routes.", "Expanded Results, Discovery, Profile, Messaging, Favorites, Beginner Guide, and Subscription flows.", "Added shared services, state handling, themed components, assets, and PWA metadata."],
+    delivery: "Delivered a live app preview and a complete UI/UX upgrade story across product, design system, and implementation layers.",
+  },
+  "6": {
+    snapshot: ["Motion bumper", "After Effects and Premiere Pro", "Video-first case study with synced audio"],
+    context: "The intro needed to feel intense while keeping typography readable and synchronized to sound.",
+    process: ["Storyboarded timing beats.", "Animated type, impact frames, lighting, and camera movement.", "Prepared synced web playback."],
+    delivery: "Delivered a focused motion showcase with final video and synchronized soundtrack.",
+  },
+  "7": {
+    snapshot: ["Music label website redesign", "Front-end UI/UX, live preview direction, and style guide", "Black and KVDST blue visual system"],
+    context: "KVDST needed stronger brand alignment, clearer page hierarchy, and a case study that felt connected to music, events, artists, and merch.",
+    process: ["Reworked navigation, hero, content hierarchy, and responsive polish.", "Aligned the case study to the KVDST brand.", "Added code and style-guide presentation."],
+    delivery: "Delivered a stronger label website case study with live-site link, brand-focused PDF section, and code showcase.",
+  },
+};
+
+const ronWireframes = [
+  ronWire1,
+  ronWire2,
+  ronWire3,
+  ronWire4,
+  ronWire5,
+  ronWire6,
+  ronWire7,
+  ronWire8,
+  ronWire9,
+  ronWire10,
+  ronWire11,
+  ronWire12,
+];
 
 const kvdstCodeSamples = {
   HTML: `<header class="site-header">
@@ -173,25 +300,31 @@ const timmyCareResearch = {
 const projects = [
   {
     id: "1",
-    title: "Ron Zalko Fitness Website Redesign",
+    title: "Ron Zalko Fitness - Rebrand & Website Redesign",
     category: "UI/UX",
     image: ronzalko,
-    technicalInfo: "UI/UX Design • Website Redesign • User Flow",
-    overview: "A website redesign focused on improving structure, clarity, navigation, and the overall user experience for a fitness brand.",
-    challenges: "The main challenge was making the site easier to understand while improving how users move through the experience.",
-    outcome: "The redesign direction created a cleaner user journey, stronger hierarchy, and a more polished digital presence.",
+    technicalInfo: "UI/UX Design • Logo Redesign • Website Redesign • Brand System",
+    logo: ronLogo,
+    overview: "A full rebrand and website redesign for Ron Zalko Fitness & Yoga. The work covered UI/UX strategy, logo redesign, website structure, wireframes, user flow, Adobe XD prototype, poster design, business cards, envelope, invoice, and a finished style guide.",
+    challenges: "The original brand and website needed stronger cohesion, clearer navigation, better digital hierarchy, and a visual system that could work across both interface design and practical business collateral.",
+    outcome: "A modernized Ron Zalko identity with a stronger logo, cleaner website redesign, clearer user journey, reusable brand assets, print-ready collateral, and a documented style-guide system.",
     details: [
-      "Improved page structure and visual hierarchy.",
-      "Focused on clearer navigation and stronger user flow.",
-      "Explored layout updates for a more modern fitness brand experience.",
-      "Balanced visual design with usability.",
+      "Redesigned the Ron Zalko logo by combining strength, balance, and unity through a yoga pose, arm, and weight forming one unified mark.",
+      "Created a poster ad using the new brand direction: Unity, Balance, Power.",
+      "Extended the brand system into business cards, mail envelope, and invoice design so the identity works beyond the website.",
+      "Rebuilt the website structure with improved navigation, clearer hierarchy, and a user-centered flow.",
+      "Produced wireframes across 12 pages and a full Adobe XD prototype.",
+      "Applied the Ron Zalko colour system, deep crimson, black, and white, across brand touchpoints.",
+      "Documented the full project in a UI/UX style guide PDF covering research, competitive analysis, personas, and results.",
     ],
-    scrollBrowseTitle: "Scroll to Browse",
-    scrollBrowseText: "A Melody-style browser for Ron Zalko website screens, user flow, and redesign assets.",
-    scrollImages: [ronzalko, ronUserFlow, ronCardOne, ronCardTwo, ronInvoice],
+    scrollBrowseTitle: "Wireframe Browser",
+    scrollBrowseText: "Scroll to view Ron Zalko wireframes and design explorations.",
+    scrollImages: [ronzalko, ronUserFlow, ...ronWireframes, ronPoster, ronBusinessCard, ronBusinessCardTwo, ronEnvelope, ronInvoice],
     oldSiteUrl: "https://ronzalko.com/",
     prototypeUrl: "https://xd.adobe.com/view/20f25a09-a9b7-4b46-a4cd-6158c74e6a52-75a1/",
     prototypeEmbedUrl: "https://xd.adobe.com/embed/20f25a09-a9b7-4b46-a4cd-6158c74e6a52-75a1/",
+    styleGuidePdf: ronStyleGuidePdf,
+    styleGuideFilename: "Ron zalko style-guide.pdf",
     isRon: true,
   },
   {
@@ -247,8 +380,10 @@ const projects = [
       "Restored the full-page website scroll preview using scwcharitywebpage.png.",
       "Added sitemap, user persona, SCW logo, and full logo display as research/brand artifacts.",
       "Added low-fidelity wireframes Page 01 through Page 13 as a separate section.",
+      "Added the SCW Brand Design System PDF with preview, open-PDF action, color swatches, and brand-system highlights.",
       "Placed the sections in UX process order: final preview, overview, personas, sitemap, wireframes, logo, and brand system highlights.",
     ],
+    brandGuidePdf: scwBrandSystemPdf,
     isScw: true,
   },
   {
@@ -256,15 +391,18 @@ const projects = [
     title: "AstroMatch App",
     category: "UI/UX",
     image: astroPlaceholder,
-    technicalInfo: "Product Design • UI/UX • App Concept",
-    overview: "A live astrology dating app concept upgraded into a more complete interactive product with compatibility results, profiles, discovery, favorites, messaging, beginner guidance, and subscription pathways.",
-    challenges: "The challenge was turning the original concept into a usable app experience with richer flows, clearer states, saved-profile behavior, better onboarding, and a theme-aware interface.",
-    outcome: "The upgraded app now presents a stronger product case study with a live app preview, clearer feature story, and more detailed UI/UX evidence.",
+    technicalInfo: "React Native • Expo • Product Design • UI/UX • App Upgrade",
+    overview: "A live astrology dating app upgraded from concept into an interactive product shell with compatibility results, discovery, profiles, messaging, favorites, beginner guidance, subscription paths, shared services, and a theme-aware design system.",
+    challenges: "The challenge was expanding the original idea into a usable app experience with stronger routes, richer states, saved-profile behavior, premium paths, onboarding support, live feedback, and light/dark UI consistency.",
+    outcome: "AstroMatch now has a stronger product story, live app preview, upgraded screen flows, reusable components, shared hooks/utilities, profile personalization, and a more complete UI/UX delivery narrative.",
     details: [
-      "Upgraded Results, Discovery, Profile, Messaging, Favorites, Beginner Guide, and Subscription flows.",
-      "Added loading skeletons, empty states, online status, toast feedback, favorite limits, and premium report direction.",
-      "Improved match cards, compatibility score bars, saved profiles, profile dashboards, and conversation starters.",
-      "Updated the design system with a premium light/dark palette and tighter card styling.",
+      "Rebuilt the app shell with a web phone-frame layout, AppUiProvider, global toast host, online status banner, new Beginner Guide and Subscription routes, and improved tab styling.",
+      "Upgraded Results with theme support, beginner guidance, loading skeletons, empty states, compatibility hero, score insights, sign cards, comparison tools, favorite limits, premium report content, and bottom actions.",
+      "Improved Discovery and Matching with better ranking, sort controls, element filters, match score bars, saved profile tracking, online status indicators, discovery stats, and faster FlatList settings.",
+      "Expanded Profile flows with ethnicity, image personalization, completion progress, zodiac auto-detection, profile dashboard stats, badges, quick actions, compatibility breakdowns, charts, starters, and safety controls.",
+      "Improved Messaging and Favorites with richer chat headers, safety reminders, conversation starters, message sent toasts, saved people/signs behavior, removal toasts, and tab-style organization.",
+      "Added shared components, hooks, utilities, premium status, favorite profile services, profile image assets, PWA metadata, build output, roadmap docs, and a Bluehost upload zip.",
+      "Updated the design system with a premium light/dark palette, cleaner 8px-style cards, better line heights, updated element colors, and improved shadows.",
     ],
     scrollBrowseTitle: "Illustrator Mock-Up",
     scrollBrowseText: "A horizontal mock-up browser for the AstroMatch mobile app screens and product direction.",
@@ -316,13 +454,13 @@ const projects = [
       "Reworked the navigation, hero, content flow, and visual hierarchy.",
       "Aligned the case study to the KVDST brand with a black/neon stage, #29ABE2 accents, grid texture, record-style visual, and equalizer motion.",
       "Added a live preview iframe using the copied static website at /kvdst-site/index.html.",
-      "Kept the external live-site button pointing to http://kvdst.timmybad.com/.",
+      "Kept the external live-site button pointing to https://timmybad.com/kvdst/.",
       "Added the KVDST record label style guide PDF section with right-to-left horizontal movement.",
       "Added code showcase sections for HTML, CSS, and JavaScript.",
     ],
-    liveUrl: "http://kvdst.timmybad.com/",
-    previewUrl: null,
-    styleGuide: null,
+    liveUrl: "https://timmybad.com/kvdst/",
+    previewUrl: "/kvdst-site/index.html",
+    styleGuide: kvdstStyleGuidePdf,
     isKvdst: true,
   },
 ];
@@ -330,7 +468,13 @@ const projects = [
 const projectRouteOrder = ["1", "2", "3", "4", "5", "6", "7"];
 
 function getProjectDataById(id) {
-  return projects.find((project) => project.id === id);
+  const project = projects.find((item) => item.id === id);
+  if (!project) return undefined;
+
+  return {
+    ...project,
+    caseStudy: caseStudyMetadata[id],
+  };
 }
 
 function ScrollBrowse({ title, text, images, theme = "" }) {
@@ -355,6 +499,128 @@ function ScrollBrowse({ title, text, images, theme = "" }) {
             </figcaption>
           </figure>
         ))}
+      </div>
+    </section>
+  );
+}
+
+function RonHeroBrowser({ images }) {
+  return (
+    <div className="ron-hero-browser" aria-label="Ron Zalko wireframes and design explorations">
+      <div className="ron-hero-browser-head">
+        <span>Scroll left to right</span>
+        <p>Ron Zalko wireframes and design explorations</p>
+      </div>
+      <div className="ron-hero-track">
+        {images.map((image, index) => (
+          <figure className="ron-hero-frame" key={`${image}-${index}`}>
+            <img src={image} alt={`Ron Zalko project artifact ${index + 1}`} />
+          </figure>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function CaseStudyStructure({ projectData }) {
+  const caseStudy = projectData.caseStudy;
+  if (!caseStudy) return null;
+
+  return (
+    <section className="project-case-study-flow" aria-label="Shared case study structure">
+      <article className="case-study-panel case-study-snapshot">
+        <p className="project-kicker">Snapshot</p>
+        <h2>What the project covers</h2>
+        <div className="case-study-snapshot-grid">
+          {caseStudy.snapshot.map((item) => (
+            <span key={item}>{item}</span>
+          ))}
+        </div>
+      </article>
+
+      <article className="case-study-panel">
+        <p className="project-kicker">Context</p>
+        <h2>Why the work mattered</h2>
+        <p>{caseStudy.context}</p>
+      </article>
+
+      <article className="case-study-panel">
+        <p className="project-kicker">Process</p>
+        <h2>How I approached it</h2>
+        <ul>
+          {caseStudy.process.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      </article>
+
+      <article className="case-study-panel case-study-delivery">
+        <p className="project-kicker">Delivery</p>
+        <h2>What was delivered</h2>
+        <p>{caseStudy.delivery}</p>
+      </article>
+    </section>
+  );
+}
+
+function StyleGuideSection({
+  className = "",
+  kicker,
+  title,
+  description,
+  pdf,
+  filename,
+  swatches,
+  notes,
+}) {
+  if (!pdf) return null;
+
+  return (
+    <section className={`project-section style-guide-section ${className}`}>
+      <div className="style-guide-head">
+        <div>
+          <p className="project-kicker">{kicker}</p>
+          <h2>{title}</h2>
+          <p>{description}</p>
+        </div>
+        <a href={pdf} target="_blank" rel="noreferrer" className="project-doc-link">
+          Open PDF ↗
+        </a>
+      </div>
+
+      <div className="style-guide-layout">
+        <div className="style-guide-preview">
+          <div className="style-guide-browser-bar">
+            <span></span>
+            <span></span>
+            <span></span>
+            <strong>{filename}</strong>
+          </div>
+          <iframe src={`${pdf}#toolbar=0&view=FitH`} title={filename} />
+        </div>
+
+        <aside className="style-guide-aside">
+          <div className="style-guide-swatches">
+            {swatches.map((swatch) => (
+              <div className="style-guide-swatch" key={swatch.name}>
+                <span style={{ background: swatch.color }}></span>
+                <div>
+                  <strong>{swatch.name}</strong>
+                  <small>{swatch.color}</small>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="style-guide-notes">
+            {notes.map((note) => (
+              <div className="style-guide-note" key={note}>
+                <span></span>
+                <p>{note}</p>
+              </div>
+            ))}
+          </div>
+        </aside>
       </div>
     </section>
   );
@@ -533,12 +799,16 @@ export default function ProjectDetailPage() {
         <div className="project-title-block">
           <p className="project-kicker">Project Case Study</p>
 
-          <div className={projectData.isKvdst ? "kvdst-title-lockup" : ""}>
+          <div className={[
+            projectData.isKvdst ? "kvdst-title-lockup" : "",
+            projectData.isRon ? "ron-title-lockup" : "",
+          ].join(" ").trim()}>
             {projectData.isKvdst && <img src={projectData.logo} alt="KVDST logo" />}
+            {projectData.isRon && <img src={projectData.logo} alt="Ron Zalko logo" />}
             <h1>{projectData.title}</h1>
           </div>
 
-          {!projectData.isKvdst && <h1>{projectData.title}</h1>}
+          {!projectData.isKvdst && !projectData.isRon && <h1>{projectData.title}</h1>}
 
           <div className="project-detail-meta">
             <span>{projectData.category}</span>
@@ -556,6 +826,8 @@ export default function ProjectDetailPage() {
               {Array.from({ length: 16 }, (_, i) => <span key={i}></span>)}
             </div>
           </div>
+        ) : projectData.isRon ? (
+          <RonHeroBrowser images={projectData.scrollImages} />
         ) : projectData.isMotion ? (
           <div className="motion-video-hero">
             <MotionSyncPlayer
@@ -570,6 +842,7 @@ export default function ProjectDetailPage() {
           </div>
         ) : projectData.isScw ? (
           <div className="scw-scroll-preview">
+            <p className="scw-scroll-hint">Scroll to explore the project file</p>
             <div className="scw-scroll-browser">
               <img src={scwcharity} alt="SCW Charity Website full page preview" />
             </div>
@@ -582,6 +855,8 @@ export default function ProjectDetailPage() {
       </section>
 
       <DetailCards projectData={projectData} />
+
+      <CaseStudyStructure projectData={projectData} />
 
       {projectData.isScw && (
         <>
@@ -641,22 +916,25 @@ export default function ProjectDetailPage() {
             </div>
           </section>
 
-          <section className="project-section scw-brand-system">
-            <p className="project-kicker">Brand Design System</p>
-            <h2>SCW visual rules behind the website.</h2>
-            <div className="scw-system-notes">
-              {[
-                "Warm maroon/plum, cream, peach, and mint accents support a compassionate charity tone.",
-                "The brand system connects logo direction, audience needs, sitemap structure, and the full-page website.",
-                "Reusable guidance keeps campaign, website, and outreach materials visually consistent.",
-              ].map((note) => (
-                <div className="scw-system-note" key={note}>
-                  <span></span>
-                  <p>{note}</p>
-                </div>
-              ))}
-            </div>
-          </section>
+          <StyleGuideSection
+            className="scw-brand-system"
+            kicker="Brand Design System"
+            title="SCW visual rules behind the website."
+            description="The SCW Brand Design System connects the charity tone, logo usage, colors, and reusable visual rules behind the website experience."
+            pdf={projectData.brandGuidePdf}
+            filename="SCW-BRAND-DESIGN-SYSTEM.pdf"
+            swatches={[
+              { name: "Warrior Plum", color: "#690b22" },
+              { name: "Warm Cream", color: "#fff3e8" },
+              { name: "Peach Accent", color: "#ffb38e" },
+              { name: "Mint Support", color: "#9bcfc2" },
+            ]}
+            notes={[
+              "Warm maroon/plum, cream, peach, and mint accents support a compassionate charity tone.",
+              "The brand system connects logo direction, audience needs, sitemap structure, and the full-page website.",
+              "Reusable guidance keeps campaign, website, and outreach materials visually consistent.",
+            ]}
+          />
         </>
       )}
 
@@ -713,20 +991,84 @@ export default function ProjectDetailPage() {
       {projectData.isRon && (
         <>
           <section className="project-section ron-artifact-section">
-            <p className="project-kicker">Logo Redesign and Brand Assets</p>
-            <h2>Strength, balance, and unity translated into a fitness identity.</h2>
-            <div className="ron-artifact-grid">
-              {[
-                { title: "New Ron Zalko Logo", img: ronLogo },
-                { title: "Poster Ad Design", img: ronPoster },
-                { title: "User Flow", img: ronUserFlow },
-              ].map((item) => (
-                <figure className="ron-artifact-card" key={item.title}>
-                  <img src={item.img} alt={item.title} />
+            <p className="project-kicker">Logo Redesign</p>
+            <h2>Strength, balance, and unity, one unified mark.</h2>
+            <p className="ron-section-note">
+              The new Ron Zalko logo brings together a yoga pose, a weighted arm,
+              and a unity symbol, forming a single identity that captures what the
+              brand stands for: Unity, Balance, Power.
+            </p>
+            <div className="ron-logo-showcase">
+              <div className="ron-logo-card">
+                <img src={ronLogo} alt="New Ron Zalko logo" />
+                <span>New Ron Zalko Logo - 2024 Rebrand</span>
+              </div>
+              <div className="ron-logo-compare">
+                <a
+                  href={projectData.oldSiteUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="ron-old-site-link"
+                >
+                  View Old Website & Logo ↗
+                </a>
+                <p>
+                  The previous identity lacked cohesion and modern fitness brand
+                  presence. The redesign unifies all three brand values into a
+                  single logo mark.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section className="project-section ron-artifact-section">
+            <p className="project-kicker">Poster Ad Design</p>
+            <h2>Unity. Balance. Power. in print.</h2>
+            <div className="ron-poster-showcase">
+              <figure className="ron-poster-card">
+                <img src={ronPoster} alt="Ron Zalko poster ad design" />
+                <figcaption>Ron Zalko Fitness - Personal Trainer Poster Ad</figcaption>
+              </figure>
+              <div className="ron-poster-copy">
+                <p>
+                  The poster applies the new brand direction at full scale. The
+                  Ron Zalko logo sits within a dynamic wave layout with Unity,
+                  Balance, Power leading the message and the fitness brand
+                  photography grounding it.
+                </p>
+                <ul>
+                  <li>Brand colour system applied across the wave composition</li>
+                  <li>Logo placed within a real-world print context</li>
+                  <li>Movement line wave mirrors the website redesign direction</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section className="project-section ron-collateral-section">
+            <p className="project-kicker">Brand Collateral</p>
+            <h2>Cards, envelope, and invoice system.</h2>
+            <p className="ron-section-note">
+              The rebrand extends into operational touchpoints so the Ron Zalko
+              identity stays consistent beyond the website.
+            </p>
+            <div className="ron-collateral-grid">
+              {ronBrandCollateral.map((item) => (
+                <figure className="ron-collateral-card" key={item.title}>
+                  <img src={item.image} alt={`Ron Zalko ${item.title}`} />
                   <figcaption>{item.title}</figcaption>
                 </figure>
               ))}
             </div>
+          </section>
+
+          <section className="project-section ron-artifact-section">
+            <p className="project-kicker">User Flow</p>
+            <h2>How users move through the redesigned experience.</h2>
+            <figure className="ron-userflow-card">
+              <img src={ronUserFlow} alt="Ron Zalko user flow diagram" />
+              <figcaption>User flow - from homepage landing to membership decision</figcaption>
+            </figure>
           </section>
 
           <section className="live-site-section ron-prototype-section">
@@ -734,14 +1076,42 @@ export default function ProjectDetailPage() {
               <div>
                 <p className="project-kicker">Adobe XD Prototype</p>
                 <h2>Prototype of the redesigned Ron Zalko website.</h2>
-                <p className="live-site-note">The prototype replaces the generic gallery and keeps the case study focused on interaction and site structure.</p>
+                <p className="live-site-note">
+                  The prototype shows the full redesigned experience: improved
+                  navigation, modern layout, and the new brand system in action.
+                </p>
               </div>
               <a href={projectData.prototypeUrl} target="_blank" rel="noreferrer" className="project-doc-link">
                 Open Prototype ↗
               </a>
             </div>
-            <iframe src={projectData.prototypeEmbedUrl} title="Ron Zalko Adobe XD prototype" className="project-live-frame" />
+            <iframe
+              src={projectData.prototypeEmbedUrl}
+              title="Ron Zalko Adobe XD prototype"
+              className="project-live-frame"
+              allowFullScreen
+            />
           </section>
+
+          <StyleGuideSection
+            className="ron-pdf-section"
+            kicker="Style Guide"
+            title="Ron zalko style-guide.pdf"
+            description="The vertical PDF preview documents the redesign process: brief, problem analysis, research, competitive analysis, personas, empathy map, journey map, user flow, redesign goals, wireframes, collateral, and results."
+            pdf={projectData.styleGuidePdf}
+            filename={projectData.styleGuideFilename}
+            swatches={[
+              { name: "Ron Crimson", color: "#c41e3a" },
+              { name: "Deep Red", color: "#8b1a1a" },
+              { name: "Fitness Black", color: "#0a0a0a" },
+              { name: "Clean White", color: "#ffffff" },
+            ]}
+            notes={[
+              "Logo redesign unifies strength, balance, and unity in one mark.",
+              "The website redesign improves navigation, hierarchy, and membership decision flow.",
+              "Cards, envelope, invoice, poster, and PDF documentation keep the identity consistent across touchpoints.",
+            ]}
+          />
         </>
       )}
 
@@ -771,22 +1141,41 @@ export default function ProjectDetailPage() {
       )}
 
       {projectData.isAstro && projectData.liveUrl && (
-        <section className="live-site-section astro-live-section">
-          <div className="live-site-head">
-            <div>
-              <p className="project-kicker">Live App Display</p>
-              <h2>Interact with the AstroMatch app build.</h2>
-              <p className="live-site-note">The live preview shows the upgraded product experience and lets visitors explore the app directly.</p>
+        <>
+          <section className="project-section astro-upgrade-section">
+            <p className="project-kicker">Upgrade Summary</p>
+            <h2>What changed across the AstroMatch product.</h2>
+            <div className="astro-upgrade-grid">
+              {astroUpgradeGroups.map((group) => (
+                <article className="astro-upgrade-card" key={group.title}>
+                  <h3>{group.title}</h3>
+                  <ul>
+                    {group.items.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </article>
+              ))}
             </div>
-            <a href={projectData.liveUrl} target="_blank" rel="noreferrer" className="project-doc-link">
-              Open Live App ↗
-            </a>
-          </div>
-          <iframe src={projectData.liveUrl} title="AstroMatch live app" className="project-live-frame" />
-        </section>
+          </section>
+
+          <section className="live-site-section astro-live-section">
+            <div className="live-site-head">
+              <div>
+                <p className="project-kicker">Live App Display</p>
+                <h2>Interact with the AstroMatch app build.</h2>
+                <p className="live-site-note">The live preview shows the upgraded product experience and lets visitors explore the app directly.</p>
+              </div>
+              <a href={projectData.liveUrl} target="_blank" rel="noreferrer" className="project-doc-link">
+                Open Live App ↗
+              </a>
+            </div>
+            <iframe src={projectData.liveUrl} title="AstroMatch live app" className="project-live-frame" />
+          </section>
+        </>
       )}
 
-      {projectData.scrollImages && (
+      {projectData.scrollImages && !projectData.isRon && (
         <ScrollBrowse
           title={projectData.scrollBrowseTitle}
           text={projectData.scrollBrowseText}
@@ -837,17 +1226,24 @@ export default function ProjectDetailPage() {
                 <p className="project-kicker">Live Preview</p>
                 <h2>KVDST live site preview.</h2>
                 <p className="live-site-note">
-                  The live URL is set to the new KVDST domain. The site can be opened directly once the domain is live.
+                  The iframe uses the live URL first. The local code backup is included and can be opened if the live host is down.
                 </p>
               </div>
 
-              <a href={projectData.liveUrl} target="_blank" rel="noreferrer" className="project-doc-link">
-                Open Live Site ↗
-              </a>
+              <div className="kvdst-live-actions">
+                <a href={projectData.liveUrl} target="_blank" rel="noreferrer" className="project-doc-link">
+                  Open Live Site ↗
+                </a>
+                {projectData.previewUrl && (
+                  <a href={projectData.previewUrl} target="_blank" rel="noreferrer" className="project-doc-link kvdst-backup-link">
+                    Open Backup Code Site ↗
+                  </a>
+                )}
+              </div>
             </div>
 
-            {projectData.previewUrl ? (
-              <iframe src={projectData.previewUrl} title={projectData.title} className="project-live-frame" />
+            {projectData.liveUrl || projectData.previewUrl ? (
+              <iframe src={projectData.liveUrl || projectData.previewUrl} title={projectData.title} className="project-live-frame" />
             ) : (
               <div className="kvdst-live-placeholder">
                 <img src={projectData.logo} alt="KVDST logo" />
@@ -874,21 +1270,25 @@ export default function ProjectDetailPage() {
             </div>
           </section>
 
-          <section className="project-section kvdst-pdf-marquee">
-            <p className="project-kicker">Style Guide</p>
-            <h2>KVDST record label style guide.</h2>
-            {projectData.styleGuide ? (
-              <div className="kvdst-marquee-track">
-                <a href={projectData.styleGuide} target="_blank" rel="noreferrer">KVDST-record-label-style-guide.pdf ↗</a>
-                <a href={projectData.styleGuide} target="_blank" rel="noreferrer">KVDST-record-label-style-guide.pdf ↗</a>
-                <a href={projectData.styleGuide} target="_blank" rel="noreferrer">KVDST-record-label-style-guide.pdf ↗</a>
-              </div>
-            ) : (
-              <p className="kvdst-file-note">
-                The style guide PDF is not currently present in this restored workspace.
-              </p>
-            )}
-          </section>
+          <StyleGuideSection
+            className="kvdst-pdf-section"
+            kicker="Style Guide"
+            title="KVDST record label style guide."
+            description="The KVDST style-guide preview frames the record-label identity with the same document treatment used for the SCW brand-system section."
+            pdf={projectData.styleGuide}
+            filename="KVDST-record-label-style-guide.pdf"
+            swatches={[
+              { name: "KVDST Blue", color: "#29abe2" },
+              { name: "Stage Black", color: "#020406" },
+              { name: "Electric Cyan", color: "#d8f5ff" },
+              { name: "Soft White", color: "#f4fff1" },
+            ]}
+            notes={[
+              "Black and blue create a stage-like identity that matches the music label direction.",
+              "The PDF section now includes a framed preview, document bar, open-PDF button, and brand swatches.",
+              "The case study keeps the live-site link, code showcase, and brand documentation in one flow.",
+            ]}
+          />
 
           <section className="project-section kvdst-code-section">
             <p className="project-kicker">View Code</p>

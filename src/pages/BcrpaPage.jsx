@@ -93,6 +93,17 @@ import ambassadorButton07 from "../assets/bcrpa/internship/BCRPA Ambassador Butt
 import ambassadorButton08 from "../assets/bcrpa/internship/BCRPA Ambassador Buttons-08.jpg";
 import ambassadorButton09 from "../assets/bcrpa/internship/BCRPA Ambassador Buttons-09.jpg";
 
+// Registration banner drafts (newly uploaded)
+import regBannerDraftRed from "../assets/BCRPA registration banner Draft_Red design 2.png";
+import regBannerDraft1 from "../assets/BCRPA registration banner Draft_Reg design 1.png";
+import regBannerDraft3 from "../assets/BCRPA registration banner Draft_Reg design 3.png";
+import regBannerDraft4 from "../assets/BCRPA registration banner Draft_Reg design 4.png";
+import regBannerDraft5 from "../assets/BCRPA registration banner Draft_Reg design 5.png";
+import regBannerDraft6 from "../assets/BCRPA registration banner Draft_Reg design 6.png";
+import regBannerDraft7 from "../assets/BCRPA registration banner Draft_Reg design 7.png";
+import regBannerDraft8 from "../assets/BCRPA registration banner Draft_Reg design 8.png";
+import fitnessBannerDraft from "../assets/bcrpa fitness banner-01-compressed.jpg";
+
 const supervisors = [
   {
     name: "Kat / Kathryn Tindale",
@@ -113,7 +124,7 @@ const supervisors = [
 const referenceMaterials = [
   "BCRPA brand guidelines and refreshed brand asset library",
   "Logo files, colour systems, typography rules, and movement-line assets",
-  "Timmy’s asset list, previous-year files, SharePoint working files, and source examples",
+  "Timmy's asset list, previous-year files, SharePoint working files, and source examples",
   "Provincial Awards, Symposium, website, and 2025 event photo libraries",
   "Print dimensions, production notes, sponsor logo updates, and final review requirements",
 ];
@@ -146,22 +157,23 @@ const finalDeliverables = [
     wide: true,
   },
   {
+    title: "Fitness Registry Banner",
+    type: "Digital Banner",
+    text: "Registry banner update using the BCRPA Fitness mark, Ice Blue, and updated headline-font direction.",
+    image: fitnessBanner,
+    wide: true,
+  },
+  {
     title: "Symposium Welcome Sign",
     type: "Event Signage",
     text: "A refreshed welcome sign direction using the new BCRPA identity to support arrival, wayfinding, and event atmosphere.",
     image: welcomeSign,
   },
   {
-    title: "Delegate Bag Asset",
+    title: "Delegate Bag",
     type: "Symposium Collateral",
-    text: "A simple Symposium bag direction using the Lake Blue logo, Healthier, Together tagline, conference dates, and sponsor placement planning.",
-    image: delegateBagOne,
-  },
-  {
-    title: "Sponsor Bag Back",
-    type: "Sponsor Layout",
-    text: "Sponsor logo layout prepared to support evolving sponsor lists while keeping the bag clean and brand-focused.",
-    image: delegateBagTwo,
+    text: "Front shows logo, tagline, and conference dates. Back holds the evolving sponsor layout while keeping the bag brand-focused.",
+    paired: [delegateBagOne, delegateBagTwo],
   },
   {
     title: "DB Perks Aquatics Award",
@@ -173,29 +185,15 @@ const finalDeliverables = [
   {
     title: "Letterhead System",
     type: "Brand Template",
-    text: "Light, movement-focused letterhead backgrounds designed to support future CEO seasonal messages, announcements, and program updates.",
-    image: letterheadOne,
+    text: "Two letterhead directions — movement-focused backgrounds designed to support CEO messages, announcements, and program updates.",
+    paired: [letterheadOne, letterheadTwo],
     tall: true,
   },
   {
-    title: "Letterhead Variation",
-    type: "Template Direction",
-    text: "A second direction testing logo and tagline placement while preserving open space for Midnight Navy body copy.",
-    image: letterheadTwo,
-    tall: true,
-  },
-  {
-    title: "Certificate Template",
+    title: "Certificate Templates",
     type: "Recognition Design",
-    text: "Certificate artwork updated with new logo placement, Midnight Navy border treatment, Meadow Green accenting, and revised type hierarchy.",
-    image: certificateOne,
-    tall: true,
-  },
-  {
-    title: "Certificate Variation",
-    type: "Digital Template",
-    text: "Additional certificate direction for reusable recognition applications across BCRPA programming.",
-    image: certificateTwo,
+    text: "Two certificate directions with updated logo placement, Midnight Navy border, Meadow Green accenting, and revised type hierarchy.",
+    paired: [certificateOne, certificateTwo],
     tall: true,
   },
   {
@@ -205,35 +203,16 @@ const finalDeliverables = [
     image: patchDesign,
   },
   {
-    title: "Fitness Registry Banner",
-    type: "Digital Banner",
-    text: "Registry banner update using the BCRPA Fitness mark, Ice Blue, and updated headline-font direction.",
-    image: fitnessBanner,
-    wide: true,
-  },
-  {
-    title: "E-Learning Intro Slide",
+    title: "E-Learning Slides",
     type: "Slide System",
-    text: "Intro/outro slide direction using Midnight Navy, Ice Blue, Pale Lime, updated fonts, and e-learning icon placement.",
-    image: eLearningOne,
+    text: "Intro and outro slide directions using Midnight Navy, Ice Blue, Pale Lime, updated fonts, and e-learning icon placement.",
+    paired: [eLearningOne, eLearningTwo],
   },
   {
-    title: "E-Learning Outro Slide",
-    type: "Learning Asset",
-    text: "A companion slide direction for video workshops, maintaining consistency across title, presenter, and Good Luck messaging.",
-    image: eLearningTwo,
-  },
-  {
-    title: "Thank You Card Front",
-    type: "Print Design",
-    text: "Foldable 5 in by 7 in card direction using Thank You copy and BCRPA line-pattern inspiration.",
-    image: thankYouA,
-  },
-  {
-    title: "Thank You Card Back",
-    type: "Print Production",
-    text: "Secondary-logo and contact-detail treatment using BCRPA PO box and general phone information.",
-    image: thankYouA2,
+    title: "Thank You Card",
+    type: "Print Design — Option A",
+    text: "Foldable 5 in by 7 in card. Front uses Thank You copy and BCRPA line-pattern inspiration; back shows secondary logo and contact details.",
+    paired: [thankYouA, thankYouA2],
   },
 ];
 
@@ -315,6 +294,17 @@ const healthyLivingAssets = [
   { label: "Final Direction 04", image: healthyFinal04 },
 ];
 
+const registrationBannerDrafts = [
+  { label: "Draft 1", image: regBannerDraft1 },
+  { label: "Draft 2 — Red Direction", image: regBannerDraftRed },
+  { label: "Draft 3", image: regBannerDraft3 },
+  { label: "Draft 4", image: regBannerDraft4 },
+  { label: "Draft 5", image: regBannerDraft5 },
+  { label: "Draft 6", image: regBannerDraft6 },
+  { label: "Draft 7", image: regBannerDraft7 },
+  { label: "Draft 8", image: regBannerDraft8 },
+];
+
 const registryAssets = [
   { label: "Draft 01", image: registryDraft01 },
   { label: "Draft 02", image: registryDraft02 },
@@ -322,6 +312,7 @@ const registryAssets = [
   { label: "Draft 04", image: registryDraft04 },
   { label: "Draft 05", image: registryDraft05 },
   { label: "Final Web Banner", image: registryFinal },
+  { label: "Compressed Pop-up Banner", image: fitnessBannerDraft },
 ];
 
 const workshopAssets = [
@@ -360,8 +351,15 @@ const expandedCampaigns = [
     title: "Healthy Living Matters",
     type: "Brand Launch / Digital Direction",
     text: "Program banner explorations testing BCRPA movement lines, logo hierarchy, colour balance, and final campaign direction.",
-    feature: { label: "Featured final direction", image: healthyFinal01 },
+    feature: { label: "Final direction 04", image: healthyFinal04 },
     rail: healthyLivingAssets,
+  },
+  {
+    title: "Registration Banner Drafts",
+    type: "Wayfinding / Signage Exploration",
+    text: "Eight registration banner directions exploring logo scale, type visibility, movement-line positioning, colour, and background treatments for a 6 ft by 3 ft event banner.",
+    feature: { label: "Draft 2 — Red direction", image: regBannerDraftRed, wide: true },
+    rail: registrationBannerDrafts,
   },
   {
     title: "Fitness Registry Banner",
@@ -380,18 +378,18 @@ const expandedCampaigns = [
   {
     title: "Thank You Card",
     type: "Print Card / Front and Back System",
-    text: "Foldable card options grouped as complete front/back concepts, with Option A featured as the strongest display direction.",
-    feature: { label: "Featured Option A front", image: thankYouOptionA, compact: true },
+    text: "Foldable card options shown as complete front and back pairs. Option A and Option B each presented together so the full card reads as one piece.",
+    feature: { label: "Option A — front", image: thankYouOptionA, compact: true },
     rail: [
-      { label: "Option A front/back", images: [thankYouOptionA, thankYouOptionA2] },
-      { label: "Option B front/back", images: [thankYouOptionB, thankYouOptionB2] },
+      { label: "Option A — front & back", images: [thankYouOptionA, thankYouOptionA2] },
+      { label: "Option B — front & back", images: [thankYouOptionB, thankYouOptionB2] },
     ],
   },
   {
     title: "Symposium Welcome Sign",
     type: "Event Signage / On-site Context",
-    text: "Welcome sign explorations supported arrival, wayfinding, and event atmosphere; the feature image shows the sign work in the event setup context.",
-    feature: { label: "Event setup feature", image: eventSetup, photo: true },
+    text: "Welcome sign explorations supported arrival, wayfinding, and event atmosphere. The event setup photo shows the sign work in full real-world context.",
+    feature: { label: "Event setup — full view", image: eventSetup, photo: true, contain: true },
     rail: welcomeAssets,
   },
   {
@@ -433,7 +431,6 @@ export default function BcrpaPage() {
             signage, print systems, brand collateral, Symposium support, and
             production-ready design work.
           </p>
-
           <div className="bcrpa-hero-pills">
             <span>Student: Timmy Badejo</span>
             <span>Organization: BCRPA</span>
@@ -453,13 +450,11 @@ export default function BcrpaPage() {
           <h2>Communications Intern</h2>
           <span>Visual design, print collateral, signage, event materials, template systems, and on-site support.</span>
         </article>
-
         <article>
           <p className="bcrpa-kicker">Core Direction</p>
           <h2>Brand Launch Support</h2>
           <span>Midnight Navy, Pale Lime, Ice Blue, Meadow Green, White, and movement-based brand elements.</span>
         </article>
-
         <article>
           <p className="bcrpa-kicker">Output</p>
           <h2>Real Touchpoints</h2>
@@ -468,9 +463,9 @@ export default function BcrpaPage() {
       </section>
 
       <section className="bcrpa-media-strip">
-        <img src={eventSetup} alt="BCRPA event setup" />
+        <img src={eventSetup} alt="BCRPA event setup" style={{ objectPosition: "center 30%" }} />
         <img src={printWork} alt="BCRPA print materials" />
-        <img src={signage} alt="BCRPA signage" />
+        <img src={signage} alt="BCRPA signage" style={{ objectPosition: "center 40%" }} />
       </section>
 
       <section className="bcrpa-section bcrpa-brief">
@@ -492,11 +487,10 @@ export default function BcrpaPage() {
               {referenceMaterials.map((item) => <li key={item}>{item}</li>)}
             </ul>
           </article>
-
           <article>
             <h3>Core Brand Direction</h3>
             <p>
-              Most designs followed BCRPA’s refreshed brand system: Midnight
+              Most designs followed BCRPA's refreshed brand system: Midnight
               Navy for authority, Pale Lime and Ice Blue for freshness and
               movement, Meadow Green for support, and White for production
               clarity. The goal was to keep each asset active and brand-aligned
@@ -559,9 +553,21 @@ export default function BcrpaPage() {
               key={item.title}
             >
               <div className="bcrpa-deliverable-image">
-                <img src={item.image} alt={item.title} loading="lazy" />
+                {item.paired ? (
+                  <div className={`bcrpa-deliverable-paired ${item.tall ? "stacked" : ""}`}>
+                    {item.paired.map((img, i) => (
+                      <img
+                        src={img}
+                        alt={`${item.title} ${i === 0 ? "front" : "back"}`}
+                        loading="lazy"
+                        key={i}
+                      />
+                    ))}
+                  </div>
+                ) : (
+                  <img src={item.image} alt={item.title} loading="lazy" />
+                )}
               </div>
-
               <div className="bcrpa-deliverable-copy">
                 <p>{item.type}</p>
                 <h3>{item.title}</h3>
@@ -585,7 +591,6 @@ export default function BcrpaPage() {
                 <img src={card.front} alt={`${card.name} business card front`} loading="lazy" />
                 <img src={card.back} alt={`${card.name} business card back`} loading="lazy" />
               </div>
-
               <p>{card.role}</p>
               <h3>{card.name}</h3>
             </article>
@@ -615,11 +620,20 @@ export default function BcrpaPage() {
               </div>
 
               <div
-                className={`bcrpa-campaign-feature ${track.feature.compact ? "compact" : ""} ${
-                  track.feature.square ? "square" : ""
-                } ${track.feature.photo ? "photo" : ""}`}
+                className={[
+                  "bcrpa-campaign-feature",
+                  track.feature.compact ? "compact" : "",
+                  track.feature.square ? "square" : "",
+                  track.feature.photo ? "photo" : "",
+                  track.feature.contain ? "contain" : "",
+                  track.feature.wide ? "wide-feature" : "",
+                ].filter(Boolean).join(" ")}
               >
-                <img src={track.feature.image} alt={`${track.title} ${track.feature.label}`} loading="lazy" />
+                <img
+                  src={track.feature.image}
+                  alt={`${track.title} — ${track.feature.label}`}
+                  loading="lazy"
+                />
                 <span>{track.feature.label}</span>
               </div>
 
@@ -632,17 +646,17 @@ export default function BcrpaPage() {
                     <div className="bcrpa-asset-frame">
                       {item.images ? (
                         <div className="bcrpa-paired-assets">
-                          {item.images.map((image, imageIndex) => (
+                          {item.images.map((image, idx) => (
                             <img
                               src={image}
-                              alt={`${item.label} ${imageIndex === 0 ? "front" : "back"}`}
+                              alt={`${item.label} ${idx === 0 ? "front" : "back"}`}
                               loading="lazy"
-                              key={`${item.label}-${image}`}
+                              key={`${item.label}-${idx}`}
                             />
                           ))}
                         </div>
                       ) : (
-                        <img src={item.image} alt={`${track.title} ${item.label}`} loading="lazy" />
+                        <img src={item.image} alt={`${track.title} — ${item.label}`} loading="lazy" />
                       )}
                     </div>
                     <span>{item.label}</span>
@@ -698,9 +712,9 @@ export default function BcrpaPage() {
         <div className="bcrpa-collab-note">
           <h3>Professional Context</h3>
           <p>
-            I worked within BCRPA’s communications environment, supporting real
+            I worked within BCRPA's communications environment, supporting real
             staff needs and real event deadlines while keeping visual decisions
-            aligned with the organization’s brand direction.
+            aligned with the organization's brand direction.
           </p>
         </div>
       </section>
@@ -750,11 +764,10 @@ export default function BcrpaPage() {
             design execution.
           </p>
         </div>
-
         <div className="bcrpa-footer-actions">
           <Link to="/work">View More Work ↗</Link>
           <Link to="/contact" className="tb-btn tb-btn-primary">
-            Let’s Work Together ↗
+            Let's Work Together ↗
           </Link>
         </div>
       </footer>
