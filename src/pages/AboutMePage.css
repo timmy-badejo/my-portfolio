@@ -473,3 +473,36 @@
 
   .about-back-line { height: 54px; }
 }
+
+
+/* Refined About page rhythm: fewer competing elements and calmer spacing */
+.ap-hero-section,
+.ap-design-drive,
+.ap-edu-exp-section,
+.ap-core-values-section,
+.ap-story-arc,
+.ap-fun-fact-section,
+.ap-about-footer {
+  max-width: 1440px;
+  margin-inline: auto;
+}
+.about-page-nav {
+  max-width: min(620px, calc(100vw - 48px));
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  scrollbar-width: none;
+}
+.about-page-nav::-webkit-scrollbar { display: none; }
+.ap-hero-grid { gap: clamp(24px, 4vw, 54px); }
+.ap-design-drive { margin-bottom: 72px; }
+.ap-story-stack { gap: 18px; }
+@media (max-width: 768px) {
+  .about-page-nav {
+    position: sticky;
+    top: 10px;
+    z-index: 130;
+    max-width: 100%;
+    flex-wrap: nowrap;
+    border-radius: 999px;
+  }
+}

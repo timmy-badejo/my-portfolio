@@ -1000,32 +1000,69 @@
   color: var(--text-main);
 }
 
-.timmycare-pdf-grid {
+.timmycare-map-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 18px;
-  margin-bottom: 24px;
+  gap: 24px;
+  margin-bottom: 34px;
 }
 
-.timmycare-pdf-card {
+.timmycare-map-card {
+  margin: 0;
   background: var(--surface-soft);
   border: 1px solid var(--border-soft);
-  border-radius: 22px;
-  padding: 18px;
+  border-radius: 26px;
+  padding: clamp(16px, 2.2vw, 24px);
+  overflow: hidden;
 }
 
-.timmycare-pdf-card iframe {
-  width: 100%;
-  height: 300px;
-  border: none;
-  border-radius: 16px;
-  background: #fff;
+.timmycare-map-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 22px;
+  margin-bottom: 18px;
 }
 
-.timmycare-pdf-card a {
+.timmycare-map-head h3 {
+  max-width: 680px;
+  margin: 7px 0 0;
+  color: var(--text-main);
+  font-size: clamp(1.05rem, 2vw, 1.32rem);
+  line-height: 1.45;
+}
+
+.timmycare-map-head a {
+  flex: 0 0 auto;
   color: var(--timmy-coral);
   font-weight: 900;
   text-decoration: none;
+}
+
+.timmycare-map-head a:hover {
+  color: var(--text-main);
+}
+
+.timmycare-map-media {
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #fff;
+}
+
+.timmycare-map-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.timmycare-map-tall .timmycare-map-media {
+  padding: clamp(8px, 2vw, 20px);
+}
+
+.timmycare-map-tall .timmycare-map-media img {
+  max-width: 960px;
 }
 
 .timmycare-file-note {
@@ -2554,6 +2591,15 @@
   .timmycare-logo-panel p {
     grid-column: 1 / -1;
   }
+
+  .timmycare-map-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .timmycare-map-tall .timmycare-map-media {
+    padding: 6px;
+  }
   .ron-wireframe-grid,
   .ron-collateral-grid {
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
@@ -2695,4 +2741,280 @@
   .style-guide-preview iframe { height: 430px; }
   .kvdst-hero-stage { min-height: 420px; }
   .kvdst-record { width: 210px; height: 210px; }
+}
+
+
+/* 2026 portfolio refinement: quieter navigation, shared title identity, and live demo framing */
+.project-page-nav {
+  left: 50%;
+  right: auto;
+  top: 18px;
+  transform: translateX(-50%);
+  max-width: min(92vw, 860px);
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.project-page-nav::-webkit-scrollbar { display: none; }
+.project-page-nav a { flex: 0 0 auto; }
+
+.project-title-lockup {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: clamp(14px, 2vw, 24px);
+  align-items: center;
+}
+.project-title-lockup img {
+  width: clamp(62px, 8vw, 112px);
+  height: clamp(62px, 8vw, 112px);
+  object-fit: contain;
+  padding: 10px;
+  border-radius: 22px;
+  background: #fff;
+  border: 1px solid var(--border-soft);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.16);
+}
+.project-title-lockup h1 { margin: 0; }
+.project-detail-melody .project-title-lockup img { background: #f8f6f1; }
+.project-detail-motion .project-title-lockup img { object-fit: cover; padding: 0; }
+
+.timmycare-hero-preview {
+  max-width: min(880px, 100%);
+  margin-inline: auto;
+  padding: clamp(18px, 4vw, 36px);
+  position: relative;
+}
+.timmycare-hero-preview .project-image {
+  width: min(100%, 620px);
+  margin-inline: auto;
+  border-radius: 22px;
+  background: var(--timmy-cream);
+}
+.timmycare-hero-label {
+  width: fit-content;
+  margin: 0 auto 16px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  color: var(--timmy-burgundy);
+  border: 1px solid rgba(90, 28, 43, 0.16);
+  background: rgba(255, 248, 241, 0.72);
+  font-size: 0.74rem;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+.timmycare-live-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.timmycare-alt-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--timmy-burgundy);
+  padding: 12px 16px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 900;
+  background: rgba(255, 248, 241, 0.62);
+  border: 1px solid rgba(90, 28, 43, 0.2);
+}
+.timmycare-alt-link:hover { background: rgba(255, 112, 67, 0.15); }
+.timmycare-live-frame-wrap { display: grid; gap: 12px; }
+.timmycare-live-fallback {
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(255, 112, 67, 0.08);
+  border: 1px dashed rgba(255, 112, 67, 0.3);
+  font-size: 0.92rem;
+}
+.style-guide-actions {
+  display: grid;
+  justify-items: end;
+  gap: 9px;
+}
+.style-guide-fallback-note {
+  max-width: 210px;
+  margin: 0;
+  text-align: right;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 768px) {
+  .project-page-nav {
+    position: sticky;
+    top: 10px;
+    left: auto;
+    transform: none;
+    display: flex;
+    flex-wrap: nowrap;
+    max-width: 100%;
+    overflow-x: auto;
+    margin: 0 0 28px;
+    z-index: 135;
+  }
+  .project-title-lockup {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .project-title-lockup h1 { margin: 0; }
+  .style-guide-actions { justify-items: start; }
+  .style-guide-fallback-note { text-align: left; max-width: none; }
+}
+
+
+/* KVDST style-guide image gallery: reliable PDF alternative */
+.style-guide-image-gallery {
+  display: grid;
+  gap: 16px;
+  padding: 16px;
+  max-height: min(840px, 82vh);
+  overflow-y: auto;
+  background: color-mix(in srgb, var(--surface-soft) 70%, transparent);
+  scrollbar-width: thin;
+}
+
+.style-guide-image-page {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid var(--border-soft);
+  background: #f7f9fc;
+}
+
+.style-guide-image-page img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 11;
+  object-fit: contain;
+  display: block;
+  background: #f7f9fc;
+}
+
+.style-guide-image-page figcaption {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 16px 16px;
+  background: var(--surface);
+}
+
+.style-guide-image-page figcaption span {
+  flex: 0 0 auto;
+  color: var(--kvdst-accent, var(--soft-gold));
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.style-guide-image-page figcaption strong {
+  display: block;
+  color: var(--text-main);
+}
+
+.style-guide-image-page figcaption p {
+  margin: 4px 0 0;
+  color: var(--text-muted);
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+
+.project-detail-kvdst .style-guide-preview {
+  background: rgba(44, 62, 80, 0.18);
+}
+
+@media (max-width: 768px) {
+  .style-guide-image-gallery {
+    padding: 10px;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .style-guide-image-page figcaption {
+    padding: 12px;
+  }
+}
+
+
+/* SCW completed visual-rules gallery labelling */
+.style-guide-gallery-meta {
+  padding: clamp(18px, 2vw, 24px);
+  border-bottom: 1px solid var(--border-soft);
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+}
+
+.style-guide-gallery-meta h3 {
+  margin: 8px 0 10px;
+  color: var(--text-main);
+  font-size: clamp(1.25rem, 2vw, 1.55rem);
+  letter-spacing: -0.03em;
+}
+
+.style-guide-gallery-meta > p:not(.project-kicker) {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+.style-guide-phase-key {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.style-guide-phase-key span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 11px;
+  border-radius: 999px;
+  border: 1px solid var(--border-soft);
+  color: var(--text-muted);
+  background: var(--surface-soft);
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.style-guide-phase-key strong {
+  color: var(--soft-gold);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+}
+
+.style-guide-phase-tag {
+  display: inline-flex;
+  width: fit-content;
+  margin-bottom: 5px;
+  padding: 4px 7px;
+  border-radius: 999px;
+  background: rgba(143, 20, 24, 0.16);
+  color: #f79325;
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.project-detail-scw .style-guide-image-page figcaption > span,
+.project-detail-scw .style-guide-phase-key strong {
+  color: #f79325;
+}
+
+.project-detail-scw .style-guide-phase-tag {
+  color: #f79325;
+  background: rgba(143, 20, 24, 0.25);
+  border: 1px solid rgba(247, 147, 37, 0.18);
+}
+
+@media (max-width: 768px) {
+  .style-guide-gallery-meta {
+    padding: 15px 12px;
+  }
+
+  .style-guide-phase-key {
+    gap: 6px;
+  }
 }

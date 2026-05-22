@@ -150,7 +150,6 @@ export default function AboutMePage() {
         <a href="#education-experience">Journey</a>
         <a href="#values">Values</a>
         <a href="#story">Story</a>
-        <a href="#facts">Facts</a>
       </nav>
 
       <section className="ap-hero-section" id="profile">

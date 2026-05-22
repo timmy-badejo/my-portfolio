@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   FaEnvelope,
@@ -79,6 +79,7 @@ const tools = [
 ];
 
 export default function LandingPage() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const featuredWork = projectsData.filter((project) => project.featured).slice(0, 4);
 
   const handleTiltMove = (e) => {
@@ -111,15 +112,26 @@ export default function LandingPage() {
           </span>
         </Link>
 
-        <div className="tb-nav-links">
-          <a href="#work">Work</a>
-          <a href="#experience">Experience</a>
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <Link to="/contact">Contact</Link>
+        <button
+          type="button"
+          className="tb-menu-toggle"
+          aria-expanded={isMenuOpen}
+          aria-controls="landing-navigation"
+          onClick={() => setIsMenuOpen((open) => !open)}
+        >
+          <span></span><span></span>
+          <span className="sr-only">Toggle navigation</span>
+        </button>
+
+        <div id="landing-navigation" className={`tb-nav-links ${isMenuOpen ? "is-open" : ""}`}>
+          <a href="#work" onClick={() => setIsMenuOpen(false)}>Work</a>
+          <a href="#experience" onClick={() => setIsMenuOpen(false)}>Experience</a>
+          <a href="#about" onClick={() => setIsMenuOpen(false)}>About</a>
+          <a href="#skills" onClick={() => setIsMenuOpen(false)}>Skills</a>
+          <Link to="/contact" onClick={() => setIsMenuOpen(false)}>Contact</Link>
         </div>
 
-        <Link to="/contact" className="tb-btn tb-btn-primary">
+        <Link to="/contact" className="tb-btn tb-btn-primary tb-nav-action">
           Let’s Work Together ↗
         </Link>
       </nav>

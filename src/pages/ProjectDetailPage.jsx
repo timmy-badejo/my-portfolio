@@ -23,6 +23,23 @@ import ronWire10 from "../assets/Ron-Zalko-Web-Design-Wireframe_Page_10.jpg";
 import ronWire11 from "../assets/Ron-Zalko-Web-Design-Wireframe_Page_11.jpg";
 import ronWire12 from "../assets/Ron-Zalko-Web-Design-Wireframe_Page_12.jpg";
 import ronStyleGuidePdf from "../assets/Ron-zalko-style-guide.pdf";
+import ronGuidePage1 from "../assets/Ron-zalko-style-guide_Page_01.jpg";
+import ronGuidePage2 from "../assets/Ron-zalko-style-guide_Page_02.jpg";
+import ronGuidePage3 from "../assets/Ron-zalko-style-guide_Page_03.jpg";
+import ronGuidePage4 from "../assets/Ron-zalko-style-guide_Page_04.jpg";
+import ronGuidePage5 from "../assets/Ron-zalko-style-guide_Page_05.jpg";
+import ronGuidePage6 from "../assets/Ron-zalko-style-guide_Page_06.jpg";
+import ronGuidePage7 from "../assets/Ron-zalko-style-guide_Page_07.jpg";
+import ronGuidePage8 from "../assets/Ron-zalko-style-guide_Page_08.jpg";
+import ronGuidePage9 from "../assets/Ron-zalko-style-guide_Page_09.jpg";
+import ronGuidePage10 from "../assets/Ron-zalko-style-guide_Page_10.jpg";
+import ronGuidePage11 from "../assets/Ron-zalko-style-guide_Page_11.jpg";
+import ronGuidePage12 from "../assets/Ron-zalko-style-guide_Page_12.jpg";
+import ronGuidePage13 from "../assets/Ron-zalko-style-guide_Page_13.jpg";
+import ronGuidePage14 from "../assets/Ron-zalko-style-guide_Page_14.jpg";
+import ronGuidePage15 from "../assets/Ron-zalko-style-guide_Page_15.jpg";
+import ronGuidePage16 from "../assets/Ron-zalko-style-guide_Page_16.jpg";
+import ronGuidePage17 from "../assets/Ron-zalko-style-guide_Page_17.jpg";
 import melodyBusinessCard1 from "../assets/melody-beats-buisness-card-1.jpg";
 import melodyBusinessCard2 from "../assets/melody-beats-buisness-card-2.jpg";
 import melodyBusinessCard3 from "../assets/melody-beats-buisness-card-3.jpg";
@@ -70,6 +87,9 @@ import timmyWishlist from "../assets/Wishlist Screen for timmyhaircare.jpg";
 import timmyJourneyMapPdf from "../assets/timmyhaircare-journeymap.pdf";
 import timmySitemapPdf from "../assets/timmycare-sitemap.pdf";
 import timmyUserFlowPdf from "../assets/timmycare-userflow.pdf";
+import timmyJourneyMapImage from "../assets/timmyhaircare-journeymap.jpg";
+import timmySitemapImage from "../assets/timmycare-sitemap.jpg";
+import timmyUserFlowImage from "../assets/timmycare-userflow.jpg";
 import timmyEmpathyMaya from "../assets/timmyhaircare-empathy map for maya.jpg";
 import timmyEmpathyTimmy from "../assets/timmyhaircare-empathy map for timmy.jpg";
 import timmyGrayBlackLogo from "../assets/timmyhaircare-gray and black.png";
@@ -99,6 +119,30 @@ import scwPersonaTwo from "../assets/scw user persona 2.jpg";
 import scwSitemap from "../assets/scw-sitemap.png";
 import scwFullDisplay from "../assets/scw-full-display.jpg";
 import scwBrandSystemPdf from "../assets/SCW-BRAND-DESIGN-SYSTEM.pdf";
+import scwGuidePage1 from "../assets/SCW-BRAND-DESIGN-SYSTEM_Page_01.jpg";
+import scwGuidePage2 from "../assets/SCW-BRAND-DESIGN-SYSTEM_Page_02.jpg";
+import scwGuidePage3 from "../assets/SCW-BRAND-DESIGN-SYSTEM_Page_03.jpg";
+import scwGuidePage4 from "../assets/SCW-BRAND-DESIGN-SYSTEM_Page_04.jpg";
+import scwGuidePage5 from "../assets/SCW-BRAND-DESIGN-SYSTEM_Page_05.jpg";
+import scwGuidePage6 from "../assets/SCW-BRAND-DESIGN-SYSTEM_Page_06.jpg";
+import scwGuidePage7 from "../assets/SCW-BRAND-DESIGN-SYSTEM_Page_07.jpg";
+import scwGuidePage8 from "../assets/SCW-BRAND-DESIGN-SYSTEM_Page_08.jpg";
+import scwGuidePage9 from "../assets/SCW-BRAND-DESIGN-SYSTEM_Page_09.jpg";
+import scwGuidePage10 from "../assets/SCW-BRAND-DESIGN-SYSTEM_Page_10.jpg";
+import scwGuidePage11 from "../assets/SCW-BRAND-DESIGN-SYSTEM_Page_11.jpg";
+import scwGuidePage12 from "../assets/SCW-BRAND-DESIGN-SYSTEM_Page_12.jpg";
+import scwGuidePage13 from "../assets/SCW-BRAND-DESIGN-SYSTEM_Page_13.jpg";
+import scwGuidePage14 from "../assets/SCW-BRAND-DESIGN-SYSTEM_Page_14.jpg";
+import scwGuidePage15 from "../assets/SCW-BRAND-DESIGN-SYSTEM_Page_15.jpg";
+import scwGuidePage16 from "../assets/SCW-BRAND-DESIGN-SYSTEM_Page_16.jpg";
+import scwGuidePage17 from "../assets/SCW-BRAND-DESIGN-SYSTEM_Page_17.jpg";
+import scwGuidePage18 from "../assets/SCW-BRAND-DESIGN-SYSTEM_Page_18.jpg";
+import scwGuidePage19 from "../assets/SCW-BRAND-DESIGN-SYSTEM_Page_19.jpg";
+import scwGuidePage20 from "../assets/SCW-BRAND-DESIGN-SYSTEM_Page_20.jpg";
+import scwGuidePage21 from "../assets/SCW-BRAND-DESIGN-SYSTEM_Page_21.jpg";
+import scwGuidePage22 from "../assets/SCW-BRAND-DESIGN-SYSTEM_Page_22.jpg";
+import scwGuidePage23 from "../assets/SCW-BRAND-DESIGN-SYSTEM_Page_23.jpg";
+import scwGuidePage24 from "../assets/SCW-BRAND-DESIGN-SYSTEM_Page_24.jpg";
 import scwWire1 from "../assets/SCW Charity Website Wireframe A 2_Page_01.jpg";
 import scwWire2 from "../assets/SCW Charity Website Wireframe A 2_Page_02.jpg";
 import scwWire3 from "../assets/SCW Charity Website Wireframe A 2_Page_03.jpg";
@@ -133,6 +177,13 @@ import motionGraphicVideo from "../assets/Jujitsu_Kaisen_Intro_Bumper_Timilehin 
 import motionGraphicAudio from "../assets/jujitsu_kaisen_intro_Bumper-audio.mp3";
 import kvdstLogo from "../assets/KVDST LOGO.png";
 import kvdstStyleGuidePdf from "../assets/KVDST-record-label-style-guide.pdf";
+import kvdstGuidePage1 from "../assets/KVDST-record-label-style-guide_Page_1.jpg";
+import kvdstGuidePage2 from "../assets/KVDST-record-label-style-guide_Page_2.jpg";
+import kvdstGuidePage3 from "../assets/KVDST-record-label-style-guide_Page_3.jpg";
+import kvdstGuidePage4 from "../assets/KVDST-record-label-style-guide_Page_4.jpg";
+import kvdstGuidePage5 from "../assets/KVDST-record-label-style-guide_Page_5.jpg";
+import kvdstGuidePage6 from "../assets/KVDST-record-label-style-guide_Page_6.jpg";
+import kvdstGuidePage7 from "../assets/KVDST-record-label-style-guide_Page_7.jpg";
 
 const scwWireframes = [
   scwWire1,
@@ -418,6 +469,63 @@ const ronScrollArtifacts = [
   { title: "Poster Ad", note: "Campaign direction", image: ronPoster },
 ];
 
+const ronStyleGuidePages = [
+  { title: "Project Overview", note: "Brief, purpose, and value of the Ron Zalko website redesign", image: ronGuidePage1 },
+  { title: "Current Website Review", note: "Existing site audit and design problems", image: ronGuidePage2 },
+  { title: "The Challenge", note: "User needs, business requirements, and redesign constraints", image: ronGuidePage3 },
+  { title: "Solution Direction", note: "Methods, features, and accessibility improvements", image: ronGuidePage4 },
+  { title: "Visual Redesign", note: "New visual direction for the fitness website", image: ronGuidePage5 },
+  { title: "Redesign Goals", note: "Modernization, navigation, accessibility, and performance objectives", image: ronGuidePage6 },
+  { title: "Results", note: "Success measures and improvement outcomes", image: ronGuidePage7 },
+  { title: "Research Overview", note: "Design problem definition and research methods", image: ronGuidePage8 },
+  { title: "User Interviews", note: "Interview approach for members, potential users, and industry experts", image: ronGuidePage9 },
+  { title: "Surveys", note: "Audience groups and feedback collection strategy", image: ronGuidePage10 },
+  { title: "Competitive Analysis", note: "Fitness-centre competitor comparison", image: ronGuidePage11 },
+  { title: "User Persona & Scenario", note: "Primary user needs and booking scenario", image: ronGuidePage12 },
+  { title: "Empathy Map", note: "User thoughts, feelings, actions, and frustrations", image: ronGuidePage13 },
+  { title: "Journey Map", note: "Experience mapping direction", image: ronGuidePage14 },
+  { title: "User Flow", note: "Navigation path toward class and membership action", image: ronGuidePage15 },
+  { title: "UX Case Study Summary", note: "Research, process, problem, and results recap", image: ronGuidePage16 },
+  { title: "Prototype Link", note: "Final Adobe XD prototype reference", image: ronGuidePage17 },
+];
+
+const kvdstStyleGuidePages = [
+  { title: "Brand Guidelines", note: "Cover and project introduction", image: kvdstGuidePage1 },
+  { title: "Logo Exploration", note: "Logo variations and audience direction", image: kvdstGuidePage2 },
+  { title: "Logo Construction", note: "Mark construction and alignment study", image: kvdstGuidePage3 },
+  { title: "Logo Design Overview", note: "Minimal wordmark strategy and visual direction", image: kvdstGuidePage4 },
+  { title: "Primary Typography", note: "Montserrat type hierarchy", image: kvdstGuidePage5 },
+  { title: "Secondary Typography", note: "Open Sans supporting type system", image: kvdstGuidePage6 },
+  { title: "Colour Palette", note: "Core KVDST record label colour system", image: kvdstGuidePage7 },
+];
+
+const scwBrandSystemPages = [
+  { section: "Foundation", title: "Guide Cover", note: "Sickle Cell Warrior brand-system introduction.", image: scwGuidePage1 },
+  { section: "Foundation", title: "Primary Identity", note: "SCW Warrior logo lockup and mission-led positioning.", image: scwGuidePage2 },
+  { section: "Identity", title: "Logo Construction", note: "Structure of the intertwined SC identity mark.", image: scwGuidePage3 },
+  { section: "Identity", title: "Logo Meaning", note: "Identity rationale: strength, hope, unity, and advocacy.", image: scwGuidePage4 },
+  { section: "Identity", title: "Typography System", note: "Poppins hierarchy for headings, body copy, and supporting text.", image: scwGuidePage5 },
+  { section: "Identity", title: "Colour Palette", note: "Core visual palette for trust, urgency, and hope.", image: scwGuidePage6 },
+  { section: "Mobile UX", title: "Mobile Homepage", note: "Early mobile layout for discovery and donation entry points.", image: scwGuidePage7 },
+  { section: "Mobile UX", title: "Mission & Vision Screen", note: "Mobile content structure for mission storytelling.", image: scwGuidePage8 },
+  { section: "Mobile UX", title: "Donation Selection", note: "Cause and contribution selection flow.", image: scwGuidePage9 },
+  { section: "Mobile UX", title: "Donation Information", note: "Donation details and newsletter sign-up form.", image: scwGuidePage10 },
+  { section: "Mobile UX", title: "Payment & Sharing", note: "Payment options and campaign-sharing screen direction.", image: scwGuidePage11 },
+  { section: "Desktop UX", title: "Homepage Hero", note: "Desktop navigation, search, donate CTA, and hero structure.", image: scwGuidePage12 },
+  { section: "Desktop UX", title: "Featured Causes", note: "Cause-card presentation for campaigns and initiatives.", image: scwGuidePage13 },
+  { section: "Desktop UX", title: "Donation Feature", note: "Large donation entry section and supporting visual placement.", image: scwGuidePage14 },
+  { section: "Desktop UX", title: "Newsletter Signup", note: "Email capture and engagement form system.", image: scwGuidePage15 },
+  { section: "Desktop UX", title: "News & Updates", note: "Blog, events, and content-discovery layout.", image: scwGuidePage16 },
+  { section: "Desktop UX", title: "Footer System", note: "Subscription, navigation, social, and contact footer layout.", image: scwGuidePage17 },
+  { section: "Desktop UX", title: "About Page Hero", note: "Mission-led introduction and brand storytelling layout.", image: scwGuidePage18 },
+  { section: "Desktop UX", title: "Mission Section", note: "Content block establishing SCW purpose and impact.", image: scwGuidePage19 },
+  { section: "Desktop UX", title: "Programs & Services", note: "Category-based presentation of SCW support areas.", image: scwGuidePage20 },
+  { section: "Engagement", title: "Values & Get Involved", note: "Volunteer and supporter participation experience.", image: scwGuidePage21 },
+  { section: "Donation", title: "Donate Landing Page", note: "Dedicated donation page entry and supporting content.", image: scwGuidePage22 },
+  { section: "Donation", title: "Giving Options", note: "Donation plans including one-time, monthly, sponsorship, and in-kind giving.", image: scwGuidePage23 },
+  { section: "Donation", title: "Impact of Giving", note: "Visual explanation of how donations support community outcomes.", image: scwGuidePage24 },
+];
+
 const kvdstCodeSamples = {
   HTML: `<header class="site-header">
   <a class="brand" href="#home">KVDST</a>
@@ -524,9 +632,27 @@ const timmyCareResearch = {
   logo: timmyLogo,
   alternateLogo: timmyGrayBlackLogo,
   researchMaps: [
-    { title: "Sitemap", type: "PDF", src: timmySitemapPdf },
-    { title: "Journey Map", type: "PDF", src: timmyJourneyMapPdf },
-    { title: "User Flow", type: "PDF", src: timmyUserFlowPdf },
+    {
+      title: "Sitemap",
+      image: timmySitemapImage,
+      pdf: timmySitemapPdf,
+      note: "Information architecture across shopping, products, account support, and checkout.",
+      layout: "wide",
+    },
+    {
+      title: "Journey Map",
+      image: timmyJourneyMapImage,
+      pdf: timmyJourneyMapPdf,
+      note: "Maya’s experience from awareness and research to purchase, delivery, and reflection.",
+      layout: "wide",
+    },
+    {
+      title: "User Flow",
+      image: timmyUserFlowImage,
+      pdf: timmyUserFlowPdf,
+      note: "A complete shopping path from product discovery to checkout and post-purchase support.",
+      layout: "tall",
+    },
   ],
   empathyMaps: [
     { title: "Empathy Map for Maya", src: timmyEmpathyMaya },
@@ -581,6 +707,7 @@ const projects = [
     category: "Visual Design",
     image: melodyProductBox,
     technicalInfo: "Brand Identity • Photoshop • Adobe After Effects",
+    logo: melodyLogoBlue,
     overview: "A Melody Beats branding project case study for a music-focused product system. The work covers logo sketches and final designs, business cards, postal cards, branded items, and product/package design.",
     challenges: "The challenge was making the identity feel sonic, energetic, and vibrant while still staying consistent across practical collateral, campaign cards, brand documentation, and product packaging.",
     outcome: "The final brand system presents Melody Beats as a complete music identity with a waveform logo, deep blue/coral/teal/olive/pink palette, business card system, postal-card campaign direction, and package/product design.",
@@ -603,6 +730,9 @@ const projects = [
     category: "UI/UX",
     image: timmyhaircare,
     technicalInfo: "Mobile UI • UX Research • Brand Guide",
+    logo: timmyLogo,
+    liveUrl: "http://website-97dbf5bd.pef.fai.mybluehost.me/",
+    alternateLiveUrl: "http://pef.fai.mybluehost.me/website_97dbf5bd",
     overview: "A mobile app redesign for a haircare shopping experience, combining brand direction, research artifacts, sitemap, user flow, low-fidelity wireframes, and final screens.",
     challenges: "The challenge was turning research needs into a clearer shopping flow while keeping the interface warm, usable, and consistent with the TimmyCare identity.",
     outcome: "The case study now presents TimmyCare as a fuller UX project: brand guide, empathy maps, personas, journey map, sitemap, user flow, low-fidelity wireframes, and final app screens.",
@@ -626,15 +756,16 @@ const projects = [
     category: "Web",
     image: scwcharity,
     technicalInfo: "UX Research • Sitemap • Wireframes • Brand Identity",
-    overview: "A responsive charity website case study with research artifacts, sitemap, user persona, low-fidelity wireframes, logo direction, and brand design system.",
-    challenges: "The challenge was organizing charity information into a structure that felt clear, warm, accessible, and easy to navigate.",
-    outcome: "The final structure supports storytelling, research-backed UX decisions, brand consistency, and a clearer visual system.",
+    logo: scwLogo,
+    overview: "A complete website and brand-system case study for Sickle Cell Warrior, combining audience research, information architecture, responsive wireframes, identity design, donation pathways, and a full 24-page visual rules guide.",
+    challenges: "The challenge was translating a cause-driven mission into a clear, compassionate, and accessible digital experience that guides visitors from awareness to action and donation.",
+    outcome: "The completed SCW system connects identity, UX structure, responsive page layouts, engagement content, and donation flows into one cohesive charity website direction.",
     details: [
-      "Restored the full-page website scroll preview using scwcharitywebpage.png.",
-      "Added sitemap, user persona, SCW logo, and full logo display as research/brand artifacts.",
-      "Reworked the low-fidelity wireframes into a tab/card presentation with a direct image frame.",
-      "Added the SCW Brand Design System PDF with preview, open-PDF action, color swatches, and brand-system highlights.",
-      "Placed the sections in UX process order: final preview, overview, personas, sitemap, wireframes, logo, and brand system highlights.",
+      "Presented the SCW website experience through a full-page preview supported by research and structured UX artifacts.",
+      "Included audience personas, sitemap, logo identity assets, and low-fidelity wireframes to show the design decisions behind the interface.",
+      "Organized wireframes in a focused tab/card presentation for easier review of layout hierarchy and user flow.",
+      "Completed a 24-page SCW Brand Design System gallery covering identity, typography, colour, mobile UX, desktop layouts, engagement, and donation experiences.",
+      "Structured the case study in process order: website direction, audience insight, architecture, wireframes, identity, and final visual rules system.",
     ],
     brandGuidePdf: scwBrandSystemPdf,
     isScw: true,
@@ -645,6 +776,7 @@ const projects = [
     category: "UI/UX",
     image: astroPlaceholder,
     technicalInfo: "React Native • Expo • Product Design • UI/UX • App Upgrade",
+    logo: astroPlaceholder,
     overview: "A live astrology dating app upgraded from concept into an interactive product shell with compatibility results, discovery, profiles, messaging, favorites, beginner guidance, subscription paths, shared services, and a theme-aware design system.",
     challenges: "The challenge was expanding the original idea into a usable app experience with stronger routes, richer states, saved-profile behavior, premium paths, onboarding support, live feedback, and light/dark UI consistency.",
     outcome: "AstroMatch now has a stronger product story, live app preview, upgraded screen flows, reusable components, shared hooks/utilities, profile personalization, and a more complete UI/UX delivery narrative.",
@@ -671,6 +803,7 @@ const projects = [
     video: motionGraphicVideo,
     audio: motionGraphicAudio,
     technicalInfo: "After Effects • Premiere Pro • Motion Graphics",
+    logo: motionPlaceholder,
     overview: "Produced a fast-paced anime-inspired intro bumper where the final motion piece is the main artifact, built around kinetic typography, impact frames, lighting, timing, and camera movement.",
     challenges: "Balancing legibility, speed, and visual intensity while syncing the edit to the music track and keeping the final export smooth for web playback.",
     outcome: "Delivered a focused video presentation with a synced soundtrack, making the case study feel like a motion showcase instead of an image gallery.",
@@ -733,44 +866,33 @@ function getProjectDataById(id) {
 function ProjectSectionNav({ projectData }) {
   const sharedItems = [
     { href: "#overview", label: "Overview" },
-    { href: "#project-details", label: "Details" },
-    { href: "#case-study", label: "Process" },
+    { href: "#case-study", label: "Framework" },
   ];
 
+  // Keep the floating nav intentionally short so it guides without covering work.
   const projectItems = {
     "1": [
       { href: "#redesign-system", label: "System" },
-      { href: "#logo", label: "Logo" },
-      { href: "#wireframes", label: "Wireframes" },
-      { href: "#collateral", label: "Collateral" },
-      { href: "#user-flow", label: "User Flow" },
+      { href: "#user-flow", label: "Flow" },
       { href: "#prototype", label: "Prototype" },
-      { href: "#style-guide", label: "Style Guide" },
     ],
     "2": [
-      { href: "#brand-system", label: "Brand System" },
+      { href: "#brand-system", label: "System" },
       { href: "#deliverables", label: "Deliverables" },
     ],
     "3": [
-      { href: "#brand-guide", label: "Brand Guide" },
       { href: "#ux-research", label: "Research" },
-      { href: "#sitemap", label: "Sitemap" },
-      { href: "#user-flow", label: "User Flow" },
-      { href: "#wireframes", label: "Wireframes" },
-      { href: "#final-screens", label: "Final Screens" },
-      { href: "#prototype", label: "Prototype" },
+      { href: "#final-screens", label: "Screens" },
+      { href: "#prototype", label: "Demo" },
     ],
     "4": [
-      { href: "#personas", label: "Personas" },
-      { href: "#sitemap", label: "Sitemap" },
+      { href: "#personas", label: "Research" },
       { href: "#wireframes", label: "Wireframes" },
-      { href: "#logo", label: "Logo" },
-      { href: "#brand-system", label: "Brand System" },
+      { href: "#brand-system", label: "Brand" },
     ],
     "5": [
       { href: "#high-fidelity", label: "Mockups" },
       { href: "#project-guide", label: "Guide" },
-      { href: "#upgrades", label: "Upgrades" },
       { href: "#live-app", label: "Live App" },
     ],
     "6": [
@@ -778,15 +900,13 @@ function ProjectSectionNav({ projectData }) {
       { href: "#technical-delivery", label: "Delivery" },
     ],
     "7": [
-      { href: "#live-preview", label: "Live Preview" },
+      { href: "#live-preview", label: "Preview" },
       { href: "#framework", label: "Framework" },
       { href: "#style-guide", label: "Style Guide" },
-      { href: "#implementation", label: "Code" },
-      { href: "#quality", label: "Quality" },
     ],
   };
 
-  const items = [...sharedItems, ...(projectItems[projectData.id] ?? []), { href: "#contact", label: "Contact" }];
+  const items = [...sharedItems, ...(projectItems[projectData.id] ?? [])];
 
   return (
     <nav className="project-page-nav" aria-label={`${projectData.title} section navigation`}>
@@ -904,7 +1024,7 @@ function CaseStudyStructure({ projectData }) {
   return (
     <section className="project-case-study-flow" id="case-study" aria-label="Shared case study structure">
       <article className="case-study-panel case-study-snapshot">
-        <p className="project-kicker">Snapshot</p>
+        <p className="project-kicker">Case Study Framework</p>
         <h2>What the project covers</h2>
         <div className="case-study-snapshot-grid">
           {caseStudy.snapshot.map((item) => (
@@ -946,10 +1066,15 @@ function StyleGuideSection({
   description,
   pdf,
   filename,
+  imagePages = [],
+  galleryLabel,
+  galleryTitle,
+  galleryDescription,
+  galleryPhases = [],
   swatches,
   notes,
 }) {
-  if (!pdf) return null;
+  if (!pdf && imagePages.length === 0) return null;
 
   return (
     <section className={`project-section style-guide-section ${className}`} id={id}>
@@ -959,9 +1084,14 @@ function StyleGuideSection({
           <h2>{title}</h2>
           <p>{description}</p>
         </div>
-        <a href={pdf} target="_blank" rel="noreferrer" className="project-doc-link">
-          Open PDF ↗
-        </a>
+        {pdf && (
+          <div className="style-guide-actions">
+            <a href={pdf} target="_blank" rel="noreferrer" className="project-doc-link">
+              Open PDF ↗
+            </a>
+            <p className="style-guide-fallback-note">Images are displayed below for reliable viewing across devices.</p>
+          </div>
+        )}
       </div>
 
       <div className="style-guide-layout">
@@ -972,7 +1102,44 @@ function StyleGuideSection({
             <span></span>
             <strong>{filename}</strong>
           </div>
-          <iframe src={`${pdf}#toolbar=0&view=FitH`} title={filename} />
+          {imagePages.length > 0 ? (
+            <>
+              {(galleryTitle || galleryPhases.length > 0) && (
+                <div className="style-guide-gallery-meta">
+                  {galleryLabel && <p className="project-kicker">{galleryLabel}</p>}
+                  {galleryTitle && <h3>{galleryTitle}</h3>}
+                  {galleryDescription && <p>{galleryDescription}</p>}
+                  {galleryPhases.length > 0 && (
+                    <div className="style-guide-phase-key" aria-label="Brand system sections">
+                      {galleryPhases.map((phase) => (
+                        <span key={phase.name}>
+                          <strong>{phase.pages}</strong>
+                          {phase.name}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
+              <div className="style-guide-image-gallery" aria-label={`${filename} page gallery`}>
+                {imagePages.map((page, index) => (
+                  <figure className="style-guide-image-page" key={page.title}>
+                    <img src={page.image} alt={`${page.title} — ${filename} page ${index + 1}`} loading="lazy" />
+                    <figcaption>
+                      <span>{String(index + 1).padStart(2, "0")}</span>
+                      <div>
+                        {page.section && <small className="style-guide-phase-tag">{page.section}</small>}
+                        <strong>{page.title}</strong>
+                        {page.note && <p>{page.note}</p>}
+                      </div>
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+            </>
+          ) : (
+            <iframe src={`${pdf}#toolbar=0&view=FitH`} title={filename} />
+          )}
         </div>
 
         <aside className="style-guide-aside">
@@ -1169,16 +1336,10 @@ export default function ProjectDetailPage() {
         <div className="project-title-block">
           <p className="project-kicker">Project Case Study</p>
 
-          <div className={[
-            projectData.isKvdst ? "kvdst-title-lockup" : "",
-            projectData.isRon ? "ron-title-lockup" : "",
-          ].join(" ").trim()}>
-            {projectData.isKvdst && <img src={projectData.logo} alt="KVDST logo" />}
-            {projectData.isRon && <img src={projectData.logo} alt="Ron Zalko logo" />}
+          <div className={`project-title-lockup ${projectData.isKvdst ? "kvdst-title-lockup" : ""} ${projectData.isRon ? "ron-title-lockup" : ""}`}>
+            {projectData.logo && <img src={projectData.logo} alt={`${projectData.title} logo`} />}
             <h1>{projectData.title}</h1>
           </div>
-
-          {!projectData.isKvdst && !projectData.isRon && <h1>{projectData.title}</h1>}
 
           <div className="project-detail-meta">
             <span>{projectData.category}</span>
@@ -1216,6 +1377,11 @@ export default function ProjectDetailPage() {
             <div className="scw-scroll-browser">
               <img src={scwcharity} alt="SCW Charity Website full page preview" />
             </div>
+          </div>
+        ) : projectData.isTimmyCare ? (
+          <div className="project-hero-image-wrap timmycare-hero-preview">
+            <div className="timmycare-hero-label">Mobile shopping experience</div>
+            <img src={projectData.image} alt={projectData.title} className="project-image" />
           </div>
         ) : (
           <div className="project-hero-image-wrap">
@@ -1309,21 +1475,35 @@ export default function ProjectDetailPage() {
           <StyleGuideSection
             className="scw-brand-system"
             id="brand-system"
-            kicker="Brand Design System"
-            title="SCW visual rules behind the website."
-            description="The SCW Brand Design System connects the charity tone, logo usage, colors, and reusable visual rules behind the website experience."
+            kicker="Complete Brand Design System"
+            title="SCW: from Warrior identity to donation experience."
+            description="A completed 24-page visual system showing how the Sickle Cell Warrior identity translates into typography, colour, mobile and desktop layouts, engagement paths, and a structured donation experience."
             pdf={projectData.brandGuidePdf}
             filename="SCW-BRAND-DESIGN-SYSTEM.pdf"
+            imagePages={scwBrandSystemPages}
+            galleryLabel="Gallery Overview"
+            galleryTitle="24-page visual rules library"
+            galleryDescription="Browse the completed system by design phase — from brand foundation and identity through responsive website screens, engagement, and donation pathways."
+            galleryPhases={[
+              { pages: "01–02", name: "Foundation" },
+              { pages: "03–06", name: "Identity" },
+              { pages: "07–11", name: "Mobile UX" },
+              { pages: "12–20", name: "Desktop UX" },
+              { pages: "21", name: "Engagement" },
+              { pages: "22–24", name: "Donation" },
+            ]}
             swatches={[
-              { name: "Warrior Plum", color: "#690b22" },
-              { name: "Warm Cream", color: "#fff3e8" },
-              { name: "Peach Accent", color: "#ffb38e" },
-              { name: "Mint Support", color: "#9bcfc2" },
+              { name: "Warrior Red", color: "#8f1418" },
+              { name: "Hope Orange", color: "#f79325" },
+              { name: "Carbon Black", color: "#08090b" },
+              { name: "Soft Grey", color: "#dfdfdf" },
+              { name: "Pure White", color: "#ffffff" },
+              { name: "Midnight Navy", color: "#242f41" },
             ]}
             notes={[
-              "Warm maroon/plum, cream, peach, and mint accents support a compassionate charity tone.",
-              "The brand system connects logo direction, audience needs, sitemap structure, and the full-page website.",
-              "Reusable guidance keeps campaign, website, and outreach materials visually consistent.",
+              "The red, orange, black, grey, white, and navy palette communicates strength, urgency, hope, and trust.",
+              "The intertwined SC identity mark establishes a memorable Warrior of Hope identity across digital touchpoints.",
+              "The completed system demonstrates a consistent path from awareness and mission storytelling to supporter engagement and donation action.",
             ]}
           />
         </>
@@ -1345,17 +1525,24 @@ export default function ProjectDetailPage() {
               <p className="project-kicker">Maps and Flow</p>
               <h3>Sitemap, journey map, and user flow.</h3>
             </div>
-            <div className="timmycare-pdf-grid">
+            <div className="timmycare-map-gallery">
               {timmyCareResearch.researchMaps.map((doc) => (
-                <article
-                  className="timmycare-pdf-card"
+                <figure
+                  className={`timmycare-map-card timmycare-map-${doc.layout}`}
                   id={doc.title === "Sitemap" ? "sitemap" : doc.title === "User Flow" ? "user-flow" : undefined}
                   key={doc.title}
                 >
-                  <h3>{doc.title}</h3>
-                  <iframe src={doc.src} title={doc.title}></iframe>
-                  <a href={doc.src} target="_blank" rel="noreferrer">Open PDF ↗</a>
-                </article>
+                  <div className="timmycare-map-head">
+                    <div>
+                      <p className="project-kicker">{doc.title}</p>
+                      <h3>{doc.note}</h3>
+                    </div>
+                    <a href={doc.pdf} target="_blank" rel="noreferrer">Open PDF ↗</a>
+                  </div>
+                  <div className="timmycare-map-media">
+                    <img src={doc.image} alt={`TimmyCare ${doc.title}`} loading="lazy" />
+                  </div>
+                </figure>
               ))}
             </div>
 
@@ -1416,17 +1603,29 @@ export default function ProjectDetailPage() {
             <div className="live-site-head">
               <div>
                 <p className="project-kicker">Interactive Prototype</p>
-                <h2>Code-based TimmyCare demo placeholder.</h2>
+                <h2>Explore the live TimmyCare app.</h2>
                 <p className="live-site-note">
-                  The Adobe prototype implementation has been removed. This section is ready to be replaced with the code-based sample app demonstration when it is provided.
+                  A code-based demonstration replaces the previous Adobe prototype link, allowing visitors to explore the shopping flow directly.
                 </p>
               </div>
+              <div className="timmycare-live-actions">
+                <a href={projectData.liveUrl} target="_blank" rel="noreferrer" className="project-doc-link">
+                  Open Live App ↗
+                </a>
+                <a href={projectData.alternateLiveUrl} target="_blank" rel="noreferrer" className="timmycare-alt-link">
+                  Alternate Link ↗
+                </a>
+              </div>
             </div>
-            <div className="timmycare-prototype-placeholder">
-              <span>Coming next</span>
-              <h3>Interactive sample app demonstration</h3>
-              <p>
-                The next version of this area will host the code-based TimmyCare app demo instead of an Adobe XD iframe.
+            <div className="timmycare-live-frame-wrap">
+              <iframe
+                src={projectData.liveUrl}
+                title="TimmyCare live app demonstration"
+                className="project-live-frame"
+                loading="lazy"
+              />
+              <p className="timmycare-live-fallback">
+                If the embedded view is blocked by the host or browser, open the live app using the button above.
               </p>
             </div>
             <div className="timmycare-swatch-row">
@@ -1634,9 +1833,10 @@ export default function ProjectDetailPage() {
             id="style-guide"
             kicker="Style Guide"
             title="Ron zalko style-guide.pdf"
-            description="The vertical PDF preview documents the redesign process: brief, problem analysis, research, competitive analysis, personas, empathy map, journey map, user flow, redesign goals, wireframes, collateral, and results."
+            description="A complete visual case study documenting the brief, existing-site review, research, persona, empathy map, journey map, user flow, solution direction, redesign goals, results, and prototype."
             pdf={projectData.styleGuidePdf}
             filename={projectData.styleGuideFilename}
+            imagePages={ronStyleGuidePages}
             swatches={[
               { name: "Ron Crimson", color: "#c41e3a" },
               { name: "Deep Red", color: "#8b1a1a" },
@@ -1888,19 +2088,22 @@ export default function ProjectDetailPage() {
             id="style-guide"
             kicker="Style Guide"
             title="KVDST record label style guide."
-            description="The KVDST style-guide preview frames the record-label identity with the same document treatment used for the SCW brand-system section."
+            description="Browse the full KVDST identity system through a responsive image gallery, with the original PDF still available as an optional download."
             pdf={projectData.styleGuide}
-            filename="KVDST-record-label-style-guide.pdf"
+            filename="KVDST-record-label-style-guide"
+            imagePages={kvdstStyleGuidePages}
             swatches={[
-              { name: "KVDST Blue", color: "#29abe2" },
-              { name: "Stage Black", color: "#020406" },
-              { name: "Electric Cyan", color: "#d8f5ff" },
-              { name: "Soft White", color: "#f4fff1" },
+              { name: "Coral", color: "#FF6F61" },
+              { name: "Teal", color: "#4ECDC4" },
+              { name: "Cloud White", color: "#F7F9FC" },
+              { name: "Deep Navy", color: "#2C3E50" },
+              { name: "Purple", color: "#8E44AD" },
+              { name: "Yellow", color: "#FFD700" },
             ]}
             notes={[
-              "Black and blue create a stage-like identity that matches the music label direction.",
-              "The PDF section now includes a framed preview, document bar, open-PDF button, and brand swatches.",
-              "The case study keeps the live-site link, code showcase, and brand documentation in one flow.",
+              "The style guide is displayed as images so visitors can view it reliably across devices and browsers.",
+              "The document communicates the logo construction, type hierarchy, and six-colour identity palette.",
+              "The original PDF remains available as an optional document link.",
             ]}
           />
 

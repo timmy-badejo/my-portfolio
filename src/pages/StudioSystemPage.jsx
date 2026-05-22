@@ -81,7 +81,6 @@ export default function StudioSystemPage() {
         <a href="#tools">Tools</a>
         <a href="#services">Services</a>
         <a href="#process">Process</a>
-        <a href="#studio-cta">CTA</a>
       </nav>
 
       <section className="studio-hero">
@@ -98,6 +97,12 @@ export default function StudioSystemPage() {
           <span>Front-End</span>
           <span>Brand Systems</span>
         </div>
+      </section>
+
+      <section className="studio-signal-rail" aria-label="Creative studio capabilities">
+        <article><span>01</span><strong>Shape</strong><p>Brand and visual direction</p></article>
+        <article><span>02</span><strong>Systemize</strong><p>UI/UX and component thinking</p></article>
+        <article><span>03</span><strong>Build</strong><p>Responsive front-end delivery</p></article>
       </section>
 
       <section className="studio-command">

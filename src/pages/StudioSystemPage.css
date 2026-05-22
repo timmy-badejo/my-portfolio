@@ -364,3 +364,58 @@
 
   .studio-back-line { height: 54px; }
 }
+
+
+/* Studio System: stronger visual pacing and capability signal rail */
+.studio-page-nav {
+  max-width: min(560px, calc(100vw - 48px));
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  scrollbar-width: none;
+}
+.studio-page-nav::-webkit-scrollbar { display: none; }
+.studio-signal-rail {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: -42px 0 68px;
+  position: relative;
+  z-index: 2;
+}
+.studio-signal-rail article {
+  padding: 20px;
+  display: grid;
+  gap: 7px;
+  border-radius: 22px;
+  background: color-mix(in srgb, var(--surface) 90%, var(--rich-maroon) 10%);
+  border: 1px solid var(--border-soft);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, .18);
+}
+.studio-signal-rail span {
+  color: var(--soft-gold);
+  font-size: .74rem;
+  font-weight: 900;
+  letter-spacing: .14em;
+}
+.studio-signal-rail strong {
+  color: var(--text-main);
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
+}
+.studio-signal-rail p {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+@media (max-width: 700px) {
+  .studio-page-nav {
+    position: sticky;
+    top: 10px;
+    z-index: 130;
+    flex-wrap: nowrap;
+    border-radius: 999px;
+  }
+  .studio-signal-rail {
+    grid-template-columns: 1fr;
+    margin: -40px 0 52px;
+  }
+}
