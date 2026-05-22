@@ -2745,18 +2745,19 @@
 
 
 /* 2026 portfolio refinement: quieter navigation, shared title identity, and live demo framing */
+/* BCRPA-inspired project section navigation: fixed top-right pill panel */
 .project-page-nav {
-  left: 50%;
-  right: auto;
-  top: 18px;
-  transform: translateX(-50%);
-  max-width: min(92vw, 860px);
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  scrollbar-width: none;
+  max-width: min(820px, calc(100vw - 48px));
 }
-.project-page-nav::-webkit-scrollbar { display: none; }
-.project-page-nav a { flex: 0 0 auto; }
+
+.project-page-nav a {
+  flex: 0 0 auto;
+}
+
+.project-page-nav a:focus-visible {
+  outline: 2px solid var(--soft-gold);
+  outline-offset: 2px;
+}
 
 .project-title-lockup {
   display: grid;
@@ -2845,15 +2846,18 @@
 
 @media (max-width: 768px) {
   .project-page-nav {
-    position: sticky;
-    top: 10px;
+    position: static;
+    top: auto;
+    right: auto;
     left: auto;
     transform: none;
     display: flex;
-    flex-wrap: nowrap;
-    max-width: 100%;
-    overflow-x: auto;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    max-width: none;
+    overflow: visible;
     margin: 0 0 28px;
+    border-radius: 24px;
     z-index: 135;
   }
   .project-title-lockup {
@@ -3017,4 +3021,63 @@
   .style-guide-phase-key {
     gap: 6px;
   }
+}
+
+
+/* Fixed top navigation anchor offset: keeps clicked sections visible below the nav */
+.project-detail :is(
+  #overview,
+  #case-study,
+  #redesign-system,
+  #wireframes,
+  #user-flow,
+  #prototype,
+  #style-guide,
+  #brand-system,
+  #deliverables,
+  #ux-research,
+  #final-screens,
+  #personas,
+  #sitemap,
+  #logo,
+  #high-fidelity,
+  #project-guide,
+  #live-app,
+  #motion-process,
+  #technical-delivery,
+  #live-preview,
+  #framework
+) {
+  scroll-margin-top: 112px;
+}
+
+/* Page-specific hover accents preserve each project's identity while using one interaction system. */
+.project-detail-ron .project-page-nav a:hover {
+  background: #ee6f57;
+  color: #fff;
+}
+
+.project-detail-melody .project-page-nav a:hover {
+  background: #dbc073;
+  color: #191712;
+}
+
+.project-detail-timmycare .project-page-nav a:hover {
+  background: var(--timmy-coral);
+  color: #fff;
+}
+
+.project-detail-scw .project-page-nav a:hover {
+  background: #8f1418;
+  color: #fff;
+}
+
+.project-detail-kvdst .project-page-nav a:hover {
+  background: var(--kvdst-accent, #29abe2);
+  color: #071725;
+}
+
+.project-detail-motion .project-page-nav a:hover {
+  background: #e34a43;
+  color: #fff;
 }

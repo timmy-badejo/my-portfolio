@@ -864,52 +864,68 @@ function getProjectDataById(id) {
 }
 
 function ProjectSectionNav({ projectData }) {
-  const sharedItems = [
-    { href: "#overview", label: "Overview" },
-    { href: "#case-study", label: "Framework" },
-  ];
-
-  // Keep the floating nav intentionally short so it guides without covering work.
-  const projectItems = {
+  /*
+   * Uses the same interaction direction as the BCRPA case study:
+   * a fixed, rounded section navigator on desktop and a clean stacked/flowing
+   * navigation panel on smaller screens.
+   */
+  const navigationByProject = {
     "1": [
-      { href: "#redesign-system", label: "System" },
-      { href: "#user-flow", label: "Flow" },
+      { href: "#overview", label: "Overview" },
+      { href: "#case-study", label: "Framework" },
+      { href: "#wireframes", label: "Wireframes" },
+      { href: "#user-flow", label: "User Flow" },
       { href: "#prototype", label: "Prototype" },
+      { href: "#style-guide", label: "Style Guide" },
     ],
     "2": [
-      { href: "#brand-system", label: "System" },
+      { href: "#overview", label: "Overview" },
+      { href: "#case-study", label: "Framework" },
+      { href: "#brand-system", label: "Brand System" },
       { href: "#deliverables", label: "Deliverables" },
     ],
     "3": [
+      { href: "#overview", label: "Overview" },
       { href: "#ux-research", label: "Research" },
+      { href: "#wireframes", label: "Wireframes" },
       { href: "#final-screens", label: "Screens" },
-      { href: "#prototype", label: "Demo" },
+      { href: "#prototype", label: "Prototype" },
     ],
     "4": [
-      { href: "#personas", label: "Research" },
+      { href: "#overview", label: "Overview" },
+      { href: "#personas", label: "Personas" },
+      { href: "#sitemap", label: "Sitemap" },
       { href: "#wireframes", label: "Wireframes" },
-      { href: "#brand-system", label: "Brand" },
+      { href: "#logo", label: "Identity" },
+      { href: "#brand-system", label: "System" },
     ],
     "5": [
+      { href: "#overview", label: "Overview" },
+      { href: "#case-study", label: "Framework" },
       { href: "#high-fidelity", label: "Mockups" },
       { href: "#project-guide", label: "Guide" },
       { href: "#live-app", label: "Live App" },
     ],
     "6": [
+      { href: "#overview", label: "Overview" },
+      { href: "#case-study", label: "Framework" },
       { href: "#motion-process", label: "Process" },
       { href: "#technical-delivery", label: "Delivery" },
     ],
     "7": [
+      { href: "#overview", label: "Overview" },
       { href: "#live-preview", label: "Preview" },
       { href: "#framework", label: "Framework" },
       { href: "#style-guide", label: "Style Guide" },
     ],
   };
 
-  const items = [...sharedItems, ...(projectItems[projectData.id] ?? [])];
+  const items = navigationByProject[projectData.id] ?? [];
+
+  if (!items.length) return null;
 
   return (
-    <nav className="project-page-nav" aria-label={`${projectData.title} section navigation`}>
+    <nav className="project-page-nav" aria-label={`${projectData.title} page navigation`}>
       {items.map((item) => (
         <a href={item.href} key={`${projectData.id}-${item.href}`}>
           {item.label}
