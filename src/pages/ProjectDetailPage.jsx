@@ -6,7 +6,6 @@ import ronzalko from "../assets/Ron Zalko web design.jpg";
 import ronLogo from "../assets/Ron-Zalko-Logo.png";
 import ronPoster from "../assets/Ron Zalko zoster.jpg";
 import ronUserFlow from "../assets/User flow for ron zalko fitness web redesignn.png";
-import ronSitemap from "../assets/Ui-Ux RonZalko-WebDesign_Page_16.jpg";
 import ronBusinessCardFront from "../assets/ron-zalko-buisness-card-front.jpg";
 import ronBusinessCardBack from "../assets/ron-zalko-buisness-card-back.jpg";
 import ronInvoice from "../assets/ron zalko gym invoice.jpg";
@@ -26,11 +25,12 @@ import ronWire12 from "../assets/Ron-Zalko-Web-Design-Wireframe_Page_12.jpg";
 import ronStyleGuidePdf from "../assets/Ron-zalko-style-guide.pdf";
 import melodyBusinessCard1 from "../assets/melody-beats-buisness-card-1.jpg";
 import melodyBusinessCard2 from "../assets/melody-beats-buisness-card-2.jpg";
+import melodyBusinessCard3 from "../assets/melody-beats-buisness-card-3.jpg";
 import melodyBusinessCard4 from "../assets/melody-beats-buisness-card-4.jpg";
 import melodyBusinessCard5 from "../assets/melody-beats-buisness-card-5.jpg";
 import melodyBusinessCard6 from "../assets/melody-beats-buisness-card-6.jpg";
-import melodyBusinessCard7 from "../assets/melody-beats-buisness-card-7.jpg";
-import melodyBeatsItem from "../assets/Melody-beats-item.jpg";
+import melodyBusinessCardMain1 from "../assets/Melody-Beats- Buisness-Card-Main-1.jpg";
+import melodyBusinessCardMain2 from "../assets/Melody-Beats- Buisness-Card-Main-2.jpg";
 import melodyPosterCard1 from "../assets/melody-beats-poster-card-1.jpg";
 import melodyPosterCard2 from "../assets/melody-beats-poster-card-2.jpg";
 import melodyPosterCard3 from "../assets/melody-beats-poster-card-3.jpg";
@@ -49,13 +49,17 @@ import melodyDoc9 from "../assets/melodyBeatsDocument_Page_09.jpg";
 import melodyDoc10 from "../assets/melodyBeatsDocument_Page_10.jpg";
 import melodyDoc11 from "../assets/melodyBeatsDocument_Page_11.jpg";
 import melodyDoc12 from "../assets/melodyBeatsDocument_Page_12.jpg";
-import melodyLogoSketch from "../assets/melody shape logo for melody.png";
-import melodyLogoFinal from "../assets/Melody Logo 2 blue for melody.png";
-import melodyPosterCard from "../assets/Melody Logo poster cards for melody.png";
-import melodyProduct from "../assets/melody-beats-package-design-1.png";
+import melodyLogoSketchesConcept from "../assets/melody-beats-logo-sketches-concept.jpg";
+import melodyLogoBlue from "../assets/melody-beats-logo-blue.png";
+import melodyLogoBlueAlt from "../assets/melody-beats-logo-blue-2.png";
+import melodyLogoOrange from "../assets/melody-beats-logo-orange-1.png";
+import melodyLogoOrangeAlt from "../assets/melody-beats-logo-Orange-2.png";
+import melodyLogoTextOption1 from "../assets/melody-beats-logo-text-option-1.png";
+import melodyLogoTextOption2 from "../assets/melody-beats-logo-text-option-2.png";
+import melodyPackageDesign from "../assets/melody-beats-package-design-1.png";
 import melodyProductBox from "../assets/melody-beats-package-design-2.jpg";
-import melodyHeadphone from "../assets/Melody beats headphone.jpg";
-import melodyBlueLogo from "../assets/melody blue for melody.png";
+import melodyHeadphoneItem from "../assets/Melody-beats-headphone-item-1.jpg";
+import melodyPlushieItem from "../assets/melody-beats-plushie-item-2.jpg";
 import timmyhaircare from "../assets/timmyhaircare4.jpg";
 import timmyhaircare1 from "../assets/timmyhaircare1.jpg";
 import timmyhaircare2 from "../assets/timmyhaircare2.jpg";
@@ -63,6 +67,31 @@ import timmyhaircare3 from "../assets/timmyhaircare3.jpg";
 import timmyLogo from "../assets/Tc_logo.png";
 import timmyProductPage from "../assets/Product Page for timmyhaircare.png";
 import timmyWishlist from "../assets/Wishlist Screen for timmyhaircare.jpg";
+import timmyJourneyMapPdf from "../assets/timmyhaircare-journeymap.pdf";
+import timmySitemapPdf from "../assets/timmycare-sitemap.pdf";
+import timmyUserFlowPdf from "../assets/timmycare-userflow.pdf";
+import timmyEmpathyMaya from "../assets/timmyhaircare-empathy map for maya.jpg";
+import timmyEmpathyTimmy from "../assets/timmyhaircare-empathy map for timmy.jpg";
+import timmyGrayBlackLogo from "../assets/timmyhaircare-gray and black.png";
+import timmyLowFi1 from "../assets/timmyhaircare-low fidelity-mockup-1.jpg";
+import timmyLowFi2 from "../assets/timmyhaircare-low fidelity-mockup-2.jpg";
+import timmyLowFi3 from "../assets/timmyhaircare-low fidelity-mockup-3.jpg";
+import timmyLowFi4 from "../assets/timmyhaircare-low fidelity-mockup-4.jpg";
+import timmyLowFi5 from "../assets/timmyhaircare-low fidelity-mockup-5.jpg";
+import timmyLowFi6 from "../assets/timmyhaircare-low fidelity-mockup-6.jpg";
+import timmyPersona1 from "../assets/timmyhaircare-user persona-1.jpg";
+import timmyPersona2 from "../assets/timmyhaircare-user persona-2.jpg";
+import timmyBrandGuide1 from "../assets/timicare-hair-brand-2_Page_01.jpg";
+import timmyBrandGuide2 from "../assets/timicare-hair-brand-2_Page_02.jpg";
+import timmyBrandGuide3 from "../assets/timicare-hair-brand-2_Page_03.jpg";
+import timmyBrandGuide4 from "../assets/timicare-hair-brand-2_Page_04.jpg";
+import timmyBrandGuide5 from "../assets/timicare-hair-brand-2_Page_05.jpg";
+import timmyBrandGuide6 from "../assets/timicare-hair-brand-2_Page_06.jpg";
+import timmyBrandGuide7 from "../assets/timicare-hair-brand-2_Page_07.jpg";
+import timmyBrandGuide8 from "../assets/timicare-hair-brand-2_Page_08.jpg";
+import timmyBrandGuide9 from "../assets/timicare-hair-brand-2_Page_09.jpg";
+import timmyBrandGuide10 from "../assets/timicare-hair-brand-2_Page_10.jpg";
+import timmyBrandGuide11 from "../assets/timicare-hair-brand-2_Page_11.jpg";
 import scwcharity from "../assets/scwcharitywebpage.png";
 import scwLogo from "../assets/scw logo.png";
 import scwPersona from "../assets/scw user persona 1.jpg";
@@ -84,11 +113,21 @@ import scwWire11 from "../assets/SCW Charity Website Wireframe A 2_Page_11.jpg";
 import scwWire12 from "../assets/SCW Charity Website Wireframe A 2_Page_12.jpg";
 import scwWire13 from "../assets/SCW Charity Website Wireframe A 2_Page_13.jpg";
 import astroPlaceholder from "../assets/AstorMatchlogo.jpg";
-import astro1 from "../assets/astro-match-app_Page_0a.jpg";
-import astro2 from "../assets/astro-match-app_Page_0b.jpg";
-import astro3 from "../assets/astro-match-app_Page_0c.jpg";
-import astro4 from "../assets/astro-match-app_Page_0d.jpg";
-import astro5 from "../assets/astro-match-app_Page_0e.jpg";
+import astroGuideA from "../assets/astro-match-app_Page_0a.jpg";
+import astroGuideB from "../assets/astro-match-app_Page_0b.jpg";
+import astroGuideC from "../assets/astro-match-app_Page_0c.jpg";
+import astroGuideD from "../assets/astro-match-app_Page_0d.jpg";
+import astroGuideE from "../assets/astro-match-app_Page_0e.jpg";
+import astroGuideF from "../assets/astro-match-app_Page_0f.jpg";
+import astroGuideG from "../assets/astro-match-app_Page_0g.jpg";
+import astroGuideH from "../assets/astro-match-app_Page_0h.jpg";
+import astroGuideI from "../assets/astro-match-app_Page_0i.jpg";
+import astroGuideJ from "../assets/astro-match-app_Page_0j.jpg";
+import astroGuideK from "../assets/astro-match-app_Page_0k.jpg";
+import astroHighFi1 from "../assets/Astro-Match-App_highfideliity-wireframe_1.jpg";
+import astroHighFi2 from "../assets/Astro-Match-App_highfideliity-wireframe_2.jpg";
+import astroHighFi3 from "../assets/Astro-Match-App_highfideliity-wireframe_3.jpg";
+import astroHighFi4 from "../assets/Astro-Match-App_highfideliity-wireframe_4.jpg";
 import motionPlaceholder from "../assets/motion graphics.webp";
 import motionGraphicVideo from "../assets/Jujitsu_Kaisen_Intro_Bumper_Timilehin Yomi-Badejo_Final comp.mp4";
 import motionGraphicAudio from "../assets/jujitsu_kaisen_intro_Bumper-audio.mp3";
@@ -126,23 +165,28 @@ const melodyBrandSystem = [
 ];
 
 const melodyLogoSystem = [
+  melodyLogoSketchesConcept,
   melodyDoc3,
   melodyDoc4,
   melodyDoc5,
   melodyDoc6,
-  melodyLogoSketch,
-  melodyLogoFinal,
-  melodyBlueLogo,
-  melodyPosterCard,
+  melodyLogoBlue,
+  melodyLogoBlueAlt,
+  melodyLogoOrange,
+  melodyLogoOrangeAlt,
+  melodyLogoTextOption1,
+  melodyLogoTextOption2,
 ];
 
 const melodyBusinessCards = [
+  melodyBusinessCardMain1,
+  melodyBusinessCardMain2,
   melodyBusinessCard1,
   melodyBusinessCard2,
+  melodyBusinessCard3,
   melodyBusinessCard4,
   melodyBusinessCard5,
   melodyBusinessCard6,
-  melodyBusinessCard7,
 ];
 
 const melodyPostcards = [
@@ -155,23 +199,80 @@ const melodyPostcards = [
 ];
 
 const melodyProductDesign = [
-  melodyProduct,
+  melodyPackageDesign,
   melodyProductBox,
   melodyPackageUnfolded,
-  melodyHeadphone,
-  melodyBeatsItem,
+  melodyHeadphoneItem,
+  melodyPlushieItem,
 ];
 
-const timmyCareScreens = [
-  timmyhaircare,
-  timmyhaircare1,
-  timmyhaircare2,
-  timmyhaircare3,
-  timmyProductPage,
-  timmyWishlist,
+const timmyCareBrandGuide = [
+  { title: "Cover", note: "TimmyCare brand guide opening page.", image: timmyBrandGuide1 },
+  { title: "Welcome", note: "Brand mission and visual introduction.", image: timmyBrandGuide2 },
+  { title: "Values", note: "Brand values and identity applications.", image: timmyBrandGuide3 },
+  { title: "Audience", note: "Target audience and product positioning.", image: timmyBrandGuide4 },
+  { title: "Team", note: "Designer and project background.", image: timmyBrandGuide5 },
+  { title: "Competitive Analysis", note: "Product concept strengths and gaps.", image: timmyBrandGuide6 },
+  { title: "Typography", note: "Type hierarchy and brand font system.", image: timmyBrandGuide7 },
+  { title: "Logo", note: "Logo construction and usage rules.", image: timmyBrandGuide8 },
+  { title: "Color Palette", note: "Burgundy, coral, green, and blush palette.", image: timmyBrandGuide9 },
+  { title: "App Screens", note: "High-fidelity mobile app presentation.", image: timmyBrandGuide10 },
+  { title: "Thank You", note: "Closing brand-guide page.", image: timmyBrandGuide11 },
 ];
 
-const astroMockups = [astroPlaceholder, astro1, astro2, astro3, astro4, astro5];
+const timmyCareLowFi = [
+  { title: "Low-Fidelity Home", src: timmyLowFi1 },
+  { title: "Low-Fidelity Cart", src: timmyLowFi2 },
+  { title: "Low-Fidelity Product Grid", src: timmyLowFi3 },
+  { title: "Low-Fidelity Checkout", src: timmyLowFi4 },
+  { title: "Low-Fidelity Product Detail", src: timmyLowFi5 },
+  { title: "Low-Fidelity Wishlist", src: timmyLowFi6 },
+];
+
+const timmyCareFinalScreens = [
+  { title: "Home and Brand Entry", src: timmyhaircare },
+  { title: "Product Detail", src: timmyhaircare1 },
+  { title: "Product List", src: timmyhaircare2 },
+  { title: "Checkout Flow", src: timmyhaircare3 },
+];
+
+const astroHighFidelityMockups = [
+  {
+    title: "Launch and Horoscope Entry",
+    note: "Illustrator high-fidelity direction showing the logo, zodiac set, and primary app feature labels.",
+    image: astroHighFi1,
+  },
+  {
+    title: "Create Account Flow",
+    note: "High-fidelity onboarding form direction for profile setup and personal information capture.",
+    image: astroHighFi2,
+  },
+  {
+    title: "Feed Card Direction",
+    note: "A content card exploration for zodiac tags, author hierarchy, comments, and reactions.",
+    image: astroHighFi3,
+  },
+  {
+    title: "Daily Horoscope Feed",
+    note: "Scrollable feed direction showing repeated horoscope posts, engagement counts, and action controls.",
+    image: astroHighFi4,
+  },
+];
+
+const astroProjectGuide = [
+  { title: "Project Overview", note: "Concept opening, logo direction, and presentation context.", image: astroGuideA },
+  { title: "Audience and Value", note: "Target audience and value proposition for the astrology dating experience.", image: astroGuideB },
+  { title: "Monetization Strategy", note: "Freemium model, premium subscription, in-app ads, and partnership thinking.", image: astroGuideC },
+  { title: "App Features", note: "Core feature set including zodiac matching, profiles, compatibility, and horoscopes.", image: astroGuideD },
+  { title: "User Workflows", note: "Onboarding and repeat-use path from sign-up to profile engagement.", image: astroGuideE },
+  { title: "Wireframes and Prototype", note: "Early app screen planning and development lifecycle framing.", image: astroGuideF },
+  { title: "Competitive Space", note: "Dating and horoscope app comparison with market positioning.", image: astroGuideG },
+  { title: "App Details", note: "Onboarding approach, primary views, and navigation pattern planning.", image: astroGuideH },
+  { title: "Data Requirements", note: "Birthdate, zodiac, preferences, and astrology API requirements.", image: astroGuideI },
+  { title: "Team Requirements", note: "Project roles needed across development, design, astrology, marketing, and product.", image: astroGuideJ },
+  { title: "Development Approach", note: "First iteration plan from validation through launch preparation.", image: astroGuideK },
+];
+
 const ronBrandCollateral = [
   {
     title: "Business Card Front",
@@ -248,16 +349,16 @@ const caseStudyMetadata = {
     delivery: "Delivered a refreshed brand system, horizontal wireframe browser, Adobe XD prototype, and vertical style-guide preview.",
   },
   "2": {
-    snapshot: ["Music brand identity system", "Logo sketches, final marks, business cards, poster cards, and package design", "Melody blue, coral, teal, green, purple, and warm gold palette"],
+    snapshot: ["Music brand identity system", "Logo sketches, final marks, business cards, postal cards, and package design", "Deep blue, coral, teal, olive, and pink Melody palette"],
     context: "Melody Beats needed a cohesive music identity that could feel energetic on promotional pieces while still working across practical brand collateral and product packaging.",
-    process: ["Explored logo sketches around waveforms, rhythm, motion, and the Melody name.", "Refined final logo directions and built a color system for blue, coral, teal, green, purple, and warm gold applications.", "Applied the identity across business cards, poster cards, headphone visuals, and product package mockups."],
-    delivery: "Delivered a detailed brand-system case study with a slider for the full design system and grouped sections for logo work, business cards, poster cards, and package design.",
+    process: ["Explored logo sketches around waveforms, rhythm, motion, and the Melody name.", "Refined final logo directions and built a color system for deep blue, coral, teal, olive, pink, and orange applications.", "Applied the identity across business cards, postal cards, headphone visuals, branded items, and product package mockups."],
+    delivery: "Delivered a detailed brand-system case study with a slider for the full design system and grouped sections for logo work, business cards, postal cards, and product/package design.",
   },
   "3": {
-    snapshot: ["Mobile app redesign", "Research artifacts, flows, personas, and high-fidelity screens", "Haircare shopping and wishlist experience"],
-    context: "TimmyCare needed clearer mobile flows grounded in user research and product browsing behavior.",
-    process: ["Mapped personas, empathy maps, scenarios, sitemap, journey map, and user flow.", "Separated low-fidelity planning from polished screen presentation.", "Kept the interface aligned to the TimmyCare palette."],
-    delivery: "Delivered a cleaner mobile-first UI/UX case study with research support and screen gallery.",
+    snapshot: ["Mobile app redesign", "Brand guide, UX research, sitemap, user flow, and low-fidelity wireframes", "Burgundy, coral, green, cream, and blush TimmyCare palette"],
+    context: "TimmyCare needed a clearer haircare shopping experience for African Americans in Vancouver, supported by research, brand direction, and a mobile-first product flow.",
+    process: ["Mapped personas, empathy maps, scenarios, journey map, sitemap, and user flow.", "Moved from low-fidelity wireframes into final mobile screens.", "Connected the brand guide, research structure, and interface presentation through the TimmyCare palette."],
+    delivery: "Delivered a complete app redesign case study with a brand-guide browser, research artifacts, sitemap, user flow, low-fidelity wireframes, and final screens.",
   },
   "4": {
     snapshot: ["Charity website case study", "Personas, sitemap, wireframes, logo, full-page preview, and brand system", "Warm, accessible SCW visual language"],
@@ -266,7 +367,7 @@ const caseStudyMetadata = {
     delivery: "Delivered a full SCW case study with website preview, research artifacts, wireframes, and embedded brand design system PDF.",
   },
   "5": {
-    snapshot: ["Live app upgrade", "React Native/Expo product UI", "Compatibility, discovery, profiles, messaging, favorites, guide, and subscription flows"],
+    snapshot: ["Astrology dating app", "Illustrator high-fidelity mockups, product guide, and live app UI", "Compatibility, discovery, profiles, messaging, favorites, guide, and subscription flows"],
     context: "AstroMatch moved from an app concept into a broader interactive product case study with real flows, states, navigation, and live preview.",
     process: ["Rebuilt the app shell and routes.", "Expanded Results, Discovery, Profile, Messaging, Favorites, Beginner Guide, and Subscription flows.", "Added shared services, state handling, themed components, assets, and PWA metadata."],
     delivery: "Delivered a live app preview and a complete UI/UX upgrade story across product, design system, and implementation layers.",
@@ -308,7 +409,7 @@ const ronWireframeGallery = ronWireframes.map((image, index) => ({
 
 const ronScrollArtifacts = [
   { title: "Ron Zalko Logo", note: "Primary identity mark", image: ronLogo },
-  { title: "Site Map", note: "Navigation and page-path planning", image: ronSitemap },
+  { title: "Site Map", note: "Navigation and page-path planning", image: ronUserFlow },
   ...ronWireframeGallery,
   { title: "Business Card Front", note: "Brand collateral", image: ronBusinessCardFront },
   { title: "Business Card Back", note: "Brand collateral", image: ronBusinessCardBack },
@@ -421,24 +522,26 @@ const kvdstQualitySignals = [
 
 const timmyCareResearch = {
   logo: timmyLogo,
+  alternateLogo: timmyGrayBlackLogo,
   researchMaps: [
-    { title: "Sitemap", type: "PDF" },
-    { title: "Journey Map", type: "PDF" },
-    { title: "Userflow", type: "PDF" },
+    { title: "Sitemap", type: "PDF", src: timmySitemapPdf },
+    { title: "Journey Map", type: "PDF", src: timmyJourneyMapPdf },
+    { title: "User Flow", type: "PDF", src: timmyUserFlowPdf },
   ],
   empathyMaps: [
-    { title: "Empathy Map Direction", src: timmyhaircare1 },
-    { title: "User Need Mapping", src: timmyhaircare2 },
+    { title: "Empathy Map for Maya", src: timmyEmpathyMaya },
+    { title: "Empathy Map for Timmy", src: timmyEmpathyTimmy },
   ],
   personas: [
-    { title: "Persona Direction", src: timmyhaircare3 },
-    { title: "TimmyCare Logo", src: timmyLogo },
+    { title: "User Persona 01", src: timmyPersona1 },
+    { title: "User Persona 02", src: timmyPersona2 },
   ],
   scenarios: [
-    { title: "User Scenario Screen", src: timmyProductPage },
-    { title: "Wishlist / Saved Care Flow", src: timmyWishlist },
+    { title: "Product Page Scenario", src: timmyProductPage },
+    { title: "Wishlist Scenario", src: timmyWishlist },
   ],
-  lowFi: [],
+  lowFi: timmyCareLowFi,
+  finalScreens: timmyCareFinalScreens,
 };
 
 const projects = [
@@ -461,8 +564,9 @@ const projects = [
       "Applied the Ron Zalko colour system, deep crimson, black, and white, across brand touchpoints.",
       "Documented the full project in a UI/UX style guide PDF covering research, competitive analysis, personas, and results.",
     ],
-    scrollBrowseTitle: "Wireframe Browser",
-    scrollBrowseText: "Scroll to view the Ron Zalko logo, sitemap, wireframes, and collateral sequence.",
+    scrollBrowseTitle: "Redesign System",
+    scrollBrowseText: "Scroll through the visual system.",
+    scrollBrowseSubtext: "Logo, sitemap, wireframes, and collateral.",
     scrollImages: ronScrollArtifacts,
     oldSiteUrl: "https://ronzalko.com/",
     prototypeUrl: "https://xd.adobe.com/view/20f25a09-a9b7-4b46-a4cd-6158c74e6a52-75a1/",
@@ -475,19 +579,21 @@ const projects = [
     id: "2",
     title: "Melody Beats Branding",
     category: "Visual Design",
-    image: melodyBeatsItem,
+    image: melodyProductBox,
     technicalInfo: "Brand Identity • Photoshop • Adobe After Effects",
-    overview: "A Melody Beats brand identity case study for a music-focused product system. The work covers logo sketches and final designs, business cards, poster cards, product visuals, and package design.",
-    challenges: "The challenge was making the identity feel sonic, energetic, and vibrant while still staying consistent across cards, poster layouts, brand documentation, and product packaging.",
-    outcome: "The final brand system presents Melody Beats as a complete music identity with a clear waveform logo, flexible color palette, business card system, poster-card campaign direction, and package/product design.",
+    overview: "A Melody Beats branding project case study for a music-focused product system. The work covers logo sketches and final designs, business cards, postal cards, branded items, and product/package design.",
+    challenges: "The challenge was making the identity feel sonic, energetic, and vibrant while still staying consistent across practical collateral, campaign cards, brand documentation, and product packaging.",
+    outcome: "The final brand system presents Melody Beats as a complete music identity with a waveform logo, deep blue/coral/teal/olive/pink palette, business card system, postal-card campaign direction, and package/product design.",
     details: [
-      "Updated the case study slider into a brand-system design slider using the Melody Beats presentation pages.",
-      "Grouped the project into logo sketches and final designs, business cards, poster cards, and product package design.",
-      "Featured Melody Beats items as designed artifacts instead of relying on a click-to-open image preview gallery.",
-      "Applied the Melody Beats palette across the case study page, project card, and light/dark themed treatments.",
+      "Replaced the older Melody document/gallery treatment with a brand-system design slider for the case study flow.",
+      "Grouped the project into Logo System, Business Cards, Postal Cards, and Product/Package Design sections.",
+      "Featured the Melody Beats logo, business cards, campaign cards, package artwork, headphone visual, and branded item directly on the page.",
+      "Applied the Melody Beats deep blue, coral, teal, olive, and pink palette across the case study page, project card, and light/dark theme treatments.",
     ],
-    scrollBrowseTitle: "Melody Beats Brand System Slider",
-    scrollBrowseText: "Browse the brand-system pages for logo development, color, typography, cards, poster cards, product mockups, and package design.",
+    scrollBrowseTitle: "Brand System",
+    scrollBrowseText: "Scroll through the visual system.",
+    scrollBrowseSubtext: "Logo, color, typography, cards, and packaging.",
+    scrollBrowseAction: "Browse system →",
     scrollImages: melodyBrandSystem,
     isMelody: true,
   },
@@ -496,19 +602,22 @@ const projects = [
     title: "TimmyCare App Redesign",
     category: "UI/UX",
     image: timmyhaircare,
-    technicalInfo: "Mobile UI • App Redesign • UX Research",
-    overview: "A mobile app redesign focused on usability, research, user flows, low-fidelity exploration, high-fidelity screens, and prototype clarity.",
-    challenges: "The challenge was making the experience easier to use while grounding the interface decisions in research artifacts and user needs.",
-    outcome: "The redesign created a stronger mobile-first product structure with research support, clearer flows, and more polished high-fidelity wireframes.",
+    technicalInfo: "Mobile UI • UX Research • Brand Guide",
+    overview: "A mobile app redesign for a haircare shopping experience, combining brand direction, research artifacts, sitemap, user flow, low-fidelity wireframes, and final screens.",
+    challenges: "The challenge was turning research needs into a clearer shopping flow while keeping the interface warm, usable, and consistent with the TimmyCare identity.",
+    outcome: "The case study now presents TimmyCare as a fuller UX project: brand guide, empathy maps, personas, journey map, sitemap, user flow, low-fidelity wireframes, and final app screens.",
     details: [
-      "Added user personas, empathy maps, scenarios, sitemap, journey map, and userflow.",
-      "Separated low-fidelity wireframes from the high-fidelity screen gallery.",
-      "Used full-display image treatment so research artifacts are not cropped.",
-      "Kept the TimmyCare burgundy/coral/blush theme across light and dark modes.",
+      "Replaced the old generic project-file treatment with a TimmyCare brand-guide browser.",
+      "Added empathy maps, user personas, user scenarios, journey map, sitemap, and user flow support.",
+      "Added six low-fidelity wireframes and four final mobile app screens as dedicated visual sections.",
+      "Removed the Adobe XD prototype embed so the section can be replaced with the code-based app demonstration.",
+      "Applied TimmyCare cream, blush, burgundy, coral, and green styling across light and dark modes.",
     ],
-    scrollBrowseTitle: "High-Fidelity Wireframe",
-    scrollBrowseText: "A horizontal screen browser showing the polished TimmyCare app direction.",
-    scrollImages: timmyCareScreens,
+    scrollBrowseTitle: "Brand Guide",
+    scrollBrowseText: "Scroll through the TimmyCare brand guide.",
+    scrollBrowseSubtext: "Identity, audience, values, typography, color, and app direction.",
+    scrollBrowseAction: "Browse guide →",
+    scrollImages: timmyCareBrandGuide,
     isTimmyCare: true,
   },
   {
@@ -523,7 +632,7 @@ const projects = [
     details: [
       "Restored the full-page website scroll preview using scwcharitywebpage.png.",
       "Added sitemap, user persona, SCW logo, and full logo display as research/brand artifacts.",
-      "Added low-fidelity wireframes Page 01 through Page 13 as a separate section.",
+      "Reworked the low-fidelity wireframes into a tab/card presentation with a direct image frame.",
       "Added the SCW Brand Design System PDF with preview, open-PDF action, color swatches, and brand-system highlights.",
       "Placed the sections in UX process order: final preview, overview, personas, sitemap, wireframes, logo, and brand system highlights.",
     ],
@@ -547,11 +656,11 @@ const projects = [
       "Improved Messaging and Favorites with richer chat headers, safety reminders, conversation starters, message sent toasts, saved people/signs behavior, removal toasts, and tab-style organization.",
       "Added shared components, hooks, utilities, premium status, favorite profile services, profile image assets, PWA metadata, build output, roadmap docs, and a Bluehost upload zip.",
       "Updated the design system with a premium light/dark palette, cleaner 8px-style cards, better line heights, updated element colors, and improved shadows.",
+      "Added Illustrator high-fidelity mockups and the full project guide assets as dedicated presentation sections.",
     ],
-    scrollBrowseTitle: "Illustrator Mock-Up",
-    scrollBrowseText: "A horizontal mock-up browser for the AstroMatch mobile app screens and product direction.",
-    scrollImages: astroMockups,
     liveUrl: "http://website-b862f62d.pef.fai.mybluehost.me/",
+    highFidelityMockups: astroHighFidelityMockups,
+    projectGuide: astroProjectGuide,
     isAstro: true,
   },
   {
@@ -621,16 +730,87 @@ function getProjectDataById(id) {
   };
 }
 
-function ScrollBrowse({ title, text, images, theme = "" }) {
+function ProjectSectionNav({ projectData }) {
+  const sharedItems = [
+    { href: "#overview", label: "Overview" },
+    { href: "#project-details", label: "Details" },
+    { href: "#case-study", label: "Process" },
+  ];
+
+  const projectItems = {
+    "1": [
+      { href: "#redesign-system", label: "System" },
+      { href: "#logo", label: "Logo" },
+      { href: "#wireframes", label: "Wireframes" },
+      { href: "#collateral", label: "Collateral" },
+      { href: "#user-flow", label: "User Flow" },
+      { href: "#prototype", label: "Prototype" },
+      { href: "#style-guide", label: "Style Guide" },
+    ],
+    "2": [
+      { href: "#brand-system", label: "Brand System" },
+      { href: "#deliverables", label: "Deliverables" },
+    ],
+    "3": [
+      { href: "#brand-guide", label: "Brand Guide" },
+      { href: "#ux-research", label: "Research" },
+      { href: "#sitemap", label: "Sitemap" },
+      { href: "#user-flow", label: "User Flow" },
+      { href: "#wireframes", label: "Wireframes" },
+      { href: "#final-screens", label: "Final Screens" },
+      { href: "#prototype", label: "Prototype" },
+    ],
+    "4": [
+      { href: "#personas", label: "Personas" },
+      { href: "#sitemap", label: "Sitemap" },
+      { href: "#wireframes", label: "Wireframes" },
+      { href: "#logo", label: "Logo" },
+      { href: "#brand-system", label: "Brand System" },
+    ],
+    "5": [
+      { href: "#high-fidelity", label: "Mockups" },
+      { href: "#project-guide", label: "Guide" },
+      { href: "#upgrades", label: "Upgrades" },
+      { href: "#live-app", label: "Live App" },
+    ],
+    "6": [
+      { href: "#motion-process", label: "Process" },
+      { href: "#technical-delivery", label: "Delivery" },
+    ],
+    "7": [
+      { href: "#live-preview", label: "Live Preview" },
+      { href: "#framework", label: "Framework" },
+      { href: "#style-guide", label: "Style Guide" },
+      { href: "#implementation", label: "Code" },
+      { href: "#quality", label: "Quality" },
+    ],
+  };
+
+  const items = [...sharedItems, ...(projectItems[projectData.id] ?? []), { href: "#contact", label: "Contact" }];
+
+  return (
+    <nav className="project-page-nav" aria-label={`${projectData.title} section navigation`}>
+      {items.map((item) => (
+        <a href={item.href} key={`${projectData.id}-${item.href}`}>
+          {item.label}
+        </a>
+      ))}
+    </nav>
+  );
+}
+
+function ScrollBrowse({ id, title, text, subtext, actionLabel, images, theme = "" }) {
   if (!images?.length) return null;
 
   return (
-    <section className={`project-section scroll-browse-section ${theme}`}>
+    <section className={`project-section scroll-browse-section ${theme}`} id={id}>
       <div className="scroll-browse-head">
         <div>
           <p className="project-kicker">{title}</p>
           <h2>{text}</h2>
+          {subtext && <p className="scroll-browse-subtext">{subtext}</p>}
         </div>
+        {actionLabel && <span className="scroll-browse-action">{actionLabel}</span>}
       </div>
 
       <div className="scroll-browse-track">
@@ -654,17 +834,50 @@ function ScrollBrowse({ title, text, images, theme = "" }) {
   );
 }
 
+function ScwWireframeTabs({ wireframes }) {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const activeWireframe = wireframes[activeIndex];
+
+  return (
+    <div className="scw-wireframe-tabs">
+      <div className="scw-wireframe-tab-list" role="tablist" aria-label="SCW low-fidelity wireframe pages">
+        {wireframes.map((wire, index) => (
+          <button
+            type="button"
+            role="tab"
+            aria-selected={activeIndex === index}
+            className={activeIndex === index ? "active" : ""}
+            onClick={() => setActiveIndex(index)}
+            key={wire}
+          >
+            Wireframe {String(index + 1).padStart(2, "0")}
+          </button>
+        ))}
+      </div>
+
+      <figure className="scw-wireframe-feature-card">
+        <img src={activeWireframe} alt={`SCW low-fidelity wireframe ${activeIndex + 1}`} />
+        <figcaption>
+          <span>Selected Wireframe</span>
+          <h3>Screen structure {String(activeIndex + 1).padStart(2, "0")}</h3>
+          <p>Low-fidelity layout card focused on page structure, hierarchy, and content flow.</p>
+        </figcaption>
+      </figure>
+    </div>
+  );
+}
+
 function RonHeroBrowser({ images }) {
   return (
-    <div className="ron-hero-browser" aria-label="Ron Zalko wireframes and design explorations">
+    <div className="ron-hero-browser" id="redesign-system" aria-label="Ron Zalko wireframes and design explorations">
       <div className="ron-hero-browser-head">
         <div className="ron-scroll-indicator">
           <span></span>
-          <p>Scroll to View</p>
+          <p>Browse →</p>
         </div>
         <div className="ron-hero-head-copy">
-          <span>Horizontal case study browser</span>
-          <p>Logo, sitemap, high-fidelity wireframes, business cards, envelope, invoice, and poster.</p>
+          <span>Redesign System</span>
+          <p>Scroll through the visual system.</p>
         </div>
       </div>
       <div className="ron-hero-track">
@@ -689,7 +902,7 @@ function CaseStudyStructure({ projectData }) {
   if (!caseStudy) return null;
 
   return (
-    <section className="project-case-study-flow" aria-label="Shared case study structure">
+    <section className="project-case-study-flow" id="case-study" aria-label="Shared case study structure">
       <article className="case-study-panel case-study-snapshot">
         <p className="project-kicker">Snapshot</p>
         <h2>What the project covers</h2>
@@ -726,6 +939,7 @@ function CaseStudyStructure({ projectData }) {
 }
 
 function StyleGuideSection({
+  id,
   className = "",
   kicker,
   title,
@@ -738,7 +952,7 @@ function StyleGuideSection({
   if (!pdf) return null;
 
   return (
-    <section className={`project-section style-guide-section ${className}`}>
+    <section className={`project-section style-guide-section ${className}`} id={id}>
       <div className="style-guide-head">
         <div>
           <p className="project-kicker">{kicker}</p>
@@ -858,7 +1072,7 @@ function DetailCards({ projectData }) {
   const isKvdst = projectData.isKvdst;
 
   return (
-    <section className={`cards-container ${isKvdst ? "kvdst-cards-container" : ""}`}>
+    <section className={`cards-container ${isKvdst ? "kvdst-cards-container" : ""}`} id="project-details">
       <article className="card">
         <p className="project-kicker">Overview</p>
         <h2>Project Overview</h2>
@@ -940,14 +1154,6 @@ export default function ProjectDetailPage() {
           </div>
         </Link>
 
-        <Link to="/#work" className="project-nav-indicator project-work-indicator">
-          <div className="project-nav-line"></div>
-          <div className="project-nav-content">
-            <span className="project-nav-arrow">↑</span>
-            <p>Return to Work Section</p>
-          </div>
-        </Link>
-
         <Link to={`/projects/${nextProjectId}`} className="project-nav-indicator project-next-indicator">
           <div className="project-nav-line"></div>
           <div className="project-nav-content">
@@ -957,7 +1163,9 @@ export default function ProjectDetailPage() {
         </Link>
       </nav>
 
-      <section className="project-hero">
+      <ProjectSectionNav projectData={projectData} />
+
+      <section className="project-hero" id="overview">
         <div className="project-title-block">
           <p className="project-kicker">Project Case Study</p>
 
@@ -1016,13 +1224,37 @@ export default function ProjectDetailPage() {
         )}
       </section>
 
+      {projectData.isMelody && projectData.scrollImages && (
+        <ScrollBrowse
+          id="brand-system"
+          title={projectData.scrollBrowseTitle}
+          text={projectData.scrollBrowseText}
+          subtext={projectData.scrollBrowseSubtext}
+          actionLabel={projectData.scrollBrowseAction}
+          images={projectData.scrollImages}
+          theme="melody-scroll-showcase"
+        />
+      )}
+
+      {projectData.isTimmyCare && projectData.scrollImages && (
+        <ScrollBrowse
+          id="brand-guide"
+          title={projectData.scrollBrowseTitle}
+          text={projectData.scrollBrowseText}
+          subtext={projectData.scrollBrowseSubtext}
+          actionLabel={projectData.scrollBrowseAction}
+          images={projectData.scrollImages}
+          theme="timmycare-scroll"
+        />
+      )}
+
       <DetailCards projectData={projectData} />
 
       <CaseStudyStructure projectData={projectData} />
 
       {projectData.isScw && (
         <>
-          <section className="project-section scw-artifacts scw-persona-section">
+          <section className="project-section scw-artifacts scw-persona-section" id="personas">
             <p className="project-kicker">User Personas</p>
             <h2>Audience needs before page layout.</h2>
             <div className="scw-artifact-grid">
@@ -1038,7 +1270,7 @@ export default function ProjectDetailPage() {
             </div>
           </section>
 
-          <section className="project-section scw-artifacts scw-sitemap-section">
+          <section className="project-section scw-artifacts scw-sitemap-section" id="sitemap">
             <p className="project-kicker">Sitemap and Facets</p>
             <h2>Navigation structure and homepage priorities.</h2>
             <div className="scw-artifact-grid scw-single-artifact">
@@ -1049,20 +1281,16 @@ export default function ProjectDetailPage() {
             </div>
           </section>
 
-          <section className="project-section scw-wireframes">
+          <section className="project-section scw-wireframes" id="wireframes">
             <p className="project-kicker">Low-Fidelity Wireframes</p>
-            <h2>Page 01 through Page 13.</h2>
-            <div className="scw-wireframe-grid">
-              {scwWireframes.map((wire, index) => (
-                <figure className="scw-wireframe-card" key={wire}>
-                  <img src={wire} alt={`SCW low-fidelity wireframe page ${index + 1}`} />
-                  <figcaption>Page {index + 1}</figcaption>
-                </figure>
-              ))}
-            </div>
+            <h2>Low-fidelity screen structure and page flow.</h2>
+            <p className="scw-wireframe-intro">
+              Select a wireframe tab to review the early page layout without the mobile-device presentation frame.
+            </p>
+            <ScwWireframeTabs wireframes={scwWireframes} />
           </section>
 
-          <section className="project-section scw-artifacts scw-logo-section">
+          <section className="project-section scw-artifacts scw-logo-section" id="logo">
             <p className="project-kicker">Logo and Identity</p>
             <h2>The SCW Warrior visual anchor.</h2>
             <div className="scw-artifact-grid">
@@ -1080,6 +1308,7 @@ export default function ProjectDetailPage() {
 
           <StyleGuideSection
             className="scw-brand-system"
+            id="brand-system"
             kicker="Brand Design System"
             title="SCW visual rules behind the website."
             description="The SCW Brand Design System connects the charity tone, logo usage, colors, and reusable visual rules behind the website experience."
@@ -1101,43 +1330,65 @@ export default function ProjectDetailPage() {
       )}
 
       {projectData.isTimmyCare && (
-        <section className="project-section timmycare-research">
-          <p className="project-kicker">UX Research Foundation</p>
-          <h2>Research artifacts before the prototype.</h2>
+        <>
+          <section className="project-section timmycare-research" id="ux-research">
+            <p className="project-kicker">UX Research Foundation</p>
+            <h2>Research, structure, and wireframes before the prototype.</h2>
 
-          <div className="timmycare-logo-panel">
-            <img src={timmyCareResearch.logo} alt="TimmyHairCare logo" />
-            <p>Research, structure, and wireframes supporting the TimmyHairCare app redesign.</p>
-          </div>
+            <div className="timmycare-logo-panel">
+              <img src={timmyCareResearch.logo} alt="TimmyCare primary logo" />
+              <img src={timmyCareResearch.alternateLogo} alt="TimmyCare gray and black logo direction" />
+              <p>TimmyCare combines a warm haircare identity with a practical mobile shopping flow for browsing, comparing, saving, and checking out.</p>
+            </div>
 
-          <div className="timmycare-pdf-grid">
-            {timmyCareResearch.researchMaps.map((doc) => (
-              <article className="timmycare-pdf-card" key={doc.title}>
-                <h3>{doc.title}</h3>
-                {doc.src ? (
-                  <>
-                    <iframe src={doc.src} title={doc.title}></iframe>
-                    <a href={doc.src} target="_blank" rel="noreferrer">Open PDF ↗</a>
-                  </>
-                ) : (
-                  <p className="timmycare-file-note">
-                    The original {doc.title.toLowerCase()} PDF is not currently present in this restored workspace.
-                  </p>
-                )}
-              </article>
-            ))}
-          </div>
+            <div className="timmycare-section-head">
+              <p className="project-kicker">Maps and Flow</p>
+              <h3>Sitemap, journey map, and user flow.</h3>
+            </div>
+            <div className="timmycare-pdf-grid">
+              {timmyCareResearch.researchMaps.map((doc) => (
+                <article
+                  className="timmycare-pdf-card"
+                  id={doc.title === "Sitemap" ? "sitemap" : doc.title === "User Flow" ? "user-flow" : undefined}
+                  key={doc.title}
+                >
+                  <h3>{doc.title}</h3>
+                  <iframe src={doc.src} title={doc.title}></iframe>
+                  <a href={doc.src} target="_blank" rel="noreferrer">Open PDF ↗</a>
+                </article>
+              ))}
+            </div>
 
-          <div className="timmycare-image-grid">
-            {[...timmyCareResearch.empathyMaps, ...timmyCareResearch.personas, ...timmyCareResearch.scenarios].map((item) => (
-              <figure className="timmycare-research-card" key={item.title}>
-                <img src={item.src} alt={item.title} />
-                <figcaption>{item.title}</figcaption>
-              </figure>
-            ))}
-          </div>
+            <div className="timmycare-section-head">
+              <p className="project-kicker">Empathy and Personas</p>
+              <h3>User needs behind the shopping flow.</h3>
+            </div>
+            <div className="timmycare-image-grid">
+              {[...timmyCareResearch.empathyMaps, ...timmyCareResearch.personas].map((item) => (
+                <figure className="timmycare-research-card" key={item.title}>
+                  <img src={item.src} alt={item.title} />
+                  <figcaption>{item.title}</figcaption>
+                </figure>
+              ))}
+            </div>
 
-          {timmyCareResearch.lowFi.length > 0 && (
+            <div className="timmycare-section-head">
+              <p className="project-kicker">User Scenario</p>
+              <h3>Key shopping and saved-care moments.</h3>
+            </div>
+            <div className="timmycare-image-grid">
+              {timmyCareResearch.scenarios.map((item) => (
+                <figure className="timmycare-research-card" key={item.title}>
+                  <img src={item.src} alt={item.title} />
+                  <figcaption>{item.title}</figcaption>
+                </figure>
+              ))}
+            </div>
+
+            <div className="timmycare-section-head" id="wireframes">
+              <p className="project-kicker">Low-Fidelity Wireframes</p>
+              <h3>Six early mobile screens used to shape the app flow.</h3>
+            </div>
             <div className="timmycare-lowfi-grid">
               {timmyCareResearch.lowFi.map((item) => (
                 <figure className="timmycare-lowfi-card" key={item.title}>
@@ -1146,13 +1397,59 @@ export default function ProjectDetailPage() {
                 </figure>
               ))}
             </div>
-          )}
-        </section>
+
+            <div className="timmycare-section-head" id="final-screens">
+              <p className="project-kicker">Final App Screens</p>
+              <h3>Four polished screens from the redesigned mobile app.</h3>
+            </div>
+            <div className="timmycare-lowfi-grid timmycare-final-grid">
+              {timmyCareResearch.finalScreens.map((item) => (
+                <figure className="timmycare-lowfi-card" key={item.title}>
+                  <img src={item.src} alt={item.title} />
+                  <figcaption>{item.title}</figcaption>
+                </figure>
+              ))}
+            </div>
+          </section>
+
+          <section className="live-site-section timmycare-prototype-section" id="prototype">
+            <div className="live-site-head">
+              <div>
+                <p className="project-kicker">Interactive Prototype</p>
+                <h2>Code-based TimmyCare demo placeholder.</h2>
+                <p className="live-site-note">
+                  The Adobe prototype implementation has been removed. This section is ready to be replaced with the code-based sample app demonstration when it is provided.
+                </p>
+              </div>
+            </div>
+            <div className="timmycare-prototype-placeholder">
+              <span>Coming next</span>
+              <h3>Interactive sample app demonstration</h3>
+              <p>
+                The next version of this area will host the code-based TimmyCare app demo instead of an Adobe XD iframe.
+              </p>
+            </div>
+            <div className="timmycare-swatch-row">
+              {[
+                { name: "Cream", color: "#fff8f1" },
+                { name: "Blush", color: "#f8d8d2" },
+                { name: "Burgundy", color: "#5a1c2b" },
+                { name: "Coral", color: "#ff7043" },
+                { name: "Green", color: "#388e3c" },
+              ].map((swatch) => (
+                <span key={swatch.name}>
+                  <i style={{ background: swatch.color }}></i>
+                  {swatch.name}
+                </span>
+              ))}
+            </div>
+          </section>
+        </>
       )}
 
       {projectData.isRon && (
         <>
-          <section className="project-section ron-artifact-section">
+          <section className="project-section ron-artifact-section" id="logo">
             <p className="project-kicker">Logo Redesign</p>
             <h2>Strength, balance, and unity, one unified mark.</h2>
             <p className="ron-section-note">
@@ -1183,11 +1480,11 @@ export default function ProjectDetailPage() {
             </div>
           </section>
 
-          <section className="project-section ron-wireframe-section">
+          <section className="project-section ron-wireframe-section" id="wireframes">
             <div className="ron-section-headline">
               <div>
                 <p className="project-kicker">Wireframes and Mockups</p>
-                <h2>High-fidelity website screens from Page 01 through Page 12.</h2>
+                <h2>Website screen system.</h2>
               </div>
               <p>
                 The mockup sequence translates the sitemap into a complete web experience:
@@ -1233,11 +1530,11 @@ export default function ProjectDetailPage() {
             </div>
           </section>
 
-          <section className="project-section ron-collateral-section">
+          <section className="project-section ron-collateral-section" id="collateral">
             <div className="ron-section-headline">
               <div>
                 <p className="project-kicker">Brand Collateral</p>
-                <h2>Cards, stationery, and operational brand touchpoints.</h2>
+                <h2>Essential brand touchpoints.</h2>
               </div>
               <p>
                 The collateral system turns the refreshed identity into practical
@@ -1275,11 +1572,11 @@ export default function ProjectDetailPage() {
             </div>
           </section>
 
-          <section className="project-section ron-artifact-section">
+          <section className="project-section ron-artifact-section" id="user-flow">
             <div className="ron-section-headline">
               <div>
                 <p className="project-kicker">User Flow</p>
-                <h2>How users move from discovery to membership action.</h2>
+                <h2>From discovery to active membership.</h2>
               </div>
               <p>
                 The flow defines a clearer journey for new visitors and returning
@@ -1310,11 +1607,11 @@ export default function ProjectDetailPage() {
             </div>
           </section>
 
-          <section className="live-site-section ron-prototype-section">
+          <section className="live-site-section ron-prototype-section" id="prototype">
             <div className="live-site-head">
               <div>
                 <p className="project-kicker">Adobe XD Prototype</p>
-                <h2>Prototype of the redesigned Ron Zalko website.</h2>
+                <h2>New Ron Zalko prototype.</h2>
                 <p className="live-site-note">
                   The prototype shows the full redesigned experience: improved
                   navigation, modern layout, and the new brand system in action.
@@ -1334,6 +1631,7 @@ export default function ProjectDetailPage() {
 
           <StyleGuideSection
             className="ron-pdf-section"
+            id="style-guide"
             kicker="Style Guide"
             title="Ron zalko style-guide.pdf"
             description="The vertical PDF preview documents the redesign process: brief, problem analysis, research, competitive analysis, personas, empathy map, journey map, user flow, redesign goals, wireframes, collateral, and results."
@@ -1355,45 +1653,59 @@ export default function ProjectDetailPage() {
       )}
 
       {projectData.isMelody && (
-        <section className="project-section melody-brand-sections">
+        <section className="project-section melody-brand-sections" id="deliverables">
           <p className="project-kicker">Melody Beats Items</p>
-          <h2>Logo, business cards, poster cards, and package design.</h2>
-          <div className="melody-section-grid">
+          <h2>Brand deliverables organized by touchpoint.</h2>
+          <p className="melody-deliverables-intro">
+            The deliverables are grouped into clearer presentation cards so each system has its own hierarchy, lead visual, and supporting image set.
+          </p>
+          <div className="melody-deliverables-stack">
             {[
               {
-                title: "Logo Sketches and Final Designs",
+                title: "Logo System",
                 tool: "Designed in Photoshop",
                 description: "Sketch exploration, waveform concepts, logo variations, and final Melody Beats marks.",
                 images: melodyLogoSystem,
+                feature: melodyLogoBlue,
               },
               {
-                title: "Business Card System",
+                title: "Business Cards",
                 tool: "Designed in Photoshop",
                 description: "Front and back card applications using the Melody blue, coral, teal, and warm gold palette.",
                 images: melodyBusinessCards,
+                feature: melodyBusinessCardMain1,
               },
               {
-                title: "Poster Card System",
+                title: "Postal Cards",
                 tool: "Designed in Photoshop",
-                description: "Promotional poster cards for the headphone/music campaign and postcard-style brand touchpoints.",
+                description: "Promotional postal cards for the headphone/music campaign and postcard-style brand touchpoints.",
                 images: melodyPostcards,
+                feature: melodyPosterCard1,
               },
               {
-                title: "Product Package Design",
+                title: "Product/Package Design",
                 tool: "Designed with Adobe After Effects",
                 description: "Headphone product visuals, package mockups, unfolded box artwork, and final branded items.",
                 images: melodyProductDesign,
+                feature: melodyProductBox,
               },
             ].map((section) => (
               <article className="melody-item-card" key={section.title}>
-                <div className="melody-item-images">
-                  {section.images.map((image) => (
-                    <img src={image} alt={section.title} key={image} />
-                  ))}
+                <div className="melody-item-copy">
+                  <p className="project-kicker">{section.tool}</p>
+                  <h3>{section.title}</h3>
+                  <p>{section.description}</p>
                 </div>
-                <p className="project-kicker">{section.tool}</p>
-                <h3>{section.title}</h3>
-                <p>{section.description}</p>
+                <div className="melody-item-feature">
+                  <img src={section.feature} alt={`${section.title} featured design`} />
+                </div>
+                <div className="melody-item-images" aria-label={`${section.title} supporting assets`}>
+                  {section.images
+                    .filter((image) => image !== section.feature)
+                    .map((image, index) => (
+                      <img src={image} alt={`${section.title} supporting asset ${index + 1}`} key={image} />
+                    ))}
+                </div>
               </article>
             ))}
           </div>
@@ -1402,7 +1714,33 @@ export default function ProjectDetailPage() {
 
       {projectData.isAstro && projectData.liveUrl && (
         <>
-          <section className="project-section astro-upgrade-section">
+          <section className="project-section astro-highfi-section" id="high-fidelity">
+            <p className="project-kicker">High-Fidelity Mockups</p>
+            <h2>Illustrator mockups and supporting app screens.</h2>
+            <div className="astro-highfi-grid">
+              {projectData.highFidelityMockups.map((item) => (
+                <figure className="astro-highfi-card" key={item.title}>
+                  <img src={item.image} alt={`AstroMatch ${item.title}`} />
+                  <figcaption>
+                    <span>{item.title}</span>
+                    <p>{item.note}</p>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </section>
+
+          <ScrollBrowse
+            id="project-guide"
+            title="Project Guide"
+            text="AstroMatch guide assets."
+            subtext="Concept, value proposition, monetization, feature planning, data needs, and development approach."
+            actionLabel="Browse guide →"
+            images={projectData.projectGuide}
+            theme="astro-guide-scroll"
+          />
+
+          <section className="project-section astro-upgrade-section" id="upgrades">
             <p className="project-kicker">Upgrade Summary</p>
             <h2>What changed across the AstroMatch product.</h2>
             <div className="astro-upgrade-grid">
@@ -1419,7 +1757,7 @@ export default function ProjectDetailPage() {
             </div>
           </section>
 
-          <section className="live-site-section astro-live-section">
+          <section className="live-site-section astro-live-section" id="live-app">
             <div className="live-site-head">
               <div>
                 <p className="project-kicker">Live App Display</p>
@@ -1435,10 +1773,13 @@ export default function ProjectDetailPage() {
         </>
       )}
 
-      {projectData.scrollImages && !projectData.isRon && (
+      {projectData.scrollImages && !projectData.isRon && !projectData.isMelody && !projectData.isTimmyCare && !projectData.isAstro && (
         <ScrollBrowse
+          id="project-gallery"
           title={projectData.scrollBrowseTitle}
           text={projectData.scrollBrowseText}
+          subtext={projectData.scrollBrowseSubtext}
+          actionLabel={projectData.scrollBrowseAction}
           images={projectData.scrollImages}
           theme={projectData.isTimmyCare ? "timmycare-scroll" : ""}
         />
@@ -1446,7 +1787,7 @@ export default function ProjectDetailPage() {
 
       {projectData.isMotion && (
         <>
-          <section className="motion-process-section">
+          <section className="motion-process-section" id="motion-process">
             <div className="motion-process-head">
               <p className="motion-section-kicker">Motion Process</p>
               <h2>How the intro bumper was built.</h2>
@@ -1463,7 +1804,7 @@ export default function ProjectDetailPage() {
             </div>
           </section>
 
-          <section className="motion-delivery-section">
+          <section className="motion-delivery-section" id="technical-delivery">
             <p className="motion-section-kicker">Technical Delivery</p>
             <h2>Final video prepared for web playback.</h2>
             <div className="motion-delivery-grid">
@@ -1480,7 +1821,7 @@ export default function ProjectDetailPage() {
 
       {projectData.isKvdst && (
         <>
-          <section className="live-site-section kvdst-live-section">
+          <section className="live-site-section kvdst-live-section" id="live-preview">
             <div className="live-site-head">
               <div>
                 <p className="project-kicker">Live Preview</p>
@@ -1512,7 +1853,7 @@ export default function ProjectDetailPage() {
             )}
           </section>
 
-          <section className="project-section kvdst-process-section">
+          <section className="project-section kvdst-process-section" id="framework">
             <p className="project-kicker">Case Study Framework</p>
             <h2>KVDST redesign from strategy to delivery.</h2>
             <div className="kvdst-framework-layout">
@@ -1544,6 +1885,7 @@ export default function ProjectDetailPage() {
 
           <StyleGuideSection
             className="kvdst-pdf-section"
+            id="style-guide"
             kicker="Style Guide"
             title="KVDST record label style guide."
             description="The KVDST style-guide preview frames the record-label identity with the same document treatment used for the SCW brand-system section."
@@ -1562,7 +1904,7 @@ export default function ProjectDetailPage() {
             ]}
           />
 
-          <section className="project-section kvdst-code-section">
+          <section className="project-section kvdst-code-section" id="implementation">
             <p className="project-kicker">Implementation</p>
             <h2>Code structure and backup architecture.</h2>
             <p className="kvdst-code-note">
@@ -1578,7 +1920,7 @@ export default function ProjectDetailPage() {
             </div>
           </section>
 
-          <section className="project-section kvdst-quality-section">
+          <section className="project-section kvdst-quality-section" id="quality">
             <p className="project-kicker">Delivery Quality</p>
             <h2>Professional release signals.</h2>
             <div className="kvdst-quality-grid">
@@ -1593,19 +1935,17 @@ export default function ProjectDetailPage() {
         </>
       )}
 
-      <footer className="project-detail-footer">
+      <footer className="project-detail-footer" id="contact">
         <div>
-          <p className="project-kicker">Next Step</p>
-          <h2>Keep exploring the work.</h2>
+          <p className="project-kicker">Let's Connect</p>
+          <h2>Let’s work together.</h2>
           <p>
-            Move through the project library, view another case study, or reach
-            out if the work connects with what you’re building.
+            Reach out if this case study connects with the kind of design,
+            interface, or front-end work you want to build.
           </p>
         </div>
 
         <div className="project-footer-actions">
-          <Link to="/work">Back to Project Library</Link>
-          <Link to={`/projects/${nextProjectId}`}>Next Project →</Link>
           <Link to="/contact" className="tb-btn tb-btn-primary">
             Let’s Work Together ↗
           </Link>

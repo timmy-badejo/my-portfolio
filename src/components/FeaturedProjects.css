@@ -155,15 +155,21 @@
 .fp-project-card-melody {
   background:
     radial-gradient(circle at 18% 10%, rgba(239, 111, 97, 0.2), transparent 30%),
-    radial-gradient(circle at 88% 20%, rgba(33, 69, 130, 0.18), transparent 28%),
+    radial-gradient(circle at 88% 20%, rgba(6, 79, 137, 0.18), transparent 28%),
+    radial-gradient(circle at 42% 100%, rgba(207, 45, 141, 0.1), transparent 28%),
     linear-gradient(145deg, #fff8f4 0%, #f3eee6 56%, #eef4f6 100%);
-  border: 1px solid rgba(33, 69, 130, 0.18);
+  border: 1px solid rgba(6, 79, 137, 0.18);
 }
 
 .fp-project-card-melody .fp-project-image-container {
   background:
     linear-gradient(135deg, rgba(239, 111, 97, 0.14), transparent 44%),
-    #214582;
+    #064f89;
+}
+
+.fp-project-card-melody .fp-project-image {
+  object-fit: contain;
+  padding: 18px;
 }
 
 .fp-project-card-melody .fp-project-title {
@@ -176,7 +182,7 @@
 }
 
 .fp-project-card-melody .fp-software-used strong {
-  color: #214582;
+  color: #064f89;
 }
 
 .fp-project-card-melody .fp-software-used span,
@@ -195,6 +201,7 @@
   background:
     radial-gradient(circle at 18% 10%, rgba(239, 111, 97, 0.22), transparent 30%),
     radial-gradient(circle at 88% 20%, rgba(31, 127, 122, 0.18), transparent 28%),
+    radial-gradient(circle at 42% 100%, rgba(207, 45, 141, 0.12), transparent 28%),
     linear-gradient(145deg, #071c36 0%, #0b2e55 58%, #061b35 100%);
   border-color: rgba(255, 145, 36, 0.24);
 }
@@ -213,6 +220,133 @@
   background: rgba(239, 111, 97, 0.16);
   border-color: rgba(255, 145, 36, 0.26);
   color: #fff8ef;
+}
+
+.fp-project-card-timmycare {
+  background:
+    radial-gradient(circle at 14% 10%, rgba(255, 112, 67, 0.13), transparent 30%),
+    radial-gradient(circle at 88% 18%, rgba(248, 216, 210, 0.55), transparent 30%),
+    linear-gradient(145deg, #fff8f1 0%, #fff1eb 58%, #f8d8d2 100%);
+  border: 1px solid rgba(90, 28, 43, 0.16);
+}
+
+.fp-project-card-timmycare .fp-project-image-container {
+  background: #fff8f1;
+}
+
+.fp-project-card-timmycare .fp-project-image {
+  object-fit: contain;
+  padding: 18px;
+}
+
+.fp-project-card-timmycare .fp-project-title {
+  color: #2b1717;
+}
+
+.fp-project-card-timmycare .fp-project-desc,
+.fp-project-card-timmycare .fp-software-used {
+  color: #674848;
+}
+
+.fp-project-card-timmycare .fp-software-used strong {
+  color: #5a1c2b;
+}
+
+.fp-project-card-timmycare .fp-software-used span,
+.fp-project-card-timmycare .fp-view-project-btn {
+  background: rgba(255, 112, 67, 0.14);
+  border: 1px solid rgba(90, 28, 43, 0.16);
+  color: #2b1717;
+}
+
+.fp-project-card-timmycare .fp-view-project-btn:hover {
+  background: #ff7043;
+  color: #fff;
+}
+
+:root[data-theme="dark"] .fp-project-card-timmycare {
+  background:
+    radial-gradient(circle at 14% 10%, rgba(255, 112, 67, 0.18), transparent 30%),
+    radial-gradient(circle at 88% 18%, rgba(90, 28, 43, 0.22), transparent 30%),
+    linear-gradient(145deg, #2a1518 0%, #341a1f 58%, #1a1011 100%);
+  border-color: rgba(255, 112, 67, 0.24);
+}
+
+:root[data-theme="dark"] .fp-project-card-timmycare .fp-project-title {
+  color: #fff8f1;
+}
+
+:root[data-theme="dark"] .fp-project-card-timmycare .fp-project-desc,
+:root[data-theme="dark"] .fp-project-card-timmycare .fp-software-used {
+  color: #f8d8d2;
+}
+
+:root[data-theme="dark"] .fp-project-card-timmycare .fp-software-used span,
+:root[data-theme="dark"] .fp-project-card-timmycare .fp-view-project-btn {
+  background: rgba(255, 112, 67, 0.16);
+  border-color: rgba(255, 112, 67, 0.26);
+  color: #fff8f1;
+}
+
+.fp-project-card-scw {
+  background:
+    radial-gradient(circle at 16% 10%, rgba(255, 179, 142, 0.22), transparent 30%),
+    radial-gradient(circle at 88% 18%, rgba(155, 207, 194, 0.18), transparent 30%),
+    linear-gradient(145deg, #fffaf4 0%, #fff3e8 58%, #f4dfd4 100%);
+  border: 1px solid rgba(105, 11, 34, 0.16);
+}
+
+.fp-project-card-scw .fp-project-image-container {
+  background: #fff3e8;
+}
+
+.fp-project-card-scw .fp-project-title {
+  color: #3a0d1d;
+}
+
+.fp-project-card-scw .fp-project-desc,
+.fp-project-card-scw .fp-software-used {
+  color: #62424c;
+}
+
+.fp-project-card-scw .fp-software-used strong {
+  color: #690b22;
+}
+
+.fp-project-card-scw .fp-software-used span,
+.fp-project-card-scw .fp-view-project-btn {
+  background: rgba(255, 179, 142, 0.18);
+  border: 1px solid rgba(105, 11, 34, 0.16);
+  color: #3a0d1d;
+}
+
+.fp-project-card-scw .fp-view-project-btn:hover {
+  background: #690b22;
+  color: #fff3e8;
+}
+
+:root[data-theme="dark"] .fp-project-card-scw {
+  background:
+    radial-gradient(circle at 16% 10%, rgba(255, 179, 142, 0.22), transparent 30%),
+    radial-gradient(circle at 88% 18%, rgba(105, 11, 34, 0.22), transparent 30%),
+    linear-gradient(145deg, #2b0814 0%, #3a0d1d 58%, #16060d 100%);
+  border-color: rgba(255, 179, 142, 0.26);
+}
+
+:root[data-theme="dark"] .fp-project-card-scw .fp-project-title {
+  color: #fff3e8;
+}
+
+:root[data-theme="dark"] .fp-project-card-scw .fp-project-desc,
+:root[data-theme="dark"] .fp-project-card-scw .fp-software-used {
+  color: #f1d4c6;
+}
+
+:root[data-theme="dark"] .fp-project-card-scw .fp-software-used span,
+:root[data-theme="dark"] .fp-project-card-scw .fp-view-project-btn {
+  background: rgba(255, 179, 142, 0.14);
+  border-color: rgba(255, 179, 142, 0.24);
+  color: #fff3e8;
 }
 
 .fp-project-card-astro {

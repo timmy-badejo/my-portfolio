@@ -170,7 +170,14 @@ export default function LandingPage() {
           {featuredWork.map((project) => (
             <Link
               to={project.link}
-              className={`tb-work-card ${project.id === "2" ? "tb-work-card-melody" : ""}`}
+              className={[
+                "tb-work-card",
+                project.id === "1" ? "tb-work-card-ron" : "",
+                project.id === "2" ? "tb-work-card-melody" : "",
+                project.id === "3" ? "tb-work-card-timmycare" : "",
+                project.id === "4" ? "tb-work-card-scw" : "",
+                project.id === "5" ? "tb-work-card-astro" : "",
+              ].join(" ").trim()}
               key={project.id}
               onMouseMove={handleTiltMove}
               onMouseLeave={handleTiltLeave}

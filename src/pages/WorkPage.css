@@ -183,19 +183,82 @@
 /* Project-specific card themes */
 .tb-project-card-ron {
   background:
-    radial-gradient(circle at 18% 12%, rgba(212, 40, 59, 0.14), transparent 34%),
-    linear-gradient(145deg, var(--surface), color-mix(in srgb, var(--surface) 78%, #d4283b 8%));
+    radial-gradient(circle at 18% 12%, rgba(196, 30, 58, 0.22), transparent 34%),
+    radial-gradient(circle at 88% 18%, rgba(139, 26, 26, 0.2), transparent 30%),
+    linear-gradient(145deg, #0a0a0a 0%, #111111 56%, #1a0a0a 100%);
+  border-color: rgba(196, 30, 58, 0.32);
+}
+
+.tb-project-card-ron .tb-project-image {
+  background:
+    linear-gradient(135deg, rgba(196, 30, 58, 0.18), transparent 44%),
+    #0a0a0a;
+}
+
+.tb-project-card-ron .tb-project-image img {
+  object-fit: contain;
+  padding: 18px;
 }
 
 .tb-project-card-ron .tb-project-content p,
 .tb-project-card-ron .tb-project-content strong {
-  color: #d4283b;
+  color: #ff4f66;
+}
+
+.tb-project-card-ron .tb-project-content h2 {
+  color: #f5ede6;
+}
+
+.tb-project-card-ron .tb-project-content span {
+  color: #d7c8c5;
+}
+
+.tb-project-card-ron .tb-project-tools small,
+.tb-project-card-ron .tb-preview-btn {
+  background: rgba(196, 30, 58, 0.16);
+  border-color: rgba(196, 30, 58, 0.34);
+  color: #f5ede6;
+}
+
+:root[data-theme="light"] .tb-project-card-ron {
+  background:
+    radial-gradient(circle at 18% 12%, rgba(196, 30, 58, 0.16), transparent 34%),
+    radial-gradient(circle at 88% 18%, rgba(139, 26, 26, 0.1), transparent 30%),
+    linear-gradient(145deg, #ffffff 0%, #fff8f7 56%, #fdf0ee 100%);
+  border-color: rgba(196, 30, 58, 0.22);
+}
+
+:root[data-theme="light"] .tb-project-card-ron .tb-project-image {
+  background:
+    linear-gradient(135deg, rgba(196, 30, 58, 0.1), transparent 44%),
+    #ffffff;
+}
+
+:root[data-theme="light"] .tb-project-card-ron .tb-project-content h2 {
+  color: #0a0a0a;
+}
+
+:root[data-theme="light"] .tb-project-card-ron .tb-project-content span {
+  color: #5e4f4f;
+}
+
+:root[data-theme="light"] .tb-project-card-ron .tb-project-content p,
+:root[data-theme="light"] .tb-project-card-ron .tb-project-content strong {
+  color: #c41e3a;
+}
+
+:root[data-theme="light"] .tb-project-card-ron .tb-project-tools small,
+:root[data-theme="light"] .tb-project-card-ron .tb-preview-btn {
+  background: rgba(196, 30, 58, 0.1);
+  border-color: rgba(196, 30, 58, 0.22);
+  color: #0a0a0a;
 }
 
 .tb-project-card-melody {
   background:
-    radial-gradient(circle at 18% 12%, rgba(33, 69, 130, 0.24), transparent 34%),
+    radial-gradient(circle at 18% 12%, rgba(6, 79, 137, 0.26), transparent 34%),
     radial-gradient(circle at 88% 18%, rgba(239, 111, 97, 0.2), transparent 28%),
+    radial-gradient(circle at 30% 95%, rgba(207, 45, 141, 0.12), transparent 28%),
     linear-gradient(145deg, #071c36 0%, #0b2e55 58%, #061b35 100%);
   border-color: rgba(255, 145, 36, 0.24);
 }
@@ -203,7 +266,12 @@
 .tb-project-card-melody .tb-project-image {
   background:
     linear-gradient(135deg, rgba(239, 111, 97, 0.16), transparent 42%),
-    #214582;
+    #064f89;
+}
+
+.tb-project-card-melody .tb-project-image img {
+  object-fit: contain;
+  padding: 18px;
 }
 
 .tb-project-card-melody .tb-project-content p,
@@ -225,9 +293,10 @@
 :root[data-theme="light"] .tb-project-card-melody {
   background:
     radial-gradient(circle at 18% 12%, rgba(239, 111, 97, 0.18), transparent 34%),
-    radial-gradient(circle at 88% 18%, rgba(33, 69, 130, 0.12), transparent 28%),
+    radial-gradient(circle at 88% 18%, rgba(6, 79, 137, 0.12), transparent 28%),
+    radial-gradient(circle at 30% 95%, rgba(207, 45, 141, 0.08), transparent 28%),
     linear-gradient(145deg, #fff8f4 0%, #f3eee6 58%, #eef4f6 100%);
-  border-color: rgba(33, 69, 130, 0.2);
+  border-color: rgba(6, 79, 137, 0.2);
 }
 
 :root[data-theme="light"] .tb-project-card-melody .tb-project-image {
@@ -254,26 +323,122 @@
 
 .tb-project-card-timmycare {
   background:
-    radial-gradient(circle at 18% 12%, rgba(217, 111, 99, 0.2), transparent 34%),
-    radial-gradient(circle at 88% 18%, rgba(90, 28, 43, 0.16), transparent 28%),
-    var(--surface);
+    radial-gradient(circle at 18% 12%, rgba(255, 112, 67, 0.18), transparent 34%),
+    radial-gradient(circle at 88% 18%, rgba(90, 28, 43, 0.18), transparent 28%),
+    linear-gradient(145deg, #2a1518 0%, #341a1f 58%, #1a1011 100%);
+  border-color: rgba(255, 112, 67, 0.24);
+}
+
+.tb-project-card-timmycare .tb-project-image {
+  background: #fff8f1;
+}
+
+.tb-project-card-timmycare .tb-project-image img {
+  object-fit: contain;
+  padding: 16px;
 }
 
 .tb-project-card-timmycare .tb-project-content p,
 .tb-project-card-timmycare .tb-project-content strong {
-  color: #d96f63;
+  color: #ff7043;
+}
+
+.tb-project-card-timmycare .tb-project-content h2 {
+  color: #fff8f1;
+}
+
+.tb-project-card-timmycare .tb-project-content span {
+  color: #f8d8d2;
+}
+
+.tb-project-card-timmycare .tb-project-tools small,
+.tb-project-card-timmycare .tb-preview-btn {
+  background: rgba(255, 112, 67, 0.14);
+  border-color: rgba(255, 112, 67, 0.26);
+  color: #fff8f1;
+}
+
+:root[data-theme="light"] .tb-project-card-timmycare {
+  background:
+    radial-gradient(circle at 18% 12%, rgba(255, 112, 67, 0.13), transparent 34%),
+    radial-gradient(circle at 88% 18%, rgba(248, 216, 210, 0.6), transparent 28%),
+    linear-gradient(145deg, #fff8f1 0%, #fff1eb 58%, #f8d8d2 100%);
+  border-color: rgba(90, 28, 43, 0.16);
+}
+
+:root[data-theme="light"] .tb-project-card-timmycare .tb-project-content h2 {
+  color: #2b1717;
+}
+
+:root[data-theme="light"] .tb-project-card-timmycare .tb-project-content span {
+  color: #674848;
+}
+
+:root[data-theme="light"] .tb-project-card-timmycare .tb-project-content p,
+:root[data-theme="light"] .tb-project-card-timmycare .tb-project-content strong {
+  color: #ff7043;
+}
+
+:root[data-theme="light"] .tb-project-card-timmycare .tb-project-tools small,
+:root[data-theme="light"] .tb-project-card-timmycare .tb-preview-btn {
+  background: rgba(255, 112, 67, 0.14);
+  border-color: rgba(90, 28, 43, 0.16);
+  color: #2b1717;
 }
 
 .tb-project-card-scw {
   background:
-    radial-gradient(circle at 18% 12%, rgba(255, 179, 142, 0.18), transparent 34%),
-    radial-gradient(circle at 88% 18%, rgba(105, 11, 34, 0.16), transparent 28%),
-    var(--surface);
+    radial-gradient(circle at 18% 12%, rgba(255, 179, 142, 0.22), transparent 34%),
+    radial-gradient(circle at 88% 18%, rgba(105, 11, 34, 0.22), transparent 28%),
+    linear-gradient(145deg, #2b0814 0%, #3a0d1d 58%, #16060d 100%);
+  border-color: rgba(255, 179, 142, 0.26);
+}
+
+.tb-project-card-scw .tb-project-image {
+  background: #fff3e8;
 }
 
 .tb-project-card-scw .tb-project-content p,
 .tb-project-card-scw .tb-project-content strong {
   color: #ffb38e;
+}
+
+.tb-project-card-scw .tb-project-content h2 {
+  color: #fff3e8;
+}
+
+.tb-project-card-scw .tb-project-content span {
+  color: #f1d4c6;
+}
+
+.tb-project-card-scw .tb-project-tools small,
+.tb-project-card-scw .tb-preview-btn {
+  background: rgba(255, 179, 142, 0.14);
+  border-color: rgba(255, 179, 142, 0.24);
+  color: #fff3e8;
+}
+
+:root[data-theme="light"] .tb-project-card-scw {
+  background:
+    radial-gradient(circle at 18% 12%, rgba(255, 179, 142, 0.22), transparent 34%),
+    radial-gradient(circle at 88% 18%, rgba(155, 207, 194, 0.18), transparent 28%),
+    linear-gradient(145deg, #fffaf4 0%, #fff3e8 58%, #f4dfd4 100%);
+  border-color: rgba(105, 11, 34, 0.16);
+}
+
+:root[data-theme="light"] .tb-project-card-scw .tb-project-content h2 {
+  color: #3a0d1d;
+}
+
+:root[data-theme="light"] .tb-project-card-scw .tb-project-content span {
+  color: #62424c;
+}
+
+:root[data-theme="light"] .tb-project-card-scw .tb-project-tools small,
+:root[data-theme="light"] .tb-project-card-scw .tb-preview-btn {
+  background: rgba(255, 179, 142, 0.18);
+  border-color: rgba(105, 11, 34, 0.16);
+  color: #3a0d1d;
 }
 
 .tb-project-card-astro {

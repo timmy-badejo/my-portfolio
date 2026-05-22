@@ -340,16 +340,77 @@
   margin-top: 18px;
 }
 
+.tb-work-card-ron {
+  background:
+    radial-gradient(circle at 16% 10%, rgba(196, 30, 58, 0.22), transparent 30%),
+    radial-gradient(circle at 88% 16%, rgba(139, 26, 26, 0.2), transparent 30%),
+    linear-gradient(145deg, #0a0a0a 0%, #111111 56%, #1a0a0a 100%);
+  border-color: rgba(196, 30, 58, 0.32);
+}
+
+.tb-work-card-ron .tb-work-image {
+  background: #0a0a0a;
+}
+
+.tb-work-card-ron .tb-work-image img {
+  object-fit: contain;
+  padding: 16px;
+}
+
+.tb-work-card-ron p,
+.tb-work-card-ron strong {
+  color: #ff4f66;
+}
+
+.tb-work-card-ron h3 {
+  color: #f5ede6;
+}
+
+.tb-work-card-ron span {
+  color: #d7c8c5;
+}
+
+:root[data-theme="light"] .tb-work-card-ron {
+  background:
+    radial-gradient(circle at 16% 10%, rgba(196, 30, 58, 0.16), transparent 30%),
+    radial-gradient(circle at 88% 16%, rgba(139, 26, 26, 0.1), transparent 30%),
+    linear-gradient(145deg, #ffffff 0%, #fff8f7 56%, #fdf0ee 100%);
+  border-color: rgba(196, 30, 58, 0.22);
+}
+
+:root[data-theme="light"] .tb-work-card-ron .tb-work-image {
+  background: #ffffff;
+}
+
+:root[data-theme="light"] .tb-work-card-ron h3 {
+  color: #0a0a0a;
+}
+
+:root[data-theme="light"] .tb-work-card-ron span {
+  color: #5e4f4f;
+}
+
+:root[data-theme="light"] .tb-work-card-ron p,
+:root[data-theme="light"] .tb-work-card-ron strong {
+  color: #c41e3a;
+}
+
 .tb-work-card-melody {
   background:
     radial-gradient(circle at 16% 10%, rgba(239, 111, 97, 0.2), transparent 30%),
-    radial-gradient(circle at 88% 16%, rgba(33, 69, 130, 0.18), transparent 28%),
+    radial-gradient(circle at 88% 16%, rgba(6, 79, 137, 0.2), transparent 28%),
+    radial-gradient(circle at 22% 94%, rgba(207, 45, 141, 0.12), transparent 28%),
     linear-gradient(145deg, #071c36 0%, #0b2e55 58%, #061b35 100%);
   border-color: rgba(255, 145, 36, 0.24);
 }
 
 .tb-work-card-melody .tb-work-image {
-  background: #214582;
+  background: #064f89;
+}
+
+.tb-work-card-melody .tb-work-image img {
+  object-fit: contain;
+  padding: 16px;
 }
 
 .tb-work-card-melody p,
@@ -368,9 +429,10 @@
 :root[data-theme="light"] .tb-work-card-melody {
   background:
     radial-gradient(circle at 16% 10%, rgba(239, 111, 97, 0.18), transparent 30%),
-    radial-gradient(circle at 88% 16%, rgba(33, 69, 130, 0.12), transparent 28%),
+    radial-gradient(circle at 88% 16%, rgba(6, 79, 137, 0.12), transparent 28%),
+    radial-gradient(circle at 22% 94%, rgba(207, 45, 141, 0.08), transparent 28%),
     linear-gradient(145deg, #fff8f4 0%, #f3eee6 58%, #eef4f6 100%);
-  border-color: rgba(33, 69, 130, 0.2);
+  border-color: rgba(6, 79, 137, 0.2);
 }
 
 :root[data-theme="light"] .tb-work-card-melody .tb-work-image {
@@ -383,6 +445,143 @@
 
 :root[data-theme="light"] .tb-work-card-melody span {
   color: #355066;
+}
+
+.tb-work-card-timmycare {
+  background:
+    radial-gradient(circle at 14% 10%, rgba(255, 112, 67, 0.18), transparent 30%),
+    radial-gradient(circle at 88% 18%, rgba(90, 28, 43, 0.2), transparent 30%),
+    linear-gradient(145deg, #2a1518 0%, #341a1f 58%, #1a1011 100%);
+  border-color: rgba(255, 112, 67, 0.24);
+}
+
+.tb-work-card-timmycare .tb-work-image {
+  background: #fff8f1;
+}
+
+.tb-work-card-timmycare .tb-work-image img {
+  object-fit: contain;
+  padding: 16px;
+}
+
+.tb-work-card-timmycare p,
+.tb-work-card-timmycare strong {
+  color: #ff7043;
+}
+
+.tb-work-card-timmycare h3 {
+  color: #fff8f1;
+}
+
+.tb-work-card-timmycare span {
+  color: #f8d8d2;
+}
+
+:root[data-theme="light"] .tb-work-card-timmycare {
+  background:
+    radial-gradient(circle at 14% 10%, rgba(255, 112, 67, 0.13), transparent 30%),
+    radial-gradient(circle at 88% 18%, rgba(248, 216, 210, 0.6), transparent 30%),
+    linear-gradient(145deg, #fff8f1 0%, #fff1eb 58%, #f8d8d2 100%);
+  border-color: rgba(90, 28, 43, 0.16);
+}
+
+:root[data-theme="light"] .tb-work-card-timmycare h3 {
+  color: #2b1717;
+}
+
+:root[data-theme="light"] .tb-work-card-timmycare span {
+  color: #674848;
+}
+
+.tb-work-card-scw {
+  background:
+    radial-gradient(circle at 16% 10%, rgba(255, 179, 142, 0.22), transparent 30%),
+    radial-gradient(circle at 88% 18%, rgba(105, 11, 34, 0.22), transparent 30%),
+    linear-gradient(145deg, #2b0814 0%, #3a0d1d 58%, #16060d 100%);
+  border-color: rgba(255, 179, 142, 0.26);
+}
+
+.tb-work-card-scw .tb-work-image {
+  background: #fff3e8;
+}
+
+.tb-work-card-scw p,
+.tb-work-card-scw strong {
+  color: #ffb38e;
+}
+
+.tb-work-card-scw h3 {
+  color: #fff3e8;
+}
+
+.tb-work-card-scw span {
+  color: #f1d4c6;
+}
+
+:root[data-theme="light"] .tb-work-card-scw {
+  background:
+    radial-gradient(circle at 16% 10%, rgba(255, 179, 142, 0.22), transparent 30%),
+    radial-gradient(circle at 88% 18%, rgba(155, 207, 194, 0.18), transparent 30%),
+    linear-gradient(145deg, #fffaf4 0%, #fff3e8 58%, #f4dfd4 100%);
+  border-color: rgba(105, 11, 34, 0.16);
+}
+
+:root[data-theme="light"] .tb-work-card-scw h3 {
+  color: #3a0d1d;
+}
+
+:root[data-theme="light"] .tb-work-card-scw span {
+  color: #62424c;
+}
+
+.tb-work-card-astro {
+  background:
+    radial-gradient(circle at 18% 10%, rgba(91, 58, 255, 0.22), transparent 30%),
+    radial-gradient(circle at 88% 18%, rgba(255, 125, 204, 0.18), transparent 28%),
+    linear-gradient(145deg, #111023 0%, #171333 58%, #0c0b18 100%);
+  border-color: rgba(180, 140, 255, 0.26);
+}
+
+.tb-work-card-astro .tb-work-image {
+  background: #171333;
+}
+
+.tb-work-card-astro .tb-work-image img {
+  object-fit: contain;
+  padding: 16px;
+}
+
+.tb-work-card-astro p,
+.tb-work-card-astro strong {
+  color: #b48cff;
+}
+
+.tb-work-card-astro h3 {
+  color: #f6f1ff;
+}
+
+.tb-work-card-astro span {
+  color: #d9ccff;
+}
+
+:root[data-theme="light"] .tb-work-card-astro {
+  background:
+    radial-gradient(circle at 18% 10%, rgba(91, 58, 255, 0.12), transparent 30%),
+    radial-gradient(circle at 88% 18%, rgba(255, 125, 204, 0.12), transparent 28%),
+    linear-gradient(145deg, #ffffff 0%, #f7f3ff 58%, #fff3fb 100%);
+  border-color: rgba(124, 92, 255, 0.2);
+}
+
+:root[data-theme="light"] .tb-work-card-astro .tb-work-image {
+  background: #f7f3ff;
+}
+
+:root[data-theme="light"] .tb-work-card-astro h3 {
+  color: #211548;
+}
+
+:root[data-theme="light"] .tb-work-card-astro span {
+  color: #51476e;
 }
 
 .experience-section {

@@ -74,6 +74,8 @@ const FeaturedProjects = () => {
           const isMotion = project.cardTheme === "motion" || project.id === "6";
           const isAstro = project.id === "5";
           const isMelody = project.id === "2";
+          const isTimmyCare = project.id === "3";
+          const isScw = project.id === "4";
 
           return (
             <Tilt
@@ -88,6 +90,8 @@ const FeaturedProjects = () => {
                 className={[
                   "fp-project-card",
                   isMelody ? "fp-project-card-melody" : "",
+                  isTimmyCare ? "fp-project-card-timmycare" : "",
+                  isScw ? "fp-project-card-scw" : "",
                   isAstro ? "fp-project-card-astro" : "",
                   isMotion ? "fp-project-card-motion" : "",
                 ].join(" ").trim()}

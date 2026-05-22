@@ -1,5 +1,5 @@
 import ronzalko from "../assets/Ron Zalko web design.jpg";
-import melodyBeatsItem from "../assets/Melody-beats-item.jpg";
+import melodyPackageDesign from "../assets/melody-beats-package-design-2.jpg";
 import timmyhaircare from "../assets/timmyhaircare4.jpg";
 import scwcharity from "../assets/scwcharitywebpage.png";
 import scwLogo from "../assets/scw logo.png";
@@ -24,8 +24,8 @@ export const projectsData = [
     id: "2",
     title: "Melody Beats Branding",
     category: "Visual Design",
-    description: "Music brand identity case study with logo development, business cards, poster cards, and package design.",
-    image: melodyBeatsItem,
+    description: "Brand identity system with logo development, business cards, postal cards, package design, and branded product items.",
+    image: melodyPackageDesign,
     software: ["Photoshop", "Adobe After Effects", "Brand System"],
     link: "/projects/2",
     featured: true,
@@ -34,9 +34,9 @@ export const projectsData = [
     id: "3",
     title: "TimmyCare App Redesign",
     category: "UI/UX",
-    description: "Haircare app redesign with research, flows, wireframes, personas, and prototype structure.",
+    description: "Haircare app redesign with brand guide, UX research, sitemap, user flow, low-fidelity wireframes, and final mobile screens.",
     image: timmyhaircare,
-    software: ["Figma", "Adobe XD", "UI/UX"],
+    software: ["UX Research", "Mobile UI", "Brand Guide"],
     link: "/projects/3",
     featured: true,
   },
