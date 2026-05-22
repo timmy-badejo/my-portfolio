@@ -124,7 +124,7 @@ import astroGuideH from "../assets/astro-match-app_Page_0h.jpg";
 import astroGuideI from "../assets/astro-match-app_Page_0i.jpg";
 import astroGuideJ from "../assets/astro-match-app_Page_0j.jpg";
 import astroGuideK from "../assets/astro-match-app_Page_0k.jpg";
-import astroHighFi1 from "../assets/Astro-Match-App_highfideliity-wireframe_1.jpg";
+import astroHighFi1 from "../assets/Astro-Match-App_Page_1.jpg";
 import astroHighFi2 from "../assets/Astro-Match-App_highfideliity-wireframe_2.jpg";
 import astroHighFi3 from "../assets/Astro-Match-App_highfideliity-wireframe_3.jpg";
 import astroHighFi4 from "../assets/Astro-Match-App_highfideliity-wireframe_4.jpg";
