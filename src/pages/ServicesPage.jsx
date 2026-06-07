@@ -273,7 +273,7 @@ const ServicesPage = () => {
             ref={(el) => (cardsRef.current[idx] = el)}
           >
             <div className="service-top">
-              <img src={service.visual} alt={service.title} className="service-visual" />
+              <img src={service.visual} alt={service.title} className="service-visual" loading="lazy" decoding="async" />
               <span className="service-pill">Featured</span>
             </div>
             <h3>{service.title}</h3>
@@ -321,7 +321,7 @@ const ServicesPage = () => {
               ref={(el) => (processRefs.current[idx] = el)}
             >
               <div className="service-process-top">
-                <img src={step.visual} alt={step.title} className="service-visual" />
+                <img src={step.visual} alt={step.title} className="service-visual" loading="lazy" decoding="async" />
                 <span className="service-pill">Step {idx + 1}</span>
               </div>
               <h3>{step.title}</h3>

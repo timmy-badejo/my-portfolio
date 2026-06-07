@@ -283,6 +283,39 @@
 }
 
 @media (max-width: 480px) {
+  .services-page {
+    padding: 32px max(18px, 5vw);
+  }
+
+  .services-hero,
+  .service-card,
+  .service-process-card,
+  .service-cta,
+  .service-faq-card,
+  .services-step-card {
+    border-radius: 20px;
+  }
+
+  .services-hero h1 {
+    line-height: 1.08;
+    letter-spacing: 0;
+  }
+
+  .services-grid,
+  .services-process-grid,
+  .services-steps-grid,
+  .services-faq-grid,
+  .services-stack-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .services-btn,
+  .service-link {
+    min-height: 46px;
+    width: 100%;
+    justify-content: center;
+  }
+
   .service-card h3 {
     font-size: 1.05rem;
   }

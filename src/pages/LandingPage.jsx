@@ -23,15 +23,15 @@ import { VscVscode } from "react-icons/vsc";
 import "./LandingPage.css";
 import { projectsData } from "../data/projectsData";
 
-import timmyBadLogo from "../assets/timmybadlogo.png";
+import timmyBadLogo from "../assets/optimized/timmybadlogo-mobile.png";
 import heroVisual from "../assets/prototypewireframe.png";
 import footerVisual from "../assets/uiux.svg";
-import profileImage from "../assets/profile_image.jpg";
+import profileImage from "../assets/optimized/profile-image-mobile.jpg";
 
-import bcrpaVideo from "../assets/BCRPASYPOSUM.mp4";
-import eventSetup from "../assets/EventSetup.jpeg";
-import printWork from "../assets/PrintWork.jpeg";
-import signage from "../assets/Signage.jpeg";
+import bcrpaVideo from "../assets/optimized/bcrpa-loop-mobile.mp4";
+import eventSetup from "../assets/optimized/event-setup-mobile.jpg";
+import printWork from "../assets/optimized/print-work-mobile.jpg";
+import signage from "../assets/optimized/signage-mobile.jpg";
 
 import uiuxIcon from "../assets/uiux.svg";
 import brandingIcon from "../assets/branding.svg";
@@ -105,7 +105,7 @@ export default function LandingPage() {
     <main className="tb-site">
       <nav className="tb-nav">
         <Link to="/" className="tb-logo tb-logo-hover" aria-label="Timmybad home">
-          <img src={timmyBadLogo} alt="Timmybad logo" />
+          <img src={timmyBadLogo} alt="Timmybad logo" width="44" height="34" />
           <span className="tb-logo-slide">
             <span className="slide-timmy">timmy</span>
             <span className="slide-bad">bad</span>
@@ -155,7 +155,14 @@ export default function LandingPage() {
 
         <div className="tb-hero-visual">
           <div className="tb-hero-visual-card">
-            <img src={heroVisual} alt="Prototype wireframing visual" />
+            <img
+              src={heroVisual}
+              alt="Prototype wireframing visual"
+              width="1100"
+              height="1064"
+              fetchPriority="high"
+              decoding="async"
+            />
           </div>
           <p>clean build structure • premium feel • system thinking</p>
         </div>
@@ -195,7 +202,7 @@ export default function LandingPage() {
               onMouseLeave={handleTiltLeave}
             >
               <div className="tb-work-image">
-                <img src={project.image} alt={project.title} />
+                <img src={project.image} alt={project.title} loading="lazy" decoding="async" />
               </div>
               <p>{project.category}</p>
               <h3>{project.title}</h3>
@@ -221,7 +228,7 @@ export default function LandingPage() {
       onMouseLeave={handleTiltLeave}
     >
       <div className="bcrpa-brand-mark">
-        <img src={bcrpaLogo} alt="BCRPA logo" />
+        <img src={bcrpaLogo} alt="BCRPA logo" loading="lazy" decoding="async" />
       </div>
 
       <div className="bcrpa-brand-copy">
@@ -237,7 +244,15 @@ export default function LandingPage() {
 
   <div className="experience-media">
     <div className="experience-video tilt-card" onMouseMove={handleTiltMove} onMouseLeave={handleTiltLeave}>
-      <video src={bcrpaVideo} autoPlay muted loop playsInline />
+      <video
+        src={bcrpaVideo}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        poster={eventSetup}
+      />
       <div className="experience-video-overlay">
         <span>BCRPA Symposium</span>
       </div>
@@ -274,6 +289,8 @@ export default function LandingPage() {
             src={item.image}
             alt={`BCRPA ${item.label}`}
             style={{ objectPosition: item.position }}
+            loading="lazy"
+            decoding="async"
           />
 
           <div className="gallery-overlay">
@@ -327,7 +344,7 @@ export default function LandingPage() {
           <span className="atom-dot dot-two"></span>
           <span className="atom-dot dot-three"></span>
           <div className="profile-nucleus">
-            <img src={profileImage} alt="Timmy Badejo" />
+            <img src={profileImage} alt="Timmy Badejo" loading="lazy" decoding="async" />
           </div>
         </div>
       </section>
@@ -350,7 +367,7 @@ export default function LandingPage() {
               onMouseLeave={handleTiltLeave}
             >
               <div className="skill-icon-wrap">
-                <img src={skill.icon} alt={skill.title} />
+                <img src={skill.icon} alt={skill.title} loading="lazy" decoding="async" />
               </div>
               <h3>{skill.title}</h3>
               <p>{skill.text}</p>
@@ -381,7 +398,7 @@ export default function LandingPage() {
       <footer id="contact" className="tb-footer tb-section">
         <div>
           <Link to="/" className="tb-footer-brand" aria-label="Timmybad home">
-            <img className="tb-footer-logo" src={timmyBadLogo} alt="Timmybad logo" />
+            <img className="tb-footer-logo" src={timmyBadLogo} alt="Timmybad logo" loading="lazy" decoding="async" />
             <span className="tb-footer-slide">
               <span className="slide-timmy">timmy</span>
               <span className="slide-bad">bad</span>
@@ -401,7 +418,7 @@ export default function LandingPage() {
         </div>
 
         <div className="tb-footer-visual">
-          <img src={footerVisual} alt="UI UX visual" />
+          <img src={footerVisual} alt="UI UX visual" loading="lazy" decoding="async" />
           <span className="tb-footer-orbit tb-footer-orbit-one"></span>
           <span className="tb-footer-orbit tb-footer-orbit-two"></span>
           <span className="tb-footer-line line-one"></span>

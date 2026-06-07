@@ -184,7 +184,7 @@ export default function AboutMePage() {
             <span className="ap-network-node node-4"></span>
 
             <div className="ap-profile-core">
-              <img src={profileImage} alt="Timmy Badejo" />
+              <img src={profileImage} alt="Timmy Badejo" loading="lazy" decoding="async" />
             </div>
           </div>
         </div>
@@ -214,7 +214,9 @@ export default function AboutMePage() {
           <div className="ap-edu-stack">
             {profileData.education.map((edu, index) => (
               <div key={edu.degree} className="ap-edu-card" ref={(el) => (eduRefs.current[index] = el)}>
-                <div className="ap-edu-image"><img src={edu.image} alt={edu.school} /></div>
+                <div className="ap-edu-image">
+                  <img src={edu.image} alt={edu.school} loading="lazy" decoding="async" />
+                </div>
                 <div className="ap-edu-top">
                   <span className="ap-pill">Education</span>
                   <span className="ap-edu-date">{edu.date}</span>
@@ -271,7 +273,7 @@ export default function AboutMePage() {
             <div key={story.title} className="ap-story-card" ref={(el) => (storyRefs.current[index] = el)}>
               <div className="ap-story-top">
                 <span className="ap-story-badge">{story.badge}</span>
-                <img src={story.visual} alt={story.title} className="ap-story-visual" />
+                <img src={story.visual} alt={story.title} className="ap-story-visual" loading="lazy" decoding="async" />
               </div>
               <h3>{story.title}</h3>
               <p>{story.text}</p>

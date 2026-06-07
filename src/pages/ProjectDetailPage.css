@@ -175,7 +175,7 @@
   color: var(--text-main);
   font-size: clamp(2.6rem, 6vw, 6rem);
   line-height: 0.95;
-  letter-spacing: -0.07em;
+  letter-spacing: 0;
   margin: 16px 0;
 }
 
@@ -253,7 +253,7 @@
 .motion-delivery-section h2 {
   color: var(--text-main);
   margin: 12px 0;
-  letter-spacing: -0.04em;
+  letter-spacing: 0;
 }
 
 .card p,
@@ -398,7 +398,7 @@
 .case-study-panel h2 {
   margin: 10px 0 14px;
   color: var(--text-main);
-  letter-spacing: -0.04em;
+  letter-spacing: 0;
 }
 
 .case-study-panel p,
@@ -1360,7 +1360,7 @@
   margin: 0;
   color: #fff;
   font-size: clamp(1.12rem, 1.8vw, 1.34rem);
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 }
 
 .ron-hero-frame p {
@@ -1991,7 +1991,7 @@
   margin: 8px 0 10px;
   color: var(--text-main);
   font-size: clamp(1.6rem, 3vw, 2.35rem);
-  letter-spacing: -0.035em;
+  letter-spacing: 0;
 }
 
 .melody-item-copy p:not(.project-kicker) {
@@ -2398,7 +2398,7 @@
 .kvdst-quality-grid h3 {
   margin: 0 0 12px;
   color: var(--text-main);
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 }
 
 .kvdst-framework-grid article ul,
@@ -2960,7 +2960,7 @@
   margin: 8px 0 10px;
   color: var(--text-main);
   font-size: clamp(1.25rem, 2vw, 1.55rem);
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
 }
 
 .style-guide-gallery-meta > p:not(.project-kicker) {
@@ -3026,6 +3026,145 @@
   }
 
   .style-guide-phase-key {
+    gap: 6px;
+  }
+}
+
+@media (max-width: 640px) {
+  .project-detail {
+    padding: 76px max(18px, 5vw) 58px;
+  }
+
+  .project-page-nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    border-radius: 999px;
+    padding: 8px;
+    scrollbar-width: none;
+  }
+
+  .project-page-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .project-page-nav a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .project-nav-indicator {
+    min-height: 56px;
+    border-radius: 18px;
+  }
+
+  .project-title-block h1,
+  .project-missing h1,
+  .project-title-lockup h1,
+  .project-detail-footer h2,
+  .live-site-head h2,
+  .ron-section-headline h2 {
+    font-size: clamp(2rem, 13vw, 3.45rem);
+    line-height: 1.05;
+    letter-spacing: 0;
+  }
+
+  .project-hero {
+    margin-bottom: 44px;
+  }
+
+  .project-hero-image-wrap,
+  .project-image,
+  .motion-video-frame,
+  .scw-scroll-browser,
+  .card,
+  .project-section,
+  .live-site-section,
+  .project-detail-footer,
+  .project-missing,
+  .motion-process-section,
+  .motion-delivery-section,
+  .case-study-panel,
+  .scroll-browse-frame {
+    border-radius: 20px;
+  }
+
+  .card,
+  .project-section,
+  .live-site-section,
+  .project-detail-footer,
+  .project-missing,
+  .motion-process-section,
+  .motion-delivery-section,
+  .case-study-panel {
+    padding: 20px;
+  }
+
+  .cards-container,
+  .project-section,
+  .live-site-section,
+  .motion-process-section,
+  .motion-delivery-section,
+  .project-case-study-flow {
+    margin-bottom: 46px;
+  }
+
+  .project-details-card ul,
+  .case-study-snapshot-grid,
+  .ron-wireframe-grid,
+  .ron-collateral-grid,
+  .melody-item-images,
+  .kvdst-framework-grid,
+  .kvdst-quality-grid,
+  .timmycare-logo-panel,
+  .project-detail-melody .melody-item-card,
+  .scw-wireframe-tabs {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .scroll-browse-track {
+    gap: 12px;
+    padding-bottom: 14px;
+  }
+
+  .scroll-browse-frame {
+    min-width: min(300px, 84vw);
+  }
+
+  .scroll-browse-frame img,
+  .project-live-frame,
+  .scw-scroll-browser,
+  .style-guide-preview iframe,
+  .ron-pdf-frame {
+    height: min(360px, 74vh);
+  }
+
+  .project-doc-link,
+  .timmycare-alt-link,
+  .motion-sync-button,
+  .ron-old-site-link,
+  .project-footer-actions a,
+  .tb-btn {
+    min-height: 46px;
+    justify-content: center;
+  }
+
+  .project-footer-actions,
+  .timmycare-live-actions,
+  .style-guide-actions {
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .project-doc-link,
+  .timmycare-alt-link,
+  .project-footer-actions a,
+  .project-detail-footer .tb-btn {
+    width: 100%;
+  }
+
+  .style-guide-image-page figcaption {
+    flex-direction: column;
     gap: 6px;
   }
 }

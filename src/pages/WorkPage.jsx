@@ -133,7 +133,7 @@ export default function WorkPage() {
               onMouseLeave={handleTiltLeave}
             >
               <div className="tb-project-image">
-                <img src={project.image} alt={project.title} />
+                <img src={project.image} alt={project.title} loading="lazy" decoding="async" />
               </div>
 
               {project.audio && (
@@ -142,7 +142,7 @@ export default function WorkPage() {
                     if (el) audioRefs.current[project.id] = el;
                   }}
                   src={project.audio}
-                  preload="auto"
+                  preload="none"
                   onEnded={() => setPlayingId(null)}
                 />
               )}
@@ -231,6 +231,7 @@ export default function WorkPage() {
               src={previewProject.previewUrl || previewProject.liveUrl}
               title={previewProject.title}
               className="preview-frame"
+              loading="lazy"
             />
           </div>
         </div>

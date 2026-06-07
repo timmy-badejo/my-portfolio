@@ -61,7 +61,7 @@
   color: var(--text-main);
   font-size: clamp(2.8rem, 7vw, 6.4rem);
   line-height: 0.92;
-  letter-spacing: -0.075em;
+  letter-spacing: 0;
   margin: 16px 0 20px;
 }
 
@@ -417,5 +417,70 @@
   .studio-signal-rail {
     grid-template-columns: 1fr;
     margin: -40px 0 52px;
+  }
+}
+
+@media (max-width: 640px) {
+  .studio-page {
+    padding: 76px max(18px, 5vw) 58px;
+  }
+
+  .studio-page-nav {
+    padding: 8px;
+  }
+
+  .studio-page-nav a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    flex: 0 0 auto;
+  }
+
+  .studio-command,
+  .studio-card,
+  .studio-tool-card,
+  .studio-service-card,
+  .studio-process-card,
+  .studio-footer,
+  .studio-signal-rail article {
+    border-radius: 20px;
+  }
+
+  .studio-command,
+  .studio-card,
+  .studio-service-card,
+  .studio-process-card,
+  .studio-footer {
+    padding: 20px;
+  }
+
+  .studio-command h1,
+  .studio-section-head h2,
+  .studio-footer h2 {
+    font-size: clamp(2rem, 13vw, 3.45rem);
+    line-height: 1.05;
+    letter-spacing: 0;
+  }
+
+  .studio-command p,
+  .studio-section-head p,
+  .studio-card p,
+  .studio-service-card p,
+  .studio-process-card p,
+  .studio-footer p {
+    line-height: 1.7;
+  }
+
+  .studio-card-grid,
+  .studio-tools-grid,
+  .studio-service-grid,
+  .studio-process {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .studio-footer a,
+  .studio-service-card a {
+    min-height: 46px;
+    justify-content: center;
   }
 }

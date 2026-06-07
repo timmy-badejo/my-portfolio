@@ -112,7 +112,7 @@
   color: var(--text-main);
   font-size: clamp(2.5rem, 5.6vw, 5.65rem);
   line-height: 0.96;
-  letter-spacing: -0.045em;
+  letter-spacing: 0;
   margin: 14px 0 20px;
 }
 
@@ -223,7 +223,7 @@
 
 .bcrpa-snapshot h2 {
   font-size: clamp(1.25rem, 2vw, 2rem);
-  letter-spacing: -0.04em;
+  letter-spacing: 0;
 }
 
 /* ── Media strip ──────────────────────────────── */
@@ -544,7 +544,7 @@
   color: var(--text-main);
   font-size: clamp(1.45rem, 2.6vw, 2.8rem);
   line-height: 1;
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
   margin: 8px 0 12px;
 }
 
@@ -1002,5 +1002,88 @@
   .bcrpa-asset-frame,
   .bcrpa-asset-card.square .bcrpa-asset-frame {
     height: 130px;
+  }
+}
+
+@media (max-width: 640px) {
+  .bcrpa-page {
+    padding: 76px max(18px, 5vw) 58px;
+  }
+
+  .bcrpa-page-nav {
+    position: sticky;
+    top: 10px;
+    z-index: 130;
+    flex-wrap: nowrap;
+    max-width: 100%;
+    overflow-x: auto;
+    border-radius: 999px;
+    padding: 8px;
+    scrollbar-width: none;
+  }
+
+  .bcrpa-page-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .bcrpa-page-nav a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    flex: 0 0 auto;
+  }
+
+  .bcrpa-hero h1,
+  .bcrpa-section-head h2,
+  .bcrpa-reflection h2 {
+    font-size: clamp(2rem, 13vw, 3.45rem);
+    line-height: 1.05;
+    letter-spacing: 0;
+  }
+
+  .bcrpa-hero p,
+  .bcrpa-section-head p,
+  .bcrpa-reflection p,
+  .bcrpa-card p,
+  .bcrpa-card li {
+    line-height: 1.7;
+  }
+
+  .bcrpa-hero,
+  .bcrpa-card,
+  .bcrpa-reflection,
+  .bcrpa-hero-media,
+  .bcrpa-snapshot article,
+  .bcrpa-media-strip,
+  .bcrpa-campaign {
+    border-radius: 20px;
+  }
+
+  .bcrpa-hero-copy,
+  .bcrpa-card,
+  .bcrpa-reflection {
+    padding: 20px;
+  }
+
+  .bcrpa-snapshot,
+  .bcrpa-media-strip,
+  .bcrpa-deliverables-grid,
+  .bcrpa-workflow-grid,
+  .bcrpa-process-grid,
+  .bcrpa-expanded-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .bcrpa-hero-pills span,
+  .bcrpa-reflection a,
+  .bcrpa-card a,
+  .tb-btn {
+    min-height: 46px;
+    justify-content: center;
+  }
+
+  .bcrpa-reflection a,
+  .bcrpa-reflection .tb-btn {
+    width: 100%;
   }
 }

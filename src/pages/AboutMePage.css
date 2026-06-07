@@ -95,7 +95,7 @@
   margin: 0;
   color: var(--text-main);
   line-height: 1;
-  letter-spacing: -0.05em;
+  letter-spacing: 0;
 }
 
 .ap-hero-copy h1 { max-width: 820px; font-size: clamp(2.8rem, 7vw, 6.2rem); }
@@ -504,5 +504,124 @@
     max-width: 100%;
     flex-wrap: nowrap;
     border-radius: 999px;
+  }
+}
+
+@media (max-width: 640px) {
+  .ap-about-me-page {
+    padding: 76px max(18px, 5vw) 58px;
+    overflow: hidden visible;
+  }
+
+  .about-page-nav {
+    padding: 8px;
+    gap: 8px;
+    scroll-snap-type: x proximity;
+  }
+
+  .about-page-nav a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    flex: 0 0 auto;
+  }
+
+  .ap-hero-section,
+  .ap-edu-exp-section,
+  .ap-core-values-section,
+  .ap-story-arc,
+  .ap-fun-fact-section,
+  .ap-design-drive {
+    margin-bottom: 56px;
+  }
+
+  .ap-hero-grid,
+  .ap-design-drive,
+  .ap-about-footer {
+    padding: 22px;
+    border-radius: 22px;
+  }
+
+  .ap-hero-copy h1,
+  .ap-section-title,
+  .ap-core-values-title,
+  .ap-story-header h2,
+  .ap-design-drive h2,
+  .ap-about-footer h2 {
+    font-size: clamp(2rem, 13vw, 3.45rem);
+    line-height: 1.05;
+    letter-spacing: 0;
+  }
+
+  .ap-hero-bio,
+  .ap-edu-exp-head p,
+  .ap-edu-details,
+  .ap-exp-description,
+  .ap-exp-skills,
+  .ap-core-values-subtitle,
+  .ap-core-card p,
+  .ap-story-header p,
+  .ap-story-card p,
+  .ap-fun-fact-content p,
+  .ap-design-drive p,
+  .ap-about-footer p {
+    line-height: 1.7;
+  }
+
+  .ap-profile-network {
+    min-height: 310px;
+    border-radius: 22px;
+  }
+
+  .ap-profile-core {
+    width: 168px;
+    height: 168px;
+  }
+
+  .ap-network-orbit {
+    width: 270px;
+    height: 108px;
+  }
+
+  .node-1,
+  .node-2,
+  .node-3,
+  .node-4 {
+    display: none;
+  }
+
+  .ap-edu-card,
+  .ap-exp-card,
+  .ap-core-card,
+  .ap-story-card,
+  .ap-fun-fact-item {
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  .ap-edu-top,
+  .ap-exp-top,
+  .ap-story-top {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .ap-hero-pills span,
+  .ap-pill,
+  .ap-core-tag,
+  .ap-story-badge,
+  .ap-about-footer a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .ap-fun-fact-item {
+    min-width: min(300px, 84vw);
+  }
+
+  .ap-about-footer a {
+    justify-content: center;
+    width: 100%;
   }
 }

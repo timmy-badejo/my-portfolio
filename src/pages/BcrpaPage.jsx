@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import "./BcrpaPage.css";
 
 import bcrpaLogo from "../assets/BCRPA-primary-logo.png";
-import bcrpaVideo from "../assets/BCRPASYPOSUM.mp4";
-import eventSetup from "../assets/EventSetup.jpeg";
-import printWork from "../assets/PrintWork.jpeg";
-import signage from "../assets/Signage.jpeg";
+import bcrpaVideo from "../assets/optimized/bcrpa-loop-mobile.mp4";
+import eventSetup from "../assets/optimized/event-setup-mobile.jpg";
+import printWork from "../assets/optimized/print-work-mobile.jpg";
+import signage from "../assets/optimized/signage-mobile.jpg";
 
 import registrationBanner from "../assets/BCRPA REGISTRATION BANNER FINAL.png";
 import welcomeSign from "../assets/BCRPA SYMPOSIUM WELCOME SIGN drafts-03.jpg";
@@ -423,7 +423,7 @@ export default function BcrpaPage() {
 
       <section className="bcrpa-hero" id="overview">
         <div className="bcrpa-hero-copy">
-          <img src={bcrpaLogo} alt="BCRPA logo" className="bcrpa-hero-logo" />
+          <img src={bcrpaLogo} alt="BCRPA logo" className="bcrpa-hero-logo" decoding="async" />
           <p className="bcrpa-kicker">Internship Experience</p>
           <h1>BCRPA Visual Communication & Event Design</h1>
           <p>
@@ -439,7 +439,7 @@ export default function BcrpaPage() {
         </div>
 
         <div className="bcrpa-hero-media">
-          <video src={bcrpaVideo} autoPlay muted loop playsInline controls />
+          <video src={bcrpaVideo} muted loop playsInline controls preload="metadata" poster={eventSetup} />
           <span>BCRPA Symposium Video Glimpse</span>
         </div>
       </section>
@@ -463,9 +463,9 @@ export default function BcrpaPage() {
       </section>
 
       <section className="bcrpa-media-strip">
-        <img src={eventSetup} alt="BCRPA event setup" style={{ objectPosition: "center 30%" }} />
-        <img src={printWork} alt="BCRPA print materials" />
-        <img src={signage} alt="BCRPA signage" style={{ objectPosition: "center 40%" }} />
+        <img src={eventSetup} alt="BCRPA event setup" style={{ objectPosition: "center 30%" }} loading="lazy" decoding="async" />
+        <img src={printWork} alt="BCRPA print materials" loading="lazy" decoding="async" />
+        <img src={signage} alt="BCRPA signage" style={{ objectPosition: "center 40%" }} loading="lazy" decoding="async" />
       </section>
 
       <section className="bcrpa-section bcrpa-brief">

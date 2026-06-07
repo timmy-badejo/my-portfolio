@@ -134,7 +134,7 @@ export default function StudioSystemPage() {
         <div className="studio-card-grid">
           {coreSkills.map((skill) => (
             <article className="studio-card" key={skill.title}>
-              <img src={skill.icon} alt={skill.title} />
+              <img src={skill.icon} alt={skill.title} loading="lazy" decoding="async" />
               <h3>{skill.title}</h3>
               <p>{skill.text}</p>
             </article>
@@ -167,7 +167,7 @@ export default function StudioSystemPage() {
         <div className="studio-service-grid">
           {services.map((service) => (
             <article className="studio-service-card" key={service.title}>
-              <img src={service.icon} alt={service.title} />
+              <img src={service.icon} alt={service.title} loading="lazy" decoding="async" />
               <div>
                 <h3>{service.title}</h3>
                 <p>{service.text}</p>

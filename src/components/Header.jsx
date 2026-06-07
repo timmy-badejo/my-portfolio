@@ -20,9 +20,15 @@ const Header = () => {
         <img src={Tclogo} alt="TimmyCreative Logo" className="header__logo-image" />
         <span className="header__logo-text">TimmyCreative</span>
       </div>
-      <div className="header__menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+      <button
+        type="button"
+        className="header__menu-toggle"
+        aria-label="Toggle navigation"
+        aria-expanded={menuOpen}
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
         {menuOpen ? <FaTimes /> : <FaBars />}
-      </div>
+      </button>
       <nav className={`header__nav-menu ${menuOpen ? 'active' : ''}`}>
         <ul className="header__nav-links">
           <li>
