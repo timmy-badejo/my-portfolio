@@ -365,7 +365,7 @@ const ServicesPage = () => {
 
       <section className="services-cta">
         <h2>Let’s build something unforgettable.</h2>
-        <p>Ready to start a project? Reach out at <a href="mailto:hello@timmybad.com">hello@timmybad.com</a> or use the contact form.</p>
+        <p>Ready to start a project? Reach out at <a href="mailto:timmybad06@gmail.com">timmybad06@gmail.com</a> or use the contact form.</p>
         <Link className="services-btn" to="/contact">Work With Me</Link>
       </section>
 

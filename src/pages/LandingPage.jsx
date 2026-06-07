@@ -412,7 +412,8 @@ export default function LandingPage() {
 
         <div>
           <h3>Contact</h3>
-          <p className="tb-contact-line"><FaEnvelope /> studio@timmybad.com</p>
+          <p className="tb-contact-line"><FaEnvelope /> <a href="mailto:timmybad06@gmail.com">timmybad06@gmail.com</a></p>
+          <p className="tb-contact-line"><FaEnvelope /> <a href="mailto:studio@timmybad.com">studio@timmybad.com</a></p>
           <p className="tb-contact-line"><FaMapMarkerAlt /> Vancouver, BC, Canada</p>
           <Link to="/contact" className="tb-btn tb-btn-primary">Let’s Work Together ↗</Link>
         </div>

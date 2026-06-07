@@ -54,7 +54,7 @@ export default function ContactPage() {
       `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
     );
 
-    window.location.href = `mailto:studio@timmybad.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:timmybad06@gmail.com?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -143,10 +143,10 @@ export default function ContactPage() {
 
           <div className="contact-cta">
             <p>
-              Prefer direct email? Use the studio email for portfolio, collaboration,
+              Prefer direct email? Use Gmail or the studio email for portfolio, collaboration,
               and design-related work.
             </p>
-            <a className="contact-btn ghost" href="mailto:studio@timmybad.com">Email Studio ↗</a>
+            <a className="contact-btn ghost" href="mailto:timmybad06@gmail.com">Email Timmy ↗</a>
           </div>
         </aside>
       </section>
