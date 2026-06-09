@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./LoadingScreen.css";
 import timmyBadLogo from "../assets/timmybadlogo.png";
 
-const LOADING_DURATION = 3400;
-const FADE_DURATION = 600;
+const LOADING_DURATION = 1500;
+const FADE_DURATION = 450;
 
 export default function LoadingScreen({ onComplete = () => {} }) {
   const [hide, setHide] = useState(false);

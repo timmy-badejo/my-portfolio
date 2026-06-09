@@ -1,6 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { gsap } from 'gsap';
-import VanillaTilt from 'vanilla-tilt';
 import { FaHtml5, FaCss3Alt, FaReact, FaFigma, FaGithub } from "react-icons/fa";
 import { TbBrandJavascript, TbBrandReactNative, TbBrandAdobePhotoshop, TbBrandAdobeIllustrator, TbBrandAdobeIndesign, TbDimensions, TbBrandAdobeXd } from "react-icons/tb";
 import './SkillsSection.css';
@@ -22,20 +21,8 @@ const skillsData = [
 
 const SkillsSection = () => {
   const [activeSkill, setActiveSkill] = useState(null);
-  const skillRefs = useRef([]);
 
   useEffect(() => {
-    skillRefs.current.forEach((card) => {
-      if (card) {
-        VanillaTilt.init(card, {
-          max: 15,
-          speed: 400,
-          glare: true,
-          "max-glare": 0.3,
-        });
-      }
-    });
-
     gsap.fromTo(
       ".skill-card",
       { opacity: 0, y: 20 },
@@ -56,7 +43,6 @@ const SkillsSection = () => {
             <div
               key={index}
               className="skill-card"
-              ref={(el) => (skillRefs.current[index] = el)}
               onMouseEnter={() => setActiveSkill(index)}
               onMouseLeave={() => setActiveSkill(null)}
             >

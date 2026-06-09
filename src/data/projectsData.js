@@ -18,6 +18,7 @@ export const projectsData = [
     image: ronzalko,
     software: ["Adobe XD", "UI/UX", "Brand System"],
     link: "/projects/1",
+    cardTheme: "ron",
     featured: true,
   },
   {
@@ -28,6 +29,7 @@ export const projectsData = [
     image: melodyPackageDesign,
     software: ["Photoshop", "Adobe After Effects", "Brand System"],
     link: "/projects/2",
+    cardTheme: "melody",
     featured: true,
   },
   {
@@ -38,6 +40,7 @@ export const projectsData = [
     image: timmyhaircare,
     software: ["UX Research", "Mobile UI", "Brand Guide"],
     link: "/projects/3",
+    cardTheme: "timmycare",
     featured: true,
   },
   {
@@ -48,6 +51,7 @@ export const projectsData = [
     image: scwcharity || scwLogo,
     software: ["UX Research", "Wireframes", "Branding"],
     link: "/projects/4",
+    cardTheme: "scw",
     featured: true,
   },
   {
@@ -59,6 +63,7 @@ export const projectsData = [
     software: ["React Native", "Expo", "Product Design", "UI/UX", "Design System"],
     link: "/projects/5",
     liveUrl: "http://website-b862f62d.pef.fai.mybluehost.me/",
+    cardTheme: "astro",
     featured: false,
   },
   {
@@ -84,6 +89,7 @@ export const projectsData = [
     link: "/projects/7",
     liveUrl: "https://timmybad.com/kvdst/",
     previewUrl: "/kvdst-site/index.html",
+    cardTheme: "kvdst",
     featured: false,
   },
   {
@@ -94,6 +100,7 @@ export const projectsData = [
     image: bcrpaLogo,
     software: ["Print Design", "Brand Systems", "Event Design"],
     link: "/bcrpa",
+    cardTheme: "bcrpa",
     featured: false,
   },
 ];

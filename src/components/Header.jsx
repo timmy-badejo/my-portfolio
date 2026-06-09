@@ -1,68 +1,83 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { gsap } from 'gsap';
-import Tclogo from '../assets/Tclogo.svg';
-import mainCv from '../assets/Timilehin Yomi-Badejo CV.pdf';
-import altCv from '../assets/Timmy Badejo resume.pdf';
-import { FaBars, FaTimes, FaHome, FaUser, FaFolderOpen, FaEnvelope, FaFileDownload } from 'react-icons/fa';
-import './Header.css';
+import { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { FaBars, FaFileDownload, FaTimes } from "react-icons/fa";
+import timmyBadLogo from "../assets/optimized/timmybadlogo-mobile.png";
+import "./Header.css";
+
+const navItems = [
+  { to: "/", label: "Home", end: true },
+  { to: "/work", label: "Work" },
+  { to: "/services", label: "Services" },
+  { to: "/about", label: "About" },
+  { to: "/studio-system", label: "Studio" },
+  { to: "/contact", label: "Contact" },
+];
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const handleLogoClick = () => {
-    gsap.fromTo('.header__logo-image', { rotation: 0 }, { rotation: 360, duration: 1, ease: 'power2.out' });
+  const closeMenu = () => {
+    setMenuOpen(false);
   };
 
   return (
-    <header className="header">
-      <div className="header__logo" onClick={handleLogoClick}>
-        <img src={Tclogo} alt="TimmyCreative Logo" className="header__logo-image" />
-        <span className="header__logo-text">TimmyCreative</span>
-      </div>
+    <header className="site-header">
+      <Link to="/" className="site-header__brand" aria-label="Timmy Bad home" onClick={closeMenu}>
+        <img src={timmyBadLogo} alt="Timmy Bad logo" width="44" height="34" />
+        <span className="site-header__brand-text">
+          <span>timmy</span>
+          <span>bad</span>
+        </span>
+      </Link>
+
       <button
         type="button"
-        className="header__menu-toggle"
+        className="site-header__menu-toggle"
         aria-label="Toggle navigation"
         aria-expanded={menuOpen}
+        aria-controls="site-navigation"
         onClick={() => setMenuOpen(!menuOpen)}
       >
         {menuOpen ? <FaTimes /> : <FaBars />}
       </button>
-      <nav className={`header__nav-menu ${menuOpen ? 'active' : ''}`}>
-        <ul className="header__nav-links">
-          <li>
-            <Link to="/" className="header__nav-link" onClick={() => setMenuOpen(false)}>
-              <FaHome /> Home
-            </Link>
-          </li>
-          <li>
-            <Link to="/about" className="header__nav-link" onClick={() => setMenuOpen(false)}>
-              <FaUser /> About
-            </Link>
-          </li>
-          <li>
-            <Link to="/work" className="header__nav-link" onClick={() => setMenuOpen(false)}>
-              <FaFolderOpen /> Work
-            </Link>
-          </li>
-          <li>
-            <Link to="/services" className="header__nav-link" onClick={() => setMenuOpen(false)}>
-              <FaFolderOpen /> Services
-            </Link>
-          </li>
-          <li>
-            <Link to="/contact" className="header__nav-link" onClick={() => setMenuOpen(false)}>
-              <FaEnvelope /> Contact
-            </Link>
-          </li>
-        </ul>
-        <div className="header__resume-group">
-          <a href={mainCv} download className="header__btn-resume">
-            <FaFileDownload /> Download CV
+
+      <nav
+        id="site-navigation"
+        className={`site-header__nav ${menuOpen ? "is-open" : ""}`}
+        aria-label="Primary navigation"
+      >
+        {navItems.map((item) => (
+          <NavLink
+            key={item.to}
+            to={item.to}
+            end={item.end}
+            className={({ isActive }) =>
+              `site-header__link ${isActive ? "is-active" : ""}`
+            }
+            onClick={closeMenu}
+          >
+            {item.label}
+          </NavLink>
+        ))}
+
+        <div className="site-header__downloads">
+          <a
+            href="/timmy-badejo-resume.pdf"
+            download="Timmy_Badejo_Resume.pdf"
+            className="site-header__download"
+            onClick={closeMenu}
+          >
+            <FaFileDownload />
+            <span>Resume</span>
           </a>
-          <a href={altCv} download className="header__btn-resume header__btn-resume--ghost">
-            <FaFileDownload /> Download Resume
+          <a
+            href="/timmy-badejo-cv.pdf"
+            download="Timmy_Badejo_CV.pdf"
+            className="site-header__download site-header__download--ghost"
+            onClick={closeMenu}
+          >
+            <FaFileDownload />
+            <span>CV</span>
           </a>
         </div>
       </nav>

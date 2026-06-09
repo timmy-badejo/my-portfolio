@@ -7,7 +7,6 @@ import designIcon from '../assets/graphic.svg';
 import collabIcon from '../assets/coding & development.svg';
 import codeIcon from '../assets/uiux.svg';
 import motionIcon from '../assets/prototypewireframing.svg';
-import BackToHomeButton from '../components/BackToHomeButton';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -255,7 +254,6 @@ const ServicesPage = () => {
 
   return (
     <div className="services-page">
-      <BackToHomeButton />
       <section className="services-hero" ref={heroRef}>
         <p className="services-kicker">What I Do</p>
         <h1>Design + Build digital experiences</h1>
@@ -365,7 +363,7 @@ const ServicesPage = () => {
 
       <section className="services-cta">
         <h2>Let’s build something unforgettable.</h2>
-        <p>Ready to start a project? Reach out at <a href="mailto:timmybad06@gmail.com">timmybad06@gmail.com</a> or use the contact form.</p>
+        <p>Ready to start a project? Reach out at <a href="mailto:studio@timmybad.com">studio@timmybad.com</a> or use the contact form.</p>
         <Link className="services-btn" to="/contact">Work With Me</Link>
       </section>
 

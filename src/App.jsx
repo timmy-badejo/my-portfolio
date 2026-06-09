@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToHash from "./components/ScrollToHash";
 import LoadingScreen from "./components/LoadingScreen";
 import ThemeToggle from "./components/ThemeToggle";
+import Seo from "./components/Seo";
+import Header from "./components/Header";
 
 import LandingPage from "./pages/LandingPage";
 import WorkPage from "./pages/WorkPage";
@@ -12,6 +14,7 @@ import AboutMePage from "./pages/AboutMePage";
 import ProjectDetailPage from "./pages/ProjectDetailPage";
 import BcrpaPage from "./pages/BcrpaPage";
 import StudioSystemPage from "./pages/StudioSystemPage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 import "./App.css";
 
@@ -23,11 +26,13 @@ function App() {
 
   return (
     <BrowserRouter>
+      <Seo />
       {!isAppReady && <LoadingScreen onComplete={handleLoadingComplete} />}
       <ThemeToggle />
 
       {isAppReady && (
         <>
+          <Header />
           <ScrollToHash />
 
           <Routes>
@@ -39,6 +44,7 @@ function App() {
             <Route path="/bcrpa" element={<BcrpaPage />} />
             <Route path="/studio-system" element={<StudioSystemPage />} />
             <Route path="/projects/:id" element={<ProjectDetailPage />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </>
       )}

@@ -171,6 +171,19 @@ export default function AboutMePage() {
               <span>Brand Systems</span>
               <span>Car-Inspired Precision</span>
             </div>
+
+            <div className="ap-hero-actions">
+              <a href="/timmy-badejo-resume.pdf" download="Timmy_Badejo_Resume.pdf">
+                Download Resume
+              </a>
+              <a
+                href="/timmy-badejo-cv.pdf"
+                download="Timmy_Badejo_CV.pdf"
+                className="ap-hero-action-secondary"
+              >
+                Download CV
+              </a>
+            </div>
           </div>
 
           <div className="ap-profile-network">

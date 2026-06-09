@@ -13,12 +13,20 @@ import "./ContactPage.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const PRIMARY_EMAIL = "studio@timmybad.com";
+const BACKUP_EMAIL = "timmybad06@gmail.com";
+const CONTACT_FORM_ENDPOINT =
+  process.env.REACT_APP_CONTACT_FORM_ENDPOINT ||
+  `https://formsubmit.co/ajax/${PRIMARY_EMAIL}`;
+
 export default function ContactPage() {
   const heroRef = useRef(null);
   const formRef = useRef(null);
   const infoRef = useRef(null);
 
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [formStatus, setFormStatus] = useState({ type: "idle", message: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     if (heroRef.current) {
@@ -46,15 +54,55 @@ export default function ContactPage() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
+  const openMailFallback = () => {
     const subject = encodeURIComponent(`Portfolio message from ${formData.name}`);
     const body = encodeURIComponent(
       `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
     );
 
-    window.location.href = `mailto:timmybad06@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:${PRIMARY_EMAIL}?subject=${subject}&body=${body}`;
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+    setFormStatus({ type: "idle", message: "" });
+
+    try {
+      const response = await fetch(CONTACT_FORM_ENDPOINT, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          _subject: `Portfolio message from ${formData.name}`,
+          _template: "table",
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Form submission failed");
+      }
+
+      setFormData({ name: "", email: "", message: "" });
+      setFormStatus({
+        type: "success",
+        message: "Message sent. I will reply from the studio email.",
+      });
+    } catch (error) {
+      openMailFallback();
+      setFormStatus({
+        type: "error",
+        message:
+          "The form service did not respond, so I opened a pre-filled email instead.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -120,7 +168,15 @@ export default function ContactPage() {
               <textarea name="message" placeholder="Tell me what you’re working on..." value={formData.message} onChange={handleChange} rows="6" required />
             </label>
 
-            <button type="submit" className="contact-btn">Send Message ↗</button>
+            {formStatus.message && (
+              <p className={`contact-form-status ${formStatus.type}`} role="status">
+                {formStatus.message}
+              </p>
+            )}
+
+            <button type="submit" className="contact-btn" disabled={isSubmitting}>
+              {isSubmitting ? "Sending..." : "Send Message ↗"}
+            </button>
           </form>
         </div>
 
@@ -130,8 +186,8 @@ export default function ContactPage() {
 
           <ul>
             <li><FaPhoneAlt /><a href="tel:+1236669328">236-669-328</a></li>
-            <li><FaEnvelope /><a href="mailto:timmybad06@gmail.com">timmybad06@gmail.com</a></li>
-            <li><FaEnvelope /><a href="mailto:studio@timmybad.com">studio@timmybad.com</a></li>
+            <li><FaEnvelope /><a href={`mailto:${PRIMARY_EMAIL}`}>{PRIMARY_EMAIL}</a></li>
+            <li><FaEnvelope /><a href={`mailto:${BACKUP_EMAIL}`}>Backup: {BACKUP_EMAIL}</a></li>
             <li>
               <FaLinkedin />
               <a href="https://linkedin.com/in/timmy-yomi-badejo-b9b773251" target="_blank" rel="noreferrer">
@@ -143,10 +199,10 @@ export default function ContactPage() {
 
           <div className="contact-cta">
             <p>
-              Prefer direct email? Use Gmail or the studio email for portfolio, collaboration,
+              Prefer direct email? Use the studio email for portfolio, collaboration,
               and design-related work.
             </p>
-            <a className="contact-btn ghost" href="mailto:timmybad06@gmail.com">Email Timmy ↗</a>
+            <a className="contact-btn ghost" href={`mailto:${PRIMARY_EMAIL}`}>Email Timmy ↗</a>
           </div>
         </aside>
       </section>

@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import profileImage from "../assets/profile_image.jpg";
-import Tilt from "react-parallax-tilt";
 import "./AboutMeSection.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -66,13 +65,11 @@ const AboutMeSection = () => {
         ))}
       </div>
 
-      {/* Profile Image with Tilt */}
+      {/* Profile image */}
       <div className="profile-container">
-        <Tilt tiltMaxAngleX={15} tiltMaxAngleY={15} glareEnable glareMaxOpacity={0.2} scale={1.02}>
-          <div className="profile-tilt-off">
-            <img ref={profileRef} src={profileImage} alt="Profile" className="profilei_mage" />
-          </div>
-        </Tilt>
+        <div className="profile-tilt-off">
+          <img ref={profileRef} src={profileImage} alt="Profile" className="profilei_mage" />
+        </div>
       </div>
 
       {/* About Content */}

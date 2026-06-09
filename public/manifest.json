@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Timmy Bad",
+  "name": "Timmy Bad Portfolio",
   "icons": [
     {
       "src": "favicon.ico",
@@ -18,8 +18,9 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#0b0b0f",
+  "background_color": "#0b0b0f",
+  "description": "Portfolio of Timilehin Yomi-Badejo, a Vancouver-based visual designer and front-end designer/developer."
 }

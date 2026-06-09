@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import {
   FaEnvelope,
@@ -79,7 +79,6 @@ const tools = [
 ];
 
 export default function LandingPage() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const featuredWork = projectsData.filter((project) => project.featured).slice(0, 4);
 
   const handleTiltMove = (e) => {
@@ -103,39 +102,6 @@ export default function LandingPage() {
 
   return (
     <main className="tb-site">
-      <nav className="tb-nav">
-        <Link to="/" className="tb-logo tb-logo-hover" aria-label="Timmybad home">
-          <img src={timmyBadLogo} alt="Timmybad logo" width="44" height="34" />
-          <span className="tb-logo-slide">
-            <span className="slide-timmy">timmy</span>
-            <span className="slide-bad">bad</span>
-          </span>
-        </Link>
-
-        <button
-          type="button"
-          className="tb-menu-toggle"
-          aria-expanded={isMenuOpen}
-          aria-controls="landing-navigation"
-          onClick={() => setIsMenuOpen((open) => !open)}
-        >
-          <span></span><span></span>
-          <span className="sr-only">Toggle navigation</span>
-        </button>
-
-        <div id="landing-navigation" className={`tb-nav-links ${isMenuOpen ? "is-open" : ""}`}>
-          <a href="#work" onClick={() => setIsMenuOpen(false)}>Work</a>
-          <a href="#experience" onClick={() => setIsMenuOpen(false)}>Experience</a>
-          <a href="#about" onClick={() => setIsMenuOpen(false)}>About</a>
-          <a href="#skills" onClick={() => setIsMenuOpen(false)}>Skills</a>
-          <Link to="/contact" onClick={() => setIsMenuOpen(false)}>Contact</Link>
-        </div>
-
-        <Link to="/contact" className="tb-btn tb-btn-primary tb-nav-action">
-          Let’s Work Together ↗
-        </Link>
-      </nav>
-
       <section id="home" className="tb-hero tb-section">
         <div className="tb-hero-copy">
           <p className="tb-kicker">Visual Designer & Front-End Designer / Developer</p>
@@ -149,7 +115,7 @@ export default function LandingPage() {
 
           <div className="tb-hero-actions">
             <a href="#work" className="tb-btn tb-btn-primary">View My Work</a>
-            <Link to="/contact" className="tb-btn tb-btn-primary">Let’s Work Together ↗</Link>
+            <Link to="/contact" className="tb-btn tb-btn-secondary">Let’s Work Together ↗</Link>
           </div>
         </div>
 
@@ -191,11 +157,7 @@ export default function LandingPage() {
               to={project.link}
               className={[
                 "tb-work-card",
-                project.id === "1" ? "tb-work-card-ron" : "",
-                project.id === "2" ? "tb-work-card-melody" : "",
-                project.id === "3" ? "tb-work-card-timmycare" : "",
-                project.id === "4" ? "tb-work-card-scw" : "",
-                project.id === "5" ? "tb-work-card-astro" : "",
+                project.cardTheme ? `tb-work-card-${project.cardTheme}` : "",
               ].join(" ").trim()}
               key={project.id}
               onMouseMove={handleTiltMove}
@@ -412,10 +374,15 @@ export default function LandingPage() {
 
         <div>
           <h3>Contact</h3>
-          <p className="tb-contact-line"><FaEnvelope /> <a href="mailto:timmybad06@gmail.com">timmybad06@gmail.com</a></p>
           <p className="tb-contact-line"><FaEnvelope /> <a href="mailto:studio@timmybad.com">studio@timmybad.com</a></p>
+          <p className="tb-contact-line tb-contact-line-muted"><FaEnvelope /> <a href="mailto:timmybad06@gmail.com">Backup: timmybad06@gmail.com</a></p>
           <p className="tb-contact-line"><FaMapMarkerAlt /> Vancouver, BC, Canada</p>
-          <Link to="/contact" className="tb-btn tb-btn-primary">Let’s Work Together ↗</Link>
+          <div className="tb-footer-actions">
+            <Link to="/contact" className="tb-btn tb-btn-primary">Let’s Work Together ↗</Link>
+            <a href="/timmy-badejo-resume.pdf" download="Timmy_Badejo_Resume.pdf" className="tb-btn tb-btn-secondary">
+              Download Resume
+            </a>
+          </div>
         </div>
 
         <div className="tb-footer-visual">

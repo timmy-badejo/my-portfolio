@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Tilt from "react-parallax-tilt";
 import { FaPause, FaPlay } from "react-icons/fa";
 import { projectsData } from "../data/projectsData";
 import "./FeaturedProjects.css";
@@ -71,29 +70,17 @@ const FeaturedProjects = () => {
 
       <div className="fp-projects-grid">
         {projects.map((project, index) => {
-          const isMotion = project.cardTheme === "motion" || project.id === "6";
-          const isAstro = project.id === "5";
-          const isMelody = project.id === "2";
-          const isTimmyCare = project.id === "3";
-          const isScw = project.id === "4";
+          const projectThemeClass = project.cardTheme
+            ? `fp-project-card-${project.cardTheme}`
+            : "";
 
           return (
-            <Tilt
-              key={project.id}
-              tiltMaxAngleX={5}
-              tiltMaxAngleY={5}
-              glareEnable={true}
-              glareMaxOpacity={0.3}
-            >
+            <div key={project.id} className="fp-project-shell">
               <div
                 ref={(el) => (projectRefs.current[index] = el)}
                 className={[
                   "fp-project-card",
-                  isMelody ? "fp-project-card-melody" : "",
-                  isTimmyCare ? "fp-project-card-timmycare" : "",
-                  isScw ? "fp-project-card-scw" : "",
-                  isAstro ? "fp-project-card-astro" : "",
-                  isMotion ? "fp-project-card-motion" : "",
+                  projectThemeClass,
                 ].join(" ").trim()}
               >
                 <div className="fp-project-image-container">
@@ -141,7 +128,7 @@ const FeaturedProjects = () => {
                   )}
                 </div>
               </div>
-            </Tilt>
+            </div>
           );
         })}
       </div>

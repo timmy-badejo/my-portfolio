@@ -12,7 +12,7 @@
 
 .about-page-nav {
   position: fixed;
-  top: 22px;
+  top: 96px;
   right: 24px;
   z-index: 130;
   display: flex;
@@ -136,6 +136,33 @@
 }
 
 .ap-hero-pills span { padding: 8px 12px; font-size: 0.9rem; }
+
+.ap-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.ap-hero-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 12px 16px;
+  border: 1px solid rgba(201, 164, 108, 0.35);
+  border-radius: 999px;
+  background: var(--rich-maroon);
+  color: #f5e9e2;
+  text-decoration: none;
+  font-weight: 900;
+}
+
+.ap-hero-actions .ap-hero-action-secondary {
+  background: transparent;
+  color: var(--text-main);
+  border-color: var(--border-soft);
+}
 
 .ap-profile-network {
   position: relative;
@@ -499,7 +526,7 @@
 @media (max-width: 768px) {
   .about-page-nav {
     position: sticky;
-    top: 10px;
+    top: 82px;
     z-index: 130;
     max-width: 100%;
     flex-wrap: nowrap;

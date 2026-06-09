@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import VanillaTilt from 'vanilla-tilt';
 import PrototypeWireframing from '../assets/prototypewireframing.svg';
 import Branding from '../assets/branding.svg';
 import DesignService from '../assets/designservice.svg';
@@ -20,16 +19,6 @@ const OfferSection = () => {
         { opacity: 0, y: 50 },
         { opacity: 1, y: 0, duration: 1, delay: index * 0.2, ease: 'power2.out' }
       );
-    });
-
-    // Apply Tilt Effect
-    cardRefs.current.forEach((card) => {
-      VanillaTilt.init(card, {
-        max: 10,
-        speed: 400,
-        glare: true,
-        'max-glare': 0.2,
-      });
     });
   }, []);
 

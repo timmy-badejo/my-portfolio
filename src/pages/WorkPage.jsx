@@ -104,14 +104,9 @@ export default function WorkPage() {
 
       <section className="tb-project-library">
         {filteredProjects.map((project) => {
-          const isMotion = project.cardTheme === "motion" || project.id === "6";
-          const isKvdst = project.id === "7";
-          const isBcrpa = project.id === "8";
-          const isRon = project.id === "1";
-          const isMelody = project.id === "2";
-          const isTimmyCare = project.id === "3";
-          const isScw = project.id === "4";
-          const isAstro = project.id === "5";
+          const projectThemeClass = project.cardTheme
+            ? `tb-project-card-${project.cardTheme}`
+            : "";
 
           return (
             <Link
@@ -119,14 +114,7 @@ export default function WorkPage() {
               className={[
                 "tb-project-card",
                 "magnetic-card",
-                isRon ? "tb-project-card-ron" : "",
-                isMelody ? "tb-project-card-melody" : "",
-                isTimmyCare ? "tb-project-card-timmycare" : "",
-                isScw ? "tb-project-card-scw" : "",
-                isAstro ? "tb-project-card-astro" : "",
-                isMotion ? "tb-project-card-motion" : "",
-                isKvdst ? "tb-project-card-kvdst" : "",
-                isBcrpa ? "tb-project-card-bcrpa" : "",
+                projectThemeClass,
               ].join(" ").trim()}
               key={project.id}
               onMouseMove={handleTiltMove}
@@ -159,7 +147,7 @@ export default function WorkPage() {
                 </div>
 
                 <div className="tb-card-actions">
-                  <strong>{isBcrpa ? "View Internship ↗" : "View Project ↗"}</strong>
+                  <strong>{project.cardTheme === "bcrpa" ? "View Internship ↗" : "View Project ↗"}</strong>
 
                   {project.audio && (
                     <button

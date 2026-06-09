@@ -1,21 +1,9 @@
-import React, { useEffect } from 'react';
-import $ from 'jquery';
-import 'tilt.js';
+import React from 'react';
 import './Card.css'; // Create and import a CSS file for card styles
 
 const Card = ({ icon, title, description }) => {
-  useEffect(() => {
-    $('.tilt-card').tilt({
-      maxTilt: 15,
-      scale: 1.05,
-      speed: 300,
-      glare: true,
-      maxGlare: 0.2,
-    });
-  }, []);
-
   return (
-    <div className="tilt-card" data-tilt>
+    <div className="tilt-card">
       <div className="card-icon">
         <img src={icon} alt={`${title} Icon`} />
       </div>

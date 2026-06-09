@@ -10,7 +10,7 @@
 
 .studio-page-nav {
   position: fixed;
-  top: 22px;
+  top: 96px;
   right: 24px;
   z-index: 130;
   display: flex;
@@ -409,7 +409,7 @@
 @media (max-width: 700px) {
   .studio-page-nav {
     position: sticky;
-    top: 10px;
+    top: 82px;
     z-index: 130;
     flex-wrap: nowrap;
     border-radius: 999px;

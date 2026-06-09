@@ -2,7 +2,6 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import profileImage from "../assets/profile_image.jpg";
-import Tilt from "react-parallax-tilt";
 import "./AboutHeroComposite.css";
 
 const AboutHeroComposite = () => {
@@ -56,11 +55,9 @@ const AboutHeroComposite = () => {
       <div className="about-hero__content">
         {/* profile card */}
         <div className="about-hero__profile">
-          <Tilt tiltMaxAngleX={12} tiltMaxAngleY={12} glareEnable glareMaxOpacity={0.2}>
-            <div className="about-hero__avatar-wrap">
-              <img src={profileImage} alt="Timmy Badejo" className="about-hero__avatar" />
-            </div>
-          </Tilt>
+          <div className="about-hero__avatar-wrap">
+            <img src={profileImage} alt="Timmy Badejo" className="about-hero__avatar" />
+          </div>
           <h1 className="about-hero__name">Timilehin Yomi-Badejo</h1>
           <p className="about-hero__title">New Media Designer & Web Developer</p>
         </div>

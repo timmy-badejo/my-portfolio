@@ -10,7 +10,7 @@
   pointer-events: all;
   opacity: 1;
   visibility: visible;
-  transition: opacity 0.6s ease, visibility 0.6s ease;
+  transition: opacity 0.45s ease, visibility 0.45s ease;
 }
 
 .loading-screen.hide {

@@ -1061,7 +1061,19 @@
   gap: 10px;
 }
 
+.tb-contact-line-muted {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
 .tb-contact-line svg { color: var(--vibrant-maroon); }
+
+.tb-footer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
 
 .tb-footer-visual {
   border: 1px solid var(--border-soft);
