@@ -2171,6 +2171,238 @@
   min-height: 720px;
 }
 
+/* TriumphStride */
+.project-detail-triumph {
+  --triumph-deep: #24380a;
+  --triumph-green: #0f8f2d;
+  --triumph-fresh: #8ad17a;
+  --triumph-orange: #ff7900;
+  --triumph-mint: #68d4be;
+  background:
+    radial-gradient(circle at 16% 8%, rgba(15, 143, 45, 0.18), transparent 32%),
+    radial-gradient(circle at 84% 16%, rgba(255, 121, 0, 0.14), transparent 28%),
+    radial-gradient(circle at 50% 100%, rgba(104, 212, 190, 0.12), transparent 34%),
+    linear-gradient(180deg, var(--page-bg), var(--page-bg-soft));
+}
+
+:root[data-theme="light"] .project-detail-triumph {
+  --page-bg: #f8fff8;
+  --page-bg-soft: #eaf7ed;
+  --surface: rgba(255, 255, 255, 0.95);
+  --surface-soft: rgba(15, 143, 45, 0.07);
+  --text-main: #1d2c13;
+  --text-muted: #4e5d47;
+  --border-soft: rgba(36, 56, 10, 0.16);
+}
+
+:root[data-theme="dark"] .project-detail-triumph {
+  --page-bg: #071307;
+  --page-bg-soft: #101f0a;
+  --surface: rgba(10, 27, 9, 0.9);
+  --surface-soft: rgba(15, 143, 45, 0.1);
+  --text-main: #f5fff2;
+  --text-muted: #c7d9c0;
+  --border-soft: rgba(138, 209, 122, 0.22);
+}
+
+.project-detail-triumph .project-kicker,
+.project-detail-triumph .project-detail-meta span {
+  color: var(--triumph-orange);
+}
+
+.project-detail-triumph .project-detail-meta span,
+.project-detail-triumph .project-nav-arrow,
+.project-detail-triumph .case-study-panel,
+.project-detail-triumph .card,
+.project-detail-triumph .project-section {
+  border-color: var(--border-soft);
+}
+
+.project-detail-triumph .project-doc-link,
+.project-detail-triumph .project-page-nav a:hover,
+.project-detail-triumph .project-nav-indicator:hover .project-nav-arrow {
+  background: var(--triumph-green);
+  color: #fff;
+  border-color: rgba(138, 209, 122, 0.42);
+}
+
+.project-detail-triumph .project-hero-image-wrap {
+  background:
+    radial-gradient(circle at 12% 8%, rgba(255, 121, 0, 0.22), transparent 32%),
+    radial-gradient(circle at 86% 12%, rgba(138, 209, 122, 0.24), transparent 30%),
+    linear-gradient(145deg, #ffffff, #e6f4e9);
+  padding: clamp(18px, 4vw, 46px);
+}
+
+.project-detail-triumph .project-image {
+  object-fit: contain;
+  background: transparent;
+  max-height: 680px;
+}
+
+.triumph-section-head {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(280px, 0.65fr);
+  gap: 28px;
+  align-items: end;
+  margin-bottom: 28px;
+}
+
+.triumph-section-head h2 {
+  max-width: 880px;
+  font-size: clamp(2rem, 4vw, 4.2rem);
+  line-height: 0.98;
+}
+
+.triumph-section-head > p {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.75;
+}
+
+.triumph-assets-section,
+.triumph-collateral-section,
+.triumph-product-section,
+.triumph-packaging-section,
+.triumph-system-section {
+  background:
+    radial-gradient(circle at 0 0, rgba(15, 143, 45, 0.12), transparent 30%),
+    var(--surface);
+}
+
+.triumph-logo-layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.7fr) minmax(260px, 0.3fr);
+  gap: 22px;
+  align-items: stretch;
+}
+
+.triumph-logo-card,
+.triumph-menu-card,
+.triumph-package-card,
+.triumph-artifact-card {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 24px;
+  border: 1px solid rgba(36, 56, 10, 0.18);
+  background: #fff;
+  box-shadow: 0 20px 52px rgba(12, 38, 10, 0.16);
+}
+
+.triumph-logo-card img,
+.triumph-menu-card img,
+.triumph-package-card img,
+.triumph-artifact-card img {
+  width: 100%;
+  object-fit: contain;
+  display: block;
+  background: #fff;
+}
+
+.triumph-logo-card img {
+  height: clamp(260px, 34vw, 430px);
+  padding: clamp(18px, 4vw, 44px);
+}
+
+.triumph-menu-card img {
+  max-height: 920px;
+}
+
+.triumph-package-card img {
+  max-height: 680px;
+}
+
+.triumph-artifact-card img {
+  height: clamp(330px, 42vw, 560px);
+  padding: clamp(8px, 2vw, 18px);
+}
+
+.triumph-logo-card figcaption,
+.triumph-menu-card figcaption,
+.triumph-package-card figcaption {
+  padding: 14px 16px;
+  color: var(--triumph-deep);
+  background: #f8fff8;
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.triumph-brand-notes {
+  display: grid;
+  gap: 14px;
+  align-content: stretch;
+}
+
+.triumph-note,
+.triumph-system-grid article {
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid rgba(36, 56, 10, 0.18);
+  background:
+    linear-gradient(135deg, rgba(15, 143, 45, 0.1), rgba(255, 121, 0, 0.05)),
+    var(--surface-soft);
+}
+
+.triumph-note {
+  display: grid;
+  grid-template-columns: 12px 1fr;
+  gap: 13px;
+  align-items: start;
+}
+
+.triumph-note span {
+  width: 12px;
+  height: 12px;
+  margin-top: 8px;
+  border-radius: 999px;
+  background: var(--triumph-orange);
+}
+
+.triumph-note p {
+  margin: 0;
+}
+
+.triumph-collateral-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.triumph-artifact-card figcaption {
+  padding: 18px 20px 22px;
+  background: var(--surface);
+}
+
+.triumph-artifact-card figcaption span {
+  color: var(--triumph-orange);
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.triumph-artifact-card h3,
+.triumph-system-grid h3 {
+  margin: 8px 0;
+  color: var(--text-main);
+  letter-spacing: 0;
+}
+
+.triumph-artifact-card p,
+.triumph-system-grid p {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.triumph-system-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
 /* Motion */
 .project-detail-motion {
   background:
@@ -2567,7 +2799,11 @@
   .kvdst-cards-container { grid-template-columns: 1fr; }
   .kvdst-framework-layout,
   .kvdst-framework-grid,
-  .kvdst-quality-grid {
+  .kvdst-quality-grid,
+  .triumph-section-head,
+  .triumph-logo-layout,
+  .triumph-collateral-grid,
+  .triumph-system-grid {
     grid-template-columns: 1fr;
   }
   .ron-logo-showcase,
@@ -2712,6 +2948,9 @@
     background: linear-gradient(to right, var(--ron-red), transparent);
   }
   .ron-section-headline h2 {
+    font-size: clamp(1.9rem, 11vw, 3rem);
+  }
+  .triumph-section-head h2 {
     font-size: clamp(1.9rem, 11vw, 3rem);
   }
   .ron-userflow-card img {
@@ -3118,7 +3357,11 @@
   .kvdst-quality-grid,
   .timmycare-logo-panel,
   .project-detail-melody .melody-item-card,
-  .scw-wireframe-tabs {
+  .scw-wireframe-tabs,
+  .triumph-section-head,
+  .triumph-logo-layout,
+  .triumph-collateral-grid,
+  .triumph-system-grid {
     grid-template-columns: minmax(0, 1fr);
   }
 
@@ -3192,7 +3435,12 @@
   #motion-process,
   #technical-delivery,
   #live-preview,
-  #framework
+  #framework,
+  #brand-assets,
+  #business-collateral,
+  #product-list,
+  #packaging,
+  #visual-system
 ) {
   scroll-margin-top: 112px;
 }
@@ -3225,5 +3473,10 @@
 
 .project-detail-motion .project-page-nav a:hover {
   background: #e34a43;
+  color: #fff;
+}
+
+.project-detail-triumph .project-page-nav a:hover {
+  background: #0f8f2d;
   color: #fff;
 }

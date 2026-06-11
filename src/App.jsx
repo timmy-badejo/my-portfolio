@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import ScrollToHash from "./components/ScrollToHash";
 import LoadingScreen from "./components/LoadingScreen";
 import ThemeToggle from "./components/ThemeToggle";
@@ -18,6 +18,33 @@ import NotFoundPage from "./pages/NotFoundPage";
 
 import "./App.css";
 
+const isProjectCaseStudyPath = (pathname) =>
+  pathname.startsWith("/projects/") || pathname === "/bcrpa";
+
+function AppContent() {
+  const location = useLocation();
+  const shouldHideSiteHeader = isProjectCaseStudyPath(location.pathname);
+
+  return (
+    <>
+      {!shouldHideSiteHeader && <Header />}
+      <ScrollToHash />
+
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/work" element={<WorkPage />} />
+        <Route path="/services" element={<ServicesPage />} />
+        <Route path="/about" element={<AboutMePage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/bcrpa" element={<BcrpaPage />} />
+        <Route path="/studio-system" element={<StudioSystemPage />} />
+        <Route path="/projects/:id" element={<ProjectDetailPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </>
+  );
+}
+
 function App() {
   const [isAppReady, setIsAppReady] = useState(false);
   const handleLoadingComplete = useCallback(() => {
@@ -31,22 +58,7 @@ function App() {
       <ThemeToggle />
 
       {isAppReady && (
-        <>
-          <Header />
-          <ScrollToHash />
-
-          <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/work" element={<WorkPage />} />
-            <Route path="/services" element={<ServicesPage />} />
-            <Route path="/about" element={<AboutMePage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/bcrpa" element={<BcrpaPage />} />
-            <Route path="/studio-system" element={<StudioSystemPage />} />
-            <Route path="/projects/:id" element={<ProjectDetailPage />} />
-            <Route path="*" element={<NotFoundPage />} />
-          </Routes>
-        </>
+        <AppContent />
       )}
     </BrowserRouter>
   );

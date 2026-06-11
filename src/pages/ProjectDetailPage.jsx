@@ -184,6 +184,11 @@ import kvdstGuidePage4 from "../assets/KVDST-record-label-style-guide_Page_4.jpg
 import kvdstGuidePage5 from "../assets/KVDST-record-label-style-guide_Page_5.jpg";
 import kvdstGuidePage6 from "../assets/KVDST-record-label-style-guide_Page_6.jpg";
 import kvdstGuidePage7 from "../assets/KVDST-record-label-style-guide_Page_7.jpg";
+import triumphStrideList from "../assets/TRUIMPH STRIDE LIST.jpg";
+import triumphStrideInvoice from "../assets/truimph strides invoice template.jpg";
+import triumphStrideCheque from "../assets/truimphstride cheque.jpg";
+import triumphStridePackage from "../assets/truimphstride_package design.jpg";
+import triumphStrideLogo from "../assets/TS-LOGO.jpg";
 
 const scwWireframes = [
   scwWire1,
@@ -435,6 +440,12 @@ const caseStudyMetadata = {
     process: ["Reworked information architecture and page hierarchy around user intent.", "Aligned the visual language to the KVDST identity system.", "Added live deployment, backup code continuity, style-guide framing, and code evidence."],
     delivery: "Delivered a production-ready case study with professional structure, live preview access, fallback backup path, and implementation documentation.",
   },
+  "9": {
+    snapshot: ["Brand identity and business asset system", "Logo, invoice, cheque, product list, and packaging", "Green, orange, white, and practical customer-facing layouts"],
+    context: "TriumphStride needed a cohesive brand presence that could work across product packaging, sales information, financial documents, and everyday customer communication.",
+    process: ["Built the visual direction around the TS logo, fresh green palette, and clean business-document hierarchy.", "Extended the identity across invoice, cheque, product list, and packaging formats.", "Kept each asset practical, readable, and consistent for both customer-facing and internal use."],
+    delivery: "Delivered a complete brand identity and business collateral presentation showing how TriumphStride can appear consistently across print, product, payment, and sales touchpoints.",
+  },
 };
 
 const ronWireframes = [
@@ -498,6 +509,43 @@ const kvdstStyleGuidePages = [
   { title: "Secondary Typography", note: "Open Sans supporting type system", image: kvdstGuidePage6 },
   { title: "Colour Palette", note: "Core KVDST record label colour system", image: kvdstGuidePage7 },
 ];
+
+const triumphStrideAssets = [
+  {
+    title: "Logo System",
+    label: "Brand Asset",
+    image: triumphStrideLogo,
+    note: "Circular TS identity mark and wordmark direction built around a clean green agricultural brand presence.",
+  },
+  {
+    title: "Product Package Design",
+    label: "Packaging",
+    image: triumphStridePackage,
+    note: "Garri and Ofada rice package mockups extending the visual identity into customer-facing product formats.",
+  },
+  {
+    title: "Product List and Menu",
+    label: "Customer Information",
+    image: triumphStrideList,
+    note: "A structured price list designed for quick scanning across flour, rice, palm oil, spices, beans, payment, and contact information.",
+  },
+  {
+    title: "Invoice Template",
+    label: "Business Collateral",
+    image: triumphStrideInvoice,
+    note: "Operational invoice layout with clear hierarchy for client details, item descriptions, quantities, totals, and payment information.",
+  },
+  {
+    title: "Cheque Receipt Design",
+    label: "Payment Collateral",
+    image: triumphStrideCheque,
+    note: "Cheque-style receipt design using brand color, logo placement, amount hierarchy, and payment method indicators.",
+  },
+];
+
+const triumphStrideCollateral = triumphStrideAssets.filter((asset) =>
+  ["Invoice Template", "Cheque Receipt Design"].includes(asset.title)
+);
 
 const scwBrandSystemPages = [
   { section: "Foundation", title: "Guide Cover", note: "Sickle Cell Warrior brand-system introduction.", image: scwGuidePage1 },
@@ -849,9 +897,30 @@ const projects = [
     styleGuide: kvdstStyleGuidePdf,
     isKvdst: true,
   },
+  {
+    id: "9",
+    title: "TriumphStride - Brand Identity & Business Assets",
+    category: "Brand Identity / Visual Design",
+    image: triumphStridePackage,
+    logo: triumphStrideLogo,
+    technicalInfo: "Brand Identity • Visual Design • Business Collateral • Packaging Design",
+    overview: "A brand identity and business asset project for TriumphStride, focused on building a cohesive visual presence across practical materials: logo, invoice, cheque receipt, product list/menu, and package design.",
+    challenges: "The challenge was making different business touchpoints feel connected while keeping each format easy to use. The product list needed strong scanability, financial documents needed trust and clarity, and the packaging needed to feel fresh, organic, and recognizable.",
+    outcome: "The final TriumphStride identity system creates a consistent and professional brand presence across digital, print, financial, and product-related materials.",
+    details: [
+      "Designed a clear green TS logo system as the visual anchor for the brand.",
+      "Created a customer-facing product list/menu with organized sections for flours, rice, palm oil, extras, beans, payment details, and inquiry contacts.",
+      "Built invoice and cheque receipt templates with readable hierarchy, clean spacing, and payment information placed for fast review.",
+      "Extended the identity into package designs for Yellow Garri, Ijebu Garri, and Ofada Rice.",
+      "Used consistent green, white, orange, spacing, and logo placement to connect brand, product, and business collateral.",
+    ],
+    triumphAssets: triumphStrideAssets,
+    triumphCollateral: triumphStrideCollateral,
+    isTriumphStride: true,
+  },
 ];
 
-const projectRouteOrder = ["1", "2", "3", "4", "5", "6", "7"];
+const projectRouteOrder = ["1", "2", "3", "4", "5", "6", "7", "9"];
 
 function getProjectDataById(id) {
   const project = projects.find((item) => item.id === id);
@@ -917,6 +986,15 @@ function ProjectSectionNav({ projectData }) {
       { href: "#live-preview", label: "Preview" },
       { href: "#framework", label: "Framework" },
       { href: "#style-guide", label: "Style Guide" },
+    ],
+    "9": [
+      { href: "#overview", label: "Overview" },
+      { href: "#case-study", label: "Framework" },
+      { href: "#brand-assets", label: "Brand Assets" },
+      { href: "#business-collateral", label: "Collateral" },
+      { href: "#product-list", label: "Product List" },
+      { href: "#packaging", label: "Packaging" },
+      { href: "#visual-system", label: "System" },
     ],
   };
 
@@ -1324,6 +1402,7 @@ export default function ProjectDetailPage() {
     projectData.isMelody ? "project-detail-melody" : "",
     projectData.isRon ? "project-detail-ron" : "",
     projectData.isAstro ? "project-detail-astro" : "",
+    projectData.isTriumphStride ? "project-detail-triumph" : "",
   ].join(" ").trim();
 
   return (
@@ -1985,6 +2064,136 @@ export default function ProjectDetailPage() {
               </a>
             </div>
             <iframe src={projectData.liveUrl} title="AstroMatch live app" className="project-live-frame" />
+          </section>
+        </>
+      )}
+
+      {projectData.isTriumphStride && (
+        <>
+          <section className="project-section triumph-assets-section" id="brand-assets">
+            <div className="triumph-section-head">
+              <div>
+                <p className="project-kicker">Brand Assets</p>
+                <h2>A practical identity system for a growing food brand.</h2>
+              </div>
+              <p>
+                The TriumphStride identity uses a clean TS mark, fresh green palette,
+                and simple supporting shapes to stay recognizable across product,
+                payment, and customer information formats.
+              </p>
+            </div>
+
+            <div className="triumph-logo-layout">
+              <figure className="triumph-logo-card">
+                <img src={projectData.logo} alt="TriumphStride logo system" loading="lazy" />
+                <figcaption>Primary TriumphStride logo and wordmark asset</figcaption>
+              </figure>
+              <div className="triumph-brand-notes">
+                {[
+                  "Logo-first presentation establishes recognition across every document.",
+                  "Green and white create a fresh, organic tone for food and pantry products.",
+                  "Orange accents create stronger category headers and customer-scanning points.",
+                ].map((note) => (
+                  <div className="triumph-note" key={note}>
+                    <span></span>
+                    <p>{note}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section className="project-section triumph-collateral-section" id="business-collateral">
+            <div className="triumph-section-head">
+              <div>
+                <p className="project-kicker">Business Collateral</p>
+                <h2>Invoice and cheque layouts built for trust and clarity.</h2>
+              </div>
+              <p>
+                The financial documents use clean spacing, strong totals, clear payment
+                details, and repeated brand placement so the assets feel professional
+                while remaining easy to fill out and review.
+              </p>
+            </div>
+
+            <div className="triumph-collateral-grid">
+              {projectData.triumphCollateral.map((asset) => (
+                <figure className="triumph-artifact-card" key={asset.title}>
+                  <img src={asset.image} alt={`TriumphStride ${asset.title}`} loading="lazy" />
+                  <figcaption>
+                    <span>{asset.label}</span>
+                    <h3>{asset.title}</h3>
+                    <p>{asset.note}</p>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </section>
+
+          <section className="project-section triumph-product-section" id="product-list">
+            <div className="triumph-section-head">
+              <div>
+                <p className="project-kicker">Product List/Menu</p>
+                <h2>Product information organized for fast customer scanning.</h2>
+              </div>
+              <p>
+                The product list groups items by category and uses orange headers,
+                consistent spacing, and payment details near the bottom so customers
+                can quickly move from browsing to ordering.
+              </p>
+            </div>
+
+            <figure className="triumph-menu-card">
+              <img src={triumphStrideList} alt="TriumphStride product list and menu design" loading="lazy" />
+              <figcaption>Product list/menu design with pricing, payment, and contact information.</figcaption>
+            </figure>
+          </section>
+
+          <section className="project-section triumph-packaging-section" id="packaging">
+            <div className="triumph-section-head">
+              <div>
+                <p className="project-kicker">Packaging Design</p>
+                <h2>The identity extended into physical product packaging.</h2>
+              </div>
+              <p>
+                The package mockups connect product photography, weight badges,
+                logo placement, and storage information into a reusable package
+                language for garri and Ofada rice products.
+              </p>
+            </div>
+
+            <figure className="triumph-package-card">
+              <img src={triumphStridePackage} alt="TriumphStride package design mockups" loading="lazy" />
+              <figcaption>Packaging concepts for Yellow Garri, Ijebu Garri, and Ofada Rice.</figcaption>
+            </figure>
+          </section>
+
+          <section className="project-section triumph-system-section" id="visual-system">
+            <div className="triumph-section-head">
+              <div>
+                <p className="project-kicker">Visual System</p>
+                <h2>Consistent typography, color, and layout rhythm.</h2>
+              </div>
+              <p>
+                Across the logo, product list, invoice, cheque, and package design,
+                the system uses a repeated palette, clear alignment, document-friendly
+                spacing, and product-focused hierarchy.
+              </p>
+            </div>
+
+            <div className="triumph-system-grid">
+              {[
+                { title: "Typography", detail: "Bold headings, readable body text, and clear numeric hierarchy for prices and totals." },
+                { title: "Color Palette", detail: "Deep green, fresh green, white, and orange accents connect organic product cues with business credibility." },
+                { title: "Spacing", detail: "Open spacing keeps documents readable and gives product information enough room to scan quickly." },
+                { title: "Brand Tone", detail: "Fresh, trustworthy, practical, and customer-ready across both sales and financial materials." },
+              ].map((item) => (
+                <article key={item.title}>
+                  <h3>{item.title}</h3>
+                  <p>{item.detail}</p>
+                </article>
+              ))}
+            </div>
           </section>
         </>
       )}

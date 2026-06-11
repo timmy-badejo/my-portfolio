@@ -24,7 +24,10 @@ export default function WorkPage() {
   const filteredProjects =
     activeFilter === "All"
       ? projectsData
-      : projectsData.filter((project) => project.category === activeFilter);
+      : projectsData.filter((project) => {
+          if (project.category.includes(activeFilter)) return true;
+          return activeFilter === "Branding" && project.category.includes("Brand");
+        });
 
   const handleAudioToggle = (event, project) => {
     event.preventDefault();

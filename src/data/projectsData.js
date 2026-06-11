@@ -8,6 +8,7 @@ import motionPlaceholder from "../assets/motion graphics.webp";
 import motionCardAudio from "../assets/sukuna-domain-theme.mp3";
 import kvdstLogo from "../assets/KVDST LOGO.png";
 import bcrpaLogo from "../assets/BCRPA-primary-logo.png";
+import triumphStridePackage from "../assets/truimphstride_package design.jpg";
 
 export const projectsData = [
   {
@@ -101,6 +102,17 @@ export const projectsData = [
     software: ["Print Design", "Brand Systems", "Event Design"],
     link: "/bcrpa",
     cardTheme: "bcrpa",
+    featured: false,
+  },
+  {
+    id: "9",
+    title: "TriumphStride - Brand Identity & Business Assets",
+    category: "Brand Identity / Visual Design",
+    description: "A complete brand identity and business collateral system featuring logo design, cheque layout, invoice design, product list/menu, and product packaging assets.",
+    image: triumphStridePackage,
+    software: ["Brand Identity", "Visual Design", "Packaging"],
+    link: "/projects/9",
+    cardTheme: "triumph",
     featured: false,
   },
 ];

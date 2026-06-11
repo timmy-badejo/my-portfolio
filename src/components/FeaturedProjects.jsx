@@ -12,7 +12,7 @@ const FeaturedProjects = () => {
   const projectRefs = useRef([]);
   const audioRefs = useRef({});
   const [playingId, setPlayingId] = useState(null);
-  const projects = projectsData.slice(0, 6);
+  const projects = projectsData;
 
   const handleAudioToggle = (event, project) => {
     event.preventDefault();

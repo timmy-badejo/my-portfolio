@@ -517,6 +517,74 @@
   color: #fff8ef;
 }
 
+.fp-project-card-triumph {
+  background:
+    radial-gradient(circle at 18% 10%, rgba(15, 143, 45, 0.16), transparent 30%),
+    radial-gradient(circle at 88% 20%, rgba(255, 121, 0, 0.16), transparent 26%),
+    linear-gradient(145deg, #f8fff8 0%, #ecf8ed 58%, #ffffff 100%);
+  border: 1px solid rgba(36, 56, 10, 0.16);
+}
+
+.fp-project-card-triumph .fp-project-image-container {
+  background:
+    linear-gradient(135deg, rgba(255, 121, 0, 0.12), transparent 44%),
+    #ffffff;
+}
+
+.fp-project-card-triumph .fp-project-image {
+  object-fit: contain;
+  padding: 16px;
+}
+
+.fp-project-card-triumph .fp-project-title {
+  color: #1d2c13;
+}
+
+.fp-project-card-triumph .fp-project-desc,
+.fp-project-card-triumph .fp-software-used {
+  color: #4e5d47;
+}
+
+.fp-project-card-triumph .fp-software-used strong {
+  color: #0f8f2d;
+}
+
+.fp-project-card-triumph .fp-software-used span,
+.fp-project-card-triumph .fp-view-project-btn {
+  background: rgba(15, 143, 45, 0.1);
+  border: 1px solid rgba(36, 56, 10, 0.16);
+  color: #1d2c13;
+}
+
+.fp-project-card-triumph .fp-view-project-btn:hover {
+  background: #0f8f2d;
+  color: #fff;
+}
+
+:root[data-theme="dark"] .fp-project-card-triumph {
+  background:
+    radial-gradient(circle at 18% 10%, rgba(15, 143, 45, 0.22), transparent 30%),
+    radial-gradient(circle at 88% 20%, rgba(255, 121, 0, 0.14), transparent 26%),
+    linear-gradient(145deg, #071307 0%, #101f0a 58%, #050b05 100%);
+  border-color: rgba(138, 209, 122, 0.24);
+}
+
+:root[data-theme="dark"] .fp-project-card-triumph .fp-project-title {
+  color: #f5fff2;
+}
+
+:root[data-theme="dark"] .fp-project-card-triumph .fp-project-desc,
+:root[data-theme="dark"] .fp-project-card-triumph .fp-software-used {
+  color: #c7d9c0;
+}
+
+:root[data-theme="dark"] .fp-project-card-triumph .fp-software-used span,
+:root[data-theme="dark"] .fp-project-card-triumph .fp-view-project-btn {
+  background: rgba(138, 209, 122, 0.12);
+  border-color: rgba(138, 209, 122, 0.26);
+  color: #f5fff2;
+}
+
 /* ========== Responsive ========== */
 @media (max-width: 768px) {
   .fp-projects-grid {
